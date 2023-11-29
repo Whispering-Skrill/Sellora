@@ -1,0 +1,40 @@
+.oi {
+    width: 1rem;
+    font-size: 1.1rem;
+    vertical-align: text-bottom;
+    top: 0px;
+    right: 0.3rem;
+}
+
+.login-item {
+}
+
+    .login-item:first-of-type {
+        padding-top: 0rem;
+    }
+
+    .login-item:last-of-type {
+        padding-bottom: 0rem;
+    }
+
+    .login-item ::deep a {
+        /* Block Settings */
+        border-radius: 0px;
+        height: 3.6rem;
+        min-width: 7.5rem;
+        align-items: center;
+        padding-top: 1.1rem;
+        margin: -1.5rem;
+        /* Text Settings */
+        font-family:Bahnschrift;
+        text-align: center !important;
+        color: #000000;
+    }
+
+        .login-item ::deep a.active {
+        }
+
+        .login-item ::deep a:hover {
+            background-color: #808080;
+            color: #ffffff;
+        }
