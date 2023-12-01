@@ -38,3 +38,38 @@
             background-color: #808080;
             color: #ffffff;
         }
+
+.sell-item {
+}
+
+    .sell-item:first-of-type {
+        padding-top: 0rem;
+    }
+
+    .sell-item:last-of-type {
+        padding-bottom: 0rem;
+    }
+
+    .sell-item ::deep a {
+        /* Block Settings */
+        border-radius: 7px;
+        height: 3.2rem;
+        min-width: 7rem;
+        align-items: center;
+        padding-top: 0.9rem;
+        margin: -1.5rem;
+        margin-left: -1.9rem;
+        /* Text Settings */
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-weight:bold;
+        text-align: center !important;
+        background-color: #ea0f0f;
+        color: #ffffff;
+    }
+
+        .sell-item ::deep a.active {
+        }
+
+        .sell-item ::deep a:hover {
+            background-color: #cc2c2c;
+        }
