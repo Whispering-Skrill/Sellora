@@ -20,7 +20,7 @@ main {
     height: 3.7rem;
     align-items: center;
     justify-content: space-evenly;
-    min-width: 1230px;
+    min-width: 1250px;
 }
 
 .top-cat {
@@ -37,7 +37,7 @@ main {
 
     .top-cat ::deep a, .top-cat ::deep .btn-link {
         white-space: nowrap;
-        margin-left: 1.5rem;
+        margin-left: 0.5rem;
         text-decoration: none;
     }
 
@@ -77,7 +77,7 @@ main {
 
     .top-login ::deep a, .top-login ::deep .btn-link {
         white-space: nowrap;
-        margin-left: 1.5rem;
+        margin-left: 0rem;
         text-decoration: none;
     }
 
