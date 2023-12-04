@@ -20,6 +20,7 @@ main {
     height: 3.7rem;
     align-items: center;
     justify-content: space-evenly;
+    min-width: 1230px;
 }
 
 .top-cat {
