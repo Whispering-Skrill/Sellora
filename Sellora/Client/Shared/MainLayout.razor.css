@@ -37,7 +37,7 @@ main {
 
     .top-cat ::deep a, .top-cat ::deep .btn-link {
         white-space: nowrap;
-        margin-left: 0.5rem;
+        margin-left: 0rem;
         text-decoration: none;
     }
 
@@ -198,7 +198,7 @@ main {
         min-width: 8.5rem;
         align-items: center;
         padding-top: 1rem;
-        margin: 1rem;
+        margin: 0.5rem;
 
         /* Text Settings */
         text-align: center !important;
