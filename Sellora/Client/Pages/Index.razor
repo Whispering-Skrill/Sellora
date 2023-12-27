@@ -1,14 +1,53 @@
 ﻿@page "/"
+@inject IJSRuntime JsRuntime
 
 <PageTitle>Home</PageTitle>
 
+<body>
+    <div class="carousel">
+        <div class="ad ad--visible">
+            <a href="/">
+                <img src="/lib/Living.jpg" width="1000" aria-label="Home and Living">
+            </a>
+        </div>
+        <div class="ad">
+            <img src="/lib/Cars.jpg" width="1000" />
+        </div>
+        <div class="ad">
+            <img src="/lib/Toys.jpg" width="1000" />
+        </div>
+
+        <div class="carousel_buttons">
+            <button id="carousel_button--prev" @onclick="PrevSlide">
+                <span class="oi oi-arrow-left"></span>
+            </button>
+            <button id="carousel_button--next" @onclick="NextSlide">
+                <span class="oi oi-arrow-right"></span>
+            </button>
+        </div>
+    </div>
+</body>
+
+@code
+{
+    async void NextSlide()
+    {
+        await JsRuntime.InvokeVoidAsync("moveToNextSlide");
+    }
+    async void PrevSlide()
+    {
+        await JsRuntime.InvokeVoidAsync("moveToPrevSlide");
+    }
+}
 
 
+@*
 <h1 style="font-family:'Microsoft Sans Serif'; font-size:65px"><b>Dear Customers,</b></h1>
 <br />
 <h5>The Sellora site is currently under maintenance.</h5>
 
 <h5>We seek your kind understanding and apologise for any inconvenience caused.</h5>
+*@
 
 
 @*<SurveyPrompt Title="How is Blazor working for you?" />*@
