@@ -41,3 +41,26 @@
 
 .carousel .carousel_buttons button#carousel_button--next {
 }
+
+
+
+body {
+    padding-top: 50px;
+}
+
+.listings-container {
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.listing-card {
+    margin-bottom: 20px;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.star-rating {
+    color: gold;
+}
