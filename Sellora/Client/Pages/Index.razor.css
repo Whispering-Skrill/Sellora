@@ -43,18 +43,15 @@
 }
 
 
-
-body {
-    padding-top: 50px;
-}
-
 .listings-container {
-    max-width: 500px;
+    max-width: 1000px;
     margin: 20px auto;
+    align-content: center;    
 }
 
 .listing-card {
     margin-bottom: 20px;
+    max-width: 300px;
 }
 
 .username {
