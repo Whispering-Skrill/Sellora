@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Sellora.Server.Models;
+using Sellora.Shared.Domain;
 
 namespace Sellora.Server.Data
 {
@@ -13,5 +14,15 @@ namespace Sellora.Server.Data
             IOptions<OperationalStoreOptions> operationalStoreOptions) : base(options, operationalStoreOptions)
         {
         }
+
+        public DbSet<User> Users {  get; set; }
+        public DbSet<Item> Items { get; set; }
+        public DbSet<Staff> Staff { get; set; }
+        public DbSet<Report> Reports { get; set; }
+        public DbSet<SaleTransaction> SaleTransactions { get; set; }
+        public DbSet<SwapTransaction> SwapTransactions { get; set; }
+        public DbSet<Review> Reviews { get; set; }
+        public DbSet<Category> Categories { get; set; }
+
     }
 }

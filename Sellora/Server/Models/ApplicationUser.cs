@@ -9,7 +9,5 @@ namespace Sellora.Server.Models
         public DateTime UserRegDate { get;set; }
         public string? UserDescription { get; set; }
         public DateTime UserLastOnline { get; set; }
-
-
     }
 }

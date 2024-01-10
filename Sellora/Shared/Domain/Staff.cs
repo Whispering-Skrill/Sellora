@@ -16,5 +16,9 @@ namespace Sellora.Shared.Domain
         public string? StaffAddress { get; set; }
         public string? StaffHPNum { get; set; }
         public string? StaffDepartment { get; set; }
+
+
+        // 'Many' Side References
+        public List<Report> ? Reports { get; set; }
     }
 }
