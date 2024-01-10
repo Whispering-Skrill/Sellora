@@ -352,11 +352,9 @@ namespace Sellora.Server.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserFirstName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserLastName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("UserLastOnline")

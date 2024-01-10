@@ -12,8 +12,8 @@ using Sellora.Server.Data;
 namespace Sellora.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240110041625_Item")]
-    partial class Item
+    [Migration("20240110045644_Newdb")]
+    partial class Newdb
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -355,11 +355,9 @@ namespace Sellora.Server.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserFirstName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserLastName")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("UserLastOnline")

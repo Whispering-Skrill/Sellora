@@ -16,7 +16,8 @@ namespace Sellora.Shared.Domain
         public int ItemLikes { get; set; }
         public int ItemClicks { get; set; }
         public int ItemStatus { get; set; }
-        public string? CategoryId { get; set; }
-        public int? UserId { get; set; }
+        public int CategoryId { get; set; }
+        public virtual Category ? Category { get; set; }
+        public int UserId { get; set; }
     }
 }

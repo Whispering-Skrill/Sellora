@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Sellora.Server.Migrations
 {
     /// <inheritdoc />
-    public partial class Item : Migration
+    public partial class Newdb : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -30,8 +30,8 @@ namespace Sellora.Server.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    UserFirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    UserLastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UserFirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserLastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserRegDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     UserDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserLastOnline = table.Column<DateTime>(type: "datetime2", nullable: false),
