@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace Sellora.Shared.Domain
 {
-    internal class SaleTransaction
+    public class SaleTransaction : BaseDomainModel
     {
+        public DateTime TransactionDate { get; set; }
+        public string? TransactionType { get; set; }
+        public int? UserId { get; set; }
+        public int? ItemId { get; set; }
     }
 }
