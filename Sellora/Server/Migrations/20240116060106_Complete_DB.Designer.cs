@@ -12,7 +12,7 @@ using Sellora.Server.Data;
 namespace Sellora.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240110171346_Complete_DB")]
+    [Migration("20240116060106_Complete_DB")]
     partial class Complete_DB
     {
         /// <inheritdoc />
@@ -667,6 +667,36 @@ namespace Sellora.Server.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Staff");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StaffAddress = "Temasek Polytechnic",
+                            StaffDepartment = "Full Stack Development",
+                            StaffEmail = "2102197G@student.tp.edu.sg",
+                            StaffFirstName = "Ryan",
+                            StaffHPNum = "99991111",
+                            StaffHireDate = new DateTime(2024, 1, 16, 14, 1, 6, 122, DateTimeKind.Local).AddTicks(4946),
+                            StaffLastName = "Chong",
+                            StaffPosition = "Lead Developer"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StaffAddress = "Temasek Polytechnic",
+                            StaffDepartment = "Full Stack Development",
+                            StaffEmail = "2203567i@student.tp.edu.sg",
+                            StaffFirstName = "Lucas",
+                            StaffHPNum = "99992222",
+                            StaffHireDate = new DateTime(2024, 1, 16, 14, 1, 6, 122, DateTimeKind.Local).AddTicks(4968),
+                            StaffLastName = "Do",
+                            StaffPosition = "Lead Developer"
+                        });
                 });
 
             modelBuilder.Entity("Sellora.Shared.Domain.SwapTransaction", b =>
