@@ -19,7 +19,11 @@ namespace Sellora.Server.Configurations.Entities
                     StaffPosition = "Lead Developer",
                     StaffAddress = "Temasek Polytechnic",
                     StaffHPNum = "99991111",
-                    StaffDepartment = "Full Stack Development"
+                    StaffDepartment = "Full Stack Development",
+                    DateCreated = DateTime.Now,
+                    DateUpdated = DateTime.Now,
+                    CreatedBy = "System",
+                    UpdatedBy = "System"
                 },
                 new Staff
                 {
@@ -31,7 +35,11 @@ namespace Sellora.Server.Configurations.Entities
                     StaffPosition = "Lead Developer",
                     StaffAddress = "Temasek Polytechnic",
                     StaffHPNum = "99992222",
-                    StaffDepartment = "Full Stack Development"
+                    StaffDepartment = "Full Stack Development",
+                    DateCreated = DateTime.Now,
+                    DateUpdated = DateTime.Now,
+                    CreatedBy = "System",
+                    UpdatedBy = "System"
                 }
             );
         }
