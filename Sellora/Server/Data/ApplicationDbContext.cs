@@ -16,7 +16,7 @@ namespace Sellora.Server.Data
         {
         }
 
-        public DbSet<User> Users {  get; set; }
+        public DbSet<User> Users { get; set; }
         public DbSet<Item> Items { get; set; }
         public DbSet<Staff> Staff { get; set; }
 
@@ -31,6 +31,8 @@ namespace Sellora.Server.Data
             base.OnModelCreating(builder);
 
             builder.ApplyConfiguration(new StaffSeedConfiguration());
+
+            builder.ApplyConfiguration(new CategorySeedConfiguration());
         }
     }
 }
