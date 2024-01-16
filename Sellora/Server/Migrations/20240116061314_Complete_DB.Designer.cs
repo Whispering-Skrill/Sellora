@@ -12,7 +12,7 @@ using Sellora.Server.Data;
 namespace Sellora.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240116060947_Complete_DB")]
+    [Migration("20240116061314_Complete_DB")]
     partial class Complete_DB
     {
         /// <inheritdoc />
@@ -672,30 +672,34 @@ namespace Sellora.Server.Migrations
                         new
                         {
                             Id = 1,
-                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2024, 1, 16, 14, 13, 14, 0, DateTimeKind.Local).AddTicks(9534),
+                            DateUpdated = new DateTime(2024, 1, 16, 14, 13, 14, 0, DateTimeKind.Local).AddTicks(9535),
                             StaffAddress = "Temasek Polytechnic",
                             StaffDepartment = "Full Stack Development",
                             StaffEmail = "2102197G@student.tp.edu.sg",
                             StaffFirstName = "Ryan",
                             StaffHPNum = "99991111",
-                            StaffHireDate = new DateTime(2024, 1, 16, 14, 9, 47, 517, DateTimeKind.Local).AddTicks(9014),
+                            StaffHireDate = new DateTime(2024, 1, 16, 14, 13, 14, 0, DateTimeKind.Local).AddTicks(9522),
                             StaffLastName = "Chong",
-                            StaffPosition = "Lead Developer"
+                            StaffPosition = "Lead Developer",
+                            UpdatedBy = "System"
                         },
                         new
                         {
                             Id = 2,
-                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2024, 1, 16, 14, 13, 14, 0, DateTimeKind.Local).AddTicks(9539),
+                            DateUpdated = new DateTime(2024, 1, 16, 14, 13, 14, 0, DateTimeKind.Local).AddTicks(9539),
                             StaffAddress = "Temasek Polytechnic",
                             StaffDepartment = "Full Stack Development",
                             StaffEmail = "2203567i@student.tp.edu.sg",
                             StaffFirstName = "Lucas",
                             StaffHPNum = "99992222",
-                            StaffHireDate = new DateTime(2024, 1, 16, 14, 9, 47, 517, DateTimeKind.Local).AddTicks(9026),
+                            StaffHireDate = new DateTime(2024, 1, 16, 14, 13, 14, 0, DateTimeKind.Local).AddTicks(9538),
                             StaffLastName = "Do",
-                            StaffPosition = "Lead Developer"
+                            StaffPosition = "Lead Developer",
+                            UpdatedBy = "System"
                         });
                 });
 

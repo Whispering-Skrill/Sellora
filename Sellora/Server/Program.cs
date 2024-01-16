@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using Sellora.Server.Data;
 using Sellora.Server.Models;
 using Microsoft.AspNetCore.Identity;
+using Sellora.Server.IRepository;
+using Sellora.Server.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +23,8 @@ builder.Services.AddIdentityServer()
 
 builder.Services.AddAuthentication()
     .AddIdentityServerJwt();
+
+builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages();

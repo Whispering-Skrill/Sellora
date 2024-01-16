@@ -27,8 +27,6 @@ namespace Sellora.Server.Configurations.Entities
                 DateUpdated = DateTime.Now,
                 CreatedBy = "System",
                 UpdatedBy = "System"
-
-
             }
         );
         }

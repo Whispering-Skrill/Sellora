@@ -14,6 +14,7 @@
         "launchBrowser": true,
         "inspectUri": "{wsProtocol}://{url.hostname}:{url.port}/_framework/debug/ws-proxy?browser={browserInspectUri}",
         "applicationUrl": "https://localhost:7147;http://localhost:5235",
+        "sslPort": 7147
         "environmentVariables": {
           "ASPNETCORE_ENVIRONMENT": "Development"
         }
