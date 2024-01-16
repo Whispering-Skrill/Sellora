@@ -7,26 +7,27 @@
 <!-- Carousel -->
 <body>
     <div class="carousel">
+        <button class="carousel-button-left" @onclick="PrevSlide">
+            <span class="oi oi-caret-left"></span>
+        </button>
         <div class="ad ad--visible">
             <a href="/">
                 <img src="/lib/Living.jpg" width="1000" aria-label="Home and Living">
             </a>
         </div>
         <div class="ad">
-            <img src="/lib/Cars.jpg" width="1000" />
+            <a href="/">
+                <img src="/lib/Cars.jpg" width="1000" aria-label="Cars and Vehicles">
+            </a>
         </div>
         <div class="ad">
-            <img src="/lib/Toys.jpg" width="1000" />
+            <a href="/">
+                <img src="/lib/Toys.jpg" width="1000" aria-label="Toys and Games">
+            </a>
         </div>
-
-        <div class="carousel_buttons">
-            <button id="carousel_button--prev" @onclick="PrevSlide">
-                <span class="oi oi-arrow-left"></span>
-            </button>
-            <button id="carousel_button--next" @onclick="NextSlide">
-                <span class="oi oi-arrow-right"></span>
-            </button>
-        </div>
+        <button class="carousel-button-right" @onclick="NextSlide">
+            <span class="oi oi-caret-right"></span>
+        </button>
     </div>
 </body>
 
