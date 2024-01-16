@@ -676,7 +676,7 @@ namespace Sellora.Server.Migrations
                             StaffEmail = "2102197G@student.tp.edu.sg",
                             StaffFirstName = "Ryan",
                             StaffHPNum = "99991111",
-                            StaffHireDate = new DateTime(2024, 1, 16, 14, 1, 6, 122, DateTimeKind.Local).AddTicks(4946),
+                            StaffHireDate = new DateTime(2024, 1, 16, 14, 9, 47, 517, DateTimeKind.Local).AddTicks(9014),
                             StaffLastName = "Chong",
                             StaffPosition = "Lead Developer"
                         },
@@ -690,7 +690,7 @@ namespace Sellora.Server.Migrations
                             StaffEmail = "2203567i@student.tp.edu.sg",
                             StaffFirstName = "Lucas",
                             StaffHPNum = "99992222",
-                            StaffHireDate = new DateTime(2024, 1, 16, 14, 1, 6, 122, DateTimeKind.Local).AddTicks(4968),
+                            StaffHireDate = new DateTime(2024, 1, 16, 14, 9, 47, 517, DateTimeKind.Local).AddTicks(9026),
                             StaffLastName = "Do",
                             StaffPosition = "Lead Developer"
                         });

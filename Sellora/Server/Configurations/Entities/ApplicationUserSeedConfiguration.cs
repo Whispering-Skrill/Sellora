@@ -5,7 +5,7 @@ using Sellora.Server.Models;
 
 namespace CarRentalManagement.Server.Configurations.Entities
 {
-    public class UserSeedConfiguration : IEntityTypeConfiguration<ApplicationUser>
+    public class ApplicationUserSeedConfiguration : IEntityTypeConfiguration<ApplicationUser>
     {
         public void Configure(EntityTypeBuilder<ApplicationUser> builder)
         {
