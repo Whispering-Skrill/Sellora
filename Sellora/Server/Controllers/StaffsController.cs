@@ -15,11 +15,11 @@ namespace Sellora.Server.Controllers
     [ApiController]
     public class StaffsController : ControllerBase
     {
-        // Refactored
+        // Refactored - Create UnitOfWork instance
         //private readonly ApplicationDbContext _context;
         private readonly IUnitOfWork _unitOfWork;
 
-        // Refactored
+        // Refactored - Dependency injection
         //public StaffsController(ApplicationDbContext context)
         public StaffsController(IUnitOfWork unitOfWork)
         {
@@ -28,7 +28,7 @@ namespace Sellora.Server.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        // GET: api/Staffs
+        // GET: api/Staffs - This method gets all values/data within the Staff Table of the Database
         [HttpGet]
         // Refactored
         //public async Task<ActionResult<IEnumerable<Staff>>> GetStaff()
@@ -40,41 +40,46 @@ namespace Sellora.Server.Controllers
             //    return NotFound();
             //}
             //    return await _context.Staff.ToListAsync();
+
+            // This checks if there are values in the Staff Table
             if (_unitOfWork.Staffs == null)
             {
                 return NotFound();
             }
+
+            // Gets All values within the Staff Table
             var staffs = await _unitOfWork.Staffs.GetAll();
             return Ok(staffs);
         }
 
-        // GET: api/Staffs/5
+        // GET: api/Staffs/5 - This method gets the data of specific tuple/row within the Staff table by specifying the ID
         [HttpGet("{id}")]
         // Refactored
         //public async Task<ActionResult<Staff>> GetStaff(int id)
-        public async Task<IActionResult> getStaff(int id)
+        public async Task<IActionResult> GetStaff(int id)
         {
             // Refactored
-          //if (_context.Staff == null)
-          //{
-          //    return NotFound();
-          //}
-          //  var staff = await _context.Staff.FindAsync(id);
-          //
-          //  if (staff == null)
-          //  {
-          //      return NotFound();
-          //  }
+            //if (_context.Staff == null)
+            //{
+            //    return NotFound();
+            //}
+            //  var staff = await _context.Staff.FindAsync(id);
+            //
+            //  if (staff == null)
+            //  {
+            //      return NotFound();
+            //  }
 
-          // return staff;
+            // return staff;
 
+            // This checks if there are values in the Staff Table
             if (_unitOfWork.Staffs == null)
             {
                 return NotFound();
             }
-            
+
+            // This checks if a tuple with the specified ID exists in the Staff Table
             var staff = await _unitOfWork.Staffs.Get(q => q.Id == id);
-              
             if (staff == null)
             {
                 return NotFound(id);
@@ -83,11 +88,12 @@ namespace Sellora.Server.Controllers
             return Ok(staff);
         }
 
-        // PUT: api/Staffs/5
+        // PUT: api/Staffs/5 - This method updates a tuple/resource within the Staff table with a specified ID
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutStaff(int id, Staff staff)
         {
+            // This checks if the value given is a Staff ID
             if (id != staff.Id)
             {
                 return BadRequest();
@@ -95,6 +101,8 @@ namespace Sellora.Server.Controllers
 
             // Refactored
             //_context.Entry(staff).State = EntityState.Modified;
+
+            // This updates the Staff Table
             _unitOfWork.Staffs.Update(staff);
 
             try
@@ -107,6 +115,8 @@ namespace Sellora.Server.Controllers
             {
                 // Refactored
                 //if (!StaffExists(id))
+
+                // This checks if there are values in the Staff Table with a specified ID
                 if (!await StaffExists(id))
                 {
                     return NotFound();
@@ -120,37 +130,46 @@ namespace Sellora.Server.Controllers
             return NoContent();
         }
 
-        // POST: api/Staffs
+        // POST: api/Staffs - This method creates a new tuple/resource within the Staff table with a user input or data from the browser
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Staff>> PostStaff(Staff staff)
         {
             // Refactored
-          //if (_context.Staff == null)
-          if (_unitOfWork.Staffs == null)
-          {
-              return Problem("Entity set 'ApplicationDbContext.Staff'  is null.");
-          }
+            //if (_context.Staff == null)
+
+            // This checks if there are values in the Staff Table
+            if (_unitOfWork.Staffs == null)
+            {
+                return Problem("Entity set 'ApplicationDbContext.Staff'  is null.");
+            }
             // Refactored  
             //_context.Staff.Add(staff);
             //await _context.SaveChangesAsync();
 
+            // This adds/inserts a new value/row/tuple into the Staff Table
             await _unitOfWork.Staffs.Insert(staff);
             await _unitOfWork.Save(HttpContext);
 
             return CreatedAtAction("GetStaff", new { id = staff.Id }, staff);
         }
 
-        // DELETE: api/Staffs/5
+        // DELETE: api/Staffs/5 - This method is called to delete a tuple within the Staff table, this tuple is specified by the ID of the tuple
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteStaff(int id)
         {
+            // Refactored
+            //if (_context.Staffs == null)
+
+            // This checks if there are values in the Staff Table
             if (_unitOfWork.Staffs == null)
             {
                 return NotFound();
             }
             // Refactored
             //var staff = await _context.Staff.FindAsync(id);
+
+            // This checks if a tuple with the specified ID exists in the Staff Table
             var staff = await _unitOfWork.Staffs.Get(q => q.Id == id);
             if (staff == null)
             {
@@ -161,12 +180,14 @@ namespace Sellora.Server.Controllers
             //_context.Staff.Remove(staff);
             //await _context.SaveChangesAsync();
 
+            // This deletes the tuple specified by the ID
             await _unitOfWork.Staffs.Delete(id);
             await _unitOfWork.Save(HttpContext);
 
             return NoContent();
         }
 
+        // Staff Exists - This method is called by the above methods to check if a tuple/data with a specified ID exists within the Staff Table
         // Refactored
         //private bool StaffExists(int id)
         private async Task<bool> StaffExists(int id)
