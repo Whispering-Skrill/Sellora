@@ -2,6 +2,7 @@
 
 namespace Sellora.Server.Models
 {
+    // The is entity config page edits the attributes within the ApplicationUser Table (Login and Registration details)
     public class ApplicationUser : IdentityUser
     {
         public string? UserFirstName { get; set; }

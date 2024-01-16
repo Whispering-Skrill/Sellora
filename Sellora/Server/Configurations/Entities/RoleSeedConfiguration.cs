@@ -5,6 +5,7 @@ namespace Sellora.Server.Configurations.Entities
 {
     public class RoleSeedConfiguration : IEntityTypeConfiguration<IdentityRole>
     {
+        // This seeds the user roles, giving certain users different administrative privileges over the website
         public void Configure(EntityTypeBuilder<IdentityRole> builder)
         {
             builder.HasData(

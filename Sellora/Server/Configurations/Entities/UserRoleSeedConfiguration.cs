@@ -6,6 +6,7 @@ namespace Sellora.Server.Configurations.Entities
     public class UserRoleSeedConfiguration :
    IEntityTypeConfiguration<IdentityUserRole<string>>
     {
+        // This seeds the Identity user role, it gives each application user identity a role, and thus the privileges associated with the role
         public void Configure(EntityTypeBuilder<IdentityUserRole<string>> builder)
         {
             builder.HasData(

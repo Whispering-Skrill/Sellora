@@ -6,6 +6,7 @@ namespace Sellora.Server.Configurations.Entities
 {
     public class StaffSeedConfiguration : IEntityTypeConfiguration<Staff>
     {
+        // This seeds the Staff Entity with 2 of the lead developers within the organisation
         public void Configure(EntityTypeBuilder<Staff> builder)
         {
             builder.HasData(
