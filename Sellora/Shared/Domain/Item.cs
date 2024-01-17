@@ -14,7 +14,7 @@ namespace Sellora.Shared.Domain
         public string? ItemName { get; set; }
         public int ItemPrice { get; set; }
         public string? Condition { get; set; }
-        public DateTime ItemDate { get; set; }
+        public DateTime ItemDate { get; set; } = DateTime.Now;
         public string? ItemDescription { get; set; }
         public string? ItemLocation { get; set; }
         public int ItemLikes { get; set; }

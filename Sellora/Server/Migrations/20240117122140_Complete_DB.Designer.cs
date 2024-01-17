@@ -12,7 +12,7 @@ using Sellora.Server.Data;
 namespace Sellora.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240117045009_Complete_DB")]
+    [Migration("20240117122140_Complete_DB")]
     partial class Complete_DB
     {
         /// <inheritdoc />
@@ -416,8 +416,8 @@ namespace Sellora.Server.Migrations
                             Id = 1,
                             CategoryName = "Technology",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 17, 12, 50, 9, 645, DateTimeKind.Local).AddTicks(5793),
-                            DateUpdated = new DateTime(2024, 1, 17, 12, 50, 9, 645, DateTimeKind.Local).AddTicks(5794),
+                            DateCreated = new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(6361),
+                            DateUpdated = new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(6370),
                             UpdatedBy = "System"
                         },
                         new
@@ -425,8 +425,8 @@ namespace Sellora.Server.Migrations
                             Id = 2,
                             CategoryName = "Fashion",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 17, 12, 50, 9, 645, DateTimeKind.Local).AddTicks(5796),
-                            DateUpdated = new DateTime(2024, 1, 17, 12, 50, 9, 645, DateTimeKind.Local).AddTicks(5797),
+                            DateCreated = new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(6379),
+                            DateUpdated = new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(6389),
                             UpdatedBy = "System"
                         });
                 });
@@ -531,7 +531,7 @@ namespace Sellora.Server.Migrations
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
+                    b.Property<int?>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -564,6 +564,9 @@ namespace Sellora.Server.Migrations
                     b.Property<DateTime>("DateUpdated")
                         .HasColumnType("datetime2");
 
+                    b.Property<DateTime>("ReviewDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("ReviewDescription")
                         .HasColumnType("nvarchar(max)");
 
@@ -582,7 +585,7 @@ namespace Sellora.Server.Migrations
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
+                    b.Property<int?>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -696,14 +699,14 @@ namespace Sellora.Server.Migrations
                         {
                             Id = 1,
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 17, 12, 50, 9, 645, DateTimeKind.Local).AddTicks(5437),
-                            DateUpdated = new DateTime(2024, 1, 17, 12, 50, 9, 645, DateTimeKind.Local).AddTicks(5438),
+                            DateCreated = new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(5968),
+                            DateUpdated = new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(5977),
                             StaffAddress = "Temasek Polytechnic",
                             StaffDepartment = "Full Stack Development",
                             StaffEmail = "2102197G@student.tp.edu.sg",
                             StaffFirstName = "Ryan",
                             StaffHPNum = "99991111",
-                            StaffHireDate = new DateTime(2024, 1, 17, 12, 50, 9, 645, DateTimeKind.Local).AddTicks(5425),
+                            StaffHireDate = new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(5959),
                             StaffLastName = "Chong",
                             StaffPosition = "Lead Developer",
                             UpdatedBy = "System"
@@ -712,14 +715,14 @@ namespace Sellora.Server.Migrations
                         {
                             Id = 2,
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 17, 12, 50, 9, 645, DateTimeKind.Local).AddTicks(5442),
-                            DateUpdated = new DateTime(2024, 1, 17, 12, 50, 9, 645, DateTimeKind.Local).AddTicks(5442),
+                            DateCreated = new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(6011),
+                            DateUpdated = new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(6020),
                             StaffAddress = "Temasek Polytechnic",
                             StaffDepartment = "Full Stack Development",
                             StaffEmail = "2203567i@student.tp.edu.sg",
                             StaffFirstName = "Lucas",
                             StaffHPNum = "99992222",
-                            StaffHireDate = new DateTime(2024, 1, 17, 12, 50, 9, 645, DateTimeKind.Local).AddTicks(5441),
+                            StaffHireDate = new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(6002),
                             StaffLastName = "Do",
                             StaffPosition = "Lead Developer",
                             UpdatedBy = "System"
@@ -926,9 +929,7 @@ namespace Sellora.Server.Migrations
 
                     b.HasOne("Sellora.Shared.Domain.User", "User")
                         .WithMany("Reports")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
 
                     b.Navigation("SaleTransaction");
 
@@ -951,9 +952,7 @@ namespace Sellora.Server.Migrations
 
                     b.HasOne("Sellora.Shared.Domain.User", "User")
                         .WithMany("Reviews")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
 
                     b.Navigation("SaleTransaction");
 

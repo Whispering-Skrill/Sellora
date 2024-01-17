@@ -14,9 +14,9 @@ namespace Sellora.Shared.Domain
         public string? UserEmail { get; set; }
         public string? UserPassword { get; set; }
         public string? UserHPNum { get; set; }
-        public DateTime UserRegDate { get; set; }
+        public DateTime UserRegDate { get; set; } = DateTime.Now;
         public string? UserDescription { get; set; }
-        public DateTime UserLastOnline { get; set; }
+        public DateTime UserLastOnline { get; set; } = DateTime.Now;
 
 
         // 'Many' Side References

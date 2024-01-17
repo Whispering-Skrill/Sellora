@@ -411,7 +411,7 @@ namespace Sellora.Server.Migrations
                     ReportContent = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ReportDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ReporterID = table.Column<int>(type: "int", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: true),
                     StaffID = table.Column<int>(type: "int", nullable: false),
                     SaleTransactionID = table.Column<int>(type: "int", nullable: true),
                     SwapTransactionID = table.Column<int>(type: "int", nullable: true),
@@ -443,8 +443,7 @@ namespace Sellora.Server.Migrations
                         name: "FK_Reports_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -454,11 +453,12 @@ namespace Sellora.Server.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ReviewRating = table.Column<int>(type: "int", nullable: false),
+                    ReviewDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ReviewDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     SaleTransactionID = table.Column<int>(type: "int", nullable: true),
                     SwapTransactionID = table.Column<int>(type: "int", nullable: true),
                     ReviewerID = table.Column<int>(type: "int", nullable: true),
-                    UserId = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<int>(type: "int", nullable: true),
                     DateCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DateUpdated = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -481,8 +481,7 @@ namespace Sellora.Server.Migrations
                         name: "FK_Reviews_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.InsertData(
@@ -490,8 +489,8 @@ namespace Sellora.Server.Migrations
                 columns: new[] { "Id", "CategoryName", "CreatedBy", "DateCreated", "DateUpdated", "UpdatedBy" },
                 values: new object[,]
                 {
-                    { 1, "Technology", "System", new DateTime(2024, 1, 17, 12, 50, 9, 645, DateTimeKind.Local).AddTicks(5793), new DateTime(2024, 1, 17, 12, 50, 9, 645, DateTimeKind.Local).AddTicks(5794), "System" },
-                    { 2, "Fashion", "System", new DateTime(2024, 1, 17, 12, 50, 9, 645, DateTimeKind.Local).AddTicks(5796), new DateTime(2024, 1, 17, 12, 50, 9, 645, DateTimeKind.Local).AddTicks(5797), "System" }
+                    { 1, "Technology", "System", new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(6361), new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(6370), "System" },
+                    { 2, "Fashion", "System", new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(6379), new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(6389), "System" }
                 });
 
             migrationBuilder.InsertData(
@@ -499,8 +498,8 @@ namespace Sellora.Server.Migrations
                 columns: new[] { "Id", "CreatedBy", "DateCreated", "DateUpdated", "StaffAddress", "StaffDepartment", "StaffEmail", "StaffFirstName", "StaffHPNum", "StaffHireDate", "StaffLastName", "StaffPosition", "UpdatedBy" },
                 values: new object[,]
                 {
-                    { 1, "System", new DateTime(2024, 1, 17, 12, 50, 9, 645, DateTimeKind.Local).AddTicks(5437), new DateTime(2024, 1, 17, 12, 50, 9, 645, DateTimeKind.Local).AddTicks(5438), "Temasek Polytechnic", "Full Stack Development", "2102197G@student.tp.edu.sg", "Ryan", "99991111", new DateTime(2024, 1, 17, 12, 50, 9, 645, DateTimeKind.Local).AddTicks(5425), "Chong", "Lead Developer", "System" },
-                    { 2, "System", new DateTime(2024, 1, 17, 12, 50, 9, 645, DateTimeKind.Local).AddTicks(5442), new DateTime(2024, 1, 17, 12, 50, 9, 645, DateTimeKind.Local).AddTicks(5442), "Temasek Polytechnic", "Full Stack Development", "2203567i@student.tp.edu.sg", "Lucas", "99992222", new DateTime(2024, 1, 17, 12, 50, 9, 645, DateTimeKind.Local).AddTicks(5441), "Do", "Lead Developer", "System" }
+                    { 1, "System", new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(5968), new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(5977), "Temasek Polytechnic", "Full Stack Development", "2102197G@student.tp.edu.sg", "Ryan", "99991111", new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(5959), "Chong", "Lead Developer", "System" },
+                    { 2, "System", new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(6011), new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(6020), "Temasek Polytechnic", "Full Stack Development", "2203567i@student.tp.edu.sg", "Lucas", "99992222", new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(6002), "Do", "Lead Developer", "System" }
                 });
 
             migrationBuilder.CreateIndex(

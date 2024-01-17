@@ -1,0 +1,38 @@
+﻿@page "/reports/create"
+@inject HttpClient _client
+@inject NavigationManager _navManager
+
+<h3>File a Report</h3>
+
+<br/>
+
+<EditForm Model = "@report" OnValidSubmit="CreateReport">
+    <DataAnnotationsValidator/>
+    <ValidationSummary/>
+    
+    <br/>
+    <button type="submit" class="btn btn-success btn-block">
+        Create Report
+    </button>
+</EditForm>
+
+@code {
+    Report report = new Report();
+
+    //private IList<User>? Users;
+    private IList<Staff>? Staffs;
+    private IList<SwapTransaction>? SwapTransactions;
+    private IList<SaleTransaction>? SaleTransactions;
+
+    protected async Task OnIntializedAsync()
+    {
+        Staffs = await _client.GetFromJsonAsync<List<Staff>>($"{Endpoints.StaffsEndpoint}");
+        SwapTransactions = await _client.GetFromJsonAsync<List<SwapTransaction>>($"{Endpoints.SwapTransactionsEndpoint}");
+    }
+
+    private async Task CreateReport()
+    {
+        await _client.PostAsJsonAsync(Endpoints.ReportsEndpoint, report);
+        _navManager.NavigateTo("/reports/");
+    }
+}

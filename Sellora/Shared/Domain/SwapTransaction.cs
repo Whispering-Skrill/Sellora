@@ -8,7 +8,7 @@ namespace Sellora.Shared.Domain
 {
     public class SwapTransaction : BaseDomainModel
     {
-        public DateTime TransactionDate { get; set; }
+        public DateTime TransactionDate { get; set; } = DateTime.Now;
         public int? SwapUserId { get; set; }
         public virtual User ? User { get; set; }
         public int? SwapItemId { get; set; }
