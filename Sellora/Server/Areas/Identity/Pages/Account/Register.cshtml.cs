@@ -129,8 +129,9 @@ namespace Sellora.Server.Areas.Identity.Pages.Account
             {
                 var user = CreateUser();
 
-
-                await _userStore.SetUserNameAsync(user, Input.UserFirstName, CancellationToken.None);
+                // This don't work, tried to make the name display as username but it messes with the login (big sad)
+                //await _userStore.SetUserNameAsync(user, Input.UserFirstName, CancellationToken.None);
+                await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
 
                 user.UserFirstName = Input.UserFirstName;

@@ -12,7 +12,7 @@ using Sellora.Server.Data;
 namespace Sellora.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240117160257_Complete_DB")]
+    [Migration("20240117161647_Complete_DB")]
     partial class Complete_DB
     {
         /// <inheritdoc />
@@ -416,8 +416,8 @@ namespace Sellora.Server.Migrations
                             Id = 1,
                             CategoryName = "Technology",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 18, 0, 2, 57, 469, DateTimeKind.Local).AddTicks(6191),
-                            DateUpdated = new DateTime(2024, 1, 18, 0, 2, 57, 469, DateTimeKind.Local).AddTicks(6200),
+                            DateCreated = new DateTime(2024, 1, 18, 0, 16, 47, 274, DateTimeKind.Local).AddTicks(4706),
+                            DateUpdated = new DateTime(2024, 1, 18, 0, 16, 47, 274, DateTimeKind.Local).AddTicks(4716),
                             UpdatedBy = "System"
                         },
                         new
@@ -425,8 +425,8 @@ namespace Sellora.Server.Migrations
                             Id = 2,
                             CategoryName = "Fashion",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 18, 0, 2, 57, 469, DateTimeKind.Local).AddTicks(6286),
-                            DateUpdated = new DateTime(2024, 1, 18, 0, 2, 57, 469, DateTimeKind.Local).AddTicks(6295),
+                            DateCreated = new DateTime(2024, 1, 18, 0, 16, 47, 274, DateTimeKind.Local).AddTicks(4730),
+                            DateUpdated = new DateTime(2024, 1, 18, 0, 16, 47, 274, DateTimeKind.Local).AddTicks(4739),
                             UpdatedBy = "System"
                         });
                 });
@@ -726,14 +726,14 @@ namespace Sellora.Server.Migrations
                         {
                             Id = 1,
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 18, 0, 2, 57, 469, DateTimeKind.Local).AddTicks(5798),
-                            DateUpdated = new DateTime(2024, 1, 18, 0, 2, 57, 469, DateTimeKind.Local).AddTicks(5808),
+                            DateCreated = new DateTime(2024, 1, 18, 0, 16, 47, 274, DateTimeKind.Local).AddTicks(4314),
+                            DateUpdated = new DateTime(2024, 1, 18, 0, 16, 47, 274, DateTimeKind.Local).AddTicks(4323),
                             StaffAddress = "Temasek Polytechnic",
                             StaffDepartment = "Full Stack Development",
                             StaffEmail = "2102197G@student.tp.edu.sg",
                             StaffFirstName = "Ryan",
                             StaffHPNum = "99991111",
-                            StaffHireDate = new DateTime(2024, 1, 18, 0, 2, 57, 469, DateTimeKind.Local).AddTicks(5784),
+                            StaffHireDate = new DateTime(2024, 1, 18, 0, 16, 47, 274, DateTimeKind.Local).AddTicks(4304),
                             StaffLastName = "Chong",
                             StaffPosition = "Lead Developer",
                             UpdatedBy = "System"
@@ -742,14 +742,14 @@ namespace Sellora.Server.Migrations
                         {
                             Id = 2,
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 18, 0, 2, 57, 469, DateTimeKind.Local).AddTicks(5836),
-                            DateUpdated = new DateTime(2024, 1, 18, 0, 2, 57, 469, DateTimeKind.Local).AddTicks(5846),
+                            DateCreated = new DateTime(2024, 1, 18, 0, 16, 47, 274, DateTimeKind.Local).AddTicks(4356),
+                            DateUpdated = new DateTime(2024, 1, 18, 0, 16, 47, 274, DateTimeKind.Local).AddTicks(4365),
                             StaffAddress = "Temasek Polytechnic",
                             StaffDepartment = "Full Stack Development",
                             StaffEmail = "2203567i@student.tp.edu.sg",
                             StaffFirstName = "Lucas",
                             StaffHPNum = "99992222",
-                            StaffHireDate = new DateTime(2024, 1, 18, 0, 2, 57, 469, DateTimeKind.Local).AddTicks(5827),
+                            StaffHireDate = new DateTime(2024, 1, 18, 0, 16, 47, 274, DateTimeKind.Local).AddTicks(4346),
                             StaffLastName = "Do",
                             StaffPosition = "Lead Developer",
                             UpdatedBy = "System"
