@@ -12,7 +12,7 @@ using Sellora.Server.Data;
 namespace Sellora.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240117042743_Complete_DB")]
+    [Migration("20240117045009_Complete_DB")]
     partial class Complete_DB
     {
         /// <inheritdoc />
@@ -416,8 +416,8 @@ namespace Sellora.Server.Migrations
                             Id = 1,
                             CategoryName = "Technology",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 17, 12, 27, 43, 163, DateTimeKind.Local).AddTicks(2765),
-                            DateUpdated = new DateTime(2024, 1, 17, 12, 27, 43, 163, DateTimeKind.Local).AddTicks(2767),
+                            DateCreated = new DateTime(2024, 1, 17, 12, 50, 9, 645, DateTimeKind.Local).AddTicks(5793),
+                            DateUpdated = new DateTime(2024, 1, 17, 12, 50, 9, 645, DateTimeKind.Local).AddTicks(5794),
                             UpdatedBy = "System"
                         },
                         new
@@ -425,8 +425,8 @@ namespace Sellora.Server.Migrations
                             Id = 2,
                             CategoryName = "Fashion",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 17, 12, 27, 43, 163, DateTimeKind.Local).AddTicks(2769),
-                            DateUpdated = new DateTime(2024, 1, 17, 12, 27, 43, 163, DateTimeKind.Local).AddTicks(2769),
+                            DateCreated = new DateTime(2024, 1, 17, 12, 50, 9, 645, DateTimeKind.Local).AddTicks(5796),
+                            DateUpdated = new DateTime(2024, 1, 17, 12, 50, 9, 645, DateTimeKind.Local).AddTicks(5797),
                             UpdatedBy = "System"
                         });
                 });
@@ -570,7 +570,7 @@ namespace Sellora.Server.Migrations
                     b.Property<int>("ReviewRating")
                         .HasColumnType("int");
 
-                    b.Property<int>("ReviewerID")
+                    b.Property<int?>("ReviewerID")
                         .HasColumnType("int");
 
                     b.Property<int?>("SaleTransactionID")
@@ -616,10 +616,10 @@ namespace Sellora.Server.Migrations
                     b.Property<int?>("ItemId")
                         .HasColumnType("int");
 
-                    b.Property<int>("SaleItemId")
+                    b.Property<int?>("SaleItemId")
                         .HasColumnType("int");
 
-                    b.Property<int>("SaleUserId")
+                    b.Property<int?>("SaleUserId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("TransactionDate")
@@ -696,14 +696,14 @@ namespace Sellora.Server.Migrations
                         {
                             Id = 1,
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 17, 12, 27, 43, 163, DateTimeKind.Local).AddTicks(2348),
-                            DateUpdated = new DateTime(2024, 1, 17, 12, 27, 43, 163, DateTimeKind.Local).AddTicks(2349),
+                            DateCreated = new DateTime(2024, 1, 17, 12, 50, 9, 645, DateTimeKind.Local).AddTicks(5437),
+                            DateUpdated = new DateTime(2024, 1, 17, 12, 50, 9, 645, DateTimeKind.Local).AddTicks(5438),
                             StaffAddress = "Temasek Polytechnic",
                             StaffDepartment = "Full Stack Development",
                             StaffEmail = "2102197G@student.tp.edu.sg",
                             StaffFirstName = "Ryan",
                             StaffHPNum = "99991111",
-                            StaffHireDate = new DateTime(2024, 1, 17, 12, 27, 43, 163, DateTimeKind.Local).AddTicks(2338),
+                            StaffHireDate = new DateTime(2024, 1, 17, 12, 50, 9, 645, DateTimeKind.Local).AddTicks(5425),
                             StaffLastName = "Chong",
                             StaffPosition = "Lead Developer",
                             UpdatedBy = "System"
@@ -712,14 +712,14 @@ namespace Sellora.Server.Migrations
                         {
                             Id = 2,
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 17, 12, 27, 43, 163, DateTimeKind.Local).AddTicks(2352),
-                            DateUpdated = new DateTime(2024, 1, 17, 12, 27, 43, 163, DateTimeKind.Local).AddTicks(2353),
+                            DateCreated = new DateTime(2024, 1, 17, 12, 50, 9, 645, DateTimeKind.Local).AddTicks(5442),
+                            DateUpdated = new DateTime(2024, 1, 17, 12, 50, 9, 645, DateTimeKind.Local).AddTicks(5442),
                             StaffAddress = "Temasek Polytechnic",
                             StaffDepartment = "Full Stack Development",
                             StaffEmail = "2203567i@student.tp.edu.sg",
                             StaffFirstName = "Lucas",
                             StaffHPNum = "99992222",
-                            StaffHireDate = new DateTime(2024, 1, 17, 12, 27, 43, 163, DateTimeKind.Local).AddTicks(2351),
+                            StaffHireDate = new DateTime(2024, 1, 17, 12, 50, 9, 645, DateTimeKind.Local).AddTicks(5441),
                             StaffLastName = "Do",
                             StaffPosition = "Lead Developer",
                             UpdatedBy = "System"
@@ -749,16 +749,16 @@ namespace Sellora.Server.Migrations
                     b.Property<int?>("ItemId")
                         .HasColumnType("int");
 
-                    b.Property<int>("SwapItem2Id")
+                    b.Property<int?>("SwapItem2Id")
                         .HasColumnType("int");
 
-                    b.Property<int>("SwapItemId")
+                    b.Property<int?>("SwapItemId")
                         .HasColumnType("int");
 
-                    b.Property<int>("SwapUser2Id")
+                    b.Property<int?>("SwapUser2Id")
                         .HasColumnType("int");
 
-                    b.Property<int>("SwapUserId")
+                    b.Property<int?>("SwapUserId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("TransactionDate")
