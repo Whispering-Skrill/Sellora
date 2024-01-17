@@ -3,13 +3,15 @@
 Sellora is a work in progress Sell & Swap website.
 
 <b>Current Discussion topics</b>
-- Carousel
-  - Change images within the Carousel? (better aspect ratio - better fit)
-- Landing Page setup
+- Carousel (90%)
+  - Change images within the Carousel? (better aspect ratio - better fit) (FIXED)
+  - Fix Overlay issue (FIXED)
+
+- Landing Page setup (40%)
   - How should we load the items into the listing spaces?
+    -  @foreach loop
 
-- Back-end setup
+- Back-end setup (70%)
 
-- Navbar is STILL stacking...
-  - Easy fix but not particularly important for now
+- Entity Displays (10%)
 
