@@ -1,17 +1,20 @@
 ﻿@page "/staffs/"
 @inject HttpClient _client
+@inject HttpInterceptorService _interceptor
+@implements IDisposable
 @inject IJSRuntime js
 @attribute [Authorize]
 
-<h3 class="staff-title">Our Staff</h3>
+<div class="staff-topbar">
+    <h2 class="staff-title">Our Staff</h2>
+    <a href="/staffs/create" class="btn btn-secondary">
+        <span class="oi oi-plus" style="margin-top: 5px;"></span>
+    </a>
+</div>
 
-<a href="/staffs/create" class="btn btn-secondary">
-    <span class="oi oi-plus"></span>
-    Create New Staff
-</a>
-
-<br />
-<br />
+<div style="border-bottom:solid black 1px; padding-top:3px;">
+    @*FOR SPACING*@
+</div>
 
 @if (Staffs == null)
 {
@@ -19,6 +22,8 @@
 }
 else
 {
+    @*for JS datatable script*@
+    @*<table class ="table table-responsive" id="bookingsTable">*@
     <table class ="table table-responsive">
         <thead>
             <tr>
@@ -68,8 +73,15 @@ else
 
     protected async override Task OnInitializedAsync()
     {
+        _interceptor.MonitorEvent();
         Staffs = await _client.GetFromJsonAsync<List<Staff>>($"{Endpoints.StaffsEndpoint}");
     }
+
+    // For JS datatable script
+    //protected async override Task OnAfterRenderAsync(bool firstRender)
+    //{
+    //    await js.InvokeVoidAsync("AddDataTable", "#bookingsTable");
+    //}
 
     async Task Delete(int staffID)
     {
@@ -83,5 +95,12 @@ else
                 await OnInitializedAsync();
             }
         }
+    }
+
+    public void Dispose()
+    {
+        // For JS datatable script
+        //js.InvokeVoidAsync("DataTablesDispose", "#bookingsTable");
+        _interceptor.DisposeEvent();
     }
 }

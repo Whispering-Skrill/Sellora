@@ -1,5 +1,7 @@
 @page "/reports/"
 @inject HttpClient _client
+@inject HttpInterceptorService _interceptor
+@implements IDisposable
 @inject IJSRuntime js
 @attribute [Authorize]
 
@@ -14,11 +16,12 @@ else
     <table class="table table-responsive">
         <thead>
             <tr>
+                <th>Report Title</th>
                 <th>Reporter ID</th>
                 <th>Report Date</th>
+                <th>Report Content</th>
                 <th>Sale Transaction ID</th>
                 <th>Swap Transaction ID</th>
-                <th>Report Content</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -26,11 +29,12 @@ else
             @foreach (var report in Reports)
             {
                 <tr>
+                    <td>@report.ReportTitle</td>
                     <td>@report.User.Id</td>
                     <td>@report.ReportDate</td>
+                    <td>@report.ReportContent</td>
                     <td>@report.SaleTransaction.Id</td>
                     <td>@report.SwapTransaction.Id</td>
-                    <td>@report.ReportContent</td>
                     <td>
                         <a href="/reports/view/@report.Id" class="btn btn-primary">
                             <span class="oi oi-book"></span>
@@ -54,6 +58,7 @@ else
 
     protected async override Task OnInitializedAsync()
     {
+        _interceptor.MonitorEvent();
         Reports = await _client.GetFromJsonAsync<List<Report>>($"{Endpoints.ReportsEndpoint}");
     }
 
@@ -69,5 +74,10 @@ else
                 await OnInitializedAsync();
             }
         }
+    }
+
+    public void Dispose()
+    {
+        _interceptor.DisposeEvent();
     }
 }

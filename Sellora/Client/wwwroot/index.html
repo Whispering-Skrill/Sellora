@@ -29,44 +29,17 @@
         <a href="" class="reload">Reload</a>
         <a class="dismiss">🗙</a>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+    <script src="scripts/datatable.js"></script>
+    <script src="scripts/carousel.js"></script>"
+
     <script src="_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication/AuthenticationService.js"></script>
     <script src="_framework/blazor.webassembly.js"></script>
     <script>navigator.serviceWorker.register('service-worker.js');</script>
-    <script>
-        let slidePosition = 0;
-        const slides = document.getElementsByClassName('ad');
-        const totalSlides = 3;
 
-        function updateSlidePosition() {
-            for (let slide of slides) {
-                slide.classList.remove('ad--visible')
-                slide.classList.add('ad--hidden');
-            }
-
-            slides[slidePosition].classList.add('ad--visible');
-        }
-
-        function moveToNextSlide() {
-            if (slidePosition === totalSlides - 1) {
-                slidePosition = 0;
-            } else {
-                slidePosition++;
-            }
-            console.log(slidePosition);
-            console.log(totalSlides);
-            updateSlidePosition();
-        }
-
-        function moveToPrevSlide() {
-            if (slidePosition === 0) {
-                slidePosition = totalSlides - 1;
-            } else {
-                slidePosition--;
-            }
-
-            updateSlidePosition();
-        }
-    </script>
 </body>
 
 </html>

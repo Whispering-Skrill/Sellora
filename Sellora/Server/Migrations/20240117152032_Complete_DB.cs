@@ -137,14 +137,14 @@ namespace Sellora.Server.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    StaffFirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    StaffLastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    StaffEmail = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    StaffFirstName = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    StaffLastName = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    StaffEmail = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     StaffHireDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    StaffPosition = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    StaffAddress = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    StaffHPNum = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    StaffDepartment = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    StaffPosition = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    StaffAddress = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    StaffHPNum = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    StaffDepartment = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     DateCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DateUpdated = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -364,13 +364,13 @@ namespace Sellora.Server.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     TransactionDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    SwapUserId = table.Column<int>(type: "int", nullable: true),
+                    SwapUserId = table.Column<int>(type: "int", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: true),
-                    SwapItemId = table.Column<int>(type: "int", nullable: true),
+                    SwapItemId = table.Column<int>(type: "int", nullable: false),
                     ItemId = table.Column<int>(type: "int", nullable: true),
-                    SwapUser2Id = table.Column<int>(type: "int", nullable: true),
+                    SwapUser2Id = table.Column<int>(type: "int", nullable: false),
                     User2Id = table.Column<int>(type: "int", nullable: true),
-                    SwapItem2Id = table.Column<int>(type: "int", nullable: true),
+                    SwapItem2Id = table.Column<int>(type: "int", nullable: false),
                     Item2Id = table.Column<int>(type: "int", nullable: true),
                     DateCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DateUpdated = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -408,7 +408,8 @@ namespace Sellora.Server.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ReportContent = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ReportTitle = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    ReportContent = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
                     ReportDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     ReporterID = table.Column<int>(type: "int", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: true),
@@ -452,12 +453,13 @@ namespace Sellora.Server.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
+                    ReviewTitle = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     ReviewRating = table.Column<int>(type: "int", nullable: false),
                     ReviewDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ReviewDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ReviewDescription = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
                     SaleTransactionID = table.Column<int>(type: "int", nullable: true),
                     SwapTransactionID = table.Column<int>(type: "int", nullable: true),
-                    ReviewerID = table.Column<int>(type: "int", nullable: true),
+                    ReviewerID = table.Column<int>(type: "int", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: true),
                     DateCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DateUpdated = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -489,8 +491,8 @@ namespace Sellora.Server.Migrations
                 columns: new[] { "Id", "CategoryName", "CreatedBy", "DateCreated", "DateUpdated", "UpdatedBy" },
                 values: new object[,]
                 {
-                    { 1, "Technology", "System", new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(6361), new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(6370), "System" },
-                    { 2, "Fashion", "System", new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(6379), new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(6389), "System" }
+                    { 1, "Technology", "System", new DateTime(2024, 1, 17, 23, 20, 31, 942, DateTimeKind.Local).AddTicks(8195), new DateTime(2024, 1, 17, 23, 20, 31, 942, DateTimeKind.Local).AddTicks(8210), "System" },
+                    { 2, "Fashion", "System", new DateTime(2024, 1, 17, 23, 20, 31, 942, DateTimeKind.Local).AddTicks(8220), new DateTime(2024, 1, 17, 23, 20, 31, 942, DateTimeKind.Local).AddTicks(8234), "System" }
                 });
 
             migrationBuilder.InsertData(
@@ -498,8 +500,8 @@ namespace Sellora.Server.Migrations
                 columns: new[] { "Id", "CreatedBy", "DateCreated", "DateUpdated", "StaffAddress", "StaffDepartment", "StaffEmail", "StaffFirstName", "StaffHPNum", "StaffHireDate", "StaffLastName", "StaffPosition", "UpdatedBy" },
                 values: new object[,]
                 {
-                    { 1, "System", new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(5968), new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(5977), "Temasek Polytechnic", "Full Stack Development", "2102197G@student.tp.edu.sg", "Ryan", "99991111", new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(5959), "Chong", "Lead Developer", "System" },
-                    { 2, "System", new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(6011), new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(6020), "Temasek Polytechnic", "Full Stack Development", "2203567i@student.tp.edu.sg", "Lucas", "99992222", new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(6002), "Do", "Lead Developer", "System" }
+                    { 1, "System", new DateTime(2024, 1, 17, 23, 20, 31, 942, DateTimeKind.Local).AddTicks(7798), new DateTime(2024, 1, 17, 23, 20, 31, 942, DateTimeKind.Local).AddTicks(7813), "Temasek Polytechnic", "Full Stack Development", "2102197G@student.tp.edu.sg", "Ryan", "99991111", new DateTime(2024, 1, 17, 23, 20, 31, 942, DateTimeKind.Local).AddTicks(7788), "Chong", "Lead Developer", "System" },
+                    { 2, "System", new DateTime(2024, 1, 17, 23, 20, 31, 942, DateTimeKind.Local).AddTicks(7850), new DateTime(2024, 1, 17, 23, 20, 31, 942, DateTimeKind.Local).AddTicks(7859), "Temasek Polytechnic", "Full Stack Development", "2203567i@student.tp.edu.sg", "Lucas", "99992222", new DateTime(2024, 1, 17, 23, 20, 31, 942, DateTimeKind.Local).AddTicks(7836), "Do", "Lead Developer", "System" }
                 });
 
             migrationBuilder.CreateIndex(

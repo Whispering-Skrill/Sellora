@@ -34,6 +34,9 @@ namespace Sellora.Server.Controllers
         //public async Task<ActionResult<IEnumerable<Staff>>> GetStaff()
         public async Task<IActionResult> GetStaff()
         {
+            // For Error Handling Test
+            // return NotFound();
+
             // Refactored
             //if (_context.Staff == null)
             //{

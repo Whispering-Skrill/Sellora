@@ -1,5 +1,7 @@
 @page "/reviews/"
 @inject HttpClient _client
+@inject HttpInterceptorService _interceptor
+@implements IDisposable
 @inject IJSRuntime js
 @attribute [Authorize]
 
@@ -14,12 +16,13 @@ else
     <table class="table table-responsive">
         <thead>
             <tr>
+                <th>Review Title</th>
                 <th>Reviewer ID</th>
                 <th>Review Date</th>
                 <th>Review Rating</th>
+                <th>Review Description</th>
                 <th>Sale Transaction ID</th>
                 <th>Swap Transaction ID</th>
-                <th>Review Description</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -27,12 +30,13 @@ else
             @foreach (var review in Reviews)
             {
                 <tr>
+                    <td>@review.ReviewTitle</td>
                     <td>@review.User.Id</td>
                     <td>@review.ReviewDate</td>
                     <td>@review.ReviewRating</td>
+                    <td>@review.ReviewDescription</td>
                     <td>@review.SaleTransaction.Id</td>
                     <td>@review.SwapTransaction.Id</td>
-                    <td>@review.ReviewDescription</td>
                     <td>
                         <a href="/staffs/view/@review.Id" class="btn btn-primary">
                             <span class="oi oi-book"></span>
@@ -56,6 +60,7 @@ else
 
     protected async override Task OnInitializedAsync()
     {
+        _interceptor.MonitorEvent();
         Reviews = await _client.GetFromJsonAsync<List<Review>>($"{Endpoints.ReviewsEndpoint}");
     }
 
@@ -71,5 +76,10 @@ else
                 await OnInitializedAsync();
             }
         }
+    }
+
+    public void Dispose()
+    {
+        _interceptor.DisposeEvent();
     }
 }

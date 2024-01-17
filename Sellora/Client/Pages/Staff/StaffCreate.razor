@@ -1,75 +1,18 @@
 ﻿@page "/staffs/create"
 @inject HttpClient _client
 @inject NavigationManager _navManager
+@using Sellora.Client.Components
 
-<h3>Create new Staff</h3>
+<div class="staff-topbar">
+    <h2 class="staff-title">Create Staff</h2>
+    <BackToList Target="staffs" />
+</div>
 
-<br/>
+<div style="border-bottom:solid black 1px; padding-top:3px; margin-bottom:10px;">
+    @*FOR SPACING*@
+</div>
 
-<EditForm Model = "@staff" OnValidSubmit="CreateStaff">
-    <DataAnnotationsValidator/>
-    <ValidationSummary/>
-    <div class="form-group">
-        <label>First Name: </label>
-        <div>
-            <InputText @bind-Value="@staff.StaffFirstName" class="form-control" />
-            <ValidationMessage For="@(() => staff.StaffFirstName)" />
-        </div>
-    </div>
-    <div class="form-group">
-        <label>Last Name: </label>
-        <div>
-            <InputText @bind-Value="@staff.StaffLastName" class="form-control" />
-            <ValidationMessage For="@(() => staff.StaffLastName)" />
-        </div>
-    </div>
-    <div class="form-group">
-        <label>Email: </label>
-        <div>
-            <InputText @bind-Value="@staff.StaffEmail" class="form-control" />
-            <ValidationMessage For="@(() => staff.StaffEmail)" />
-        </div>
-    </div>
-    <div class="form-group">
-        <label>Date of Hire: </label>
-        <div>
-            <InputDate @bind-Value="@staff.StaffHireDate" class="form-control" />
-            <ValidationMessage For="@(() => staff.StaffHireDate)" />
-        </div>
-    </div>
-    <div class="form-group">
-        <label>Position: </label>
-        <div>
-            <InputText @bind-Value="@staff.StaffPosition" class="form-control" />
-            <ValidationMessage For="@(() => staff.StaffPosition)" />
-        </div>
-    </div>
-    <div class="form-group">
-        <label>Address: </label>
-        <div>
-            <InputText @bind-Value="@staff.StaffAddress" class="form-control" />
-            <ValidationMessage For="@(() => staff.StaffAddress)" />
-        </div>
-    </div>
-    <div class="form-group">
-        <label>Contact: </label>
-        <div>
-            <InputText @bind-Value="@staff.StaffHPNum" class="form-control" />
-            <ValidationMessage For="@(() => staff.StaffHPNum)" />
-        </div>
-    </div>
-    <div class="form-group">
-        <label>Department: </label>
-        <div>
-            <InputText @bind-Value="@staff.StaffDepartment" class="form-control" />
-            <ValidationMessage For="@(() => staff.StaffDepartment)" />
-        </div>
-    </div>
-    <br/>
-    <button type="submit" class="btn btn-success btn-block">
-        Create Staff
-    </button>
-</EditForm>
+<StaffFormComponent ButtonText="Create Staff" staff="staff" OnValidSubmit="@CreateStaff" />
 
 @code {
     Staff staff = new Staff();

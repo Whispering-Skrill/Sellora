@@ -1,5 +1,7 @@
 @page "/swaptransactions/"
 @inject HttpClient _client
+@inject HttpInterceptorService _interceptor
+@implements IDisposable
 @inject IJSRuntime js
 @attribute [Authorize]
 
@@ -54,6 +56,7 @@ else
 
     protected async override Task OnInitializedAsync()
     {
+        _interceptor.MonitorEvent();
         SwapTransactions = await _client.GetFromJsonAsync<List<SwapTransaction>>($"{Endpoints.SwapTransactionsEndpoint}");
     }
 
@@ -69,5 +72,10 @@ else
                 await OnInitializedAsync();
             }
         }
+    }
+
+    public void Dispose()
+    {
+        _interceptor.DisposeEvent();
     }
 }

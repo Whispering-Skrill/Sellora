@@ -1,0 +1,10 @@
+﻿@* This is the back button for Create, Edit and View Pages *@
+@* Due to style differences, this will be implemented in the Create, Edit and View Pages instead of the FormComponent Pages *@
+
+<a href="/@Target/" class="btn btn-secondary">
+    <span class="oi oi-account-logout" style="margin-top: 4px; margin-bottom:4px;"></span>
+</a>
+
+@code {
+    [Parameter] public string Target { get; set; }
+}

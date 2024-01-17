@@ -7,8 +7,8 @@ namespace Sellora.Server.Models
     {
         public string? UserFirstName { get; set; }
         public string? UserLastName { get; set;}
-        public DateTime UserRegDate { get;set; }
+        public DateTime UserRegDate { get;set; } = DateTime.Now;
         public string? UserDescription { get; set; }
-        public DateTime UserLastOnline { get; set; }
+        public DateTime UserLastOnline { get; set; } = DateTime.Now;
     }
 }

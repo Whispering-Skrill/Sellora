@@ -12,7 +12,7 @@ using Sellora.Server.Data;
 namespace Sellora.Server.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240117122140_Complete_DB")]
+    [Migration("20240117152032_Complete_DB")]
     partial class Complete_DB
     {
         /// <inheritdoc />
@@ -416,8 +416,8 @@ namespace Sellora.Server.Migrations
                             Id = 1,
                             CategoryName = "Technology",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(6361),
-                            DateUpdated = new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(6370),
+                            DateCreated = new DateTime(2024, 1, 17, 23, 20, 31, 942, DateTimeKind.Local).AddTicks(8195),
+                            DateUpdated = new DateTime(2024, 1, 17, 23, 20, 31, 942, DateTimeKind.Local).AddTicks(8210),
                             UpdatedBy = "System"
                         },
                         new
@@ -425,8 +425,8 @@ namespace Sellora.Server.Migrations
                             Id = 2,
                             CategoryName = "Fashion",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(6379),
-                            DateUpdated = new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(6389),
+                            DateCreated = new DateTime(2024, 1, 17, 23, 20, 31, 942, DateTimeKind.Local).AddTicks(8220),
+                            DateUpdated = new DateTime(2024, 1, 17, 23, 20, 31, 942, DateTimeKind.Local).AddTicks(8234),
                             UpdatedBy = "System"
                         });
                 });
@@ -511,10 +511,17 @@ namespace Sellora.Server.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ReportContent")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<DateTime>("ReportDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("ReportTitle")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
 
                     b.Property<int>("ReporterID")
                         .HasColumnType("int");
@@ -568,12 +575,20 @@ namespace Sellora.Server.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ReviewDescription")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<int>("ReviewRating")
                         .HasColumnType("int");
 
+                    b.Property<string>("ReviewTitle")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
                     b.Property<int?>("ReviewerID")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int?>("SaleTransactionID")
@@ -664,28 +679,40 @@ namespace Sellora.Server.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<string>("StaffAddress")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<string>("StaffDepartment")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
 
                     b.Property<string>("StaffEmail")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("StaffFirstName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
 
                     b.Property<string>("StaffHPNum")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("StaffHireDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("StaffLastName")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
 
                     b.Property<string>("StaffPosition")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
 
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
@@ -699,14 +726,14 @@ namespace Sellora.Server.Migrations
                         {
                             Id = 1,
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(5968),
-                            DateUpdated = new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(5977),
+                            DateCreated = new DateTime(2024, 1, 17, 23, 20, 31, 942, DateTimeKind.Local).AddTicks(7798),
+                            DateUpdated = new DateTime(2024, 1, 17, 23, 20, 31, 942, DateTimeKind.Local).AddTicks(7813),
                             StaffAddress = "Temasek Polytechnic",
                             StaffDepartment = "Full Stack Development",
                             StaffEmail = "2102197G@student.tp.edu.sg",
                             StaffFirstName = "Ryan",
                             StaffHPNum = "99991111",
-                            StaffHireDate = new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(5959),
+                            StaffHireDate = new DateTime(2024, 1, 17, 23, 20, 31, 942, DateTimeKind.Local).AddTicks(7788),
                             StaffLastName = "Chong",
                             StaffPosition = "Lead Developer",
                             UpdatedBy = "System"
@@ -715,14 +742,14 @@ namespace Sellora.Server.Migrations
                         {
                             Id = 2,
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(6011),
-                            DateUpdated = new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(6020),
+                            DateCreated = new DateTime(2024, 1, 17, 23, 20, 31, 942, DateTimeKind.Local).AddTicks(7850),
+                            DateUpdated = new DateTime(2024, 1, 17, 23, 20, 31, 942, DateTimeKind.Local).AddTicks(7859),
                             StaffAddress = "Temasek Polytechnic",
                             StaffDepartment = "Full Stack Development",
                             StaffEmail = "2203567i@student.tp.edu.sg",
                             StaffFirstName = "Lucas",
                             StaffHPNum = "99992222",
-                            StaffHireDate = new DateTime(2024, 1, 17, 20, 21, 40, 129, DateTimeKind.Local).AddTicks(6002),
+                            StaffHireDate = new DateTime(2024, 1, 17, 23, 20, 31, 942, DateTimeKind.Local).AddTicks(7836),
                             StaffLastName = "Do",
                             StaffPosition = "Lead Developer",
                             UpdatedBy = "System"
@@ -753,15 +780,19 @@ namespace Sellora.Server.Migrations
                         .HasColumnType("int");
 
                     b.Property<int?>("SwapItem2Id")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int?>("SwapItemId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int?>("SwapUser2Id")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int?>("SwapUserId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<DateTime>("TransactionDate")
