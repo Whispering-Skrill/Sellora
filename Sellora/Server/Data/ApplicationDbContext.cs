@@ -19,7 +19,6 @@ namespace Sellora.Server.Data
         public DbSet<User> Users { get; set; }
         public DbSet<Item> Items { get; set; }
         public DbSet<Staff> Staff { get; set; }
-
         public DbSet<Report> Reports { get; set; }
         public DbSet<SaleTransaction> SaleTransactions { get; set; }
         public DbSet<SwapTransaction> SwapTransactions { get; set; }
