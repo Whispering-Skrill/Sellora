@@ -1,0 +1,73 @@
+@page "/swaptransactions/"
+@inject HttpClient _client
+@inject IJSRuntime js
+@attribute [Authorize]
+
+<h3 class="swaptransaction-title">Swap Transactions</h3>
+
+@if (SwapTransactions == null)
+{
+    <div class="alert alert-info">Loading Swap Transactions...</div>
+}
+else
+{
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>Transaction Date</th>
+                <th>User 1</th>
+                <th>Item 1</th>
+                <th>User 2</th>
+                <th>Item 2</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var swaptransaction in SwapTransactions)
+            {
+                <tr>
+                    <td>@swaptransaction.TransactionDate</td>
+                    <td>@swaptransaction.User.UserName</td>
+                    <td>@swaptransaction.Item.ItemName</td>
+                    <td>@swaptransaction.User2.UserName</td>
+                    <td>@swaptransaction.Item2.ItemName</td>
+                    <td>
+                        <a href="/staffs/view/@swaptransaction.Id" class="btn btn-primary">
+                            <span class="oi oi-book"></span>
+                        </a>
+                        <a href="/staffs/edit/@swaptransaction.Id" class="btn btn-warning">
+                            <span class="oi oi-pencil"></span>
+                        </a>
+                        <button class="btn btn-danger" @onclick="@(()=>Delete(swaptransaction.Id))">
+                            <span class="oi oi-delete"></span>
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    // Create a List based on Staff Table in Database
+    private List<SwapTransaction>? SwapTransactions;
+
+    protected async override Task OnInitializedAsync()
+    {
+        SwapTransactions = await _client.GetFromJsonAsync<List<SwapTransaction>>($"{Endpoints.SwapTransactionsEndpoint}");
+    }
+
+    async Task Delete(int swaptransactionsID)
+    {
+        if (SwapTransactions != null)
+        {
+            var swaptransaction = SwapTransactions.First(q => q.Id == swaptransactionsID);
+            var confirm = await js.InvokeAsync<bool>("confirm", $"Do you want to delete transactiond dated {swaptransaction.TransactionDate}?");
+            if (confirm)
+            {
+                await _client.DeleteAsync($"{Endpoints.SwapTransactionsEndpoint}/{swaptransactionsID}");
+                await OnInitializedAsync();
+            }
+        }
+    }
+}

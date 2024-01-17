@@ -35,19 +35,18 @@
     }
 
     .nav-item ::deep a {
-        font-family:'MS Reference Sans Serif';
+        font-family: 'MS Reference Sans Serif';
         letter-spacing: 1px;
-        color: #d7d7d7;
         border-radius: 7px;
         height: 3rem;
         display: flex;
         align-items: center;
         line-height: 3rem;
+        background-color: rgb(160 0 0);
+        color: white;
     }
 
         .nav-item ::deep a.active {
-            background-color: rgb(160 0 0);
-            color: white;
         }
 
         .nav-item ::deep a:hover {

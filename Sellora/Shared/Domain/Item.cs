@@ -11,6 +11,7 @@ namespace Sellora.Shared.Domain
 {
     public class Item : BaseDomainModel
     {
+        public string? ItemName { get; set; }
         public int ItemPrice { get; set; }
         public string? Condition { get; set; }
         public DateTime ItemDate { get; set; }

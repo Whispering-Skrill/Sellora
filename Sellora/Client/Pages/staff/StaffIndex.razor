@@ -1,0 +1,79 @@
+﻿@page "/staffs/"
+@inject HttpClient _client
+@inject IJSRuntime js
+@attribute [Authorize]
+
+<h3 class="staff-title">Our Staff</h3>
+
+@if (Staffs == null)
+{
+    <div class="alert alert-info">Loading Staff...</div>
+}
+else
+{
+    <table class ="table table-responsive">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Hire Date</th>
+                <th>Position</th>
+                <th>Address</th>
+                <th>Contact</th>
+                <th>Department</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var staff in Staffs)
+            {
+                <tr>
+                    <td>@staff.StaffFirstName</td>
+                    <td>@staff.StaffLastName</td>
+                    <td>@staff.StaffEmail</td>
+                    <td>@staff.StaffHireDate</td>
+                    <td>@staff.StaffPosition</td>
+                    <td>@staff.StaffAddress</td>
+                    <td>@staff.StaffHPNum</td>
+                    <td>@staff.StaffDepartment</td>
+                    <td>
+                        <a href="/staffs/view/@staff.Id" class="btn btn-primary">
+                            <span class="oi oi-book"></span>
+                        </a>
+                        <a href="/staffs/edit/@staff.Id" class="btn btn-warning">
+                            <span class="oi oi-pencil"></span>
+                        </a>
+                        <button class ="btn btn-danger" @onclick="@(()=>Delete(staff.Id))">
+                            <span class="oi oi-delete"></span>
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    // Create a List based on Staff Table in Database
+    private List<Staff>? Staffs;
+
+    protected async override Task OnInitializedAsync()
+    {
+        Staffs = await _client.GetFromJsonAsync<List<Staff>>($"{Endpoints.StaffsEndpoint}");
+    }
+
+    async Task Delete(int staffID)
+    {
+        if (Staffs != null)
+        {
+            var staff = Staffs.First(q => q.Id == staffID);
+            var confirm = await js.InvokeAsync<bool>("confirm", $"Do you want to delete {staff.StaffFirstName} {staff.StaffLastName}?");
+            if (confirm)
+            {
+                await _client.DeleteAsync($"{Endpoints.StaffsEndpoint}/{staffID}");
+                await OnInitializedAsync();
+            }
+        }
+    }
+}

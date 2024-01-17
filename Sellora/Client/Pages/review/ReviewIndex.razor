@@ -1,0 +1,73 @@
+@page "/reviews/"
+@inject HttpClient _client
+@inject IJSRuntime js
+@attribute [Authorize]
+
+<h3 class="review-title">Reviews</h3>
+
+@if (Reviews == null)
+{
+    <div class="alert alert-info">Loading Reviews...</div>
+}
+else
+{
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>Reviewer ID</th>
+                <th>Review Rating</th>
+                <th>Sale Transaction ID</th>
+                <th>Swap Transaction ID</th>
+                <th>Review Description</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var review in Reviews)
+            {
+                <tr>
+                    <td>@review.User.Id</td>
+                    <td>@review.ReviewRating</td>
+                    <td>@review.SaleTransaction.Id</td>
+                    <td>@review.SwapTransaction.Id</td>
+                    <td>@review.ReviewDescription</td>
+                    <td>
+                        <a href="/staffs/view/@review.Id" class="btn btn-primary">
+                            <span class="oi oi-book"></span>
+                        </a>
+                        <a href="/staffs/edit/@review.Id" class="btn btn-warning">
+                            <span class="oi oi-pencil"></span>
+                        </a>
+                        <button class="btn btn-danger" @onclick="@(()=>Delete(review.Id))">
+                            <span class="oi oi-delete"></span>
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    // Create a List based on Staff Table in Database
+    private List<Review>? Reviews;
+
+    protected async override Task OnInitializedAsync()
+    {
+        Reviews = await _client.GetFromJsonAsync<List<Review>>($"{Endpoints.ReviewsEndpoint}");
+    }
+
+    async Task Delete(int reviewsID)
+    {
+        if (Reviews != null)
+        {
+            var review = Reviews.First(q => q.Id == reviewsID);
+            var confirm = await js.InvokeAsync<bool>("confirm", $"Do you want to delete review created by user {review.ReviewerID}?");
+            if (confirm)
+            {
+                await _client.DeleteAsync($"{Endpoints.ReviewsEndpoint}/{reviewsID}");
+                await OnInitializedAsync();
+            }
+        }
+    }
+}

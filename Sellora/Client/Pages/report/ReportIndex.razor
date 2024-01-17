@@ -1,0 +1,73 @@
+@page "/reports/"
+@inject HttpClient _client
+@inject IJSRuntime js
+@attribute [Authorize]
+
+<h3 class="report-title">Reports</h3>
+
+@if (Reports == null)
+{
+    <div class="alert alert-info">Loading Swap Transactions...</div>
+}
+else
+{
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>Reporter ID</th>
+                <th>Report Date</th>
+                <th>Sale Transaction ID</th>
+                <th>Swap Transaction ID</th>
+                <th>Report Content</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var report in Reports)
+            {
+                <tr>
+                    <td>@report.User.Id</td>
+                    <td>@report.ReportDate</td>
+                    <td>@report.SaleTransaction.Id</td>
+                    <td>@report.SwapTransaction.Id</td>
+                    <td>@report.ReportContent</td>
+                    <td>
+                        <a href="/reports/view/@report.Id" class="btn btn-primary">
+                            <span class="oi oi-book"></span>
+                        </a>
+                        <a href="/reports/edit/@report.Id" class="btn btn-warning">
+                            <span class="oi oi-pencil"></span>
+                        </a>
+                        <button class="btn btn-danger" @onclick="@(()=>Delete(report.Id))">
+                            <span class="oi oi-delete"></span>
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    // Create a List based on Staff Table in Database
+    private List<Report>? Reports;
+
+    protected async override Task OnInitializedAsync()
+    {
+        Reports = await _client.GetFromJsonAsync<List<Report>>($"{Endpoints.ReportsEndpoint}");
+    }
+
+    async Task Delete(int reportID)
+    {
+        if (Reports != null)
+        {
+            var report = Reports.First(q => q.Id == reportID);
+            var confirm = await js.InvokeAsync<bool>("confirm", $"Do you want to delete report dated: {report.ReportDate}?");
+            if (confirm)
+            {
+                await _client.DeleteAsync($"{Endpoints.ReportsEndpoint}/{reportID}");
+                await OnInitializedAsync();
+            }
+        }
+    }
+}

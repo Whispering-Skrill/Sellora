@@ -14,9 +14,9 @@ namespace Sellora.Shared.Domain
         public virtual required User User { get; set; }
         public int StaffID { get; set; }
         public virtual Staff ? Staff { get; set; }
-        public int SaleTransactionID { get; set; }
+        public int? SaleTransactionID { get; set; }
         public virtual SaleTransaction ? SaleTransaction { get; set; }
-        public int SwapTransactionID { get; set; }
+        public int? SwapTransactionID { get; set; }
         public virtual SwapTransaction ? SwapTransaction { get; set;}
     }
 }

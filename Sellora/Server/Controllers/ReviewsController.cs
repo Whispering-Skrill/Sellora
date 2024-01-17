@@ -46,7 +46,7 @@ namespace Sellora.Server.Controllers
             {
                 return NotFound();
             }
-            var reviews = await _unitOfWork.Reviews.GetAll();
+            var reviews = await _unitOfWork.Reviews.GetAll(includes:q=>q.Include(x=>x.SaleTransaction).Include(x=>x.SwapTransaction).Include(x=>x.User));
             return Ok(reviews);
         }
 
