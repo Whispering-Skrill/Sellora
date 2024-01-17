@@ -77,11 +77,13 @@ namespace Sellora.Server.Areas.Identity.Pages.Account
             // This is the login input for First Name!
             [Required]
             [Display(Name = "First Name")]
+            [StringLength(30, ErrorMessage = "First Name cannot be longer than 30 Characters.")]
             public string UserFirstName { get; set; }
 
             // This is the login input for Last Name!
             [Required]
             [Display(Name = "Last Name")]
+            [StringLength(30, ErrorMessage = "Last Name cannot be longer than 30 Characters.")]
             public string UserLastName { get; set; }
             /// <summary>
             ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
@@ -127,7 +129,8 @@ namespace Sellora.Server.Areas.Identity.Pages.Account
             {
                 var user = CreateUser();
 
-                await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
+
+                await _userStore.SetUserNameAsync(user, Input.UserFirstName, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
 
                 user.UserFirstName = Input.UserFirstName;

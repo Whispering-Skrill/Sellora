@@ -491,8 +491,8 @@ namespace Sellora.Server.Migrations
                 columns: new[] { "Id", "CategoryName", "CreatedBy", "DateCreated", "DateUpdated", "UpdatedBy" },
                 values: new object[,]
                 {
-                    { 1, "Technology", "System", new DateTime(2024, 1, 17, 23, 20, 31, 942, DateTimeKind.Local).AddTicks(8195), new DateTime(2024, 1, 17, 23, 20, 31, 942, DateTimeKind.Local).AddTicks(8210), "System" },
-                    { 2, "Fashion", "System", new DateTime(2024, 1, 17, 23, 20, 31, 942, DateTimeKind.Local).AddTicks(8220), new DateTime(2024, 1, 17, 23, 20, 31, 942, DateTimeKind.Local).AddTicks(8234), "System" }
+                    { 1, "Technology", "System", new DateTime(2024, 1, 18, 0, 2, 57, 469, DateTimeKind.Local).AddTicks(6191), new DateTime(2024, 1, 18, 0, 2, 57, 469, DateTimeKind.Local).AddTicks(6200), "System" },
+                    { 2, "Fashion", "System", new DateTime(2024, 1, 18, 0, 2, 57, 469, DateTimeKind.Local).AddTicks(6286), new DateTime(2024, 1, 18, 0, 2, 57, 469, DateTimeKind.Local).AddTicks(6295), "System" }
                 });
 
             migrationBuilder.InsertData(
@@ -500,8 +500,8 @@ namespace Sellora.Server.Migrations
                 columns: new[] { "Id", "CreatedBy", "DateCreated", "DateUpdated", "StaffAddress", "StaffDepartment", "StaffEmail", "StaffFirstName", "StaffHPNum", "StaffHireDate", "StaffLastName", "StaffPosition", "UpdatedBy" },
                 values: new object[,]
                 {
-                    { 1, "System", new DateTime(2024, 1, 17, 23, 20, 31, 942, DateTimeKind.Local).AddTicks(7798), new DateTime(2024, 1, 17, 23, 20, 31, 942, DateTimeKind.Local).AddTicks(7813), "Temasek Polytechnic", "Full Stack Development", "2102197G@student.tp.edu.sg", "Ryan", "99991111", new DateTime(2024, 1, 17, 23, 20, 31, 942, DateTimeKind.Local).AddTicks(7788), "Chong", "Lead Developer", "System" },
-                    { 2, "System", new DateTime(2024, 1, 17, 23, 20, 31, 942, DateTimeKind.Local).AddTicks(7850), new DateTime(2024, 1, 17, 23, 20, 31, 942, DateTimeKind.Local).AddTicks(7859), "Temasek Polytechnic", "Full Stack Development", "2203567i@student.tp.edu.sg", "Lucas", "99992222", new DateTime(2024, 1, 17, 23, 20, 31, 942, DateTimeKind.Local).AddTicks(7836), "Do", "Lead Developer", "System" }
+                    { 1, "System", new DateTime(2024, 1, 18, 0, 2, 57, 469, DateTimeKind.Local).AddTicks(5798), new DateTime(2024, 1, 18, 0, 2, 57, 469, DateTimeKind.Local).AddTicks(5808), "Temasek Polytechnic", "Full Stack Development", "2102197G@student.tp.edu.sg", "Ryan", "99991111", new DateTime(2024, 1, 18, 0, 2, 57, 469, DateTimeKind.Local).AddTicks(5784), "Chong", "Lead Developer", "System" },
+                    { 2, "System", new DateTime(2024, 1, 18, 0, 2, 57, 469, DateTimeKind.Local).AddTicks(5836), new DateTime(2024, 1, 18, 0, 2, 57, 469, DateTimeKind.Local).AddTicks(5846), "Temasek Polytechnic", "Full Stack Development", "2203567i@student.tp.edu.sg", "Lucas", "99992222", new DateTime(2024, 1, 18, 0, 2, 57, 469, DateTimeKind.Local).AddTicks(5827), "Do", "Lead Developer", "System" }
                 });
 
             migrationBuilder.CreateIndex(
