@@ -3,19 +3,17 @@
 @inject NavigationManager _navManager
 @using Sellora.Client.Components
 
-<h3>File a Report</h3>
+<div class="report-topbar">
+    <h2 class="report-title">File a Report</h2>
+    <BackToList Target="reports" />
+</div>
 
-<br/>
+<div style="border-bottom:solid black 1px; padding-top:3px; margin-bottom:10px;">
+    @*FOR SPACING*@
+</div>
 
-<EditForm Model = "@report" OnValidSubmit="CreateReport">
-    <DataAnnotationsValidator/>
-    <ValidationSummary/>
-    
-    <br/>
-    <button type="submit" class="btn btn-success btn-block">
-        Create Report
-    </button>
-</EditForm>
+<ReportFormComponent ButtonText="Submit" report="report" OnValidSubmit="@CreateReport" />
+
 
 @code {
     Report report = new Report();

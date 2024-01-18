@@ -13,38 +13,38 @@ namespace Sellora.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoriesController : ControllerBase
+    public class UsersController : ControllerBase
     {
 
         private readonly IUnitOfWork _unitOfWork;
 
-        public CategoriesController(IUnitOfWork unitOfWork)
+        public UsersController(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
 
         private readonly ApplicationDbContext _context;
 
-        public CategoriesController(ApplicationDbContext context)
+        public UsersController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: api/Categories
+        // GET: api/Users
         [HttpGet]
 
-        public async Task<IActionResult> GetCategories()
+        public async Task<IActionResult> GetUsers()
         {
-            var categories = await _unitOfWork.Categories.GetAll();
+            var categories = await _unitOfWork.Users.GetAll();
             return Ok(categories);
         }
 
-        // GET: api/Categories/5
+        // GET: api/Users/5
         [HttpGet("{id}")]
 
-        public async Task<IActionResult> GetCategory(int id)
+        public async Task<IActionResult> GetUser(int id)
         {
-            var category = await _unitOfWork.Categories.Get(q => q.Id == id);
+            var category = await _unitOfWork.Users.Get(q => q.Id == id);
 
             if (category == null)
             {
@@ -54,17 +54,17 @@ namespace Sellora.Server.Controllers
             return Ok(category);
         }
 
-        // PUT: api/Categories/5
+        // PUT: api/Users/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCategory(int id, Category category)
+        public async Task<IActionResult> PutUser(int id, User category)
         {
             if (id != category.Id)
             {
                 return BadRequest();
             }
 
-            _unitOfWork.Categories.Update(category);
+            _unitOfWork.Users.Update(category);
 
             try
             {
@@ -72,7 +72,7 @@ namespace Sellora.Server.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!await CategoryExists(id))
+                if (!await UserExists(id))
                 {
                     return NotFound();
                 }
@@ -85,40 +85,40 @@ namespace Sellora.Server.Controllers
             return NoContent();
         }
 
-        // POST: api/Categories
+        // POST: api/Users
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Category>> PostCategory(Category category)
+        public async Task<ActionResult<User>> PostUser(User category)
         {
-          if (_context.Categories == null)
+          if (_context.Users == null)
           {
-              return Problem("Entity set 'ApplicationDbContext.Categories'  is null.");
+              return Problem("Entity set 'ApplicationDbContext.Users'  is null.");
           }
-            await _unitOfWork.Categories.Insert(category);
+            await _unitOfWork.Users.Insert(category);
             await _unitOfWork.Save(HttpContext);
 
-            return CreatedAtAction("GetCategory", new { id = category.Id }, category);
+            return CreatedAtAction("GetUser", new { id = category.Id }, category);
         }
 
-        // DELETE: api/Categories/5
+        // DELETE: api/Users/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCategory(int id)
+        public async Task<IActionResult> DeleteUser(int id)
         {
-            var category = await _unitOfWork.Categories.Get(q => q.Id == id);
+            var category = await _unitOfWork.Users.Get(q => q.Id == id);
             if (category == null)
             {
                 return NotFound();
             }
 
-            await _unitOfWork.Categories.Delete(id);
+            await _unitOfWork.Users.Delete(id);
             await _unitOfWork.Save(HttpContext);
 
             return NoContent();
         }
 
-        private async Task<bool> CategoryExists(int id)
+        private async Task<bool> UserExists(int id)
         {
-            var category = await _unitOfWork.Categories.Get(e => e.Id == id);
+            var category = await _unitOfWork.Users.Get(e => e.Id == id);
             return category != null;
         }
     }

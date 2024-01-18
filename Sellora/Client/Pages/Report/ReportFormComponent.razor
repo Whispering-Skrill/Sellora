@@ -1,0 +1,128 @@
+﻿@inject HttpClient _client
+
+<EditForm Model="@report" OnValidSubmit="@OnValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+    <fieldset disabled="@Disabled">
+        <div class="form-group">
+            <label>Report Title: </label>
+            <div>
+                <InputText @bind-Value="@report.ReportTitle" class="form-control" />
+                <ValidationMessage For="@(() => report.ReportTitle)" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Describe your Experience: </label>
+            <div>
+                <InputText @bind-Value="@report.ReportContent" class="form-control" />
+                <ValidationMessage For="@(() => report.ReportContent)" />
+            </div>
+        </div>
+        @if (report.Id > 0)
+        {
+            <div class="form-group">
+                <label>Date of Report: </label>
+                <div>
+                    <InputDate @bind-Value="@report.ReportDate" class="form-control" />
+                    <ValidationMessage For="@(() => report.ReportDate)" />
+                </div>
+            </div>
+        }
+        @*
+            <div class="form-group">
+            <label>Report Creator: </label>
+            <div>
+                <InputSelect @bind-Value="report.ReporterID" class="form-control">
+                    <option value="">-- Select User --</option>
+                    @if (Users != null)
+                    {
+                        foreach (var user in Users)
+                        {
+                            <option value="@user.Id">@user.UserName</option>
+                        }
+                    }
+                </InputSelect>
+                <ValidationMessage For="@(() => report.ReporterID)" />
+            </div>
+        </div>
+        *@
+        <div class="form-group">
+            <label>Handling Staff: </label>
+            <div>
+                <InputSelect @bind-Value="report.StaffID" class="form-control">
+                    <option value="">-- Select Staff in Charge --</option>
+                    @if (Staffs != null)
+                    {
+                        foreach (var staff in Staffs)
+                        {
+                            <option value="@staff.Id">@staff.StaffEmail</option>
+                        }
+                    }
+                </InputSelect>
+                <ValidationMessage For="@(() => report.StaffID)" />
+            </div>
+        </div
+        @*
+            <div class="form-group">
+            <label>Swap Transaction Choice: </label>
+            <div>
+                <InputSelect @bind-Value="report.SwapTransactionID" class="form-control">
+                    <option value="">-- Select Swap Transaction --</option>
+                    @if (SwapTransactions != null)
+                    {
+                        foreach (var swaptransaction in SwapTransactions)
+                        {
+                            <option value="@swaptransaction.Id">Swap Transaction @swaptransaction.Id</option>
+                        }
+                    }
+                </InputSelect>
+                <ValidationMessage For="@(() => report.SwapTransactionID)" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Sale Transaction Choice: </label>
+            <div>
+                <InputSelect @bind-Value="report.SaleTransactionID" class="form-control">
+                    <option value="">-- Select Sale Transaction --</option>
+                    @if (SaleTransactions != null)
+                    {
+                        foreach (var saletransaction in SaleTransactions)
+                        {
+                            <option value="@saletransaction.Id">Sale Transaction @saletransaction.Id</option>
+                        }
+                    }
+                </InputSelect>
+                <ValidationMessage For="@(() => report.SaleTransactionID)" />
+            </div>
+        </div>
+        *@
+    </fieldset>
+    <br />
+
+    @if (!Disabled)
+    {
+        <button type="submit" class="btn btn-success btn-block">
+            @ButtonText
+        </button>
+    }
+</EditForm>
+
+@code {
+    [Parameter] public bool Disabled { get; set; } = false;
+    [Parameter] public Report ? report { get; set; }
+    [Parameter] public string ButtonText { get; set; } = "Save";
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+
+    private IList<User>? Users;
+    private IList<Staff>? Staffs;
+    private IList<SwapTransaction>? SwapTransactions;
+    private IList<SaleTransaction>? SaleTransactions;
+
+    protected async override Task OnInitializedAsync()
+    {
+        Users = await _client.GetFromJsonAsync<List<User>>($"{Endpoints.UsersEndpoint}");
+        Staffs = await _client.GetFromJsonAsync<List<Staff>>($"{Endpoints.StaffsEndpoint}");
+        SwapTransactions = await _client.GetFromJsonAsync<List<SwapTransaction>>($"{Endpoints.SwapTransactionsEndpoint}");
+        SaleTransactions = await _client.GetFromJsonAsync<List<SaleTransaction>>($"{Endpoints.SaleTransactionsEndpoint}");
+    }
+}

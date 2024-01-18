@@ -13,38 +13,38 @@ namespace Sellora.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CategoriesController : ControllerBase
+    public class SaleTransactionsController : ControllerBase
     {
 
         private readonly IUnitOfWork _unitOfWork;
 
-        public CategoriesController(IUnitOfWork unitOfWork)
+        public SaleTransactionsController(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
         }
 
         private readonly ApplicationDbContext _context;
 
-        public CategoriesController(ApplicationDbContext context)
+        public SaleTransactionsController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: api/Categories
+        // GET: api/SaleTransactions
         [HttpGet]
 
-        public async Task<IActionResult> GetCategories()
+        public async Task<IActionResult> GetSaleTransactions()
         {
-            var categories = await _unitOfWork.Categories.GetAll();
+            var categories = await _unitOfWork.SaleTransactions.GetAll();
             return Ok(categories);
         }
 
-        // GET: api/Categories/5
+        // GET: api/SaleTransactions/5
         [HttpGet("{id}")]
 
-        public async Task<IActionResult> GetCategory(int id)
+        public async Task<IActionResult> GetSaleTransaction(int id)
         {
-            var category = await _unitOfWork.Categories.Get(q => q.Id == id);
+            var category = await _unitOfWork.SaleTransactions.Get(q => q.Id == id);
 
             if (category == null)
             {
@@ -54,17 +54,17 @@ namespace Sellora.Server.Controllers
             return Ok(category);
         }
 
-        // PUT: api/Categories/5
+        // PUT: api/SaleTransactions/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCategory(int id, Category category)
+        public async Task<IActionResult> PutSaleTransaction(int id, SaleTransaction category)
         {
             if (id != category.Id)
             {
                 return BadRequest();
             }
 
-            _unitOfWork.Categories.Update(category);
+            _unitOfWork.SaleTransactions.Update(category);
 
             try
             {
@@ -72,7 +72,7 @@ namespace Sellora.Server.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!await CategoryExists(id))
+                if (!await SaleTransactionExists(id))
                 {
                     return NotFound();
                 }
@@ -85,40 +85,40 @@ namespace Sellora.Server.Controllers
             return NoContent();
         }
 
-        // POST: api/Categories
+        // POST: api/SaleTransactions
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Category>> PostCategory(Category category)
+        public async Task<ActionResult<SaleTransaction>> PostSaleTransaction(SaleTransaction category)
         {
-          if (_context.Categories == null)
+          if (_context.SaleTransactions == null)
           {
-              return Problem("Entity set 'ApplicationDbContext.Categories'  is null.");
+              return Problem("Entity set 'ApplicationDbContext.SaleTransactions'  is null.");
           }
-            await _unitOfWork.Categories.Insert(category);
+            await _unitOfWork.SaleTransactions.Insert(category);
             await _unitOfWork.Save(HttpContext);
 
-            return CreatedAtAction("GetCategory", new { id = category.Id }, category);
+            return CreatedAtAction("GetSaleTransaction", new { id = category.Id }, category);
         }
 
-        // DELETE: api/Categories/5
+        // DELETE: api/SaleTransactions/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCategory(int id)
+        public async Task<IActionResult> DeleteSaleTransaction(int id)
         {
-            var category = await _unitOfWork.Categories.Get(q => q.Id == id);
+            var category = await _unitOfWork.SaleTransactions.Get(q => q.Id == id);
             if (category == null)
             {
                 return NotFound();
             }
 
-            await _unitOfWork.Categories.Delete(id);
+            await _unitOfWork.SaleTransactions.Delete(id);
             await _unitOfWork.Save(HttpContext);
 
             return NoContent();
         }
 
-        private async Task<bool> CategoryExists(int id)
+        private async Task<bool> SaleTransactionExists(int id)
         {
-            var category = await _unitOfWork.Categories.Get(e => e.Id == id);
+            var category = await _unitOfWork.SaleTransactions.Get(e => e.Id == id);
             return category != null;
         }
     }
