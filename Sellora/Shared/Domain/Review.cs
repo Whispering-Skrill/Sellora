@@ -32,7 +32,7 @@ namespace Sellora.Shared.Domain
 
         [Required]
         public int? ReviewerID { get; set; }
-        public virtual User ? User { get; set; }
+        public virtual AppUser? User { get; set; }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {

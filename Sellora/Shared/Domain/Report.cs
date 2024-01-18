@@ -24,7 +24,7 @@ namespace Sellora.Shared.Domain
         // FOR TESTING
         [Required]
         public int ReporterID { get; set; }
-        public virtual User ? User { get; set; }
+        public virtual AppUser ? User { get; set; }
 
         public int StaffID { get; set; }
         public virtual Staff ? Staff { get; set; }

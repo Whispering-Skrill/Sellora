@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Sellora.Shared.Domain
 {
-    public class User : BaseDomainModel
+    public class AppUser : BaseDomainModel
     {
         public string? UserName { get; set; }
         public string? UserFirstName { get; set; }

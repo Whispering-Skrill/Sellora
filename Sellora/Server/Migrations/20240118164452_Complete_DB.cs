@@ -14,6 +14,31 @@ namespace Sellora.Server.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "AppUsers",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserFirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserLastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserEmail = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserPassword = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserHPNum = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserRegDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    UserDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserLastOnline = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DateCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DateUpdated = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AppUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
                 {
@@ -156,31 +181,6 @@ namespace Sellora.Server.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Users",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    UserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UserFirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UserLastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UserEmail = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UserPassword = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UserHPNum = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UserRegDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UserDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UserLastOnline = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DateCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    DateUpdated = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UpdatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Users", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "AspNetRoleClaims",
                 columns: table => new
                 {
@@ -312,15 +312,15 @@ namespace Sellora.Server.Migrations
                 {
                     table.PrimaryKey("PK_Items", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Items_Categories_CategoryId",
-                        column: x => x.CategoryId,
-                        principalTable: "Categories",
+                        name: "FK_Items_AppUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AppUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_Items_Users_UserId",
-                        column: x => x.UserId,
-                        principalTable: "Users",
+                        name: "FK_Items_Categories_CategoryId",
+                        column: x => x.CategoryId,
+                        principalTable: "Categories",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -346,14 +346,14 @@ namespace Sellora.Server.Migrations
                 {
                     table.PrimaryKey("PK_SaleTransactions", x => x.Id);
                     table.ForeignKey(
+                        name: "FK_SaleTransactions_AppUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AppUsers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
                         name: "FK_SaleTransactions_Items_ItemId",
                         column: x => x.ItemId,
                         principalTable: "Items",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_SaleTransactions_Users_UserId",
-                        column: x => x.UserId,
-                        principalTable: "Users",
                         principalColumn: "Id");
                 });
 
@@ -381,6 +381,16 @@ namespace Sellora.Server.Migrations
                 {
                     table.PrimaryKey("PK_SwapTransactions", x => x.Id);
                     table.ForeignKey(
+                        name: "FK_SwapTransactions_AppUsers_User2Id",
+                        column: x => x.User2Id,
+                        principalTable: "AppUsers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_SwapTransactions_AppUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AppUsers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
                         name: "FK_SwapTransactions_Items_Item2Id",
                         column: x => x.Item2Id,
                         principalTable: "Items",
@@ -389,16 +399,6 @@ namespace Sellora.Server.Migrations
                         name: "FK_SwapTransactions_Items_ItemId",
                         column: x => x.ItemId,
                         principalTable: "Items",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_SwapTransactions_Users_User2Id",
-                        column: x => x.User2Id,
-                        principalTable: "Users",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_SwapTransactions_Users_UserId",
-                        column: x => x.UserId,
-                        principalTable: "Users",
                         principalColumn: "Id");
                 });
 
@@ -425,6 +425,11 @@ namespace Sellora.Server.Migrations
                 {
                     table.PrimaryKey("PK_Reports", x => x.Id);
                     table.ForeignKey(
+                        name: "FK_Reports_AppUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AppUsers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
                         name: "FK_Reports_SaleTransactions_SaleTransactionID",
                         column: x => x.SaleTransactionID,
                         principalTable: "SaleTransactions",
@@ -439,11 +444,6 @@ namespace Sellora.Server.Migrations
                         name: "FK_Reports_SwapTransactions_SwapTransactionID",
                         column: x => x.SwapTransactionID,
                         principalTable: "SwapTransactions",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Reports_Users_UserId",
-                        column: x => x.UserId,
-                        principalTable: "Users",
                         principalColumn: "Id");
                 });
 
@@ -470,6 +470,11 @@ namespace Sellora.Server.Migrations
                 {
                     table.PrimaryKey("PK_Reviews", x => x.Id);
                     table.ForeignKey(
+                        name: "FK_Reviews_AppUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AppUsers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
                         name: "FK_Reviews_SaleTransactions_SaleTransactionID",
                         column: x => x.SaleTransactionID,
                         principalTable: "SaleTransactions",
@@ -479,11 +484,25 @@ namespace Sellora.Server.Migrations
                         column: x => x.SwapTransactionID,
                         principalTable: "SwapTransactions",
                         principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Reviews_Users_UserId",
-                        column: x => x.UserId,
-                        principalTable: "Users",
-                        principalColumn: "Id");
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[,]
+                {
+                    { "595b2485-3bfa-4b70-9209-7526bdb84f37", null, "Staff", "STAFF" },
+                    { "ad2bcf0c-20db-474f-8407-5a6b159518ba", null, "Administrator", "ADMINISTRATOR" },
+                    { "bd2bcf0c-20db-474f-8407-5a6b159518bb", null, "User", "USER" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUsers",
+                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserDescription", "UserFirstName", "UserLastName", "UserLastOnline", "UserName", "UserRegDate" },
+                values: new object[,]
+                {
+                    { "3781efa7-66dc-47f0-860f-e506d04102e4", 0, "4485479c-3557-4276-b910-1acb9db6a06b", "admin@localhost.com", false, false, null, "ADMIN@LOCALHOST.COM", "ADMIN@LOCALHOST.COM", "AQAAAAIAAYagAAAAEL6xtrCuHtLXjalcbpbs5UaM8saVG2a1t8/RbAMwuM1nbUA+Jd0rMOx2RxjhKPY1Ug==", null, false, "6da529c1-6d24-4e26-a7ec-8b888c2f1df3", false, null, "Admin", "User", new DateTime(2024, 1, 19, 0, 44, 51, 938, DateTimeKind.Local).AddTicks(1351), "admin@localhost.com", new DateTime(2024, 1, 19, 0, 44, 51, 938, DateTimeKind.Local).AddTicks(1341) },
+                    { "b1675205-1948-44ec-8b55-b0cb71d1f84e", 0, "ecc90658-fa94-4f4b-800c-6ce76f484e78", "user@localhost.com", false, false, null, "USER@LOCALHOST.COM", "USER@LOCALHOST.COM", "AQAAAAIAAYagAAAAEAGwGuC5cCMoJgCvPPFEozg87dQNoFGox/UXxQFX+El0tx/S0FJqA2MLcV9S1HOYAQ==", null, false, "7d6db5ad-bdd5-41f8-a23b-d238315455e3", false, null, "User", "User", new DateTime(2024, 1, 19, 0, 44, 51, 983, DateTimeKind.Local).AddTicks(7934), "user@localhost.com", new DateTime(2024, 1, 19, 0, 44, 51, 983, DateTimeKind.Local).AddTicks(7911) }
                 });
 
             migrationBuilder.InsertData(
@@ -491,8 +510,8 @@ namespace Sellora.Server.Migrations
                 columns: new[] { "Id", "CategoryName", "CreatedBy", "DateCreated", "DateUpdated", "UpdatedBy" },
                 values: new object[,]
                 {
-                    { 1, "Technology", "System", new DateTime(2024, 1, 18, 23, 39, 46, 170, DateTimeKind.Local).AddTicks(3893), new DateTime(2024, 1, 18, 23, 39, 46, 170, DateTimeKind.Local).AddTicks(3903), "System" },
-                    { 2, "Fashion", "System", new DateTime(2024, 1, 18, 23, 39, 46, 170, DateTimeKind.Local).AddTicks(3912), new DateTime(2024, 1, 18, 23, 39, 46, 170, DateTimeKind.Local).AddTicks(3922), "System" }
+                    { 1, "Technology", "System", new DateTime(2024, 1, 19, 0, 44, 51, 938, DateTimeKind.Local).AddTicks(1091), new DateTime(2024, 1, 19, 0, 44, 51, 938, DateTimeKind.Local).AddTicks(1101), "System" },
+                    { 2, "Fashion", "System", new DateTime(2024, 1, 19, 0, 44, 51, 938, DateTimeKind.Local).AddTicks(1110), new DateTime(2024, 1, 19, 0, 44, 51, 938, DateTimeKind.Local).AddTicks(1119), "System" }
                 });
 
             migrationBuilder.InsertData(
@@ -500,8 +519,17 @@ namespace Sellora.Server.Migrations
                 columns: new[] { "Id", "CreatedBy", "DateCreated", "DateUpdated", "StaffAddress", "StaffDepartment", "StaffEmail", "StaffFirstName", "StaffHPNum", "StaffHireDate", "StaffLastName", "StaffPosition", "UpdatedBy" },
                 values: new object[,]
                 {
-                    { 1, "System", new DateTime(2024, 1, 18, 23, 39, 46, 170, DateTimeKind.Local).AddTicks(3482), new DateTime(2024, 1, 18, 23, 39, 46, 170, DateTimeKind.Local).AddTicks(3491), "Temasek Polytechnic", "Full Stack Development", "2102197G@student.tp.edu.sg", "Ryan", "99991111", new DateTime(2024, 1, 18, 23, 39, 46, 170, DateTimeKind.Local).AddTicks(3468), "Chong", "Lead Developer", "System" },
-                    { 2, "System", new DateTime(2024, 1, 18, 23, 39, 46, 170, DateTimeKind.Local).AddTicks(3524), new DateTime(2024, 1, 18, 23, 39, 46, 170, DateTimeKind.Local).AddTicks(3534), "Temasek Polytechnic", "Full Stack Development", "2203567i@student.tp.edu.sg", "Lucas", "99992222", new DateTime(2024, 1, 18, 23, 39, 46, 170, DateTimeKind.Local).AddTicks(3516), "Do", "Lead Developer", "System" }
+                    { 1, "System", new DateTime(2024, 1, 19, 0, 44, 51, 938, DateTimeKind.Local).AddTicks(689), new DateTime(2024, 1, 19, 0, 44, 51, 938, DateTimeKind.Local).AddTicks(698), "Temasek Polytechnic", "Full Stack Development", "2102197G@student.tp.edu.sg", "Ryan", "99991111", new DateTime(2024, 1, 19, 0, 44, 51, 938, DateTimeKind.Local).AddTicks(679), "Chong", "Lead Developer", "System" },
+                    { 2, "System", new DateTime(2024, 1, 19, 0, 44, 51, 938, DateTimeKind.Local).AddTicks(731), new DateTime(2024, 1, 19, 0, 44, 51, 938, DateTimeKind.Local).AddTicks(740), "Temasek Polytechnic", "Full Stack Development", "2203567i@student.tp.edu.sg", "Lucas", "99992222", new DateTime(2024, 1, 19, 0, 44, 51, 938, DateTimeKind.Local).AddTicks(721), "Do", "Lead Developer", "System" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetUserRoles",
+                columns: new[] { "RoleId", "UserId" },
+                values: new object[,]
+                {
+                    { "ad2bcf0c-20db-474f-8407-5a6b159518ba", "3781efa7-66dc-47f0-860f-e506d04102e4" },
+                    { "bd2bcf0c-20db-474f-8407-5a6b159518bb", "b1675205-1948-44ec-8b55-b0cb71d1f84e" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -707,10 +735,10 @@ namespace Sellora.Server.Migrations
                 name: "Items");
 
             migrationBuilder.DropTable(
-                name: "Categories");
+                name: "AppUsers");
 
             migrationBuilder.DropTable(
-                name: "Users");
+                name: "Categories");
         }
     }
 }

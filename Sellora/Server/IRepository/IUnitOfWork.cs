@@ -10,7 +10,7 @@ namespace Sellora.Server.IRepository
     public interface IUnitOfWork : IDisposable
     {
         Task Save(HttpContext httpContext);
-        IGenericRepository<User> Users { get; }
+        IGenericRepository<AppUser> AppUsers { get; }
         IGenericRepository<Staff> Staffs { get; }
         IGenericRepository<Item> Items { get; }
         IGenericRepository<Report> Reports { get; }

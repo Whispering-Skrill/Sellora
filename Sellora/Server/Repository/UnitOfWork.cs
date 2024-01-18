@@ -16,7 +16,7 @@ namespace Sellora.Server.Repository
     public class UnitOfWork : IUnitOfWork
     {
         private readonly ApplicationDbContext _context;
-        private IGenericRepository<User> _users;
+        private IGenericRepository<AppUser> _appusers;
         private IGenericRepository<Staff> _staffs;
         private IGenericRepository<Item> _items;
         private IGenericRepository<Report> _reports;
@@ -33,8 +33,8 @@ namespace Sellora.Server.Repository
             _userManager = userManager;
         }
 
-        public IGenericRepository<User> Users
-            => _users ??= new GenericRepository<User>(_context);
+        public IGenericRepository<AppUser> AppUsers
+            => _appusers ??= new GenericRepository<AppUser>(_context);
         public IGenericRepository<Staff> Staffs
             => _staffs ??= new GenericRepository<Staff>(_context);
         public IGenericRepository<Item> Items

@@ -188,6 +188,26 @@ namespace Sellora.Server.Migrations
                         .HasFilter("[NormalizedName] IS NOT NULL");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "ad2bcf0c-20db-474f-8407-5a6b159518ba",
+                            Name = "Administrator",
+                            NormalizedName = "ADMINISTRATOR"
+                        },
+                        new
+                        {
+                            Id = "bd2bcf0c-20db-474f-8407-5a6b159518bb",
+                            Name = "User",
+                            NormalizedName = "USER"
+                        },
+                        new
+                        {
+                            Id = "595b2485-3bfa-4b70-9209-7526bdb84f37",
+                            Name = "Staff",
+                            NormalizedName = "STAFF"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -277,6 +297,18 @@ namespace Sellora.Server.Migrations
                     b.HasIndex("RoleId");
 
                     b.ToTable("AspNetUserRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            UserId = "3781efa7-66dc-47f0-860f-e506d04102e4",
+                            RoleId = "ad2bcf0c-20db-474f-8407-5a6b159518ba"
+                        },
+                        new
+                        {
+                            UserId = "b1675205-1948-44ec-8b55-b0cb71d1f84e",
+                            RoleId = "bd2bcf0c-20db-474f-8407-5a6b159518bb"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
@@ -378,6 +410,100 @@ namespace Sellora.Server.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "3781efa7-66dc-47f0-860f-e506d04102e4",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "4485479c-3557-4276-b910-1acb9db6a06b",
+                            Email = "admin@localhost.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "ADMIN@LOCALHOST.COM",
+                            NormalizedUserName = "ADMIN@LOCALHOST.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEL6xtrCuHtLXjalcbpbs5UaM8saVG2a1t8/RbAMwuM1nbUA+Jd0rMOx2RxjhKPY1Ug==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "6da529c1-6d24-4e26-a7ec-8b888c2f1df3",
+                            TwoFactorEnabled = false,
+                            UserFirstName = "Admin",
+                            UserLastName = "User",
+                            UserLastOnline = new DateTime(2024, 1, 19, 0, 44, 51, 938, DateTimeKind.Local).AddTicks(1351),
+                            UserName = "admin@localhost.com",
+                            UserRegDate = new DateTime(2024, 1, 19, 0, 44, 51, 938, DateTimeKind.Local).AddTicks(1341)
+                        },
+                        new
+                        {
+                            Id = "b1675205-1948-44ec-8b55-b0cb71d1f84e",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "ecc90658-fa94-4f4b-800c-6ce76f484e78",
+                            Email = "user@localhost.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "USER@LOCALHOST.COM",
+                            NormalizedUserName = "USER@LOCALHOST.COM",
+                            PasswordHash = "AQAAAAIAAYagAAAAEAGwGuC5cCMoJgCvPPFEozg87dQNoFGox/UXxQFX+El0tx/S0FJqA2MLcV9S1HOYAQ==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "7d6db5ad-bdd5-41f8-a23b-d238315455e3",
+                            TwoFactorEnabled = false,
+                            UserFirstName = "User",
+                            UserLastName = "User",
+                            UserLastOnline = new DateTime(2024, 1, 19, 0, 44, 51, 983, DateTimeKind.Local).AddTicks(7934),
+                            UserName = "user@localhost.com",
+                            UserRegDate = new DateTime(2024, 1, 19, 0, 44, 51, 983, DateTimeKind.Local).AddTicks(7911)
+                        });
+                });
+
+            modelBuilder.Entity("Sellora.Shared.Domain.AppUser", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("CreatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DateUpdated")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UpdatedBy")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserDescription")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserEmail")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserFirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserHPNum")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserLastName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UserLastOnline")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserPassword")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UserRegDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AppUsers");
                 });
 
             modelBuilder.Entity("Sellora.Shared.Domain.Category", b =>
@@ -413,8 +539,8 @@ namespace Sellora.Server.Migrations
                             Id = 1,
                             CategoryName = "Technology",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 18, 23, 39, 46, 170, DateTimeKind.Local).AddTicks(3893),
-                            DateUpdated = new DateTime(2024, 1, 18, 23, 39, 46, 170, DateTimeKind.Local).AddTicks(3903),
+                            DateCreated = new DateTime(2024, 1, 19, 0, 44, 51, 938, DateTimeKind.Local).AddTicks(1091),
+                            DateUpdated = new DateTime(2024, 1, 19, 0, 44, 51, 938, DateTimeKind.Local).AddTicks(1101),
                             UpdatedBy = "System"
                         },
                         new
@@ -422,8 +548,8 @@ namespace Sellora.Server.Migrations
                             Id = 2,
                             CategoryName = "Fashion",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 18, 23, 39, 46, 170, DateTimeKind.Local).AddTicks(3912),
-                            DateUpdated = new DateTime(2024, 1, 18, 23, 39, 46, 170, DateTimeKind.Local).AddTicks(3922),
+                            DateCreated = new DateTime(2024, 1, 19, 0, 44, 51, 938, DateTimeKind.Local).AddTicks(1110),
+                            DateUpdated = new DateTime(2024, 1, 19, 0, 44, 51, 938, DateTimeKind.Local).AddTicks(1119),
                             UpdatedBy = "System"
                         });
                 });
@@ -723,14 +849,14 @@ namespace Sellora.Server.Migrations
                         {
                             Id = 1,
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 18, 23, 39, 46, 170, DateTimeKind.Local).AddTicks(3482),
-                            DateUpdated = new DateTime(2024, 1, 18, 23, 39, 46, 170, DateTimeKind.Local).AddTicks(3491),
+                            DateCreated = new DateTime(2024, 1, 19, 0, 44, 51, 938, DateTimeKind.Local).AddTicks(689),
+                            DateUpdated = new DateTime(2024, 1, 19, 0, 44, 51, 938, DateTimeKind.Local).AddTicks(698),
                             StaffAddress = "Temasek Polytechnic",
                             StaffDepartment = "Full Stack Development",
                             StaffEmail = "2102197G@student.tp.edu.sg",
                             StaffFirstName = "Ryan",
                             StaffHPNum = "99991111",
-                            StaffHireDate = new DateTime(2024, 1, 18, 23, 39, 46, 170, DateTimeKind.Local).AddTicks(3468),
+                            StaffHireDate = new DateTime(2024, 1, 19, 0, 44, 51, 938, DateTimeKind.Local).AddTicks(679),
                             StaffLastName = "Chong",
                             StaffPosition = "Lead Developer",
                             UpdatedBy = "System"
@@ -739,14 +865,14 @@ namespace Sellora.Server.Migrations
                         {
                             Id = 2,
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 18, 23, 39, 46, 170, DateTimeKind.Local).AddTicks(3524),
-                            DateUpdated = new DateTime(2024, 1, 18, 23, 39, 46, 170, DateTimeKind.Local).AddTicks(3534),
+                            DateCreated = new DateTime(2024, 1, 19, 0, 44, 51, 938, DateTimeKind.Local).AddTicks(731),
+                            DateUpdated = new DateTime(2024, 1, 19, 0, 44, 51, 938, DateTimeKind.Local).AddTicks(740),
                             StaffAddress = "Temasek Polytechnic",
                             StaffDepartment = "Full Stack Development",
                             StaffEmail = "2203567i@student.tp.edu.sg",
                             StaffFirstName = "Lucas",
                             StaffHPNum = "99992222",
-                            StaffHireDate = new DateTime(2024, 1, 18, 23, 39, 46, 170, DateTimeKind.Local).AddTicks(3516),
+                            StaffHireDate = new DateTime(2024, 1, 19, 0, 44, 51, 938, DateTimeKind.Local).AddTicks(721),
                             StaffLastName = "Do",
                             StaffPosition = "Lead Developer",
                             UpdatedBy = "System"
@@ -817,58 +943,6 @@ namespace Sellora.Server.Migrations
                     b.ToTable("SwapTransactions");
                 });
 
-            modelBuilder.Entity("Sellora.Shared.Domain.User", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("DateCreated")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("DateUpdated")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("UpdatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserDescription")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserEmail")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserFirstName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserHPNum")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserLastName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UserLastOnline")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("UserName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("UserPassword")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("UserRegDate")
-                        .HasColumnType("datetime2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Users");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -928,7 +1002,7 @@ namespace Sellora.Server.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Sellora.Shared.Domain.User", "User")
+                    b.HasOne("Sellora.Shared.Domain.AppUser", "User")
                         .WithMany("Items")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -955,7 +1029,7 @@ namespace Sellora.Server.Migrations
                         .WithMany()
                         .HasForeignKey("SwapTransactionID");
 
-                    b.HasOne("Sellora.Shared.Domain.User", "User")
+                    b.HasOne("Sellora.Shared.Domain.AppUser", "User")
                         .WithMany("Reports")
                         .HasForeignKey("UserId");
 
@@ -978,7 +1052,7 @@ namespace Sellora.Server.Migrations
                         .WithMany()
                         .HasForeignKey("SwapTransactionID");
 
-                    b.HasOne("Sellora.Shared.Domain.User", "User")
+                    b.HasOne("Sellora.Shared.Domain.AppUser", "User")
                         .WithMany("Reviews")
                         .HasForeignKey("UserId");
 
@@ -995,7 +1069,7 @@ namespace Sellora.Server.Migrations
                         .WithMany()
                         .HasForeignKey("ItemId");
 
-                    b.HasOne("Sellora.Shared.Domain.User", "User")
+                    b.HasOne("Sellora.Shared.Domain.AppUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
 
@@ -1014,11 +1088,11 @@ namespace Sellora.Server.Migrations
                         .WithMany()
                         .HasForeignKey("ItemId");
 
-                    b.HasOne("Sellora.Shared.Domain.User", "User2")
+                    b.HasOne("Sellora.Shared.Domain.AppUser", "User2")
                         .WithMany()
                         .HasForeignKey("User2Id");
 
-                    b.HasOne("Sellora.Shared.Domain.User", "User")
+                    b.HasOne("Sellora.Shared.Domain.AppUser", "User")
                         .WithMany()
                         .HasForeignKey("UserId");
 
@@ -1031,6 +1105,15 @@ namespace Sellora.Server.Migrations
                     b.Navigation("User2");
                 });
 
+            modelBuilder.Entity("Sellora.Shared.Domain.AppUser", b =>
+                {
+                    b.Navigation("Items");
+
+                    b.Navigation("Reports");
+
+                    b.Navigation("Reviews");
+                });
+
             modelBuilder.Entity("Sellora.Shared.Domain.Category", b =>
                 {
                     b.Navigation("Items");
@@ -1039,15 +1122,6 @@ namespace Sellora.Server.Migrations
             modelBuilder.Entity("Sellora.Shared.Domain.Staff", b =>
                 {
                     b.Navigation("Reports");
-                });
-
-            modelBuilder.Entity("Sellora.Shared.Domain.User", b =>
-                {
-                    b.Navigation("Items");
-
-                    b.Navigation("Reports");
-
-                    b.Navigation("Reviews");
                 });
 #pragma warning restore 612, 618
         }

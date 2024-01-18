@@ -18,14 +18,14 @@
 @code {
     Report report = new Report();
 
-    private IList<User>? Users;
+    private IList<AppUser>? Users;
     private IList<Staff>? Staffs;
     private IList<SwapTransaction>? SwapTransactions;
     private IList<SaleTransaction>? SaleTransactions;
 
     protected async Task OnIntializedAsync()
     {
-        Users = await _client.GetFromJsonAsync<List<User>>($"{Endpoints.UsersEndpoint}");
+        Users = await _client.GetFromJsonAsync<List<AppUser>>($"{Endpoints.AppUsersEndpoint}");
         Staffs = await _client.GetFromJsonAsync<List<Staff>>($"{Endpoints.StaffsEndpoint}");
         SwapTransactions = await _client.GetFromJsonAsync<List<SwapTransaction>>($"{Endpoints.SwapTransactionsEndpoint}");
         SaleTransactions = await _client.GetFromJsonAsync<List<SaleTransaction>>($"{Endpoints.SaleTransactionsEndpoint}");

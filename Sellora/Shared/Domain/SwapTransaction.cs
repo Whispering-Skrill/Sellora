@@ -15,7 +15,7 @@ namespace Sellora.Shared.Domain
 
         [Required]
         public int? SwapUserId { get; set; }
-        public virtual User ? User { get; set; }
+        public virtual AppUser? User { get; set; }
 
         [Required]
         public int? SwapItemId { get; set; }
@@ -23,7 +23,7 @@ namespace Sellora.Shared.Domain
 
         [Required]
         public int? SwapUser2Id { get; set; }
-        public virtual User ? User2 { get; set; }
+        public virtual AppUser? User2 { get; set; }
 
         [Required]
         public int? SwapItem2Id { get; set; }
