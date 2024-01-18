@@ -41,7 +41,7 @@ namespace Sellora.Server.Controllers
             //}
             //  return await _context.Reports.ToListAsync();
 
-            // This checks if there are values in the Reports Table
+            // This returns a 404 if the Reviews table is empty
             //if (_unitOfWork.Reports == null)
             //{
             //    return NotFound();
@@ -70,7 +70,7 @@ namespace Sellora.Server.Controllers
 
             //  return report;
 
-            // This checks if there are values in the Report Table
+            // This returns a 404 if the Reviews table is empty
             //if (_unitOfWork.Reports == null)
             //{
             //    return NotFound();
@@ -80,6 +80,7 @@ namespace Sellora.Server.Controllers
             var report = await _unitOfWork.Reports.Get(q => q.Id == id);
             if (report == null)
             {
+                // Returns a resource not found error
                 return NotFound(id);
             }
 
@@ -94,6 +95,7 @@ namespace Sellora.Server.Controllers
             // This checks if the value given is a Report ID
             if (id != report.Id)
             {
+                // Returns a bad request error
                 return BadRequest();
             }
 
@@ -117,6 +119,7 @@ namespace Sellora.Server.Controllers
                 // This checks if there are values in the Report Table with a specified ID
                 if (!await ReportExists(id))
                 {
+                    // Returns a resource not found error
                     return NotFound();
                 }
                 else
@@ -136,11 +139,12 @@ namespace Sellora.Server.Controllers
             // Refactored
             //if (_context.Reports == null)
 
-            // This checks if there are values in the Report Table
+            // This returns a 404 if the Reviews table is empty
             //if (_unitOfWork.Reports == null)
             //{
             //    return Problem("Entity set 'ApplicationDbContext.Reports'  is null.");
             //}
+
             // Refactored
             //_context.Reports.Add(report);
             //await _context.SaveChangesAsync();
@@ -158,10 +162,13 @@ namespace Sellora.Server.Controllers
         {
             // Refactored
             //if (_context.Reports == null)
+
+            // This returns a 404 if the Reviews table is empty
             //if (_unitOfWork.Reports == null)
             //{
             //    return NotFound();
             //}
+
             // Refactored
             //var report = await _context.Reports.FindAsync(id);
 
@@ -169,6 +176,7 @@ namespace Sellora.Server.Controllers
             var report = await _unitOfWork.Reports.Get(q => q.Id == id);
             if (report == null)
             {
+                // Returns a resource not found error
                 return NotFound();
             }
 

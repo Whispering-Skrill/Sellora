@@ -44,7 +44,7 @@ namespace Sellora.Server.Controllers
             //}
             //    return await _context.Staff.ToListAsync();
 
-            // This checks if there are values in the Staff Table
+            // This returns a 404 if the Staff table is empty
             //if (_unitOfWork.Staffs == null)
             //{
             //    return NotFound();
@@ -75,7 +75,7 @@ namespace Sellora.Server.Controllers
 
             // return staff;
 
-            // This checks if there are values in the Staff Table
+            // This returns a 404 if the Staff table is empty
             //if (_unitOfWork.Staffs == null)
             //{
             //    return NotFound();
@@ -85,6 +85,7 @@ namespace Sellora.Server.Controllers
             var staff = await _unitOfWork.Staffs.Get(q => q.Id == id);
             if (staff == null)
             {
+                // Returns a resource not found error
                 return NotFound(id);
             }
 
@@ -99,6 +100,7 @@ namespace Sellora.Server.Controllers
             // This checks if the value given is a Staff ID
             if (id != staff.Id)
             {
+                // Returns a Bad Request error
                 return BadRequest();
             }
 
@@ -122,6 +124,7 @@ namespace Sellora.Server.Controllers
                 // This checks if there are values in the Staff Table with a specified ID
                 if (!await StaffExists(id))
                 {
+                    // Returns a resource not found error
                     return NotFound();
                 }
                 else
@@ -129,7 +132,6 @@ namespace Sellora.Server.Controllers
                     throw;
                 }
             }
-
             return NoContent();
         }
 
@@ -141,11 +143,12 @@ namespace Sellora.Server.Controllers
             // Refactored
             //if (_context.Staff == null)
 
-            // This checks if there are values in the Staff Table
+            // This returns a 404 if the Staff table is empty
             //if (_unitOfWork.Staffs == null)
             //{
             //    return Problem("Entity set 'ApplicationDbContext.Staff'  is null.");
             //}
+
             // Refactored  
             //_context.Staff.Add(staff);
             //await _context.SaveChangesAsync();
@@ -164,11 +167,12 @@ namespace Sellora.Server.Controllers
             // Refactored
             //if (_context.Staffs == null)
 
-            // This checks if there are values in the Staff Table
+            // This returns a 404 if the Staff table is empty
             //if (_unitOfWork.Staffs == null)
             //{
             //    return NotFound();
             //}
+
             // Refactored
             //var staff = await _context.Staff.FindAsync(id);
 
@@ -176,6 +180,7 @@ namespace Sellora.Server.Controllers
             var staff = await _unitOfWork.Staffs.Get(q => q.Id == id);
             if (staff == null)
             {
+                // Returns a resource not found error
                 return NotFound();
             }
 

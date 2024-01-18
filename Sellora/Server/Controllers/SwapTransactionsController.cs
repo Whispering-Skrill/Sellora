@@ -41,7 +41,7 @@ namespace Sellora.Server.Controllers
             //}
             //  return await _context.SwapTransactions.ToListAsync();
 
-            // This checks if there are values in the SwapTransactions Table
+            // This returns a 404 if the Swaptransactions table is empty
             //if (_unitOfWork.SwapTransactions == null)
             //{
             //    return NotFound();
@@ -72,7 +72,7 @@ namespace Sellora.Server.Controllers
 
             //  return swaptransaction;
 
-            // This checks if there are values in the SwapTransaction Table
+            // This returns a 404 if the Swaptransactions table is empty
             //if (_unitOfWork.SwapTransactions == null)
             //{
             //    return NotFound();
@@ -82,6 +82,7 @@ namespace Sellora.Server.Controllers
             var swaptransaction = await _unitOfWork.SwapTransactions.Get(q => q.Id == id);
             if (swaptransaction == null)
             {
+                // Returns a resource not found error
                 return NotFound(id);
             }
 
@@ -96,6 +97,7 @@ namespace Sellora.Server.Controllers
             // This checks if the value given is a SwapTransaction ID
             if (id != swaptransaction.Id)
             {
+                // Returns a bad request error
                 return BadRequest();
             }
 
@@ -119,6 +121,7 @@ namespace Sellora.Server.Controllers
                 // This checks if there are values in the SwapTransaction Table with a specified ID
                 if (!await SwapTransactionExists(id))
                 {
+                    // Returns a resource not found error
                     return NotFound();
                 }
                 else
@@ -138,7 +141,7 @@ namespace Sellora.Server.Controllers
             // Refactored
             //if (_context.SwapTransactions == null)
 
-            // This checks if there are values in the SwapTransaction Table
+            // This returns a 404 if the Swaptransactions table is empty
             //if (_unitOfWork.SwapTransactions == null)
             //{
             //    return Problem("Entity set 'ApplicationDbContext.SwapTransactions'  is null.");
@@ -160,10 +163,13 @@ namespace Sellora.Server.Controllers
         {
             // Refactored
             //if (_context.SwapTransactions == null)
+
+            // This returns a 404 if the Swaptransactions table is empty
             //if (_unitOfWork.SwapTransactions == null)
             //{
             //    return NotFound();
             //}
+
             // Refactored
             //var swaptransaction = await _context.SwapTransactions.FindAsync(id);
 
@@ -171,6 +177,7 @@ namespace Sellora.Server.Controllers
             var swaptransaction = await _unitOfWork.SwapTransactions.Get(q => q.Id == id);
             if (swaptransaction == null)
             {
+                // Returns a resource not found error
                 return NotFound();
             }
 

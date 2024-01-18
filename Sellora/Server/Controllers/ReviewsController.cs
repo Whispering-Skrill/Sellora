@@ -41,7 +41,7 @@ namespace Sellora.Server.Controllers
             //}
             //  return await _context.Reviews.ToListAsync();
 
-            // This checks if there are values in the Reviews Table
+            // This returns a 404 if the Reviews table is empty
             //if (_unitOfWork.Reviews == null)
             //{
             //    return NotFound();
@@ -70,7 +70,7 @@ namespace Sellora.Server.Controllers
 
             //  return review;
 
-            // This checks if there are values in the Review Table
+            // This returns a 404 if the Reviews table is empty
             //if (_unitOfWork.Reviews == null)
             //{
             //    return NotFound();
@@ -80,6 +80,7 @@ namespace Sellora.Server.Controllers
             var review = await _unitOfWork.Reviews.Get(q => q.Id == id);
             if (review == null)
             {
+                // Returns a resource not found error
                 return NotFound(id);
             }
 
@@ -94,6 +95,7 @@ namespace Sellora.Server.Controllers
             // This checks if the value given is a Review ID
             if (id != review.Id)
             {
+                // Returns a Bad Request error
                 return BadRequest();
             }
 
@@ -117,6 +119,7 @@ namespace Sellora.Server.Controllers
                 // This checks if there are values in the Review Table with a specified ID
                 if (!await ReviewExists(id))
                 {
+                    // Returns a resource not found error
                     return NotFound();
                 }
                 else
@@ -136,7 +139,7 @@ namespace Sellora.Server.Controllers
             // Refactored
             //if (_context.Reviews == null)
 
-            // This checks if there are values in the Review Table
+            // This returns a 404 if the Reviews table is empty
             //if (_unitOfWork.Reviews == null)
             //{
             //    return Problem("Entity set 'ApplicationDbContext.Reviews'  is null.");
@@ -158,10 +161,13 @@ namespace Sellora.Server.Controllers
         {
             // Refactored
             //if (_context.Reviews == null)
+
+            // This returns a 404 if the Reviews table is empty
             //if (_unitOfWork.Reviews == null)
             //{
             //    return NotFound();
             //}
+
             // Refactored
             //var review = await _context.Reviews.FindAsync(id);
 
@@ -169,6 +175,7 @@ namespace Sellora.Server.Controllers
             var review = await _unitOfWork.Reviews.Get(q => q.Id == id);
             if (review == null)
             {
+                // Returns a resource not found error
                 return NotFound();
             }
 
