@@ -23,20 +23,13 @@ namespace Sellora.Server.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        private readonly ApplicationDbContext _context;
-
-        public ItemsController(ApplicationDbContext context)
-        {
-            _context = context;
-        }
-
         // GET: api/Items
         [HttpGet]
 
         public async Task<IActionResult> GetItems()
         {
-            var categories = await _unitOfWork.Items.GetAll();
-            return Ok(categories);
+            var items = await _unitOfWork.Items.GetAll();
+            return Ok(items);
         }
 
         // GET: api/Items/5
@@ -44,27 +37,27 @@ namespace Sellora.Server.Controllers
 
         public async Task<IActionResult> GetItem(int id)
         {
-            var category = await _unitOfWork.Items.Get(q => q.Id == id);
+            var item = await _unitOfWork.Items.Get(q => q.Id == id);
 
-            if (category == null)
+            if (item == null)
             {
                 return NotFound();
             }
 
-            return Ok(category);
+            return Ok(item);
         }
 
         // PUT: api/Items/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutItem(int id, Item category)
+        public async Task<IActionResult> PutItem(int id, Item item)
         {
-            if (id != category.Id)
+            if (id != item.Id)
             {
                 return BadRequest();
             }
 
-            _unitOfWork.Items.Update(category);
+            _unitOfWork.Items.Update(item);
 
             try
             {
@@ -88,24 +81,24 @@ namespace Sellora.Server.Controllers
         // POST: api/Items
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Item>> PostItem(Item category)
+        public async Task<ActionResult<Item>> PostItem(Item item)
         {
-          if (_context.Items == null)
+          if (_unitOfWork.Items == null)
           {
-              return Problem("Entity set 'ApplicationDbContext.Items'  is null.");
+              return Problem("Entity set 'ItemsController.Items'  is null.");
           }
-            await _unitOfWork.Items.Insert(category);
+            await _unitOfWork.Items.Insert(item);
             await _unitOfWork.Save(HttpContext);
 
-            return CreatedAtAction("GetItem", new { id = category.Id }, category);
+            return CreatedAtAction("GetItem", new { id = item.Id }, item);
         }
 
         // DELETE: api/Items/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteItem(int id)
         {
-            var category = await _unitOfWork.Items.Get(q => q.Id == id);
-            if (category == null)
+            var item = await _unitOfWork.Items.Get(q => q.Id == id);
+            if (item == null)
             {
                 return NotFound();
             }
@@ -118,8 +111,8 @@ namespace Sellora.Server.Controllers
 
         private async Task<bool> ItemExists(int id)
         {
-            var category = await _unitOfWork.Items.Get(e => e.Id == id);
-            return category != null;
+            var item = await _unitOfWork.Items.Get(e => e.Id == id);
+            return item != null;
         }
     }
 }

@@ -23,20 +23,13 @@ namespace Sellora.Server.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        private readonly ApplicationDbContext _context;
-
-        public UsersController(ApplicationDbContext context)
-        {
-            _context = context;
-        }
-
         // GET: api/Users
         [HttpGet]
 
         public async Task<IActionResult> GetUsers()
         {
-            var categories = await _unitOfWork.Users.GetAll();
-            return Ok(categories);
+            var users = await _unitOfWork.Users.GetAll();
+            return Ok(users);
         }
 
         // GET: api/Users/5
@@ -44,27 +37,27 @@ namespace Sellora.Server.Controllers
 
         public async Task<IActionResult> GetUser(int id)
         {
-            var category = await _unitOfWork.Users.Get(q => q.Id == id);
+            var user = await _unitOfWork.Users.Get(q => q.Id == id);
 
-            if (category == null)
+            if (user == null)
             {
                 return NotFound();
             }
 
-            return Ok(category);
+            return Ok(user);
         }
 
         // PUT: api/Users/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutUser(int id, User category)
+        public async Task<IActionResult> PutUser(int id, User user)
         {
-            if (id != category.Id)
+            if (id != user.Id)
             {
                 return BadRequest();
             }
 
-            _unitOfWork.Users.Update(category);
+            _unitOfWork.Users.Update(user);
 
             try
             {
@@ -88,24 +81,24 @@ namespace Sellora.Server.Controllers
         // POST: api/Users
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<User>> PostUser(User category)
+        public async Task<ActionResult<User>> PostUser(User user)
         {
-          if (_context.Users == null)
+          if (_unitOfWork.Users == null)
           {
-              return Problem("Entity set 'ApplicationDbContext.Users'  is null.");
+              return Problem("Entity set 'UsersController.Users'  is null.");
           }
-            await _unitOfWork.Users.Insert(category);
+            await _unitOfWork.Users.Insert(user);
             await _unitOfWork.Save(HttpContext);
 
-            return CreatedAtAction("GetUser", new { id = category.Id }, category);
+            return CreatedAtAction("GetUser", new { id = user.Id }, user);
         }
 
         // DELETE: api/Users/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUser(int id)
         {
-            var category = await _unitOfWork.Users.Get(q => q.Id == id);
-            if (category == null)
+            var user = await _unitOfWork.Users.Get(q => q.Id == id);
+            if (user == null)
             {
                 return NotFound();
             }
@@ -118,8 +111,8 @@ namespace Sellora.Server.Controllers
 
         private async Task<bool> UserExists(int id)
         {
-            var category = await _unitOfWork.Users.Get(e => e.Id == id);
-            return category != null;
+            var user = await _unitOfWork.Users.Get(e => e.Id == id);
+            return user != null;
         }
     }
 }

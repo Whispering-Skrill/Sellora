@@ -23,13 +23,6 @@ namespace Sellora.Server.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        private readonly ApplicationDbContext _context;
-
-        public CategoriesController(ApplicationDbContext context)
-        {
-            _context = context;
-        }
-
         // GET: api/Categories
         [HttpGet]
 
@@ -90,9 +83,9 @@ namespace Sellora.Server.Controllers
         [HttpPost]
         public async Task<ActionResult<Category>> PostCategory(Category category)
         {
-          if (_context.Categories == null)
+          if (_unitOfWork.Categories == null)
           {
-              return Problem("Entity set 'ApplicationDbContext.Categories'  is null.");
+              return Problem("Entity set 'CategoriesController.Categories'  is null.");
           }
             await _unitOfWork.Categories.Insert(category);
             await _unitOfWork.Save(HttpContext);

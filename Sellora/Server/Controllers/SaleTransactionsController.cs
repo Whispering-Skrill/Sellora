@@ -23,20 +23,13 @@ namespace Sellora.Server.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        private readonly ApplicationDbContext _context;
-
-        public SaleTransactionsController(ApplicationDbContext context)
-        {
-            _context = context;
-        }
-
         // GET: api/SaleTransactions
         [HttpGet]
 
         public async Task<IActionResult> GetSaleTransactions()
         {
-            var categories = await _unitOfWork.SaleTransactions.GetAll();
-            return Ok(categories);
+            var saletransactions = await _unitOfWork.SaleTransactions.GetAll();
+            return Ok(saletransactions);
         }
 
         // GET: api/SaleTransactions/5
@@ -44,27 +37,27 @@ namespace Sellora.Server.Controllers
 
         public async Task<IActionResult> GetSaleTransaction(int id)
         {
-            var category = await _unitOfWork.SaleTransactions.Get(q => q.Id == id);
+            var saletransaction = await _unitOfWork.SaleTransactions.Get(q => q.Id == id);
 
-            if (category == null)
+            if (saletransaction == null)
             {
                 return NotFound();
             }
 
-            return Ok(category);
+            return Ok(saletransaction);
         }
 
         // PUT: api/SaleTransactions/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutSaleTransaction(int id, SaleTransaction category)
+        public async Task<IActionResult> PutSaleTransaction(int id, SaleTransaction saletransaction)
         {
-            if (id != category.Id)
+            if (id != saletransaction.Id)
             {
                 return BadRequest();
             }
 
-            _unitOfWork.SaleTransactions.Update(category);
+            _unitOfWork.SaleTransactions.Update(saletransaction);
 
             try
             {
@@ -88,24 +81,24 @@ namespace Sellora.Server.Controllers
         // POST: api/SaleTransactions
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<SaleTransaction>> PostSaleTransaction(SaleTransaction category)
+        public async Task<ActionResult<SaleTransaction>> PostSaleTransaction(SaleTransaction saletransaction)
         {
-          if (_context.SaleTransactions == null)
+          if (_unitOfWork.SaleTransactions == null)
           {
-              return Problem("Entity set 'ApplicationDbContext.SaleTransactions'  is null.");
+              return Problem("Entity set 'SaleTransactionsController.SaleTransactions'  is null.");
           }
-            await _unitOfWork.SaleTransactions.Insert(category);
+            await _unitOfWork.SaleTransactions.Insert(saletransaction);
             await _unitOfWork.Save(HttpContext);
 
-            return CreatedAtAction("GetSaleTransaction", new { id = category.Id }, category);
+            return CreatedAtAction("GetSaleTransaction", new { id = saletransaction.Id }, saletransaction);
         }
 
         // DELETE: api/SaleTransactions/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteSaleTransaction(int id)
         {
-            var category = await _unitOfWork.SaleTransactions.Get(q => q.Id == id);
-            if (category == null)
+            var saletransaction = await _unitOfWork.SaleTransactions.Get(q => q.Id == id);
+            if (saletransaction == null)
             {
                 return NotFound();
             }
@@ -118,8 +111,8 @@ namespace Sellora.Server.Controllers
 
         private async Task<bool> SaleTransactionExists(int id)
         {
-            var category = await _unitOfWork.SaleTransactions.Get(e => e.Id == id);
-            return category != null;
+            var saletransaction = await _unitOfWork.SaleTransactions.Get(e => e.Id == id);
+            return saletransaction != null;
         }
     }
 }
