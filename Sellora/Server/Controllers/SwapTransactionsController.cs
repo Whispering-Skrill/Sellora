@@ -32,7 +32,7 @@ namespace Sellora.Server.Controllers
         [HttpGet]
         // Refactored
         //public async Task<ActionResult<IEnumerable<SwapTransaction>>> GetSwapTransactions()
-        public async Task<IActionResult> GetSwapTransaction()
+        public async Task<IActionResult> GetSwapTransactions()
         {
             // Refactored
             //if (_context.SwapTransactions == null)
@@ -42,10 +42,10 @@ namespace Sellora.Server.Controllers
             //  return await _context.SwapTransactions.ToListAsync();
 
             // This checks if there are values in the SwapTransactions Table
-            if (_unitOfWork.SwapTransactions == null)
-            {
-                return NotFound();
-            }
+            //if (_unitOfWork.SwapTransactions == null)
+            //{
+            //    return NotFound();
+            //}
 
             // Gets All values within the SwapTransaction Table
             var swaptransactions = await _unitOfWork.SwapTransactions.GetAll(includes:q=>q.Include(x=>x.User).Include(x=>x.Item));
@@ -73,10 +73,10 @@ namespace Sellora.Server.Controllers
             //  return swaptransaction;
 
             // This checks if there are values in the SwapTransaction Table
-            if (_unitOfWork.SwapTransactions == null)
-            {
-                return NotFound();
-            }
+            //if (_unitOfWork.SwapTransactions == null)
+            //{
+            //    return NotFound();
+            //}
 
             // This checks if a tuple with the specified ID exists in the SwapTransaction Table
             var swaptransaction = await _unitOfWork.SwapTransactions.Get(q => q.Id == id);
@@ -139,10 +139,10 @@ namespace Sellora.Server.Controllers
             //if (_context.SwapTransactions == null)
 
             // This checks if there are values in the SwapTransaction Table
-            if (_unitOfWork.SwapTransactions == null)
-            {
-                return Problem("Entity set 'ApplicationDbContext.SwapTransactions'  is null.");
-            }
+            //if (_unitOfWork.SwapTransactions == null)
+            //{
+            //    return Problem("Entity set 'ApplicationDbContext.SwapTransactions'  is null.");
+            //}
             // Refactored
             //_context.SwapTransactions.Add(swaptransaction);
             //await _context.SaveChangesAsync();
@@ -160,10 +160,10 @@ namespace Sellora.Server.Controllers
         {
             // Refactored
             //if (_context.SwapTransactions == null)
-            if (_unitOfWork.SwapTransactions == null)
-            {
-                return NotFound();
-            }
+            //if (_unitOfWork.SwapTransactions == null)
+            //{
+            //    return NotFound();
+            //}
             // Refactored
             //var swaptransaction = await _context.SwapTransactions.FindAsync(id);
 

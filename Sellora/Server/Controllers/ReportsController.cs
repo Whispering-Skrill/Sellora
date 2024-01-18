@@ -32,7 +32,7 @@ namespace Sellora.Server.Controllers
         [HttpGet]
         // Refactored
         //public async Task<ActionResult<IEnumerable<Report>>> GetReports()
-        public async Task<IActionResult> GetReport()
+        public async Task<IActionResult> GetReports()
         {
             // Refactored
             //if (_context.Reports == null)
@@ -42,10 +42,10 @@ namespace Sellora.Server.Controllers
             //  return await _context.Reports.ToListAsync();
 
             // This checks if there are values in the Reports Table
-            if (_unitOfWork.Reports == null)
-            {
-                return NotFound();
-            }
+            //if (_unitOfWork.Reports == null)
+            //{
+            //    return NotFound();
+            //}
             var reports = await _unitOfWork.Reports.GetAll(includes:q=>q.Include(x=>x.User).Include(x=>x.Staff).Include(x=>x.SwapTransaction).Include(x=>x.SaleTransaction));
             return Ok(reports);
         }
@@ -71,10 +71,10 @@ namespace Sellora.Server.Controllers
             //  return report;
 
             // This checks if there are values in the Report Table
-            if (_unitOfWork.Reports == null)
-            {
-                return NotFound();
-            }
+            //if (_unitOfWork.Reports == null)
+            //{
+            //    return NotFound();
+            //}
 
             // This checks if a tuple with the specified ID exists in the Report Table
             var report = await _unitOfWork.Reports.Get(q => q.Id == id);
@@ -137,10 +137,10 @@ namespace Sellora.Server.Controllers
             //if (_context.Reports == null)
 
             // This checks if there are values in the Report Table
-            if (_unitOfWork.Reports == null)
-            {
-                return Problem("Entity set 'ApplicationDbContext.Reports'  is null.");
-            }
+            //if (_unitOfWork.Reports == null)
+            //{
+            //    return Problem("Entity set 'ApplicationDbContext.Reports'  is null.");
+            //}
             // Refactored
             //_context.Reports.Add(report);
             //await _context.SaveChangesAsync();
@@ -158,10 +158,10 @@ namespace Sellora.Server.Controllers
         {
             // Refactored
             //if (_context.Reports == null)
-            if (_unitOfWork.Reports == null)
-            {
-                return NotFound();
-            }
+            //if (_unitOfWork.Reports == null)
+            //{
+            //    return NotFound();
+            //}
             // Refactored
             //var report = await _context.Reports.FindAsync(id);
 

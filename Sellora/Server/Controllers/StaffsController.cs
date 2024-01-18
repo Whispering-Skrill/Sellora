@@ -32,7 +32,7 @@ namespace Sellora.Server.Controllers
         [HttpGet]
         // Refactored
         //public async Task<ActionResult<IEnumerable<Staff>>> GetStaff()
-        public async Task<IActionResult> GetStaff()
+        public async Task<IActionResult> GetStaffs()
         {
             // For Error Handling Test
             // return NotFound();
@@ -45,10 +45,10 @@ namespace Sellora.Server.Controllers
             //    return await _context.Staff.ToListAsync();
 
             // This checks if there are values in the Staff Table
-            if (_unitOfWork.Staffs == null)
-            {
-                return NotFound();
-            }
+            //if (_unitOfWork.Staffs == null)
+            //{
+            //    return NotFound();
+            //}
 
             // Gets All values within the Staff Table
             var staffs = await _unitOfWork.Staffs.GetAll();
@@ -76,10 +76,10 @@ namespace Sellora.Server.Controllers
             // return staff;
 
             // This checks if there are values in the Staff Table
-            if (_unitOfWork.Staffs == null)
-            {
-                return NotFound();
-            }
+            //if (_unitOfWork.Staffs == null)
+            //{
+            //    return NotFound();
+            //}
 
             // This checks if a tuple with the specified ID exists in the Staff Table
             var staff = await _unitOfWork.Staffs.Get(q => q.Id == id);
@@ -142,10 +142,10 @@ namespace Sellora.Server.Controllers
             //if (_context.Staff == null)
 
             // This checks if there are values in the Staff Table
-            if (_unitOfWork.Staffs == null)
-            {
-                return Problem("Entity set 'ApplicationDbContext.Staff'  is null.");
-            }
+            //if (_unitOfWork.Staffs == null)
+            //{
+            //    return Problem("Entity set 'ApplicationDbContext.Staff'  is null.");
+            //}
             // Refactored  
             //_context.Staff.Add(staff);
             //await _context.SaveChangesAsync();
@@ -165,10 +165,10 @@ namespace Sellora.Server.Controllers
             //if (_context.Staffs == null)
 
             // This checks if there are values in the Staff Table
-            if (_unitOfWork.Staffs == null)
-            {
-                return NotFound();
-            }
+            //if (_unitOfWork.Staffs == null)
+            //{
+            //    return NotFound();
+            //}
             // Refactored
             //var staff = await _context.Staff.FindAsync(id);
 

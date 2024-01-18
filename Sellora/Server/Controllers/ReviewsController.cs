@@ -32,7 +32,7 @@ namespace Sellora.Server.Controllers
         [HttpGet]
         // Refactored
         //public async Task<ActionResult<IEnumerable<Review>>> GetReviews()
-        public async Task<IActionResult> GetReview()
+        public async Task<IActionResult> GetReviews()
         {
             // Refactored
             //if (_context.Reviews == null)
@@ -42,10 +42,10 @@ namespace Sellora.Server.Controllers
             //  return await _context.Reviews.ToListAsync();
 
             // This checks if there are values in the Reviews Table
-            if (_unitOfWork.Reviews == null)
-            {
-                return NotFound();
-            }
+            //if (_unitOfWork.Reviews == null)
+            //{
+            //    return NotFound();
+            //}
             var reviews = await _unitOfWork.Reviews.GetAll(includes:q=>q.Include(x=>x.SaleTransaction).Include(x=>x.SwapTransaction).Include(x=>x.User));
             return Ok(reviews);
         }
@@ -71,10 +71,10 @@ namespace Sellora.Server.Controllers
             //  return review;
 
             // This checks if there are values in the Review Table
-            if (_unitOfWork.Reviews == null)
-            {
-                return NotFound();
-            }
+            //if (_unitOfWork.Reviews == null)
+            //{
+            //    return NotFound();
+            //}
 
             // This checks if a tuple with the specified ID exists in the Review Table
             var review = await _unitOfWork.Reviews.Get(q => q.Id == id);
@@ -137,10 +137,10 @@ namespace Sellora.Server.Controllers
             //if (_context.Reviews == null)
 
             // This checks if there are values in the Review Table
-            if (_unitOfWork.Reviews == null)
-            {
-                return Problem("Entity set 'ApplicationDbContext.Reviews'  is null.");
-            }
+            //if (_unitOfWork.Reviews == null)
+            //{
+            //    return Problem("Entity set 'ApplicationDbContext.Reviews'  is null.");
+            //}
             // Refactored
             //_context.Reviews.Add(review);
             //await _context.SaveChangesAsync();
@@ -158,10 +158,10 @@ namespace Sellora.Server.Controllers
         {
             // Refactored
             //if (_context.Reviews == null)
-            if (_unitOfWork.Reviews == null)
-            {
-                return NotFound();
-            }
+            //if (_unitOfWork.Reviews == null)
+            //{
+            //    return NotFound();
+            //}
             // Refactored
             //var review = await _context.Reviews.FindAsync(id);
 
