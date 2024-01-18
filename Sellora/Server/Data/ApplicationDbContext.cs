@@ -1,4 +1,5 @@
-﻿using Duende.IdentityServer.EntityFramework.Options;
+﻿using CarRentalManagement.Server.Configurations.Entities;
+using Duende.IdentityServer.EntityFramework.Options;
 using Microsoft.AspNetCore.ApiAuthorization.IdentityServer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
@@ -32,6 +33,12 @@ namespace Sellora.Server.Data
             builder.ApplyConfiguration(new StaffSeedConfiguration());
 
             builder.ApplyConfiguration(new CategorySeedConfiguration());
+
+            builder.ApplyConfiguration(new ApplicationUserSeedConfiguration());
+
+            builder.ApplyConfiguration(new RoleSeedConfiguration());
+
+            builder.ApplyConfiguration(new UserRoleSeedConfiguration());
         }
     }
 }

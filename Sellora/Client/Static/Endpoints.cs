@@ -12,7 +12,5 @@
         public static readonly string ReviewsEndpoint = $"{Prefix}/reviews";
         public static readonly string SwapTransactionsEndpoint = $"{Prefix}/swaptransactions";
         public static readonly string SaleTransactionsEndpoint = $"{Prefix}/saletransactions";
-
-
     }
 }

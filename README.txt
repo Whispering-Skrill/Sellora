@@ -5,4 +5,6 @@
 
 
 <----- OTHERS ----->
-Nuget NewtonSoftJson Version --> 7.0.0
+Nuget NewtonSoftJson Version --> 7.0.14
+
+REMOVE COMMENTED REQUIREMENTS

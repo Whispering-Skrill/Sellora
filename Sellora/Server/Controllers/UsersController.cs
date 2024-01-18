@@ -25,7 +25,6 @@ namespace Sellora.Server.Controllers
 
         // GET: api/Users
         [HttpGet]
-
         public async Task<IActionResult> GetUsers()
         {
             var users = await _unitOfWork.Users.GetAll();
@@ -41,7 +40,7 @@ namespace Sellora.Server.Controllers
 
             if (user == null)
             {
-                return NotFound();
+                return NotFound(id);
             }
 
             return Ok(user);
@@ -83,10 +82,10 @@ namespace Sellora.Server.Controllers
         [HttpPost]
         public async Task<ActionResult<User>> PostUser(User user)
         {
-          if (_unitOfWork.Users == null)
-          {
-              return Problem("Entity set 'UsersController.Users'  is null.");
-          }
+          //if (_unitOfWork.Users == null)
+          //{
+          //    return Problem("Entity set 'UsersController.Users'  is null.");
+          //}
             await _unitOfWork.Users.Insert(user);
             await _unitOfWork.Save(HttpContext);
 
@@ -111,7 +110,7 @@ namespace Sellora.Server.Controllers
 
         private async Task<bool> UserExists(int id)
         {
-            var user = await _unitOfWork.Users.Get(e => e.Id == id);
+            var user = await _unitOfWork.Users.Get(q => q.Id == id);
             return user != null;
         }
     }
