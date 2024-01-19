@@ -16,50 +16,79 @@
     @*FOR SPACING*@
 </div>
 
-@if (Reports == null)
-{
-    <div class="alert alert-info">Loading Reports...</div>
-}
-else
-{
-    <table class="table table-responsive">
-        <thead>
-            <tr>
-                <th>Report Title</th>
-                <th>Reporter ID</th>
-                <th>Report Date</th>
-                <th>Report Content</th>
-                <th>Sale Transaction ID</th>
-                <th>Swap Transaction ID</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var report in Reports)
-            {
-                <tr>
-                    <td>@report.ReportTitle</td>
-                    <td>@report.User.Id</td>
-                    <td>@report.ReportDate</td>
-                    <td>@report.ReportContent</td>
-                    <td>@report.SaleTransaction.Id</td>
-                    <td>@report.SwapTransaction.Id</td>
-                    <td>
+<div style="margin-top: 10px;">
+    @if (Reports == null)
+    {
+        <div class="alert alert-info">Loading Reports...</div>
+    }
+    else
+    {
+        @foreach (var report in Reports)
+        {
+            <div style="background-color: #D5D5D5; border-radius: 7px; display:flex; margin-bottom:10px;">
+                <div style="padding-top: 15px; padding-bottom: 0px; flex:1;">
+                    <h4 style="margin-left: 16px; font-family:'Microsoft Sans Serif'; font-weight: bold; letter-spacing: 1px;">@report.ReportTitle</h4>
+                    <p style="margin-left:16px; margin-bottom:7px; font-size:15px; font-family:'Microsoft Sans Serif'; font-weight:bold; color:#686868;">User 12468 ------- @report.ReportDate.Day / @report.ReportDate.Month / @report.ReportDate.Year</p>
+                    <p style="margin-left:16px; font-family:'Microsoft Sans Serif';">@report.ReportContent</p>
+                </div>
+                <div style="padding:15px; display: block;">
+                    <div style="padding-left:10px; padding-right:10px;">
                         <a href="/reports/view/@report.Id" class="btn btn-primary">
-                            <span class="oi oi-book"></span>
+                            More Details
                         </a>
-                        <a href="/reports/edit/@report.Id" class="btn btn-warning">
+                    </div>
+                    <div style="padding:10px; display:flex; justify-content:space-between;">
+                        <a href="/reports/edit/@report.Id" class="btn btn-warning" style="width:100%; margin-right:5px;">
                             <span class="oi oi-pencil"></span>
                         </a>
-                        <button class="btn btn-danger" @onclick="@(()=>Delete(report.Id))">
+                        <button class="btn btn-danger" style="width:100%; margin-left:5px;" @onclick="@(()=>Delete(report.Id))">
                             <span class="oi oi-delete"></span>
                         </button>
-                    </td>
-                </tr>
-            }
-        </tbody>
+                    </div>
+                </div>
+            </div>
+        }
+        @*
+    <table class="table table-responsive">
+    <thead>
+    <tr>
+    <th>Report Title</th>
+    <th>Reporter ID</th>
+    <th>Report Date</th>
+    <th>Report Content</th>
+    <th>Sale Transaction ID</th>
+    <th>Swap Transaction ID</th>
+    <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var report in Reports)
+    {
+    <tr>
+    <td>@report.ReportTitle</td>
+    <td>@report.User.Id</td>
+    <td>@report.ReportDate</td>
+    <td>@report.ReportContent</td>
+    <td>@report.SaleTransaction.Id</td>
+    <td>@report.SwapTransaction.Id</td>
+    <td>
+    <a href="/reports/view/@report.Id" class="btn btn-primary">
+    <span class="oi oi-book"></span>
+    </a>
+    <a href="/reports/edit/@report.Id" class="btn btn-warning">
+    <span class="oi oi-pencil"></span>
+    </a>
+    <button class="btn btn-danger" @onclick="@(()=>Delete(report.Id))">
+    <span class="oi oi-delete"></span>
+    </button>
+    </td>
+    </tr>
+    }
+    </tbody>
     </table>
-}
+    *@
+    }
+</div>
 
 @code {
     // Create a List based on Staff Table in Database

@@ -1,0 +1,39 @@
+﻿@page "/reports/edit/{id:int}"
+@inject HttpClient _client
+@inject NavigationManager _navManager
+@using Sellora.Client.Components
+
+<div class="report-topbar">
+    <h2 class="report-title">Edit Report with ID: @report.Id</h2>
+    <BackToList Target="reports" />
+</div>
+
+<div style="border-bottom:solid black 1px; padding-top:3px; margin-bottom:10px;">
+    @*FOR SPACING*@
+</div>
+
+<ReportFormComponent ButtonText="Update" OnValidSubmit="EditReport" report="report"/>
+
+@code {
+    // Initialises the id integer for the @page directive
+    [Parameter] public int id { get; set; }
+
+    // Creation of Report object used by the form component
+    Report? report = new Report();
+
+    // This method activates when all parameters have been set, the function then loads a specific tuple of data by its Id, assigning it to the report object
+    protected async override Task OnParametersSetAsync()
+    {
+        report = await _client.GetFromJsonAsync<Report>($"{Endpoints.ReportsEndpoint}/{id}");
+    }
+
+    // This method is activated when the edit is confirmed by the user by clicking a button
+    async Task EditReport()
+    {
+        // Sends a PUT directive
+        await _client.PutAsJsonAsync($"{Endpoints.ReportsEndpoint}/{id}", report);
+
+        // Redirects user back to reports page
+        _navManager.NavigateTo("/reports/");
+    }
+}
