@@ -21,7 +21,6 @@ namespace Sellora.Shared.Domain
         [DataType(DataType.DateTime)]
         public DateTime ReportDate { get; set; } = DateTime.Now;
 
-        // FOR TESTING
         [Required]
         public int AppUserID { get; set; }
         public virtual AppUser ? AppUser { get; set; }

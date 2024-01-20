@@ -1,6 +1,6 @@
 1 - Add Wide height input bar for Review and Report description.
-2 - Remove Date Change option when CREATING reports, reviews, swaptransactions
-3 - Add authorisation to navbar
+2 - [COMPLETE] Remove Date Change option when CREATING reports, reviews, swaptransactions
+3 - [COMPLETE] Add authorisation to navbar 
 
 
 
@@ -58,7 +58,7 @@ Ryan - Fixed and Styled Carousel on JS Interop
 Lucas - Fixed error in Category Controller
 		- _context error
 
-Ryan - Created PARTIAL Index, Create, Update, Delete Pages for Report Entity
+Ryan - Created SPECIAL Index, Create, Update, Delete Pages for Report Entity
 		- Awaiting Lucas's Endpoints
 
 Lucas - Created Controllers and Endpoints for Lucas-Entities
@@ -67,7 +67,7 @@ Lucas - Created Controllers and Endpoints for Lucas-Entities
 		- Created Endpoints
 		- Tested on Postman
 
-Ryan - Created SPECIAL Index, Create, Update, Delete Pages for Report Entity
+Ryan - Created SPECIAL Index, Create, Update, Delete Pages for Review Entity
 		- Created Pages
 		- Configured Index Page for Better Styling and Look
 
@@ -75,4 +75,12 @@ Ryan - Fixed Large User Entity Error (User entity conflicts with system entity -
 		- Renamed User Entity to AppUser Entity
 
 Lucas - Created Index Pages for Lucas-Entities
-		- Based on Ryan pages
+
+Ryan - Created Index, Create, Update, Delete Pages for SwapTransaction Entity
+		- Created Pages
+
+Ryan - Added Authorisation for NavMenu
+
+Ryan - Configured Report and Review Form Components to have large text areas.
+
+Ryan - Added more users to user seeding config

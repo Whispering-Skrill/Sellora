@@ -46,7 +46,7 @@ namespace Sellora.Shared.Domain
             }
             if (ReviewRating > 5)
             {
-                yield return new ValidationResult("Rating must be an number ranging from 0 to .", new[] { "ReviewRating " });
+                yield return new ValidationResult("Rating must be an number ranging from 0 to 5", new[] { "ReviewRating " });
             }
         }
     }

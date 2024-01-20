@@ -1,0 +1,40 @@
+﻿@*ASPNetr-yanWorks*@
+@page "/reviews/edit/{id:int}"
+@inject HttpClient _client
+@inject NavigationManager _navManager
+@using Sellora.Client.Components
+
+<div class="review-topbar">
+    <h2 class="review-title">Edit Review with ID: @review.Id</h2>
+    <BackToList Target="reviews" />
+</div>
+
+<div style="border-bottom:solid black 1px; padding-top:3px; margin-bottom:10px;">
+    @*FOR SPACING*@
+</div>
+
+<ReviewFormComponent ButtonText="Update" OnValidSubmit="EditReview" review="review"/>
+
+@code {
+    // Initialises the id integer for the @page directive
+    [Parameter] public int id { get; set; }
+
+    // Creation of Review object used by the form component
+    Review? review = new Review();
+
+    // This method activates when all parameters have been set, the function then loads a specific tuple of data by its Id, assigning it to the review object
+    protected async override Task OnParametersSetAsync()
+    {
+        review = await _client.GetFromJsonAsync<Review>($"{Endpoints.ReviewsEndpoint}/{id}");
+    }
+
+    // This method is activated when the edit is confirmed by the user by clicking a button
+    async Task EditReview()
+    {
+        // Sends a PUT directive
+        await _client.PutAsJsonAsync($"{Endpoints.ReviewsEndpoint}/{id}", review);
+
+        // Redirects user back to reviews page
+        _navManager.NavigateTo("/reviews/");
+    }
+}

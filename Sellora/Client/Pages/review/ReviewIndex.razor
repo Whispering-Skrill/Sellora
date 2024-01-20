@@ -13,86 +13,94 @@
     </a>
 </div>
 
-@if (Reviews == null)
-{
-    <div class="alert alert-info">Loading Reviews...</div>
-}
-else
-{
-    @foreach (var review in Reviews)
+
+
+<div style="margin-top: 10px;">
+    @if (Reviews == null)
     {
-        <div class="review-box">
-            <div class="review-box-innercontainer">
-                @if (review.SwapTransaction != null)
-                {
-                    <h4 class="review-box-title">Swap Transaction: @review.SwapTransaction.Id</h4>
-                }
-                @if (review.SaleTransaction != null)
-                {
-                    <h4 class="review-box-title">Sale Transaction: @review.SaleTransaction.Id</h4>
-                }
-                <p class="review-box-details">@review.AppUser.UserName (@review.AppUser.Id) ------- @review.ReviewDate.Day / @review.ReviewDate.Month / @review.ReviewDate.Year</p>
-                <p class="review-box-content">@review.ReviewDescription</p>
-            </div>
-            <div class="review-box-control-container">
-                <div class="review-box-detail-button">
-                    <a href="/reviews/view/@review.Id" class="btn btn-primary">
-                        More Details
-                    </a>
-                </div>
-                <div class="review-box-control-bottom">
-                    <a href="/reviews/edit/@review.Id" class="btn btn-warning" style="width:100%; margin-right:5px;">
-                        <span class="oi oi-pencil"></span>
-                    </a>
-                    <button class="btn btn-danger" style="width:100%; margin-left:5px;" @onclick="@(()=>Delete(review.Id))">
-                        <span class="oi oi-delete"></span>
-                    </button>
-                </div>
-            </div>
-        </div>
+        <div class="alert alert-info">Loading Reviews...</div>
     }
-    @*
-        <table class="table table-responsive">
-        <thead>
-            <tr>
-                <th>Review Title</th>
-                <th>Reviewer ID</th>
-                <th>Review Date</th>
-                <th>Review Rating</th>
-                <th>Review Description</th>
-                <th>Sale Transaction ID</th>
-                <th>Swap Transaction ID</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var review in Reviews)
-            {
-                <tr>
-                    <td>@review.ReviewTitle</td>
-                    <td>@review.User.Id</td>
-                    <td>@review.ReviewDate</td>
-                    <td>@review.ReviewRating</td>
-                    <td>@review.ReviewDescription</td>
-                    <td>@review.SaleTransaction.Id</td>
-                    <td>@review.SwapTransaction.Id</td>
-                    <td>
-                        <a href="/staffs/view/@review.Id" class="btn btn-primary">
-                            <span class="oi oi-book"></span>
+    else
+    {
+        @foreach (var review in Reviews)
+        {
+            <div class="review-box">
+                <div class="review-box-innercontainer">
+                    @if (review.SwapTransaction != null)
+                    {
+                        <h4 class="review-box-title">Swap Transaction: @review.SwapTransaction.Id</h4>
+                    }
+                    else if (review.SaleTransaction != null)
+                    {
+                        <h4 class="review-box-title">Sale Transaction: @review.SaleTransaction.Id</h4>
+                    }
+                    else
+                    {
+                        <h4 class="review-box-title">TRANSACTION MISSING</h4>
+                    }
+                    <p class="review-box-details">@review.AppUser.UserName ------- @review.ReviewDate.Day / @review.ReviewDate.Month / @review.ReviewDate.Year</p>
+                    <p class="review-box-content">@review.ReviewDescription</p>
+                </div>
+                <div class="review-box-control-container">
+                    <div class="review-box-detail-button">
+                        <a href="/reviews/view/@review.Id" class="btn btn-primary">
+                            More Details
                         </a>
-                        <a href="/staffs/edit/@review.Id" class="btn btn-warning">
+                    </div>
+                    <div class="review-box-control-bottom">
+                        <a href="/reviews/edit/@review.Id" class="btn btn-warning" style="width:100%; margin-right:5px;">
                             <span class="oi oi-pencil"></span>
                         </a>
-                        <button class="btn btn-danger" @onclick="@(()=>Delete(review.Id))">
+                        <button class="btn btn-danger" style="width:100%; margin-left:5px;" @onclick="@(()=>Delete(review.Id))">
                             <span class="oi oi-delete"></span>
                         </button>
-                    </td>
-                </tr>
-            }
-        </tbody>
+                    </div>
+                </div>
+            </div>
+        }
+        @*
+    <table class="table table-responsive">
+    <thead>
+    <tr>
+    <th>Review Title</th>
+    <th>Reviewer ID</th>
+    <th>Review Date</th>
+    <th>Review Rating</th>
+    <th>Review Description</th>
+    <th>Sale Transaction ID</th>
+    <th>Swap Transaction ID</th>
+    <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var review in Reviews)
+    {
+    <tr>
+    <td>@review.ReviewTitle</td>
+    <td>@review.User.Id</td>
+    <td>@review.ReviewDate</td>
+    <td>@review.ReviewRating</td>
+    <td>@review.ReviewDescription</td>
+    <td>@review.SaleTransaction.Id</td>
+    <td>@review.SwapTransaction.Id</td>
+    <td>
+    <a href="/staffs/view/@review.Id" class="btn btn-primary">
+    <span class="oi oi-book"></span>
+    </a>
+    <a href="/staffs/edit/@review.Id" class="btn btn-warning">
+    <span class="oi oi-pencil"></span>
+    </a>
+    <button class="btn btn-danger" @onclick="@(()=>Delete(review.Id))">
+    <span class="oi oi-delete"></span>
+    </button>
+    </td>
+    </tr>
+    }
+    </tbody>
     </table>
     *@
-}
+    }
+</div>
 
 @code {
     // Create a List based on Staff Table in Database

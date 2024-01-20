@@ -22,7 +22,8 @@
         <div class="form-group">
             <label>Describe your Experience: </label>
             <div>
-                <InputText @bind-Value="@review.ReviewDescription" class="form-control" />
+                @*<InputText @bind-Value="@review.ReviewDescription" class="form-control" />*@
+                <textarea @bind="@review.ReviewDescription" class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
                 <ValidationMessage For="@(() => review.ReviewDescription)" />
             </div>
         </div>
@@ -37,7 +38,7 @@
             </div>
         }
         <div class="form-group">
-            <label>Review Creator: </label>
+            <label>Reviewer: </label>
             <div>
                 <InputSelect @bind-Value="@review.AppUserID" class="form-control">
                     <option value="">-- Select User --</option>
@@ -45,7 +46,7 @@
                     {
                         foreach (var appuser in AppUsers)
                         {
-                            <option value="@appuser.Id">@appuser.Id</option>
+                            <option value="@appuser.Id">User: @appuser.Id</option>
                         }
                     }
                 </InputSelect>
@@ -53,7 +54,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label>Swap Transaction Choice: </label>
+            <label>Swap Transaction: </label>
             <div>
                 <InputSelect @bind-Value="review.SwapTransactionID" class="form-control">
                     <option value="">-- Select Swap Transaction --</option>
@@ -61,7 +62,7 @@
                     {
                         foreach (var swaptransaction in SwapTransactions)
                         {
-                            <option value="@swaptransaction.Id">Swap Transaction @swaptransaction.Id</option>
+                            <option value="@swaptransaction.Id">Swap Transaction: @swaptransaction.Id</option>
                         }
                     }
                 </InputSelect>
@@ -69,7 +70,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label>Sale Transaction Choice: </label>
+            <label>Sale Transaction: </label>
             <div>
                 <InputSelect @bind-Value="review.SaleTransactionID" class="form-control">
                     <option value="">-- Select Sale Transaction --</option>
@@ -77,7 +78,7 @@
                     {
                         foreach (var saletransaction in SaleTransactions)
                         {
-                            <option value="@saletransaction.Id">Sale Transaction @saletransaction.Id</option>
+                            <option value="@saletransaction.Id">Sale Transaction: @saletransaction.Id</option>
                         }
                     }
                 </InputSelect>

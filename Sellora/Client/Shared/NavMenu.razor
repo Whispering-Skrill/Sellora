@@ -1,4 +1,7 @@
-﻿@*This is the main top aligning navigation bar - features the SELLORA logo*@
+﻿@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+
+@*This is the main top aligning navigation bar - features the SELLORA logo*@
 <div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">S E L L O R A</a>
@@ -8,51 +11,74 @@
     </div>
 </div>
 
-@*These are navigation buttons to the respective pages associated with SELLORA*@
-<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
-    <nav class="flex-column">        
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="users" Match="NavLinkMatch.All">
-                Users
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="items" Match="NavLinkMatch.All">
-                Browse
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="/" Match="NavLinkMatch.All">
+<AuthorizeView>
+    <Authorized>
+        <div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
+            <nav class="flex-column">
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="items" Match="NavLinkMatch.All">
+                        Browse Items
+                    </NavLink>
+                </div>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="users" Match="NavLinkMatch.All">
+                        Users
+                    </NavLink>
+                </div>
+                @*
+                <div class="nav-item px-3">
+                <NavLink class="nav-link" href="/" Match="NavLinkMatch.All">
                 My Items
-            </NavLink>
+                </NavLink>
+                </div>
+                *@
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="saletransactions" Match="NavLinkMatch.All">
+                        Sales
+                    </NavLink>
+                </div>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="swaptransactions" Match="NavLinkMatch.All">
+                        Swaps
+                    </NavLink>
+                </div>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="reviews" Match="NavLinkMatch.All">
+                        Reviews
+                    </NavLink>
+                </div>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="reports" Match="NavLinkMatch.All">
+                        Reports
+                    </NavLink>
+                </div>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="staffs" Match="NavLinkMatch.All">
+                        Staff
+                    </NavLink>
+                </div>
+            </nav>
         </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="reviews" Match="NavLinkMatch.All">
-                Reviews
-            </NavLink>
+    </Authorized>
+    <NotAuthorized>
+        <div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
+            <nav class="flex-column">
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="items" Match="NavLinkMatch.All">
+                        Browse Items
+                    </NavLink>
+                </div>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="reviews" Match="NavLinkMatch.All">
+                        Reviews
+                    </NavLink>
+                </div>
+            </nav>
         </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="swaptransactions" Match="NavLinkMatch.All">
-                Swaps
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="saletransactions" Match="NavLinkMatch.All">
-                Sales
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="staffs" Match="NavLinkMatch.All">
-                Staff
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="reports" Match="NavLinkMatch.All">
-                Reports
-            </NavLink>
-        </div>
-    </nav>
-</div>
+    </NotAuthorized>
+</AuthorizeView>
+
+@*These are navigation buttons to the respective pages associated with SELLORA*@
 
 @*This is the c# code section that allows the navigation bars to function*@
 @code {

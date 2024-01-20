@@ -1,0 +1,40 @@
+﻿@*ASPNetr-yanWorks*@
+@page "/swaptransactions/edit/{id:int}"
+@inject HttpClient _client
+@inject NavigationManager _navManager
+@using Sellora.Client.Components
+
+<div class="swaptransaction-topbar">
+    <h2 class="swaptransaction-title">Edit Swap Transaction with ID: @swaptransaction.Id</h2>
+    <BackToList Target="swaptransactions" />
+</div>
+
+<div style="border-bottom:solid black 1px; padding-top:3px; margin-bottom:10px;">
+    @*FOR SPACING*@
+</div>
+
+<SwapTransactionFormComponent ButtonText="Update" OnValidSubmit="EditSwapTransaction" swaptransaction="swaptransaction"/>
+
+@code {
+    // Initialises the id integer for the @page directive
+    [Parameter] public int id { get; set; }
+
+    // Creation of SwapTransaction object used by the form component
+    SwapTransaction? swaptransaction = new SwapTransaction();
+
+    // This method activates when all parameters have been set, the function then loads a specific tuple of data by its Id, assigning it to the swaptransaction object
+    protected async override Task OnParametersSetAsync()
+    {
+        swaptransaction = await _client.GetFromJsonAsync<SwapTransaction>($"{Endpoints.SwapTransactionsEndpoint}/{id}");
+    }
+
+    // This method is activated when the edit is confirmed by the user by clicking a button
+    async Task EditSwapTransaction()
+    {
+        // Sends a PUT directive
+        await _client.PutAsJsonAsync($"{Endpoints.SwapTransactionsEndpoint}/{id}", swaptransaction);
+
+        // Redirects user back to swaptransactions page
+        _navManager.NavigateTo("/swaptransactions/");
+    }
+}

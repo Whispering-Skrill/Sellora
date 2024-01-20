@@ -41,6 +41,38 @@ namespace Sellora.Server.Configurations.Entities
                     DateUpdated = DateTime.Now,
                     CreatedBy = "System",
                     UpdatedBy = "System"
+                },
+                new Staff
+                {
+                    Id = 3,
+                    StaffFirstName = "Emily",
+                    StaffLastName = "Ng",
+                    StaffEmail = "emily.ng@example.com",
+                    StaffHireDate = DateTime.Now,
+                    StaffPosition = "Senior UI/UX Designer",
+                    StaffAddress = "Design Avenue",
+                    StaffHPNum = "88882222",
+                    StaffDepartment = "User Experience Design",
+                    DateCreated = DateTime.Now,
+                    DateUpdated = DateTime.Now,
+                    CreatedBy = "System",
+                    UpdatedBy = "System"
+                },
+                new Staff
+                {
+                    Id = 4,
+                    StaffFirstName = "Daniel",
+                    StaffLastName = "Liu",
+                    StaffEmail = "daniel.liu@example.com",
+                    StaffHireDate = DateTime.Now,
+                    StaffPosition = "Database Administrator",
+                    StaffAddress = "Data Center Lane",
+                    StaffHPNum = "77773333",
+                    StaffDepartment = "Database Management",
+                    DateCreated = DateTime.Now,
+                    DateUpdated = DateTime.Now,
+                    CreatedBy = "System",
+                    UpdatedBy = "System"
                 }
             );
         }
