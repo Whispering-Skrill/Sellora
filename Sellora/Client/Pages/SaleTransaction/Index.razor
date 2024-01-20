@@ -1,0 +1,78 @@
+﻿@page "/saletransactions/"
+@inject HttpClient _client
+@inject HttpInterceptorService _interceptor
+@implements IDisposable
+@inject IJSRuntime js
+@attribute [Authorize]
+
+<h3 class="saletransaction-title">Sale Transactions</h3>
+
+@if (SaleTransactions == null)
+{
+    <div class="alert alert-info">Loading Sale Transactions...</div>
+}
+else
+{
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>Transaction Date</th>
+                <th>User</th>
+                <th>Item</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var saletransaction in SaleTransactions)
+            {
+                <tr>
+                    <td>@saletransaction.TransactionDate</td>
+                    <td>@saletransaction.User.UserName</td>
+                    <td>@saletransaction.Item.ItemName</td>
+                    <td>
+                        <a href="/staffs/view/@saletransaction.Id" class="btn btn-primary">
+                            <span class="oi oi-book"></span>
+                        </a>
+                        <a href="/staffs/edit/@saletransaction.Id" class="btn btn-warning">
+                            <span class="oi oi-pencil"></span>
+                        </a>
+                        <button class="btn btn-danger" @onclick="@(()=>Delete(saletransaction.Id))">
+                            <span class="oi oi-delete"></span>
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    // Create a List based on Staff Table in Database
+    private List<SaleTransaction>? SaleTransactions;
+
+    protected async override Task OnInitializedAsync()
+    {
+        _interceptor.MonitorEvent();
+        SaleTransactions = await _client.GetFromJsonAsync<List<SaleTransaction>>($"{Endpoints.SaleTransactionsEndpoint}");
+    }
+
+    async Task Delete(int saletransactionsID)
+    {
+        if (SaleTransactions != null)
+        {
+            var saletransaction = SaleTransactions.First(q => q.Id == saletransactionsID);
+            var confirm = await js.InvokeAsync<bool>("confirm", $"Do you want to delete transaction date {saletransaction.TransactionDate}?");
+            if (confirm)
+            {
+                await _client.DeleteAsync($"{Endpoints.SaleTransactionsEndpoint}/{saletransactionsID}");
+                await OnInitializedAsync();
+            }
+        }
+    }
+
+    public void Dispose()
+    {
+        _interceptor.DisposeEvent();
+    }
+}
+    

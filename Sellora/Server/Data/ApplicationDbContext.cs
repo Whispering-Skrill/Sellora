@@ -39,6 +39,8 @@ namespace Sellora.Server.Data
             builder.ApplyConfiguration(new RoleSeedConfiguration());
 
             builder.ApplyConfiguration(new UserRoleSeedConfiguration());
+
+            builder.ApplyConfiguration(new UserSeedConfiguration());
         }
     }
 }

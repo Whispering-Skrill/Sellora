@@ -1,0 +1,98 @@
+﻿@page "/items/"
+@inject HttpClient _client
+@inject HttpInterceptorService _interceptor
+@implements IDisposable
+@inject IJSRuntime js
+@attribute [Authorize]
+
+<div class="item-topbar">
+    <h2 class="item-title">Our Item</h2>
+    <a href="/items/create" class="btn btn-secondary">
+        <span class="oi oi-plus" style="margin-top: 5px;"></span>
+    </a>
+</div>
+
+@if (Items == null)
+{
+    <div class="alert alert-info">Loading Item...</div>
+}
+else
+{
+    @*for JS datatable script*@
+    @*<table class ="table table-responsive" id="bookingsTable">*@
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Item Price</th>
+                <th>Condition</th>
+                <th>Item Date</th>
+                <th>Item Description</th>
+                <th>Item Location</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Items)
+            {
+                <tr>
+                    <td>@item.ItemName</td>
+                    <td>@item.ItemPrice</td>
+                    <td>@item.Condition</td>
+                    <td>@item.ItemDate</td>
+                    <td>@item.ItemDescription</td>
+                    <td>@item.ItemLocation</td>
+                    <td>
+                        <a href="/items/view/@item.Id" class="btn btn-primary">
+                            <span class="oi oi-book"></span>
+                        </a>
+                        <a href="/items/edit/@item.Id" class="btn btn-warning">
+                            <span class="oi oi-pencil"></span>
+                        </a>
+                        <button class="btn btn-danger" @onclick="@(()=>Delete(item.Id))">
+                            <span class="oi oi-delete"></span>
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    // Create a List based on Item Table in Database
+    private List<Item>? Items;
+
+    protected async override Task OnInitializedAsync()
+    {
+        _interceptor.MonitorEvent();
+        Items = await _client.GetFromJsonAsync<List<Item>>($"{Endpoints.ItemsEndpoint}");
+    }
+
+    // For JS datatable script
+    //protected async override Task OnAfterRenderAsync(bool firstRender)
+    //{
+    //    await js.InvokeVoidAsync("AddDataTable", "#bookingsTable");
+    //}
+
+    async Task Delete(int itemID)
+    {
+        if (Items != null)
+        {
+            var item = Items.First(q => q.Id == itemID);
+            var confirm = await js.InvokeAsync<bool>("confirm", $"Do you want to delete {item.ItemName}?");
+            if (confirm)
+            {
+                await _client.DeleteAsync($"{Endpoints.ItemsEndpoint}/{itemID}");
+                await OnInitializedAsync();
+            }
+        }
+    }
+
+    public void Dispose()
+    {
+        // For JS datatable script
+        //js.InvokeVoidAsync("DataTablesDispose", "#bookingsTable");
+        _interceptor.DisposeEvent();
+    }
+}

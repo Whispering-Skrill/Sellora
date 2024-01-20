@@ -1,0 +1,73 @@
+﻿@page "/categories/"
+@inject HttpClient _client
+@inject HttpInterceptorService _interceptor
+@implements IDisposable
+@inject IJSRuntime js
+@attribute [Authorize]
+
+<h3 class="category-title">Categories</h3>
+
+@if (Categories == null)
+{
+    <div class="alert alert-info">Loading Categories...</div>
+}
+else
+{
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var category in Categories)
+            {
+                <tr>
+                    <td>@category.CategoryName</td>
+                    <td>
+                        <a href="/staffs/view/@category.Id" class="btn btn-primary">
+                            <span class="oi oi-book"></span>
+                        </a>
+                        <a href="/staffs/edit/@category.Id" class="btn btn-warning">
+                            <span class="oi oi-pencil"></span>
+                        </a>
+                        <button class="btn btn-danger" @onclick="@(()=>Delete(category.Id))">
+                            <span class="oi oi-delete"></span>
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    // Create a List based on Staff Table in Database
+    private List<Category>? Categories;
+
+    protected async override Task OnInitializedAsync()
+    {
+        _interceptor.MonitorEvent();
+        Categories = await _client.GetFromJsonAsync<List<Category>>($"{Endpoints.CategoriesEndpoint}");
+    }
+
+    async Task Delete(int categoriesID)
+    {
+        if (Categories != null)
+        {
+            var category = Categories.First(q => q.Id == categoriesID);
+            var confirm = await js.InvokeAsync<bool>("confirm", $"Do you want to delete Category {category.CategoryName}?");
+            if (confirm)
+            {
+                await _client.DeleteAsync($"{Endpoints.CategoriesEndpoint}/{categoriesID}");
+                await OnInitializedAsync();
+            }
+        }
+    }
+
+    public void Dispose()
+    {
+        _interceptor.DisposeEvent();
+    }
+}

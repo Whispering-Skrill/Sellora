@@ -1,0 +1,100 @@
+﻿@page "/users/"
+@inject HttpClient _client
+@inject HttpInterceptorService _interceptor
+@implements IDisposable
+@inject IJSRuntime js
+@attribute [Authorize]
+
+<div class="user-topbar">
+    <h2 class="user-title">Our User</h2>
+    <a href="/users/create" class="btn btn-secondary">
+        <span class="oi oi-plus" style="margin-top: 5px;"></span>
+    </a>
+</div>
+
+@if (AppUsers == null)
+{
+    <div class="alert alert-info">Loading User...</div>
+}
+else
+{
+    @*for JS datatable script*@
+    @*<table class ="table table-responsive" id="bookingsTable">*@
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th>UserName</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Register Date</th>
+                <th>Bio</th>
+                <th>Last Time Online</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var appuser in AppUsers)
+            {
+                <tr>
+                    <td>@appuser.UserName</td>
+                    <td>@appuser.UserFirstName</td>
+                    <td>@appuser.UserLastName</td>
+                    <td>@appuser.UserEmail</td>
+                    <td>@appuser.UserRegDate</td>
+                    <td>@appuser.UserDescription</td>
+                    <td>@appuser.UserLastOnline</td>
+                    <td>
+                        <a href="/users/view/@appuser.Id" class="btn btn-primary">
+                            <span class="oi oi-book"></span>
+                        </a>
+                        <a href="/users/edit/@appuser.Id" class="btn btn-warning">
+                            <span class="oi oi-pencil"></span>
+                        </a>
+                        <button class="btn btn-danger" @onclick="@(()=>Delete(appuser.Id))">
+                            <span class="oi oi-delete"></span>
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    // Create a List based on User Table in Database
+    private List<AppUser>? AppUsers;
+
+    protected async override Task OnInitializedAsync()
+    {
+        _interceptor.MonitorEvent();
+        AppUsers = await _client.GetFromJsonAsync<List<AppUser>>($"{Endpoints.AppUsersEndpoint}");
+    }
+
+    // For JS datatable script
+    //protected async override Task OnAfterRenderAsync(bool firstRender)
+    //{
+    //    await js.InvokeVoidAsync("AddDataTable", "#bookingsTable");
+    //}
+
+    async Task Delete(int appuserID)
+    {
+        if (AppUsers != null)
+        {
+            var appuser = AppUsers.First(q => q.Id == appuserID);
+            var confirm = await js.InvokeAsync<bool>("confirm", $"Do you want to delete {appuser.UserFirstName} {appuser.UserLastName}?");
+            if (confirm)
+            {
+                await _client.DeleteAsync($"{Endpoints.AppUsersEndpoint}/{appuserID}");
+                await OnInitializedAsync();
+            }
+        }
+    }
+
+    public void Dispose()
+    {
+        // For JS datatable script
+        //js.InvokeVoidAsync("DataTablesDispose", "#bookingsTable");
+        _interceptor.DisposeEvent();
+    }
+}
