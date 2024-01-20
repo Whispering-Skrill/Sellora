@@ -46,7 +46,7 @@ namespace Sellora.Server.Controllers
             //{
             //    return NotFound();
             //}
-            var reports = await _unitOfWork.Reports.GetAll(includes:q=>q.Include(x=>x.User).Include(x=>x.Staff).Include(x=>x.SwapTransaction).Include(x=>x.SaleTransaction));
+            var reports = await _unitOfWork.Reports.GetAll(includes:q=>q.Include(x=>x.AppUser).Include(x=>x.Staff).Include(x=>x.SwapTransaction).Include(x=>x.SaleTransaction));
             return Ok(reports);
         }
 

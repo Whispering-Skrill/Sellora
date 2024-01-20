@@ -2,6 +2,63 @@
     font-weight: bold;
     font-family: 'Microsoft Sans Serif';
     letter-spacing: 1px;
+    flex: 1;
+}
+
+.review-topbar {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.review-box {
+    background-color: #D5D5D5;
+    border-radius: 7px;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.review-box-innercontainer {
+    padding-top: 15px;
+    padding-bottom: 0px;
+    flex: 1;
+}
+
+.review-box-title {
+    margin-left: 16px;
+    font-family: 'Microsoft Sans Serif';
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.review-box-details {
+    margin-left: 16px;
+    margin-bottom: 7px;
+    font-size: 15px;
+    font-family: 'Microsoft Sans Serif';
+    font-weight: bold;
+    color: #686868;
+}
+
+.review-box-content {
+    margin-left: 16px;
+    font-family: 'Microsoft Sans Serif';
+}
+
+.review-box-control-container {
+    padding: 15px;
+    display: block;
+}
+
+.review-box-detail-button {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.review-box-control-bottom {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
 }
 
 body {

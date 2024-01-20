@@ -14,15 +14,15 @@ namespace Sellora.Shared.Domain
         public DateTime TransactionDate { get; set; } = DateTime.Now;
 
         [Required]
-        public int? SwapUserId { get; set; }
-        public virtual AppUser? User { get; set; }
+        public int? AppUser1Id { get; set; }
+        public virtual AppUser? User1 { get; set; }
 
         [Required]
-        public int? SwapItemId { get; set; }
-        public virtual Item ? Item { get; set; }
+        public int? SwapItem1Id { get; set; }
+        public virtual Item ? Item1 { get; set; }
 
         [Required]
-        public int? SwapUser2Id { get; set; }
+        public int? AppUser2Id { get; set; }
         public virtual AppUser? User2 { get; set; }
 
         [Required]
@@ -36,7 +36,7 @@ namespace Sellora.Shared.Domain
             {
                 if (TransactionDate > DateTime.Now)
                 {
-                    yield return new ValidationResult("Transaction Date cannot be greater than Current Date", new[] { "StaffHireDate" });
+                    yield return new ValidationResult("Transaction Date cannot be greater than Current Date", new[] { "TransactionDate" });
                 }
             }
         }

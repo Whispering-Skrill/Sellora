@@ -23,8 +23,8 @@ namespace Sellora.Shared.Domain
 
         // FOR TESTING
         [Required]
-        public int ReporterID { get; set; }
-        public virtual AppUser ? User { get; set; }
+        public int AppUserID { get; set; }
+        public virtual AppUser ? AppUser { get; set; }
 
         public int StaffID { get; set; }
         public virtual Staff ? Staff { get; set; }
@@ -42,7 +42,7 @@ namespace Sellora.Shared.Domain
             {
                 if (ReportDate > DateTime.Now)
                 {
-                    yield return new ValidationResult("Date of Report cannot be greater than Current Date", new[] { "StaffHireDate" });
+                    yield return new ValidationResult("Date of Report cannot be greater than Current Date", new[] { "ReportDate" });
                 }
             }
         }

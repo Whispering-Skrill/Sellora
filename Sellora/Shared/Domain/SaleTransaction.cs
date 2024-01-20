@@ -10,9 +10,9 @@ namespace Sellora.Shared.Domain
     {
         public DateTime TransactionDate { get; set; } = DateTime.Now;
         public string? TransactionType { get; set; }
-        public int? SaleUserId { get; set; }
-        public virtual AppUser? User { get; set; }
-        public int? SaleItemId { get; set; }
+        public int? AppUserId { get; set; }
+        public virtual AppUser? AppUser { get; set; }
+        public int? ItemId { get; set; }
         public virtual Item ? Item { get; set; }
     }
 }

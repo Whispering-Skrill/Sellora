@@ -416,41 +416,41 @@ namespace Sellora.Server.Migrations
                         {
                             Id = "3781efa7-66dc-47f0-860f-e506d04102e4",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "47c5d550-9a98-4b4e-abef-e2ff6fb7f57c",
+                            ConcurrencyStamp = "be911f8c-c160-4676-a7aa-36688e7285d4",
                             Email = "admin@localhost.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@LOCALHOST.COM",
                             NormalizedUserName = "ADMIN@LOCALHOST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEHYjrDx6VgTCjhO7Pa8YaJ45ekDXtJJKNXn2axZKz7wrbyjoNBv3ttw4PrA7LmMCOA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEN8clHFc6bCMfCR5emDmld7cN7yfXcjjzxtLvcmuLj7YBHwnouBH4m6GzVoe5NNlRQ==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "7c8bf313-c9ae-4615-b242-da66f31b3a91",
+                            SecurityStamp = "9f739345-59b2-4b23-b546-193c6b2f6cb1",
                             TwoFactorEnabled = false,
                             UserFirstName = "Admin",
                             UserLastName = "User",
-                            UserLastOnline = new DateTime(2024, 1, 20, 13, 50, 16, 3, DateTimeKind.Local).AddTicks(6070),
+                            UserLastOnline = new DateTime(2024, 1, 20, 16, 10, 31, 669, DateTimeKind.Local).AddTicks(3894),
                             UserName = "admin@localhost.com",
-                            UserRegDate = new DateTime(2024, 1, 20, 13, 50, 16, 3, DateTimeKind.Local).AddTicks(6061)
+                            UserRegDate = new DateTime(2024, 1, 20, 16, 10, 31, 669, DateTimeKind.Local).AddTicks(3880)
                         },
                         new
                         {
                             Id = "b1675205-1948-44ec-8b55-b0cb71d1f84e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "a6082591-44cb-40bf-bf1f-86e3eff60495",
+                            ConcurrencyStamp = "e027516c-0ccc-413e-896a-e09095bbe0e7",
                             Email = "user@localhost.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@LOCALHOST.COM",
                             NormalizedUserName = "USER@LOCALHOST.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAECJb6iITBSdEEa0d/kocwH4I8++heu1XMJn1CQNwAs8asMW8jpsvpL5OuXcBYYUOMg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEBJUenWXl3DumtegDP0pIpX+Y+QsjRkupLDL5ix3tISoeZlgzOTMXIej8ZXlpqJz7w==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "564277bd-d37f-467e-b7d0-589094644293",
+                            SecurityStamp = "216f4a98-26ad-40e1-b1d5-edcdbf46943b",
                             TwoFactorEnabled = false,
                             UserFirstName = "User",
                             UserLastName = "User",
-                            UserLastOnline = new DateTime(2024, 1, 20, 13, 50, 16, 50, DateTimeKind.Local).AddTicks(8181),
+                            UserLastOnline = new DateTime(2024, 1, 20, 16, 10, 31, 715, DateTimeKind.Local).AddTicks(4374),
                             UserName = "user@localhost.com",
-                            UserRegDate = new DateTime(2024, 1, 20, 13, 50, 16, 50, DateTimeKind.Local).AddTicks(8158)
+                            UserRegDate = new DateTime(2024, 1, 20, 16, 10, 31, 715, DateTimeKind.Local).AddTicks(4351)
                         });
                 });
 
@@ -516,10 +516,10 @@ namespace Sellora.Server.Migrations
                             UserFirstName = "Seo",
                             UserHPNum = "88123123",
                             UserLastName = "Yeong",
-                            UserLastOnline = new DateTime(2024, 1, 20, 13, 50, 16, 142, DateTimeKind.Local).AddTicks(2936),
+                            UserLastOnline = new DateTime(2024, 1, 20, 16, 10, 31, 807, DateTimeKind.Local).AddTicks(4926),
                             UserName = "User1",
-                            UserPassword = "AQAAAAIAAYagAAAAEPfH7zu2ppRtf5xDSrxd9FxUNXwYSdovx1QDf/VbgRDR57SiDgKC5lozuvg0v89pqQ==",
-                            UserRegDate = new DateTime(2024, 1, 20, 13, 50, 16, 142, DateTimeKind.Local).AddTicks(2903)
+                            UserPassword = "AQAAAAIAAYagAAAAEA2NwRbiAnoMzh/wkTqI2mh5pv8w1WpWDvpqvlZNR9xVN+E+oOfXsYGLAVjQHu84Ng==",
+                            UserRegDate = new DateTime(2024, 1, 20, 16, 10, 31, 807, DateTimeKind.Local).AddTicks(4902)
                         },
                         new
                         {
@@ -531,10 +531,10 @@ namespace Sellora.Server.Migrations
                             UserFirstName = "Tina",
                             UserHPNum = "88445566",
                             UserLastName = "Tan",
-                            UserLastOnline = new DateTime(2024, 1, 20, 13, 50, 16, 188, DateTimeKind.Local).AddTicks(1596),
+                            UserLastOnline = new DateTime(2024, 1, 20, 16, 10, 31, 852, DateTimeKind.Local).AddTicks(4025),
                             UserName = "User2",
-                            UserPassword = "AQAAAAIAAYagAAAAEOJ8NDbmiqUEbSh17LiISlUhBoyYZ0AF1FNow2Mgp0eAwber9kGj1x6ghRJLGKZIcA==",
-                            UserRegDate = new DateTime(2024, 1, 20, 13, 50, 16, 188, DateTimeKind.Local).AddTicks(1567)
+                            UserPassword = "AQAAAAIAAYagAAAAEPzEBYYfXjkImPQOUN5eDF938hnmzbIZd2QV6lPA9khTN1SRY3gR4k80mwcdv9Xmvg==",
+                            UserRegDate = new DateTime(2024, 1, 20, 16, 10, 31, 852, DateTimeKind.Local).AddTicks(4001)
                         });
                 });
 
@@ -571,8 +571,8 @@ namespace Sellora.Server.Migrations
                             Id = 1,
                             CategoryName = "Technology",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 20, 13, 50, 16, 3, DateTimeKind.Local).AddTicks(5806),
-                            DateUpdated = new DateTime(2024, 1, 20, 13, 50, 16, 3, DateTimeKind.Local).AddTicks(5815),
+                            DateCreated = new DateTime(2024, 1, 20, 16, 10, 31, 669, DateTimeKind.Local).AddTicks(3639),
+                            DateUpdated = new DateTime(2024, 1, 20, 16, 10, 31, 669, DateTimeKind.Local).AddTicks(3652),
                             UpdatedBy = "System"
                         },
                         new
@@ -580,8 +580,8 @@ namespace Sellora.Server.Migrations
                             Id = 2,
                             CategoryName = "Fashion",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 20, 13, 50, 16, 3, DateTimeKind.Local).AddTicks(5825),
-                            DateUpdated = new DateTime(2024, 1, 20, 13, 50, 16, 3, DateTimeKind.Local).AddTicks(5835),
+                            DateCreated = new DateTime(2024, 1, 20, 16, 10, 31, 669, DateTimeKind.Local).AddTicks(3666),
+                            DateUpdated = new DateTime(2024, 1, 20, 16, 10, 31, 669, DateTimeKind.Local).AddTicks(3676),
                             UpdatedBy = "System"
                         });
                 });
@@ -593,6 +593,9 @@ namespace Sellora.Server.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AppUserId")
+                        .HasColumnType("int");
 
                     b.Property<int>("CategoryId")
                         .HasColumnType("int");
@@ -636,14 +639,11 @@ namespace Sellora.Server.Migrations
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId");
+                    b.HasIndex("AppUserId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("CategoryId");
 
                     b.ToTable("Items");
                 });
@@ -655,6 +655,9 @@ namespace Sellora.Server.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("AppUserID")
+                        .HasColumnType("int");
 
                     b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(max)");
@@ -678,9 +681,6 @@ namespace Sellora.Server.Migrations
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
 
-                    b.Property<int>("ReporterID")
-                        .HasColumnType("int");
-
                     b.Property<int?>("SaleTransactionID")
                         .HasColumnType("int");
 
@@ -693,18 +693,15 @@ namespace Sellora.Server.Migrations
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
+
+                    b.HasIndex("AppUserID");
 
                     b.HasIndex("SaleTransactionID");
 
                     b.HasIndex("StaffID");
 
                     b.HasIndex("SwapTransactionID");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Reports");
                 });
@@ -716,6 +713,10 @@ namespace Sellora.Server.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("AppUserID")
+                        .IsRequired()
+                        .HasColumnType("int");
 
                     b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(max)");
@@ -731,8 +732,8 @@ namespace Sellora.Server.Migrations
 
                     b.Property<string>("ReviewDescription")
                         .IsRequired()
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<int>("ReviewRating")
                         .HasColumnType("int");
@@ -741,10 +742,6 @@ namespace Sellora.Server.Migrations
                         .IsRequired()
                         .HasMaxLength(30)
                         .HasColumnType("nvarchar(30)");
-
-                    b.Property<int?>("ReviewerID")
-                        .IsRequired()
-                        .HasColumnType("int");
 
                     b.Property<int?>("SaleTransactionID")
                         .HasColumnType("int");
@@ -755,16 +752,13 @@ namespace Sellora.Server.Migrations
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
+
+                    b.HasIndex("AppUserID");
 
                     b.HasIndex("SaleTransactionID");
 
                     b.HasIndex("SwapTransactionID");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Reviews");
                 });
@@ -776,6 +770,9 @@ namespace Sellora.Server.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int?>("AppUserId")
+                        .HasColumnType("int");
 
                     b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(max)");
@@ -789,12 +786,6 @@ namespace Sellora.Server.Migrations
                     b.Property<int?>("ItemId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("SaleItemId")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("SaleUserId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("TransactionDate")
                         .HasColumnType("datetime2");
 
@@ -804,14 +795,11 @@ namespace Sellora.Server.Migrations
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("UserId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("ItemId");
+                    b.HasIndex("AppUserId");
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("ItemId");
 
                     b.ToTable("SaleTransactions");
                 });
@@ -881,14 +869,14 @@ namespace Sellora.Server.Migrations
                         {
                             Id = 1,
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 20, 13, 50, 16, 3, DateTimeKind.Local).AddTicks(5413),
-                            DateUpdated = new DateTime(2024, 1, 20, 13, 50, 16, 3, DateTimeKind.Local).AddTicks(5423),
+                            DateCreated = new DateTime(2024, 1, 20, 16, 10, 31, 669, DateTimeKind.Local).AddTicks(3260),
+                            DateUpdated = new DateTime(2024, 1, 20, 16, 10, 31, 669, DateTimeKind.Local).AddTicks(3270),
                             StaffAddress = "Temasek Polytechnic",
                             StaffDepartment = "Full Stack Development",
                             StaffEmail = "2102197G@student.tp.edu.sg",
                             StaffFirstName = "Ryan",
                             StaffHPNum = "99991111",
-                            StaffHireDate = new DateTime(2024, 1, 20, 13, 50, 16, 3, DateTimeKind.Local).AddTicks(5403),
+                            StaffHireDate = new DateTime(2024, 1, 20, 16, 10, 31, 669, DateTimeKind.Local).AddTicks(3246),
                             StaffLastName = "Chong",
                             StaffPosition = "Lead Developer",
                             UpdatedBy = "System"
@@ -897,14 +885,14 @@ namespace Sellora.Server.Migrations
                         {
                             Id = 2,
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 20, 13, 50, 16, 3, DateTimeKind.Local).AddTicks(5456),
-                            DateUpdated = new DateTime(2024, 1, 20, 13, 50, 16, 3, DateTimeKind.Local).AddTicks(5465),
+                            DateCreated = new DateTime(2024, 1, 20, 16, 10, 31, 669, DateTimeKind.Local).AddTicks(3307),
+                            DateUpdated = new DateTime(2024, 1, 20, 16, 10, 31, 669, DateTimeKind.Local).AddTicks(3317),
                             StaffAddress = "Temasek Polytechnic",
                             StaffDepartment = "Full Stack Development",
                             StaffEmail = "2203567i@student.tp.edu.sg",
                             StaffFirstName = "Lucas",
                             StaffHPNum = "99992222",
-                            StaffHireDate = new DateTime(2024, 1, 20, 13, 50, 16, 3, DateTimeKind.Local).AddTicks(5446),
+                            StaffHireDate = new DateTime(2024, 1, 20, 16, 10, 31, 669, DateTimeKind.Local).AddTicks(3293),
                             StaffLastName = "Do",
                             StaffPosition = "Lead Developer",
                             UpdatedBy = "System"
@@ -919,6 +907,14 @@ namespace Sellora.Server.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int?>("AppUser1Id")
+                        .IsRequired()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("AppUser2Id")
+                        .IsRequired()
+                        .HasColumnType("int");
+
                     b.Property<string>("CreatedBy")
                         .HasColumnType("nvarchar(max)");
 
@@ -928,25 +924,17 @@ namespace Sellora.Server.Migrations
                     b.Property<DateTime>("DateUpdated")
                         .HasColumnType("datetime2");
 
+                    b.Property<int?>("Item1Id")
+                        .HasColumnType("int");
+
                     b.Property<int?>("Item2Id")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ItemId")
+                    b.Property<int?>("SwapItem1Id")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int?>("SwapItem2Id")
-                        .IsRequired()
-                        .HasColumnType("int");
-
-                    b.Property<int?>("SwapItemId")
-                        .IsRequired()
-                        .HasColumnType("int");
-
-                    b.Property<int?>("SwapUser2Id")
-                        .IsRequired()
-                        .HasColumnType("int");
-
-                    b.Property<int?>("SwapUserId")
                         .IsRequired()
                         .HasColumnType("int");
 
@@ -956,21 +944,21 @@ namespace Sellora.Server.Migrations
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("User2Id")
+                    b.Property<int?>("User1Id")
                         .HasColumnType("int");
 
-                    b.Property<int?>("UserId")
+                    b.Property<int?>("User2Id")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("Item1Id");
+
                     b.HasIndex("Item2Id");
 
-                    b.HasIndex("ItemId");
+                    b.HasIndex("User1Id");
 
                     b.HasIndex("User2Id");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("SwapTransactions");
                 });
@@ -1028,25 +1016,31 @@ namespace Sellora.Server.Migrations
 
             modelBuilder.Entity("Sellora.Shared.Domain.Item", b =>
                 {
+                    b.HasOne("Sellora.Shared.Domain.AppUser", "AppUser")
+                        .WithMany("Items")
+                        .HasForeignKey("AppUserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Sellora.Shared.Domain.Category", "Category")
                         .WithMany("Items")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Sellora.Shared.Domain.AppUser", "User")
-                        .WithMany("Items")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("AppUser");
 
                     b.Navigation("Category");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Sellora.Shared.Domain.Report", b =>
                 {
+                    b.HasOne("Sellora.Shared.Domain.AppUser", "AppUser")
+                        .WithMany("Reports")
+                        .HasForeignKey("AppUserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Sellora.Shared.Domain.SaleTransaction", "SaleTransaction")
                         .WithMany()
                         .HasForeignKey("SaleTransactionID");
@@ -1061,21 +1055,23 @@ namespace Sellora.Server.Migrations
                         .WithMany()
                         .HasForeignKey("SwapTransactionID");
 
-                    b.HasOne("Sellora.Shared.Domain.AppUser", "User")
-                        .WithMany("Reports")
-                        .HasForeignKey("UserId");
+                    b.Navigation("AppUser");
 
                     b.Navigation("SaleTransaction");
 
                     b.Navigation("Staff");
 
                     b.Navigation("SwapTransaction");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Sellora.Shared.Domain.Review", b =>
                 {
+                    b.HasOne("Sellora.Shared.Domain.AppUser", "AppUser")
+                        .WithMany("Reviews")
+                        .HasForeignKey("AppUserID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Sellora.Shared.Domain.SaleTransaction", "SaleTransaction")
                         .WithMany()
                         .HasForeignKey("SaleTransactionID");
@@ -1084,55 +1080,51 @@ namespace Sellora.Server.Migrations
                         .WithMany()
                         .HasForeignKey("SwapTransactionID");
 
-                    b.HasOne("Sellora.Shared.Domain.AppUser", "User")
-                        .WithMany("Reviews")
-                        .HasForeignKey("UserId");
+                    b.Navigation("AppUser");
 
                     b.Navigation("SaleTransaction");
 
                     b.Navigation("SwapTransaction");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Sellora.Shared.Domain.SaleTransaction", b =>
                 {
+                    b.HasOne("Sellora.Shared.Domain.AppUser", "AppUser")
+                        .WithMany()
+                        .HasForeignKey("AppUserId");
+
                     b.HasOne("Sellora.Shared.Domain.Item", "Item")
                         .WithMany()
                         .HasForeignKey("ItemId");
 
-                    b.HasOne("Sellora.Shared.Domain.AppUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
+                    b.Navigation("AppUser");
 
                     b.Navigation("Item");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Sellora.Shared.Domain.SwapTransaction", b =>
                 {
+                    b.HasOne("Sellora.Shared.Domain.Item", "Item1")
+                        .WithMany()
+                        .HasForeignKey("Item1Id");
+
                     b.HasOne("Sellora.Shared.Domain.Item", "Item2")
                         .WithMany()
                         .HasForeignKey("Item2Id");
 
-                    b.HasOne("Sellora.Shared.Domain.Item", "Item")
+                    b.HasOne("Sellora.Shared.Domain.AppUser", "User1")
                         .WithMany()
-                        .HasForeignKey("ItemId");
+                        .HasForeignKey("User1Id");
 
                     b.HasOne("Sellora.Shared.Domain.AppUser", "User2")
                         .WithMany()
                         .HasForeignKey("User2Id");
 
-                    b.HasOne("Sellora.Shared.Domain.AppUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId");
-
-                    b.Navigation("Item");
+                    b.Navigation("Item1");
 
                     b.Navigation("Item2");
 
-                    b.Navigation("User");
+                    b.Navigation("User1");
 
                     b.Navigation("User2");
                 });

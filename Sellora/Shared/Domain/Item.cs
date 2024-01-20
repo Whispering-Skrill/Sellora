@@ -22,7 +22,7 @@ namespace Sellora.Shared.Domain
         public int ItemStatus { get; set; }
         public int CategoryId { get; set; }
         public virtual Category ? Category { get; set; }
-        public int UserId { get; set; }
-        public virtual required AppUser User { get; set; }
+        public int AppUserId { get; set; }
+        public virtual required AppUser AppUser { get; set; }
     }
 }

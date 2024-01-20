@@ -302,7 +302,7 @@ namespace Sellora.Server.Migrations
                     ItemClicks = table.Column<int>(type: "int", nullable: false),
                     ItemStatus = table.Column<int>(type: "int", nullable: false),
                     CategoryId = table.Column<int>(type: "int", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: false),
+                    AppUserId = table.Column<int>(type: "int", nullable: false),
                     DateCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DateUpdated = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -312,8 +312,8 @@ namespace Sellora.Server.Migrations
                 {
                     table.PrimaryKey("PK_Items", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Items_AppUsers_UserId",
-                        column: x => x.UserId,
+                        name: "FK_Items_AppUsers_AppUserId",
+                        column: x => x.AppUserId,
                         principalTable: "AppUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -333,9 +333,7 @@ namespace Sellora.Server.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     TransactionDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     TransactionType = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    SaleUserId = table.Column<int>(type: "int", nullable: true),
-                    UserId = table.Column<int>(type: "int", nullable: true),
-                    SaleItemId = table.Column<int>(type: "int", nullable: true),
+                    AppUserId = table.Column<int>(type: "int", nullable: true),
                     ItemId = table.Column<int>(type: "int", nullable: true),
                     DateCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DateUpdated = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -346,8 +344,8 @@ namespace Sellora.Server.Migrations
                 {
                     table.PrimaryKey("PK_SaleTransactions", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_SaleTransactions_AppUsers_UserId",
-                        column: x => x.UserId,
+                        name: "FK_SaleTransactions_AppUsers_AppUserId",
+                        column: x => x.AppUserId,
                         principalTable: "AppUsers",
                         principalColumn: "Id");
                     table.ForeignKey(
@@ -364,11 +362,11 @@ namespace Sellora.Server.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     TransactionDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    SwapUserId = table.Column<int>(type: "int", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: true),
-                    SwapItemId = table.Column<int>(type: "int", nullable: false),
-                    ItemId = table.Column<int>(type: "int", nullable: true),
-                    SwapUser2Id = table.Column<int>(type: "int", nullable: false),
+                    AppUser1Id = table.Column<int>(type: "int", nullable: false),
+                    User1Id = table.Column<int>(type: "int", nullable: true),
+                    SwapItem1Id = table.Column<int>(type: "int", nullable: false),
+                    Item1Id = table.Column<int>(type: "int", nullable: true),
+                    AppUser2Id = table.Column<int>(type: "int", nullable: false),
                     User2Id = table.Column<int>(type: "int", nullable: true),
                     SwapItem2Id = table.Column<int>(type: "int", nullable: false),
                     Item2Id = table.Column<int>(type: "int", nullable: true),
@@ -381,23 +379,23 @@ namespace Sellora.Server.Migrations
                 {
                     table.PrimaryKey("PK_SwapTransactions", x => x.Id);
                     table.ForeignKey(
+                        name: "FK_SwapTransactions_AppUsers_User1Id",
+                        column: x => x.User1Id,
+                        principalTable: "AppUsers",
+                        principalColumn: "Id");
+                    table.ForeignKey(
                         name: "FK_SwapTransactions_AppUsers_User2Id",
                         column: x => x.User2Id,
                         principalTable: "AppUsers",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_SwapTransactions_AppUsers_UserId",
-                        column: x => x.UserId,
-                        principalTable: "AppUsers",
+                        name: "FK_SwapTransactions_Items_Item1Id",
+                        column: x => x.Item1Id,
+                        principalTable: "Items",
                         principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_SwapTransactions_Items_Item2Id",
                         column: x => x.Item2Id,
-                        principalTable: "Items",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_SwapTransactions_Items_ItemId",
-                        column: x => x.ItemId,
                         principalTable: "Items",
                         principalColumn: "Id");
                 });
@@ -411,8 +409,7 @@ namespace Sellora.Server.Migrations
                     ReportTitle = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     ReportContent = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     ReportDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ReporterID = table.Column<int>(type: "int", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: true),
+                    AppUserID = table.Column<int>(type: "int", nullable: false),
                     StaffID = table.Column<int>(type: "int", nullable: false),
                     SaleTransactionID = table.Column<int>(type: "int", nullable: true),
                     SwapTransactionID = table.Column<int>(type: "int", nullable: true),
@@ -425,10 +422,11 @@ namespace Sellora.Server.Migrations
                 {
                     table.PrimaryKey("PK_Reports", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Reports_AppUsers_UserId",
-                        column: x => x.UserId,
+                        name: "FK_Reports_AppUsers_AppUserID",
+                        column: x => x.AppUserID,
                         principalTable: "AppUsers",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Reports_SaleTransactions_SaleTransactionID",
                         column: x => x.SaleTransactionID,
@@ -456,11 +454,10 @@ namespace Sellora.Server.Migrations
                     ReviewTitle = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     ReviewRating = table.Column<int>(type: "int", nullable: false),
                     ReviewDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ReviewDescription = table.Column<string>(type: "nvarchar(150)", maxLength: 150, nullable: false),
+                    ReviewDescription = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     SaleTransactionID = table.Column<int>(type: "int", nullable: true),
                     SwapTransactionID = table.Column<int>(type: "int", nullable: true),
-                    ReviewerID = table.Column<int>(type: "int", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: true),
+                    AppUserID = table.Column<int>(type: "int", nullable: false),
                     DateCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DateUpdated = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -470,10 +467,11 @@ namespace Sellora.Server.Migrations
                 {
                     table.PrimaryKey("PK_Reviews", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Reviews_AppUsers_UserId",
-                        column: x => x.UserId,
+                        name: "FK_Reviews_AppUsers_AppUserID",
+                        column: x => x.AppUserID,
                         principalTable: "AppUsers",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Reviews_SaleTransactions_SaleTransactionID",
                         column: x => x.SaleTransactionID,
@@ -491,8 +489,8 @@ namespace Sellora.Server.Migrations
                 columns: new[] { "Id", "CreatedBy", "DateCreated", "DateUpdated", "UpdatedBy", "UserDescription", "UserEmail", "UserFirstName", "UserHPNum", "UserLastName", "UserLastOnline", "UserName", "UserPassword", "UserRegDate" },
                 values: new object[,]
                 {
-                    { 1, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "", "sy123@gmail.com", "Seo", "88123123", "Yeong", new DateTime(2024, 1, 20, 13, 50, 16, 142, DateTimeKind.Local).AddTicks(2936), "User1", "AQAAAAIAAYagAAAAEPfH7zu2ppRtf5xDSrxd9FxUNXwYSdovx1QDf/VbgRDR57SiDgKC5lozuvg0v89pqQ==", new DateTime(2024, 1, 20, 13, 50, 16, 142, DateTimeKind.Local).AddTicks(2903) },
-                    { 2, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "", "tt123@gmail.com", "Tina", "88445566", "Tan", new DateTime(2024, 1, 20, 13, 50, 16, 188, DateTimeKind.Local).AddTicks(1596), "User2", "AQAAAAIAAYagAAAAEOJ8NDbmiqUEbSh17LiISlUhBoyYZ0AF1FNow2Mgp0eAwber9kGj1x6ghRJLGKZIcA==", new DateTime(2024, 1, 20, 13, 50, 16, 188, DateTimeKind.Local).AddTicks(1567) }
+                    { 1, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "", "sy123@gmail.com", "Seo", "88123123", "Yeong", new DateTime(2024, 1, 20, 16, 10, 31, 807, DateTimeKind.Local).AddTicks(4926), "User1", "AQAAAAIAAYagAAAAEA2NwRbiAnoMzh/wkTqI2mh5pv8w1WpWDvpqvlZNR9xVN+E+oOfXsYGLAVjQHu84Ng==", new DateTime(2024, 1, 20, 16, 10, 31, 807, DateTimeKind.Local).AddTicks(4902) },
+                    { 2, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "", "tt123@gmail.com", "Tina", "88445566", "Tan", new DateTime(2024, 1, 20, 16, 10, 31, 852, DateTimeKind.Local).AddTicks(4025), "User2", "AQAAAAIAAYagAAAAEPzEBYYfXjkImPQOUN5eDF938hnmzbIZd2QV6lPA9khTN1SRY3gR4k80mwcdv9Xmvg==", new DateTime(2024, 1, 20, 16, 10, 31, 852, DateTimeKind.Local).AddTicks(4001) }
                 });
 
             migrationBuilder.InsertData(
@@ -510,8 +508,8 @@ namespace Sellora.Server.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserDescription", "UserFirstName", "UserLastName", "UserLastOnline", "UserName", "UserRegDate" },
                 values: new object[,]
                 {
-                    { "3781efa7-66dc-47f0-860f-e506d04102e4", 0, "47c5d550-9a98-4b4e-abef-e2ff6fb7f57c", "admin@localhost.com", false, false, null, "ADMIN@LOCALHOST.COM", "ADMIN@LOCALHOST.COM", "AQAAAAIAAYagAAAAEHYjrDx6VgTCjhO7Pa8YaJ45ekDXtJJKNXn2axZKz7wrbyjoNBv3ttw4PrA7LmMCOA==", null, false, "7c8bf313-c9ae-4615-b242-da66f31b3a91", false, null, "Admin", "User", new DateTime(2024, 1, 20, 13, 50, 16, 3, DateTimeKind.Local).AddTicks(6070), "admin@localhost.com", new DateTime(2024, 1, 20, 13, 50, 16, 3, DateTimeKind.Local).AddTicks(6061) },
-                    { "b1675205-1948-44ec-8b55-b0cb71d1f84e", 0, "a6082591-44cb-40bf-bf1f-86e3eff60495", "user@localhost.com", false, false, null, "USER@LOCALHOST.COM", "USER@LOCALHOST.COM", "AQAAAAIAAYagAAAAECJb6iITBSdEEa0d/kocwH4I8++heu1XMJn1CQNwAs8asMW8jpsvpL5OuXcBYYUOMg==", null, false, "564277bd-d37f-467e-b7d0-589094644293", false, null, "User", "User", new DateTime(2024, 1, 20, 13, 50, 16, 50, DateTimeKind.Local).AddTicks(8181), "user@localhost.com", new DateTime(2024, 1, 20, 13, 50, 16, 50, DateTimeKind.Local).AddTicks(8158) }
+                    { "3781efa7-66dc-47f0-860f-e506d04102e4", 0, "be911f8c-c160-4676-a7aa-36688e7285d4", "admin@localhost.com", false, false, null, "ADMIN@LOCALHOST.COM", "ADMIN@LOCALHOST.COM", "AQAAAAIAAYagAAAAEN8clHFc6bCMfCR5emDmld7cN7yfXcjjzxtLvcmuLj7YBHwnouBH4m6GzVoe5NNlRQ==", null, false, "9f739345-59b2-4b23-b546-193c6b2f6cb1", false, null, "Admin", "User", new DateTime(2024, 1, 20, 16, 10, 31, 669, DateTimeKind.Local).AddTicks(3894), "admin@localhost.com", new DateTime(2024, 1, 20, 16, 10, 31, 669, DateTimeKind.Local).AddTicks(3880) },
+                    { "b1675205-1948-44ec-8b55-b0cb71d1f84e", 0, "e027516c-0ccc-413e-896a-e09095bbe0e7", "user@localhost.com", false, false, null, "USER@LOCALHOST.COM", "USER@LOCALHOST.COM", "AQAAAAIAAYagAAAAEBJUenWXl3DumtegDP0pIpX+Y+QsjRkupLDL5ix3tISoeZlgzOTMXIej8ZXlpqJz7w==", null, false, "216f4a98-26ad-40e1-b1d5-edcdbf46943b", false, null, "User", "User", new DateTime(2024, 1, 20, 16, 10, 31, 715, DateTimeKind.Local).AddTicks(4374), "user@localhost.com", new DateTime(2024, 1, 20, 16, 10, 31, 715, DateTimeKind.Local).AddTicks(4351) }
                 });
 
             migrationBuilder.InsertData(
@@ -519,8 +517,8 @@ namespace Sellora.Server.Migrations
                 columns: new[] { "Id", "CategoryName", "CreatedBy", "DateCreated", "DateUpdated", "UpdatedBy" },
                 values: new object[,]
                 {
-                    { 1, "Technology", "System", new DateTime(2024, 1, 20, 13, 50, 16, 3, DateTimeKind.Local).AddTicks(5806), new DateTime(2024, 1, 20, 13, 50, 16, 3, DateTimeKind.Local).AddTicks(5815), "System" },
-                    { 2, "Fashion", "System", new DateTime(2024, 1, 20, 13, 50, 16, 3, DateTimeKind.Local).AddTicks(5825), new DateTime(2024, 1, 20, 13, 50, 16, 3, DateTimeKind.Local).AddTicks(5835), "System" }
+                    { 1, "Technology", "System", new DateTime(2024, 1, 20, 16, 10, 31, 669, DateTimeKind.Local).AddTicks(3639), new DateTime(2024, 1, 20, 16, 10, 31, 669, DateTimeKind.Local).AddTicks(3652), "System" },
+                    { 2, "Fashion", "System", new DateTime(2024, 1, 20, 16, 10, 31, 669, DateTimeKind.Local).AddTicks(3666), new DateTime(2024, 1, 20, 16, 10, 31, 669, DateTimeKind.Local).AddTicks(3676), "System" }
                 });
 
             migrationBuilder.InsertData(
@@ -528,8 +526,8 @@ namespace Sellora.Server.Migrations
                 columns: new[] { "Id", "CreatedBy", "DateCreated", "DateUpdated", "StaffAddress", "StaffDepartment", "StaffEmail", "StaffFirstName", "StaffHPNum", "StaffHireDate", "StaffLastName", "StaffPosition", "UpdatedBy" },
                 values: new object[,]
                 {
-                    { 1, "System", new DateTime(2024, 1, 20, 13, 50, 16, 3, DateTimeKind.Local).AddTicks(5413), new DateTime(2024, 1, 20, 13, 50, 16, 3, DateTimeKind.Local).AddTicks(5423), "Temasek Polytechnic", "Full Stack Development", "2102197G@student.tp.edu.sg", "Ryan", "99991111", new DateTime(2024, 1, 20, 13, 50, 16, 3, DateTimeKind.Local).AddTicks(5403), "Chong", "Lead Developer", "System" },
-                    { 2, "System", new DateTime(2024, 1, 20, 13, 50, 16, 3, DateTimeKind.Local).AddTicks(5456), new DateTime(2024, 1, 20, 13, 50, 16, 3, DateTimeKind.Local).AddTicks(5465), "Temasek Polytechnic", "Full Stack Development", "2203567i@student.tp.edu.sg", "Lucas", "99992222", new DateTime(2024, 1, 20, 13, 50, 16, 3, DateTimeKind.Local).AddTicks(5446), "Do", "Lead Developer", "System" }
+                    { 1, "System", new DateTime(2024, 1, 20, 16, 10, 31, 669, DateTimeKind.Local).AddTicks(3260), new DateTime(2024, 1, 20, 16, 10, 31, 669, DateTimeKind.Local).AddTicks(3270), "Temasek Polytechnic", "Full Stack Development", "2102197G@student.tp.edu.sg", "Ryan", "99991111", new DateTime(2024, 1, 20, 16, 10, 31, 669, DateTimeKind.Local).AddTicks(3246), "Chong", "Lead Developer", "System" },
+                    { 2, "System", new DateTime(2024, 1, 20, 16, 10, 31, 669, DateTimeKind.Local).AddTicks(3307), new DateTime(2024, 1, 20, 16, 10, 31, 669, DateTimeKind.Local).AddTicks(3317), "Temasek Polytechnic", "Full Stack Development", "2203567i@student.tp.edu.sg", "Lucas", "99992222", new DateTime(2024, 1, 20, 16, 10, 31, 669, DateTimeKind.Local).AddTicks(3293), "Do", "Lead Developer", "System" }
                 });
 
             migrationBuilder.InsertData(
@@ -592,14 +590,14 @@ namespace Sellora.Server.Migrations
                 column: "Expiration");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Items_AppUserId",
+                table: "Items",
+                column: "AppUserId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Items_CategoryId",
                 table: "Items",
                 column: "CategoryId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Items_UserId",
-                table: "Items",
-                column: "UserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Keys_Use",
@@ -627,6 +625,11 @@ namespace Sellora.Server.Migrations
                 columns: new[] { "SubjectId", "SessionId", "Type" });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Reports_AppUserID",
+                table: "Reports",
+                column: "AppUserID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Reports_SaleTransactionID",
                 table: "Reports",
                 column: "SaleTransactionID");
@@ -642,9 +645,9 @@ namespace Sellora.Server.Migrations
                 column: "SwapTransactionID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Reports_UserId",
-                table: "Reports",
-                column: "UserId");
+                name: "IX_Reviews_AppUserID",
+                table: "Reviews",
+                column: "AppUserID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Reviews_SaleTransactionID",
@@ -657,9 +660,9 @@ namespace Sellora.Server.Migrations
                 column: "SwapTransactionID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Reviews_UserId",
-                table: "Reviews",
-                column: "UserId");
+                name: "IX_SaleTransactions_AppUserId",
+                table: "SaleTransactions",
+                column: "AppUserId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_SaleTransactions_ItemId",
@@ -667,9 +670,9 @@ namespace Sellora.Server.Migrations
                 column: "ItemId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SaleTransactions_UserId",
-                table: "SaleTransactions",
-                column: "UserId");
+                name: "IX_SwapTransactions_Item1Id",
+                table: "SwapTransactions",
+                column: "Item1Id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_SwapTransactions_Item2Id",
@@ -677,19 +680,14 @@ namespace Sellora.Server.Migrations
                 column: "Item2Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_SwapTransactions_ItemId",
+                name: "IX_SwapTransactions_User1Id",
                 table: "SwapTransactions",
-                column: "ItemId");
+                column: "User1Id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_SwapTransactions_User2Id",
                 table: "SwapTransactions",
                 column: "User2Id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_SwapTransactions_UserId",
-                table: "SwapTransactions",
-                column: "UserId");
         }
 
         /// <inheritdoc />

@@ -1,38 +1,45 @@
 ﻿@*ASPNetr-yanWorks*@
 @inject HttpClient _client
 
-<EditForm Model="@report" OnValidSubmit="@OnValidSubmit">
+<EditForm Model="@review" OnValidSubmit="@OnValidSubmit">
     <DataAnnotationsValidator />
     <ValidationSummary />
     <fieldset disabled="@Disabled">
         <div class="form-group">
-            <label>Title of Report: </label>
+            <label>Title of Review: </label>
             <div>
-                <InputText @bind-Value="@report.ReportTitle" class="form-control" />
-                <ValidationMessage For="@(() => report.ReportTitle)" />
+                <InputText @bind-Value="@review.ReviewTitle" class="form-control" />
+                <ValidationMessage For="@(() => review.ReviewTitle)" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Rating: </label>
+            <div>
+                <InputNumber @bind-Value="@review.ReviewRating" class="form-control" />
+                <ValidationMessage For="@(() => review.ReviewRating)" />
             </div>
         </div>
         <div class="form-group">
             <label>Describe your Experience: </label>
             <div>
-                <InputText @bind-Value="@report.ReportContent" class="form-control" />
-                <ValidationMessage For="@(() => report.ReportContent)" />
+                <InputText @bind-Value="@review.ReviewDescription" class="form-control" />
+                <ValidationMessage For="@(() => review.ReviewDescription)" />
             </div>
         </div>
-        @if (report.Id > 0)
+        @if (review.Id > 0)
         {
             <div class="form-group">
-                <label>Date of Report: </label>
+                <label>Date of Review: </label>
                 <div>
-                    <InputDate @bind-Value="@report.ReportDate" class="form-control" />
-                    <ValidationMessage For="@(() => report.ReportDate)" />
+                    <InputDate @bind-Value="@review.ReviewDate" class="form-control" />
+                    <ValidationMessage For="@(() => review.ReviewDate)" />
                 </div>
             </div>
         }
         <div class="form-group">
-            <label>Report Creator: </label>
+            <label>Review Creator: </label>
             <div>
-                <InputSelect @bind-Value="report.AppUserID" class="form-control">
+                <InputSelect @bind-Value="@review.AppUserID" class="form-control">
                     <option value="">-- Select User --</option>
                     @if (AppUsers != null)
                     {
@@ -42,29 +49,13 @@
                         }
                     }
                 </InputSelect>
-                <ValidationMessage For="@(() => report.AppUserID)" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label>Handling Staff: </label>
-            <div>
-                <InputSelect @bind-Value="report.StaffID" class="form-control">
-                    <option value="">-- Select Staff in Charge --</option>
-                    @if (Staffs != null)
-                    {
-                        foreach (var staff in Staffs)
-                        {
-                            <option value="@staff.Id">ID: @staff.Id</option>
-                        }
-                    }
-                </InputSelect>
-                <ValidationMessage For="@(() => report.StaffID)" />
+                <ValidationMessage For="@(() => review.AppUserID)" />
             </div>
         </div>
         <div class="form-group">
             <label>Swap Transaction Choice: </label>
             <div>
-                <InputSelect @bind-Value="report.SwapTransactionID" class="form-control">
+                <InputSelect @bind-Value="review.SwapTransactionID" class="form-control">
                     <option value="">-- Select Swap Transaction --</option>
                     @if (SwapTransactions != null)
                     {
@@ -74,13 +65,13 @@
                         }
                     }
                 </InputSelect>
-                <ValidationMessage For="@(() => report.SwapTransactionID)" />
+                <ValidationMessage For="@(() => review.SwapTransactionID)" />
             </div>
         </div>
         <div class="form-group">
             <label>Sale Transaction Choice: </label>
             <div>
-                <InputSelect @bind-Value="report.SaleTransactionID" class="form-control">
+                <InputSelect @bind-Value="review.SaleTransactionID" class="form-control">
                     <option value="">-- Select Sale Transaction --</option>
                     @if (SaleTransactions != null)
                     {
@@ -90,7 +81,7 @@
                         }
                     }
                 </InputSelect>
-                <ValidationMessage For="@(() => report.SaleTransactionID)" />
+                <ValidationMessage For="@(() => review.SaleTransactionID)" />
             </div>
         </div>
     </fieldset>
@@ -106,7 +97,7 @@
 
 @code {
     [Parameter] public bool Disabled { get; set; } = false;
-    [Parameter] public Report ? report { get; set; }
+    [Parameter] public Review ? review { get; set; }
     [Parameter] public string ButtonText { get; set; } = "Save";
     [Parameter] public EventCallback OnValidSubmit { get; set; }
 
