@@ -1,3 +1,4 @@
+@*ASPNetr-yanWorks*@
 @page "/reports/"
 @inject HttpClient _client
 @inject HttpInterceptorService _interceptor
@@ -12,9 +13,7 @@
     </a>
 </div>
 
-<div style="border-bottom:solid black 1px; padding-top:3px;">
-    @*FOR SPACING*@
-</div>
+
 
 <div style="margin-top: 10px;">
     @if (Reports == null)
@@ -25,19 +24,19 @@
     {
         @foreach (var report in Reports)
         {
-            <div style="background-color: #D5D5D5; border-radius: 7px; display:flex; margin-bottom:10px;">
-                <div style="padding-top: 15px; padding-bottom: 0px; flex:1;">
-                    <h4 style="margin-left: 16px; font-family:'Microsoft Sans Serif'; font-weight: bold; letter-spacing: 1px;">@report.ReportTitle</h4>
-                    <p style="margin-left:16px; margin-bottom:7px; font-size:15px; font-family:'Microsoft Sans Serif'; font-weight:bold; color:#686868;">User 12468 ------- @report.ReportDate.Day / @report.ReportDate.Month / @report.ReportDate.Year</p>
-                    <p style="margin-left:16px; font-family:'Microsoft Sans Serif';">@report.ReportContent</p>
+            <div class="report-box">
+                <div class="report-box-innercontainer">
+                    <h4 class="report-box-title">@report.ReportTitle</h4>
+                    <p class="report-box-details">User 12468 ------- @report.ReportDate.Day / @report.ReportDate.Month / @report.ReportDate.Year</p>
+                    <p class="report-box-content">@report.ReportContent</p>
                 </div>
-                <div style="padding:15px; display: block;">
-                    <div style="padding-left:10px; padding-right:10px;">
+                <div class="report-box-control-container">
+                    <div class="report-box-detail-button">
                         <a href="/reports/view/@report.Id" class="btn btn-primary">
                             More Details
                         </a>
                     </div>
-                    <div style="padding:10px; display:flex; justify-content:space-between;">
+                    <div class="report-box-control-bottom">
                         <a href="/reports/edit/@report.Id" class="btn btn-warning" style="width:100%; margin-right:5px;">
                             <span class="oi oi-pencil"></span>
                         </a>
