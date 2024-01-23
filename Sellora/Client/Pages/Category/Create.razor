@@ -1,0 +1,50 @@
+﻿@page "/categories/create/"
+@inject HttpClient _client
+@inject NavigationManager _navManager
+@using Sellora.Client.Components
+
+<div class="category-topbar">
+    <h2 class="category-title">Create Category</h2>
+    <BackToList Target="categories" />
+</div>
+
+<div style="border-bottom:solid black 1px; padding-top:3px; margin-bottom:10px;">
+    @*FOR SPACING*@
+</div>
+
+<EditForm Model="@category" OnValidSubmit="CreateCategory">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label>Name: </label>
+        <div>
+            <InputText @bind-Value="@category.CategoryName" class="form-control" />
+            <ValidationMessage For="@(() => category.CategoryName)" />
+        </div>
+    </div>
+    <br />
+
+    <button type="submit" class="btn btn-success btn-block">
+            Create Category
+    </button>
+    
+</EditForm>
+
+@code {
+    Category category = new Category();
+
+    private IList<Category>? Categories;
+
+    protected async override Task OnInitializedAsync()
+    {
+        Categories = await _client.GetFromJsonAsync<List<Category>>($"{Endpoints.CategoriesEndpoint}");
+    }
+
+    private async Task CreateCategory()
+    {
+        await _client.PostAsJsonAsync(Endpoints.CategoriesEndpoint, category);
+        _navManager.NavigateTo("/categories/");
+    }
+
+}

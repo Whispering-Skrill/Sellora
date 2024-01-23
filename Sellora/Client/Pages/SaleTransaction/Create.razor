@@ -1,0 +1,87 @@
+﻿@*ASPNetr-yanWorks*@
+@page "/saletransactions/create"
+@inject HttpClient _client
+@inject NavigationManager _navManager
+@using Sellora.Client.Components
+
+<div class="saletransaction-topbar">
+    <h2 class="saletransaction-title">Create Sale Transaction</h2>
+    <BackToList Target="saletransactions" />
+</div>
+
+<div style="border-bottom:solid black 1px; padding-top:3px; margin-bottom:10px;">
+    @*FOR SPACING*@
+</div>
+
+<EditForm Model="@saletransaction" OnValidSubmit="CreateSaleTransaction">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label>Date of Transaction: </label>
+        <div>
+            <InputDate @bind-Value="@saletransaction.TransactionDate" class="form-control" />
+            <ValidationMessage For="@(() => saletransaction.TransactionDate)" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Item: </label>
+        <div>
+            <InputSelect @bind-Value="saletransaction.ItemId" class="form-control">
+                <option value="">-- Select Item --</option>
+                @if (Items != null)
+                {
+                    foreach (var item in Items)
+                    {
+                        <option value="@item.Id">@item.ItemName</option>
+                    }
+                }
+            </InputSelect>
+            <ValidationMessage For="@(() => saletransaction.ItemId)" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Uploaded By: </label>
+        <div>
+            <InputSelect @bind-Value="saletransaction.AppUserId" class="form-control">
+                <option value="">-- Select UserName --</option>
+                @if (AppUsers != null)
+                {
+                    foreach (var appUser in AppUsers)
+                    {
+                        <option value="@appUser.Id">@appUser.UserName</option>
+                    }
+                }
+            </InputSelect>
+            <ValidationMessage For="@(() => saletransaction.AppUserId)" />
+        </div>
+    </div>
+
+    <br />
+
+    <button type="submit" class="btn btn-success btn-block">
+        Create Transaction
+    </button>
+
+</EditForm>
+
+@code {
+    SaleTransaction saletransaction = new SaleTransaction();
+
+    private IList<AppUser>? AppUsers;
+    private IList<Item>? Items;
+
+    protected async Task OnIntializedAsync()
+    {
+        AppUsers = await _client.GetFromJsonAsync<List<AppUser>>($"{Endpoints.AppUsersEndpoint}");
+        Items = await _client.GetFromJsonAsync<List<Item>>($"{Endpoints.ItemsEndpoint}");
+    }
+
+    private async Task CreateSaleTransaction()
+    {
+        await _client.PostAsJsonAsync(Endpoints.SaleTransactionsEndpoint, saletransaction);
+        _navManager.NavigateTo("/saletransactions/");
+    }
+}
