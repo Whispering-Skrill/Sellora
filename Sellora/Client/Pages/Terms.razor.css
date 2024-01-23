@@ -1,0 +1,16 @@
+﻿body {
+    font-family: 'Microsoft Sans Serif';
+}
+
+.title {
+    font-family: 'Microsoft Sans Serif';
+    font-size: 60px;
+    font-weight: bold;
+}
+
+a {
+    color: #4285f4;
+    text-decoration: underline;
+}
+
+

@@ -86,3 +86,9 @@ Ryan - Configured Report and Review Form Components to have large text areas.
 Ryan - Added more users to user seeding config
 
 Ryan - Completed ALL Ryan-Entity Pages
+
+Ryan - Redesigned Global Error Handling Pages
+
+Ryan - Added Universal Footer
+
+Ryan - Added Contacts Page, Terms and Conditions Page
