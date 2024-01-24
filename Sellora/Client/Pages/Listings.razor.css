@@ -31,8 +31,8 @@
     background-color: white;
     flex: 1;
     margin: 1vh;
-    min-width: 300px;
-    max-width: 300px;
+    min-width: 20%px;
+    max-width: 20%px;
     height: auto;
     border-radius: 12px;
     transition: 0.2s;
@@ -78,7 +78,7 @@
 
 .listingitem-username {
     font-weight: bold;
-    font-family: Quicksand;
+    font-family: sans-serif;
     font-size: 85%;
     margin-left: 0.3vh;
     margin-bottom: 1px;
