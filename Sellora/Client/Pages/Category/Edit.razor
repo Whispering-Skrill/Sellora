@@ -1,0 +1,32 @@
+﻿@page "/categories/edit/{id:int}"
+@inject HttpClient _client
+@inject NavigationManager _navManager
+@using Sellora.Client.Components
+
+<div class="category-topbar">
+    <h2 class="category-title">Edit Category with ID: @category.Id</h2>
+    <BackToList Target="categories" />
+</div>
+
+<div style="border-bottom:solid black 1px; padding-top:3px; margin-bottom:10px;">
+    @*FOR SPACING*@
+</div>
+
+<FormComponent ButtonText="Update" OnValidSubmit="EditCategory" category="category" />
+
+@code {
+    [Parameter] public int id { get; set; }
+    Category? category = new Category();
+
+    protected async override Task OnParametersSetAsync()
+    {
+        category = await _client.GetFromJsonAsync<Category>($"{Endpoints.CategoriesEndpoint}/{id}");
+    }
+
+    async Task EditCategory()
+    {
+        await _client.PutAsJsonAsync($"{Endpoints.CategoriesEndpoint}/{id}", category);
+        _navManager.NavigateTo("/categories/");
+
+    }
+}

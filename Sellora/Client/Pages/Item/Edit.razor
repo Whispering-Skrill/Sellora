@@ -1,0 +1,32 @@
+﻿@page "/items/edit/{id:int}"
+@inject HttpClient _client
+@inject NavigationManager _navManager
+@using Sellora.Client.Components
+
+<div class="item-topbar">
+    <h2 class="item-title">Edit Item with ID: @item.Id</h2>
+    <BackToList Target="items" />
+</div>
+
+<div style="border-bottom:solid black 1px; padding-top:3px; margin-bottom:10px;">
+    @*FOR SPACING*@
+</div>
+
+<FormComponent ButtonText="Update" OnValidSubmit="EditItem" item="item" />
+
+@code {
+    [Parameter] public int id { get; set; }
+    Item? item = new Item();
+
+    protected async override Task OnParametersSetAsync()
+    {
+        item = await _client.GetFromJsonAsync<Item>($"{Endpoints.ItemsEndpoint}/{id}");
+    }
+
+    async Task EditItem()
+    {
+        await _client.PutAsJsonAsync($"{Endpoints.ItemsEndpoint}/{id}", item);
+        _navManager.NavigateTo("/items/");
+
+    }
+}

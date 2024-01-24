@@ -1,0 +1,32 @@
+﻿@page "/users/edit/{id:int}"
+@inject HttpClient _client
+@inject NavigationManager _navManager
+@using Sellora.Client.Components
+
+<div class="user-topbar">
+    <h2 class="user-title">Edit AppUser with ID: @user.Id</h2>
+    <BackToList Target="users" />
+</div>
+
+<div style="border-bottom:solid black 1px; padding-top:3px; margin-bottom:10px;">
+    @*FOR SPACING*@
+</div>
+
+<FormComponent ButtonText="Update" OnValidSubmit="EditAppUser" user="user" />
+
+@code {
+    [Parameter] public int id { get; set; }
+    AppUser? user = new AppUser();
+
+    protected async override Task OnParametersSetAsync()
+    {
+        user = await _client.GetFromJsonAsync<AppUser>($"{Endpoints.AppUsersEndpoint}/{id}");
+    }
+
+    async Task EditAppUser()
+    {
+        await _client.PutAsJsonAsync($"{Endpoints.AppUsersEndpoint}/{id}", user);
+        _navManager.NavigateTo("/users/");
+
+    }
+}

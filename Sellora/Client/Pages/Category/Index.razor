@@ -35,10 +35,10 @@ else
                 <tr>
                     <td>@category.CategoryName</td>
                     <td>
-                        <a href="/staffs/view/@category.Id" class="btn btn-primary">
+                        <a href="/categories/view/@category.Id" class="btn btn-primary">
                             <span class="oi oi-book"></span>
                         </a>
-                        <a href="/staffs/edit/@category.Id" class="btn btn-warning">
+                        <a href="/categories/edit/@category.Id" class="btn btn-warning">
                             <span class="oi oi-pencil"></span>
                         </a>
                         <button class="btn btn-danger" @onclick="@(()=>Delete(category.Id))">

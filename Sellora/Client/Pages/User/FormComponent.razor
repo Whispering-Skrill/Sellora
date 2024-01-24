@@ -1,0 +1,73 @@
+﻿<EditForm Model="@user" OnValidSubmit="@OnValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label>UserName: </label>
+        <div>
+            <InputText @bind-Value="@user.UserName" class="form-control" />
+            <ValidationMessage For="@(() => user.UserName)" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>First Name: </label>
+        <div>
+            <InputText @bind-Value="@user.UserFirstName" class="form-control" />
+            <ValidationMessage For="@(() => user.UserFirstName)" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Last Name: </label>
+        <div>
+            <InputText @bind-Value="@user.UserLastName" class="form-control" />
+            <ValidationMessage For="@(() => user.UserLastName)" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Email: </label>
+        <div>
+            <InputText @bind-Value="@user.UserEmail" class="form-control" />
+            <ValidationMessage For="@(() => user.UserEmail)" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Register Date: </label>
+        <div>
+            <InputDate @bind-Value="@user.UserRegDate" class="form-control" />
+            <ValidationMessage For="@(() => user.UserRegDate)" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>User Description: </label>
+        <div>
+            <InputText @bind-Value="@user.UserDescription" class="form-control" />
+            <ValidationMessage For="@(() => user.UserDescription)" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Last Time Online: </label>
+        <div>
+            <InputDate @bind-Value="@user.UserLastOnline" class="form-control" />
+            <ValidationMessage For="@(() => user.UserLastOnline)" />
+        </div>
+    </div>
+
+    <br />
+
+    <button type="submit" class="btn btn-success btn-block">
+        @ButtonText
+    </button>
+
+</EditForm>
+
+@code {
+    [Parameter] public AppUser? user { get; set; }
+    [Parameter] public string ButtonText { get; set; } = "Save";
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+}

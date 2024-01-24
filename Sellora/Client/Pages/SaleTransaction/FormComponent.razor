@@ -1,0 +1,70 @@
+﻿@inject HttpClient _client
+
+<EditForm Model="@saletransaction" OnValidSubmit="@OnValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div class="form-group">
+        <label>Date of Transaction: </label>
+        <div>
+            <InputDate @bind-Value="@saletransaction.TransactionDate" class="form-control" />
+            <ValidationMessage For="@(() => saletransaction.TransactionDate)" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Item: </label>
+        <div>
+            <InputSelect @bind-Value="saletransaction.ItemId" class="form-control">
+                <option value="">-- Select Item --</option>
+                @if (Items != null)
+                {
+                    foreach (var item in Items)
+                    {
+                        <option value="@item.Id">@item.ItemName</option>
+                    }
+                }
+            </InputSelect>
+            <ValidationMessage For="@(() => saletransaction.ItemId)" />
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Uploaded By: </label>
+        <div>
+            <InputSelect @bind-Value="saletransaction.AppUserId" class="form-control">
+                <option value="">-- Select UserName --</option>
+                @if (AppUsers != null)
+                {
+                    foreach (var appUser in AppUsers)
+                    {
+                        <option value="@appUser.Id">@appUser.UserName</option>
+                    }
+                }
+            </InputSelect>
+            <ValidationMessage For="@(() => saletransaction.AppUserId)" />
+        </div>
+    </div>
+
+    <br />
+
+    <button type="submit" class="btn btn-success btn-block">
+        @ButtonText
+    </button>
+
+</EditForm>
+
+@code {
+    [Parameter] public SaleTransaction? saletransaction { get; set; }
+    [Parameter] public string ButtonText { get; set; } = "Save";
+    [Parameter] public EventCallback OnValidSubmit { get; set; }
+
+    private IList<AppUser>? AppUsers;
+    private IList<Item>? Items;
+
+    protected async Task OnIntializedAsync()
+    {
+        AppUsers = await _client.GetFromJsonAsync<List<AppUser>>($"{Endpoints.AppUsersEndpoint}");
+        Items = await _client.GetFromJsonAsync<List<Item>>($"{Endpoints.ItemsEndpoint}");
+    }
+}

@@ -1,0 +1,32 @@
+﻿@page "/saletransactions/edit/{id:int}"
+@inject HttpClient _client
+@inject NavigationManager _navManager
+@using Sellora.Client.Components
+
+<div class="saletransaction-topbar">
+    <h2 class="saletransaction-title">Edit Sale Transaction with ID: @saletransaction.Id</h2>
+    <BackToList Target="saletransactions" />
+</div>
+
+<div style="border-bottom:solid black 1px; padding-top:3px; margin-bottom:10px;">
+    @*FOR SPACING*@
+</div>
+
+<FormComponent ButtonText="Update" OnValidSubmit="EditSaleTransaction" saletransaction="saletransaction" />
+
+@code {
+    [Parameter] public int id { get; set; }
+    SaleTransaction? saletransaction = new SaleTransaction();
+
+    protected async override Task OnParametersSetAsync()
+    {
+        saletransaction = await _client.GetFromJsonAsync<SaleTransaction>($"{Endpoints.SaleTransactionsEndpoint}/{id}");
+    }
+
+    async Task EditSaleTransaction()
+    {
+        await _client.PutAsJsonAsync($"{Endpoints.SaleTransactionsEndpoint}/{id}", saletransaction);
+        _navManager.NavigateTo("/saletransactions/");
+
+    }
+}
