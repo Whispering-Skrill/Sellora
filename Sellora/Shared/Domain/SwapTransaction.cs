@@ -15,19 +15,19 @@ namespace Sellora.Shared.Domain
 
         [Required]
         public int? AppUser1Id { get; set; }
-        public virtual AppUser? User1 { get; set; }
+        public virtual AppUser? AppUser1 { get; set; }
 
         [Required]
         public int? SwapItem1Id { get; set; }
-        public virtual Item? Item1 { get; set; }
+        public virtual Item? SwapItem1 { get; set; }
 
         [Required]
         public int? AppUser2Id { get; set; }
-        public virtual AppUser? User2 { get; set; }
+        public virtual AppUser? AppUser2 { get; set; }
 
         [Required]
         public int? SwapItem2Id { get; set; }
-        public virtual Item? Item2 { get; set; }
+        public virtual Item? SwapItem2 { get; set; }
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {

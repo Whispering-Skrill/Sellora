@@ -92,3 +92,6 @@ Ryan - Redesigned Global Error Handling Pages
 Ryan - Added Universal Footer
 
 Ryan - Added Contacts Page, Terms and Conditions Page
+
+Ryan - Configured Landing Page Listing Items to be dynamic
+		- Fixed Item Creation

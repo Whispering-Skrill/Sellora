@@ -28,7 +28,7 @@ namespace Sellora.Server.Controllers
 
         public async Task<IActionResult> GetItems()
         {
-            var items = await _unitOfWork.Items.GetAll();
+            var items = await _unitOfWork.Items.GetAll(includes: q => q.Include(x => x.AppUser));
             return Ok(items);
         }
 

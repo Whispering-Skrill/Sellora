@@ -109,13 +109,11 @@
 @code {
     Item item = new Item();
 
-    private IList<Item>? Items;
     private IList<AppUser>? AppUsers;
     private IList<Category>? Categories;
 
     protected async override Task OnInitializedAsync()
     {
-        Items = await _client.GetFromJsonAsync<List<Item>>($"{Endpoints.ItemsEndpoint}");
         AppUsers = await _client.GetFromJsonAsync<List<AppUser>>($"{Endpoints.AppUsersEndpoint}");
         Categories = await _client.GetFromJsonAsync<List<Category>>($"{Endpoints.CategoriesEndpoint}");
     }

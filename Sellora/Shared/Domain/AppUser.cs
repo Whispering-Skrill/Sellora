@@ -23,5 +23,6 @@ namespace Sellora.Shared.Domain
         public virtual List<Item> ? Items { get; set; }
         public virtual List<Report> ? Reports { get; set; }
         public virtual List<Review> ? Reviews { get; set; }
+        public virtual List<SaleTransaction>? SaleTransactions { get; set; }
     }
 }

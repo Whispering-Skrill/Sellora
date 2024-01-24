@@ -48,7 +48,7 @@ namespace Sellora.Server.Controllers
             //}
 
             // Gets All values within the SwapTransaction Table
-            var swaptransactions = await _unitOfWork.SwapTransactions.GetAll(includes:q=>q.Include(x=>x.User1).Include(x=>x.Item1).Include(x => x.User2).Include(x => x.Item2));
+            var swaptransactions = await _unitOfWork.SwapTransactions.GetAll(includes:q=>q.Include(x=>x.AppUser1).Include(x=>x.SwapItem1).Include(x => x.AppUser2).Include(x => x.SwapItem2));
             return Ok(swaptransactions);
         }
 
