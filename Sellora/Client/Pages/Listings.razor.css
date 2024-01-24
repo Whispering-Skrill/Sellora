@@ -13,7 +13,8 @@
 
 .listing-section {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
 }
 
 .listing-container {
@@ -29,7 +30,7 @@
 .listing-box {
     background-color: white;
     flex: 1;
-    margin: 1vh;
+    margin: 1%;
     min-width: 23%;
     max-width: 23%;
     height: auto;
