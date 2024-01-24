@@ -31,8 +31,8 @@
     background-color: white;
     flex: 1;
     margin: 1vh;
-    min-width: 23vh;
-    max-width: 23vh;
+    min-width: 300px;
+    max-width: 300px;
     height: auto;
     border-radius: 12px;
     transition: 0.2s;
