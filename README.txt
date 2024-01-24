@@ -93,5 +93,9 @@ Ryan - Added Universal Footer
 
 Ryan - Added Contacts Page, Terms and Conditions Page
 
+Lucas - Added Create Pages for all Lucas-Entities
+
 Ryan - Configured Landing Page Listing Items to be dynamic
 		- Fixed Item Creation
+
+Ryan - Fixed Landing Page Authorisation Issue

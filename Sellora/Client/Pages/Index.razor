@@ -1,8 +1,8 @@
 ﻿@page "/"
 @inject IJSRuntime js
-@inject HttpClient _client
-@inject HttpInterceptorService _interceptor
-@implements IDisposable
+@using Microsoft.AspNetCore.Components.Authorization
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+
 
 <PageTitle>Home</PageTitle>
 
@@ -38,46 +38,14 @@
     </div>
 </body>
 
+<AuthorizeView>
+    <NotAuthorized>
 
-<!-- Listings -->
-<div class="listing-section">
-    <div class="listing-container">
-        @if (Items == null)
-        {
-            <div class="alert alert-info">Loading Items...</div>
-        }
-        else
-        {
-            @foreach (var item in Items)
-            {
-                <div class="listing-box">
-                    <a href="" style="text-decoration:none;">
-                        <div class="listingitem-inner">
-                            <p class="listingitem-username">@item.AppUser.UserName</p>
-                            <img src="https://via.placeholder.com/300" class="card-img-top" style="border-radius:10px;">
-                            <div class="listingitem-content">
-                                <h5 class="listingitem-title">@item.ItemName</h5>
-                                @if (item.ItemPrice == 0)
-                                {
-                                    <p class="listingitem-price">Free</p>
-                                }
-                                else
-                                {
-                                    <p class="listingitem-price">$@item.ItemPrice</p>
-                                }
-                                <p class="listing-condition">@item.Condition</p>
-                                <div class="listingitem-likescontainer">
-                                    <i class="fa fa-heart-o" style="font-size:20px; margin-left:0.1vh;"></i>
-                                    <p style="margin-left:5px; margin-top:-5px; font-size:125%;">@item.ItemLikes</p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            }
-        }
-    </div>
-</div>
+    </NotAuthorized>
+    <Authorized>
+        <Sellora.Client.Pages.Listings />
+    </Authorized>
+</AuthorizeView>
 
 @*
     <div class="listings-container">
@@ -143,19 +111,6 @@
     async void PrevSlide()
     {
         await js.InvokeVoidAsync("moveToPrevSlide");
-    }
-
-    private List<Sellora.Shared.Domain.Item>? Items;
-
-    protected async override Task OnInitializedAsync()
-    {
-        _interceptor.MonitorEvent();
-        Items = await _client.GetFromJsonAsync<List<Sellora.Shared.Domain.Item>>($"{Endpoints.ItemsEndpoint}");
-    }
-
-    public void Dispose()
-    {
-        _interceptor.DisposeEvent();
     }
 }
 
