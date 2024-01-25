@@ -1,0 +1,27 @@
+﻿@*ASPNetr-yanWorks*@
+@page "/saletransactions/view/{id:int}"
+@inject HttpClient _client
+@inject NavigationManager _navManager
+@using Sellora.Client.Components
+
+<div class="saletransaction-topbar">
+    <h2 class="saletransaction-title">View SaleTransaction with ID: @saletransaction.Id</h2>
+    <BackToList Target="saletransactions" />
+</div>
+
+<div style="border-bottom:solid black 1px; padding-top:3px; margin-bottom:10px;">
+    @*FOR SPACING*@
+</div>
+
+<FormComponent saletransaction="saletransaction" Disabled="true" />
+
+@code {
+    [Parameter] public int id { get; set; }
+
+    SaleTransaction? saletransaction = new SaleTransaction();
+
+    protected async override Task OnParametersSetAsync()
+    {
+        saletransaction = await _client.GetFromJsonAsync<SaleTransaction>($"{Endpoints.SaleTransactionsEndpoint}/{id}");
+    }
+}

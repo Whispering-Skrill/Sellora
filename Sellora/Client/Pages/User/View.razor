@@ -1,0 +1,27 @@
+﻿@*ASPNetr-yanWorks*@
+@page "/users/view/{id:int}"
+@inject HttpClient _client
+@inject NavigationManager _navManager
+@using Sellora.Client.Components
+
+<div class="user-topbar">
+    <h2 class="user-title">View User with ID: @user.Id</h2>
+    <BackToList Target="users" />
+</div>
+
+<div style="border-bottom:solid black 1px; padding-top:3px; margin-bottom:10px;">
+    @*FOR SPACING*@
+</div>
+
+<FormComponent user="user" Disabled="true" />
+
+@code {
+    [Parameter] public int id { get; set; }
+
+    AppUser? user = new AppUser();
+
+    protected async override Task OnParametersSetAsync()
+    {
+        user = await _client.GetFromJsonAsync<AppUser>($"{Endpoints.AppUsersEndpoint}/{id}");
+    }
+}

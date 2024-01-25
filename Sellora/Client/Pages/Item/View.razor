@@ -1,0 +1,27 @@
+﻿@*ASPNetr-yanWorks*@
+@page "/items/view/{id:int}"
+@inject HttpClient _client
+@inject NavigationManager _navManager
+@using Sellora.Client.Components
+
+<div class="item-topbar">
+    <h2 class="item-title">View Item with ID: @item.Id</h2>
+    <BackToList Target="items" />
+</div>
+
+<div style="border-bottom:solid black 1px; padding-top:3px; margin-bottom:10px;">
+    @*FOR SPACING*@
+</div>
+
+<FormComponent item="item" Disabled="true" />
+
+@code {
+    [Parameter] public int id { get; set; }
+
+    Item? item = new Item();
+
+    protected async override Task OnParametersSetAsync()
+    {
+        item = await _client.GetFromJsonAsync<Item>($"{Endpoints.ItemsEndpoint}/{id}");
+    }
+}

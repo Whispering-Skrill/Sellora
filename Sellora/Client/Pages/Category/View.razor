@@ -1,0 +1,27 @@
+﻿@*ASPNetr-yanWorks*@
+@page "/categories/view/{id:int}"
+@inject HttpClient _client
+@inject NavigationManager _navManager
+@using Sellora.Client.Components
+
+<div class="category-topbar">
+    <h2 class="category-title">View Category with ID: @category.Id</h2>
+    <BackToList Target="categories" />
+</div>
+
+<div style="border-bottom:solid black 1px; padding-top:3px; margin-bottom:10px;">
+    @*FOR SPACING*@
+</div>
+
+<FormComponent category="category" Disabled="true" />
+
+@code {
+    [Parameter] public int id { get; set; }
+
+    Category? category = new Category();
+
+    protected async override Task OnParametersSetAsync()
+    {
+        category = await _client.GetFromJsonAsync<Category>($"{Endpoints.CategoriesEndpoint}/{id}");
+    }
+}

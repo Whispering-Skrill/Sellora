@@ -2,6 +2,7 @@
     <DataAnnotationsValidator />
     <ValidationSummary />
 
+    <fieldset disabled="@Disabled">
     <div class="form-group">
         <label>Name: </label>
         <div>
@@ -10,14 +11,18 @@
         </div>
     </div>
     <br />
+    </fieldset>
 
-    <button type="submit" class="btn btn-success btn-block">
-        @ButtonText
-    </button>
-
+    @if (!Disabled)
+    {
+        <button type="submit" class="btn btn-success btn-block">
+            @ButtonText
+        </button>
+    }
 </EditForm>
 
 @code {
+    [Parameter] public bool Disabled { get; set; } = false;
     [Parameter] public Category? category { get; set; }
     [Parameter] public string ButtonText { get; set; } = "Save";
     [Parameter] public EventCallback OnValidSubmit { get; set; }
