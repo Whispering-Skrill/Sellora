@@ -28,7 +28,7 @@ namespace Sellora.Server.Controllers
 
         public async Task<IActionResult> GetSaleTransactions()
         {
-            var saletransactions = await _unitOfWork.SaleTransactions.GetAll();
+            var saletransactions = await _unitOfWork.SaleTransactions.GetAll(includes: q => q.Include(x => x.AppUser).Include(x => x.Item));
             return Ok(saletransactions);
         }
 

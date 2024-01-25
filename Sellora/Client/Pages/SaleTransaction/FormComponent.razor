@@ -3,7 +3,6 @@
 <EditForm Model="@saletransaction" OnValidSubmit="@OnValidSubmit">
     <DataAnnotationsValidator />
     <ValidationSummary />
-
     <fieldset disabled="@Disabled">
     <div class="form-group">
         <label>Date of Transaction: </label>
@@ -68,7 +67,7 @@
     private IList<AppUser>? AppUsers;
     private IList<Item>? Items;
 
-    protected async Task OnIntializedAsync()
+    protected async override Task OnInitializedAsync()
     {
         AppUsers = await _client.GetFromJsonAsync<List<AppUser>>($"{Endpoints.AppUsersEndpoint}");
         Items = await _client.GetFromJsonAsync<List<Item>>($"{Endpoints.ItemsEndpoint}");

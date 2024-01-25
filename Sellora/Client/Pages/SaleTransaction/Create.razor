@@ -49,7 +49,7 @@
                 <option value="">-- Select UserName --</option>
                 @if (AppUsers != null)
                 {
-                    foreach (var appUser in AppUsers)
+                    @foreach (var appUser in AppUsers)
                     {
                         <option value="@appUser.Id">@appUser.UserName</option>
                     }
@@ -73,7 +73,7 @@
     private IList<AppUser>? AppUsers;
     private IList<Item>? Items;
 
-    protected async Task OnIntializedAsync()
+    protected async override Task OnInitializedAsync()
     {
         AppUsers = await _client.GetFromJsonAsync<List<AppUser>>($"{Endpoints.AppUsersEndpoint}");
         Items = await _client.GetFromJsonAsync<List<Item>>($"{Endpoints.ItemsEndpoint}");

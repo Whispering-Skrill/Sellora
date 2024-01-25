@@ -1,8 +1,7 @@
 function AddDataTable(table) {
     $(document).ready(function () {
-        currenttable = $(table).DataTable();
+        $(table).DataTable();
     })
-
 }
 
 function DataTablesDispose(table) {
@@ -15,15 +14,14 @@ function DataTablesDispose(table) {
 
 function AddModifiedDataTable(table) {
     $(document).ready(function () {
-        currenttable = $(table).DataTable({
-            //searching: false,
+        $(table).DataTable({
+            destroy: true,
             language: { search: "" },
             ordering: false,
             pageLength: 30,
             lengthChange: false,
-            dom: "<'row'<'col-sm-12'tr>>" +
+            dom:"<'row'<'col-sm-12'tr>>" +
                 "<'row'<'col-sm-5'i><'col-sm-5'p><'col-sm'f>>"
         });
     })
-
 }

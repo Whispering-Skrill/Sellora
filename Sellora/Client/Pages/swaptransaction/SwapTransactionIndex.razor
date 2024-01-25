@@ -25,7 +25,7 @@
 else
 {
     @*for JS datatable script*@
-    <table class="table table-hover" id="swapTable">
+    <table class="table table-responsive" id="swapTable">
         <thead>
             <tr>
                 <th>Transaction Date</th>
@@ -86,6 +86,7 @@ else
             var confirm = await js.InvokeAsync<bool>("confirm", $"Do you want to delete transactiond dated {swaptransaction.TransactionDate}?");
             if (confirm)
             {
+                Dispose();
                 await _client.DeleteAsync($"{Endpoints.SwapTransactionsEndpoint}/{swaptransactionsID}");
                 await OnInitializedAsync();
             }
@@ -96,6 +97,6 @@ else
     {
         // For JS datatable script
         js.InvokeVoidAsync("DataTablesDispose", "#swapTable");
-        _interceptor.DisposeEvent();
+        //_interceptor.DisposeEvent();
     }
 }

@@ -13,15 +13,19 @@ namespace Sellora.Shared.Domain
         [DataType(DataType.DateTime)]
         public DateTime TransactionDate { get; set; } = DateTime.Now;
 
+        [Required]
         public int? AppUser1Id { get; set; }
         public virtual AppUser? AppUser1 { get; set; }
 
+        [Required]
         public int? SwapItem1Id { get; set; }
         public virtual Item? SwapItem1 { get; set; }
 
+        [Required]
         public int? AppUser2Id { get; set; }
         public virtual AppUser? AppUser2 { get; set; }
 
+        [Required]
         public int? SwapItem2Id { get; set; }
         public virtual Item? SwapItem2 { get; set; }
 

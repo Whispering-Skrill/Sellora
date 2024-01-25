@@ -26,7 +26,7 @@
 else
 {
     @*for JS datatable script*@
-    <table class ="table table-hover" id="staffTable">
+    <table class ="table table-responsive" id="staffTable">
         <thead>
             <tr>
                 <th>First Name</th>
@@ -79,12 +79,6 @@ else
         Staffs = await _client.GetFromJsonAsync<List<Staff>>($"{Endpoints.StaffsEndpoint}");
     }
 
-    // For JS datatable script
-    protected async override Task OnAfterRenderAsync(bool firstRender)
-    {
-        await js.InvokeVoidAsync("AddModifiedDataTable", "#staffTable");
-    }
-
     async Task Delete(int staffID)
     {
         if (Staffs != null)
@@ -93,16 +87,23 @@ else
             var confirm = await js.InvokeAsync<bool>("confirm", $"Do you want to delete {staff.StaffFirstName} {staff.StaffLastName}?");
             if (confirm)
             {
+                Dispose();
                 await _client.DeleteAsync($"{Endpoints.StaffsEndpoint}/{staffID}");
                 await OnInitializedAsync();
             }
         }
     }
 
+    // For JS datatable script
+    protected async override Task OnAfterRenderAsync(bool firstRender)
+    {
+        await js.InvokeVoidAsync("AddModifiedDataTable", "#staffTable");
+    }
+
     public void Dispose()
     {
         // For JS datatable script
         js.InvokeVoidAsync("DataTablesDispose", "#staffTable");
-        _interceptor.DisposeEvent();
+        //_interceptor.DisposeEvent();
     }
 }
