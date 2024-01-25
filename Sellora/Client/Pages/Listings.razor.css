@@ -22,7 +22,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    max-width: 100%;
+    width: 100%;
+    max-width: 2000px;
     width: auto;
     height: auto;
 }
@@ -31,6 +32,7 @@
     background-color: white;
     flex: 1;
     margin: 1%;
+    margin-bottom: 0px;
     min-width: 23%;
     max-width: 23%;
     height: auto;

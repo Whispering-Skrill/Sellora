@@ -1,51 +1,29 @@
-﻿<h3>Profile</h3>
+﻿@page "/profile/"
 
-<div class="profile-container">
-    <div class="profile-header">
-        <img src="https://via.placeholder.com/120" alt="Profile Image" class="profile-image">
-        <h3>User Name</h3>
-        <p>Email: user@example.com</p>
-    </div>
+<PageTitle>Profile</PageTitle>
 
-    <div class="profile-details">
-        <h4>About Me</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam aliquam tristique erat vitae ultrices.</p>
-    </div>
+<AuthorizeView>
+    <Authorized>
+        <body>
+            <div class="profile-container">
+                <div class="profile-picture">
+                    <img src="https://placekitten.com/300/300" alt="Profile Picture">
+                </div>
+                <h1 class="user-name">@context.User.Identity.Name</h1>
+                <p class="user-description">Full Stack Development</p>
 
-    <div class="profile-listings">
-        <h4>Listings</h4>
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Item 1</h5>
-                <p class="card-text">Description of Item 1.</p>
+                <div class="social-icons">
+                    <a href="#" target="_blank">🌐</a>
+                    <a href="#" target="_blank">📷</a>
+                    <a href="#" target="_blank">🐦</a>
+                </div>
+                <a href="" class="nice-button">Back</a>
             </div>
-        </div>
 
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Item 2</h5>
-                <p class="card-text">Description of Item 2.</p>
-            </div>
-        </div>
+        </body>
+    </Authorized>
+</AuthorizeView>
 
-    </div>
+@code {
 
-    <div class="profile-reviews">
-        <h4>Reviews</h4>
-
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Review 1</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-body">
-                <h5 class="card-title">Review 2</h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-        </div>
-
-    </div>
-</div>
+}

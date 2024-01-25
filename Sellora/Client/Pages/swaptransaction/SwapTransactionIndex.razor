@@ -6,7 +6,9 @@
 @attribute [Authorize]
 
 <div class="swaptransaction-topbar">
-    <h2 class="swaptransaction-title">Swap Transactions</h2>
+    <div style="flex:1">
+        <h2 class="swaptransaction-title">Swap Transactions</h2>
+    </div>
     <a href="/swaptransactions/create" class="btn btn-secondary">
         <span class="oi oi-plus" style="margin-top: 5px;"></span>
     </a>
@@ -22,7 +24,8 @@
 }
 else
 {
-    <table class="table table-responsive">
+    @*for JS datatable script*@
+    <table class="table table-hover" id="swapTable">
         <thead>
             <tr>
                 <th>Transaction Date</th>
@@ -69,6 +72,12 @@ else
         SwapTransactions = await _client.GetFromJsonAsync<List<SwapTransaction>>($"{Endpoints.SwapTransactionsEndpoint}");
     }
 
+    // For JS datatable script
+    protected async override Task OnAfterRenderAsync(bool firstRender)
+    {
+        await js.InvokeVoidAsync("AddModifiedDataTable", "#swapTable");
+    }
+
     async Task Delete(int swaptransactionsID)
     {
         if (SwapTransactions != null)
@@ -85,6 +94,8 @@ else
 
     public void Dispose()
     {
+        // For JS datatable script
+        js.InvokeVoidAsync("DataTablesDispose", "#swapTable");
         _interceptor.DisposeEvent();
     }
 }

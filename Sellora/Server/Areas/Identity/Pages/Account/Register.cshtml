@@ -18,12 +18,17 @@
             <div style="float:right; width:40rem; margin-top: 4rem;">
                 <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
                 <div class="form-floating mb-3">
-                    <input asp-for="Input.UserFirstName" class="form-control" autocomplete="give-name" aria-required="true" />
+                    <input asp-for="Input.Username" class="form-control" autocomplete="user-name" aria-required="true" placeholder="username" />
+                    <label asp-for="Input.Username">Username</label>
+                    <span asp-validation-for="Input.Username" class="text-danger"></span>
+                </div>
+                <div class="form-floating mb-3">
+                    <input asp-for="Input.UserFirstName" class="form-control" autocomplete="give-name" aria-required="true" placeholder="firstname" />
                     <label asp-for="Input.UserFirstName">First Name</label>
                     <span asp-validation-for="Input.UserFirstName" class="text-danger"></span>
                 </div>
                 <div class="form-floating mb-3">
-                    <input asp-for="Input.UserLastName" class="form-control" autocomplete="family-name" aria-required="true" />
+                    <input asp-for="Input.UserLastName" class="form-control" autocomplete="family-name" aria-required="true" placeholder="lastname" />
                     <label asp-for="Input.UserLastName">Last Name</label>
                     <span asp-validation-for="Input.UserLastName" class="text-danger"></span>
                 </div>

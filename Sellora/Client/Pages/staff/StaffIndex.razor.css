@@ -11,5 +11,16 @@
     align-items: center;
 }
 
+.col-sm {
+    display:flex;
+    float:right;
+}
+
+.dataTables_filter {
+    display:flex;
+    flex:1;
+    float:right;
+}
+
 body {
 }

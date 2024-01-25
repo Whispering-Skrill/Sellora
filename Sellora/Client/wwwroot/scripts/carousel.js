@@ -17,8 +17,6 @@ function moveToNextSlide() {
     } else {
         slidePosition++;
     }
-    console.log(slidePosition);
-    console.log(totalSlides);
     updateSlidePosition();
 }
 
@@ -28,6 +26,5 @@ function moveToPrevSlide() {
     } else {
         slidePosition--;
     }
-
     updateSlidePosition();
 }

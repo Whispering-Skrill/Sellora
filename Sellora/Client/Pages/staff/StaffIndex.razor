@@ -7,8 +7,10 @@
 @attribute [Authorize]
 
 <div class="staff-topbar">
-    <h2 class="staff-title">Our Staff</h2>
-    <a href="/staffs/create" class="btn btn-secondary">
+    <div style="flex:1">
+        <h2 class="staff-title">Our Staff</h2>
+    </div>
+    <a href="/staffs/create" class="btn btn-secondary" style="align-self:flex-start;2">
         <span class="oi oi-plus" style="margin-top: 5px;"></span>
     </a>
 </div>
@@ -24,8 +26,7 @@
 else
 {
     @*for JS datatable script*@
-    @*<table class ="table table-responsive" id="bookingsTable">*@
-    <table class ="table table-responsive">
+    <table class ="table table-hover" id="staffTable">
         <thead>
             <tr>
                 <th>First Name</th>
@@ -79,10 +80,10 @@ else
     }
 
     // For JS datatable script
-    //protected async override Task OnAfterRenderAsync(bool firstRender)
-    //{
-    //    await js.InvokeVoidAsync("AddDataTable", "#bookingsTable");
-    //}
+    protected async override Task OnAfterRenderAsync(bool firstRender)
+    {
+        await js.InvokeVoidAsync("AddModifiedDataTable", "#staffTable");
+    }
 
     async Task Delete(int staffID)
     {
@@ -101,7 +102,7 @@ else
     public void Dispose()
     {
         // For JS datatable script
-        //js.InvokeVoidAsync("DataTablesDispose", "#bookingsTable");
+        js.InvokeVoidAsync("DataTablesDispose", "#staffTable");
         _interceptor.DisposeEvent();
     }
 }

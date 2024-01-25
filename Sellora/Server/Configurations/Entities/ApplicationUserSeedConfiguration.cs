@@ -29,9 +29,9 @@ namespace CarRentalManagement.Server.Configurations.Entities
                 NormalizedEmail = "USER@LOCALHOST.COM",
                 UserFirstName = "User",
                 UserLastName = "User",
-                UserName = "user@localhost.com",
-                NormalizedUserName = "USER@LOCALHOST.COM",
-                PasswordHash = hasher.HashPassword(null, "P@ssword2")
+                UserName = "user",
+                NormalizedUserName = "USER",
+                PasswordHash = hasher.HashPassword(null, "P@ssword1")
             }
             );
         }

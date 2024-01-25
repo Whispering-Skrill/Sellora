@@ -74,6 +74,12 @@ namespace Sellora.Server.Areas.Identity.Pages.Account
         /// </summary>
         public class InputModel
         {
+            // This is the login input for Username!
+            [Required]
+            [Display(Name = "UserName")]
+            [StringLength(30, ErrorMessage = "UserName cannot be longer than 30 Characters.")]
+            public string Username { get; set; }
+
             // This is the login input for First Name!
             [Required]
             [Display(Name = "First Name")]
@@ -131,11 +137,8 @@ namespace Sellora.Server.Areas.Identity.Pages.Account
 
                 // This don't work, tried to make the name display as username but it messes with the login (big sad)
                 //await _userStore.SetUserNameAsync(user, Input.UserFirstName, CancellationToken.None);
-                await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
+                await _userStore.SetUserNameAsync(user, Input.Username, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
-
-                user.UserFirstName = Input.UserFirstName;
-                user.UserLastName = Input.UserLastName;
 
                 var result = await _userManager.CreateAsync(user, Input.Password);
 

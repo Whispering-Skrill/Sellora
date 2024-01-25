@@ -1,6 +1,7 @@
 1 - [COMPLETE] Add Wide height input bar for Review and Report description.
 2 - [COMPLETE] Remove Date Change option when CREATING reports, reviews, swaptransactions
 3 - [COMPLETE] Add authorisation to navbar 
+4 - Add About Page, Unauthorised Landing Page
 
 
 
@@ -99,3 +100,11 @@ Ryan - Configured Landing Page Listing Items to be dynamic
 		- Fixed Item Creation
 
 Ryan - Fixed Landing Page Authorisation Issue
+
+Lucas - Created Edit Pages for Lucas-Entities
+
+Ryan - Fixed JS Bootstrap DataTables for Ryan-Entities
+
+Ryan - Reconfigured MainLayout Structure
+
+Ryan - Edited Profile Page

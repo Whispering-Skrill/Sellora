@@ -1,5 +1,6 @@
 ﻿@page "/"
 @inject IJSRuntime js
+@implements IDisposable
 @using Microsoft.AspNetCore.Components.Authorization
 @using Microsoft.AspNetCore.Components.WebAssembly.Authentication
 
@@ -102,8 +103,25 @@
 </div>
 *@
 
+
 @code
 {
+    private Timer timer;
+
+    protected override void OnInitialized()
+    {
+        // Set up the timer to run the function every 10 seconds
+        timer = new Timer(OnTimerCallback, null, TimeSpan.Zero, TimeSpan.FromSeconds(10));
+    }
+
+    private void OnTimerCallback(object state) => NextSlide();
+
+    public void Dispose()
+    {
+        timer?.Dispose();
+    }
+
+
     async void NextSlide()
     {
         await js.InvokeVoidAsync("moveToNextSlide");
