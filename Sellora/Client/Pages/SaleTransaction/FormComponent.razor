@@ -36,9 +36,9 @@
                 <option value="">-- Select UserName --</option>
                 @if (AppUsers != null)
                 {
-                    foreach (var appUser in AppUsers)
+                    foreach (var user in AppUsers)
                     {
-                        <option value="@appUser.Id">@appUser.UserName</option>
+                        <option value="@user.Id">@user.UserName</option>
                     }
                 }
             </InputSelect>
