@@ -3,6 +3,9 @@
 @inject HttpClient _client
 @inject NavigationManager _navManager
 @using Sellora.Client.Components
+@attribute [Authorize]
+
+<PageTitle>Viewing Review @review.Id</PageTitle>
 
 <div class="review-topbar">
     <h2 class="review-title">View Review with ID: @review.Id</h2>

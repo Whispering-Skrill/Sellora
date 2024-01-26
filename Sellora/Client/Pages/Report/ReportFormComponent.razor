@@ -40,7 +40,7 @@
                     {
                         foreach (var appuser in AppUsers)
                         {
-                            <option value="@appuser.Id">User: @appuser.Id</option>
+                            <option value="@appuser.Id">ID: @appuser.Id ( @appuser.UserName )</option>
                         }
                     }
                 </InputSelect>
@@ -56,7 +56,7 @@
                     {
                         foreach (var staff in Staffs)
                         {
-                            <option value="@staff.Id">Staff: @staff.Id</option>
+                            <option value="@staff.Id">ID: @staff.Id ( @staff.StaffFirstName @staff.StaffLastName )</option>
                         }
                     }
                 </InputSelect>

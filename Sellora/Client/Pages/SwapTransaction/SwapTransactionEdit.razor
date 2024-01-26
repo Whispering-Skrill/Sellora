@@ -3,6 +3,9 @@
 @inject HttpClient _client
 @inject NavigationManager _navManager
 @using Sellora.Client.Components
+@attribute [Authorize]
+
+<PageTitle>Editing Swap Transaction @swaptransaction.Id</PageTitle>
 
 <div class="swaptransaction-topbar">
     <h2 class="swaptransaction-title">Edit Swap Transaction with ID: @swaptransaction.Id</h2>

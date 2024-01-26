@@ -111,3 +111,7 @@ Ryan - Reconfigured MainLayout Structure
 Ryan - Edited Profile Page
 
 Lucas - Created Form Components for Lucas-Entities
+
+Ryan - Standardised all Ryan-Entities
+
+Ryan - Added Categorical Pages

@@ -3,6 +3,9 @@
 @inject HttpClient _client
 @inject NavigationManager _navManager
 @using Sellora.Client.Components
+@attribute [Authorize]
+
+<PageTitle>Viewing Staff @staff.Id</PageTitle>
 
 <div class="staff-topbar">
     <h2 class="staff-title">View Staff with ID: @staff.Id</h2>

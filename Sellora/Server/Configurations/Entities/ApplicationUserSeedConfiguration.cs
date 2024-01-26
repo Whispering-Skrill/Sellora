@@ -18,8 +18,8 @@ namespace CarRentalManagement.Server.Configurations.Entities
                 NormalizedEmail = "ADMIN@LOCALHOST.COM",
                 UserFirstName = "Admin",
                 UserLastName = "User",
-                UserName = "admin@localhost.com",
-                NormalizedUserName = "ADMIN@LOCALHOST.COM",
+                UserName = "Admin",
+                NormalizedUserName = "ADMIN",
                 PasswordHash = hasher.HashPassword(null, "P@ssword1")
             },
             new ApplicationUser

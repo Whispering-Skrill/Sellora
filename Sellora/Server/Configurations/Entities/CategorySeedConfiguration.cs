@@ -54,6 +54,24 @@ namespace Sellora.Server.Configurations.Entities
                 DateUpdated = DateTime.Now,
                 CreatedBy = "System",
                 UpdatedBy = "System"
+            },
+            new Category
+            {
+                Id = 6,
+                CategoryName = "Electronics",
+                DateCreated = DateTime.Now,
+                DateUpdated = DateTime.Now,
+                CreatedBy = "System",
+                UpdatedBy = "System"
+            },
+            new Category
+            {
+                Id = 7,
+                CategoryName = "Services",
+                DateCreated = DateTime.Now,
+                DateUpdated = DateTime.Now,
+                CreatedBy = "System",
+                UpdatedBy = "System"
             }
         );
         }

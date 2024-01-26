@@ -6,6 +6,8 @@
 @inject IJSRuntime js
 @attribute [Authorize]
 
+<PageTitle>Reports</PageTitle>
+
 <div class="report-topbar">
     <h2 class="report-title">Reports</h2>
     <a href="/reports/create" class="btn btn-secondary">
@@ -104,7 +106,7 @@
         if (Reports != null)
         {
             var report = Reports.First(q => q.Id == reportID);
-            var confirm = await js.InvokeAsync<bool>("confirm", $"Do you want to delete report dated: {report.ReportDate}?");
+            var confirm = await js.InvokeAsync<bool>("confirm", $"Do you want to delete Report {report.Id}, Dated: {report.ReportDate}?");
             if (confirm)
             {
                 await _client.DeleteAsync($"{Endpoints.ReportsEndpoint}/{reportID}");
