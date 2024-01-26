@@ -1,8 +1,9 @@
 1 - [COMPLETE] Add Wide height input bar for Review and Report description.
 2 - [COMPLETE] Remove Date Change option when CREATING reports, reviews, swaptransactions
 3 - [COMPLETE] Add authorisation to navbar 
-4 - Add About Page, Unauthorised Landing Page
+4 - [COMPLETE] Add About Page, Unauthorised Landing Page
 5 - DataTables error
+6 - All Categories paging?
 
 
 

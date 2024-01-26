@@ -7,12 +7,11 @@
 
 .listingpage-topbar {
     margin: 0.5vh 2vh;
-    padding-bottom: 2vh;
+    margin-bottom: 0;
     display: flex;
     position: relative;
     align-items: center;
     text-align: center;
-    border-bottom: solid black 3px;
 }
 
 .listingpage-alert {
@@ -36,6 +35,7 @@
 
 .listing-container {
     margin: 3vh;
+    margin-top: 1vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;

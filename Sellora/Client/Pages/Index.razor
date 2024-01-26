@@ -18,18 +18,18 @@
             <span class="oi oi-caret-left"></span>
         </button>
         <div class="ad ad--visible">
-            <a href="/">
+            <a href="/listings/9">
                 <img src="/lib/Living.jpg" width="1000" aria-label="Home and Living">
             </a>
         </div>
         <div class="ad">
-            <a href="/">
+            <a href="/listings/1">
                 <img src="/lib/Cars.jpg" width="1000" aria-label="Cars and Vehicles">
             </a>
         </div>
         <div class="ad">
-            <a href="/">
-                <img src="/lib/Toys.jpg" width="1000" aria-label="Toys and Games">
+            <a href="/listings/7">
+                <img src="/lib/Toys.jpg" width="1000" aria-label="Toys and Hobbies">
             </a>
         </div>
         <button class="carousel-button-right" @onclick="NextSlide">
@@ -40,7 +40,59 @@
 
 <AuthorizeView>
     <NotAuthorized>
-
+        <div class="login-div-container">
+            <div class="login-div">
+                <a href="authentication/login" class="login-text">Login to start Shopping today!</a>
+            </div>
+        </div>
+        <div class="listing-container">
+            <div class="row" style="margin:auto;">
+                <div class="col">
+                    <div class="listing-box">
+                        <img src="https://via.placeholder.com/300" class="card-img-top" alt="Listing Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Hand Soap</h5>
+                            <p class="card-text">Login to View</p>
+                            <p class="username">User123</p>
+                            <div class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9734;</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="listing-box">
+                        <img src="https://via.placeholder.com/300" class="card-img-top" alt="Listing Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Cheap Books</h5>
+                            <p class="card-text">Login to View</p>
+                            <p class="username">User456</p>
+                            <div class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="listing-box">
+                        <img src="https://via.placeholder.com/300" class="card-img-top" alt="Listing Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Hamburger</h5>
+                            <p class="card-text">Login to View</p>
+                            <p class="username">User789</p>
+                            <div class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="listing-box">
+                        <img src="https://via.placeholder.com/300" class="card-img-top" alt="Listing Image">
+                        <div class="card-body">
+                            <h5 class="card-title">Mazda 787</h5>
+                            <p class="card-text">Login to View</p>
+                            <p class="username">User789</p>
+                            <div class="star-rating">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </NotAuthorized>
     <Authorized>
         <Sellora.Client.Pages.Listings />

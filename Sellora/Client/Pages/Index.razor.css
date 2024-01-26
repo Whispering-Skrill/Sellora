@@ -71,10 +71,10 @@
     background-color: white;
     flex: 1;
     margin: 1vh;
-    min-width: 23vh;
-    max-width: 23vh;
+    min-width: 20vh;
+    max-width: 20vh;
     height: auto;
-    border-radius: 12px;
+    border-radius: 15px;
     transition: 0.2s;
     /*box-shadow: none;*/
 }
@@ -127,4 +127,30 @@
 .listingitem-likescontainer {
     display: flex;
     margin-top: 45px;
+}
+
+.login-div-container {
+    display:flex;
+    justify-content:center;
+}
+
+.login-div {
+    margin-top: 2vh;
+    margin-bottom: 0vh;
+    display: flex;
+    min-height: 50px;
+    min-width: 90%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: #EAEAEA;
+    border-radius: 10px;
+}
+
+.login-text {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Microsoft Sans Serif';
+    color:black;
+    text-decoration:none;
 }

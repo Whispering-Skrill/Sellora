@@ -1,0 +1,30 @@
+﻿body {
+    font-family: 'Microsoft Sans Serif';
+}
+
+.about-title-container {
+    text-align: center;
+    margin-bottom: 2vh;
+}
+
+.about-title {
+    font-weight: bold;
+    font-size: 5.5vh;
+}
+
+.about-description-container-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2vh;
+}
+
+.about-description-container {
+    width: 70vw;
+    padding: 3vh 4vw;
+    background-color: #EAEAEA;
+    border-radius: 15px;
+}
+
+.about-description {
+    font-size: 1.3vw;
+}
