@@ -21,7 +21,7 @@ else
 {
     @*for JS datatable script*@
     @*<table class ="table table-responsive" id="bookingsTable">*@
-    <table class="table table-responsive">
+    <table class="table table-responsive" id="userTable">
         <thead>
             <tr>
                 <th>UserName</th>
@@ -92,10 +92,13 @@ else
         }
     }
 
+    protected async override Task OnAfterRenderAsync(bool firstRender)
+    {
+        await js.InvokeVoidAsync("AddDataTable", "#userTable");
+    }
+
     public void Dispose()
     {
-        // For JS datatable script
-        //js.InvokeVoidAsync("DataTablesDispose", "#bookingsTable");
-        _interceptor.DisposeEvent();
+        js.InvokeVoidAsync("DataTablesDispose", "#userTable");
     }
 }
