@@ -17,7 +17,7 @@ namespace Sellora.Shared.Domain
         public DateTime ItemDate { get; set; } = DateTime.Now;
         public string? ItemDescription { get; set; }
         public string? ItemLocation { get; set; }
-        public string? ImageUrl { get; set; }
+        public string? ImageUrl { get; set; } = "https://via.placeholder.com/300";
         public int ItemLikes { get; set; }
         public int ItemClicks { get; set; }
         public int ItemStatus { get; set; }
