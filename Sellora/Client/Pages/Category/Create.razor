@@ -12,24 +12,7 @@
     @*FOR SPACING*@
 </div>
 
-<EditForm Model="@category" OnValidSubmit="CreateCategory">
-    <DataAnnotationsValidator />
-    <ValidationSummary />
-
-    <div class="form-group">
-        <label>Name: </label>
-        <div>
-            <InputText @bind-Value="@category.CategoryName" class="form-control" />
-            <ValidationMessage For="@(() => category.CategoryName)" />
-        </div>
-    </div>
-    <br />
-
-    <button type="submit" class="btn btn-success btn-block">
-            Create Category
-    </button>
-    
-</EditForm>
+<FormComponent ButtonText="Create Category" category="category" OnValidSubmit="@CreateCategory" />
 
 @code {
     Category category = new Category();

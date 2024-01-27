@@ -4,7 +4,18 @@
     <DataAnnotationsValidator />
     <ValidationSummary />
 
-    <fieldset disabled="@Disabled">
+ <fieldset disabled="@Disabled">
+    <div class="form-group">
+        <label>Add Pictures: </label>
+        <div>
+            <InputFile multiple="true" OnChange="HandleFileChange" />
+            <button type="button" class="btn btn-secondary" @onclick="UploadPictures">Upload</button>
+            <br>
+            <!-- Display the uploaded images -->
+            <div id="image-preview-container"></div>
+        </div>
+    </div>
+
     <div class="form-group">
         <label>Name: </label>
         <div>
@@ -112,5 +123,39 @@
     {
         AppUsers = await _client.GetFromJsonAsync<List<AppUser>>($"{Endpoints.AppUsersEndpoint}");
         Categories = await _client.GetFromJsonAsync<List<Category>>($"{Endpoints.CategoriesEndpoint}");
+    }
+
+    private List<string> uploadedImages = new List<string>();
+
+    private async Task HandleFileChange(InputFileChangeEventArgs e)
+    {
+        var files = e.GetMultipleFiles();
+        foreach (var file in files)
+        {
+            var imageUrl = await PreviewImage(file);
+            uploadedImages.Add(imageUrl);
+        }
+        StateHasChanged();
+    }
+    private async Task<string> PreviewImage(IBrowserFile file)
+    {
+        // Handle the file, e.g., upload to server or preview locally
+        // For simplicity, we'll just read the file and create a data URL for preview
+        var buffer = new byte[file.Size];
+        await file.OpenReadStream().ReadAsync(buffer);
+        var base64 = Convert.ToBase64String(buffer);
+        return $"data:{file.ContentType};base64,{base64}";
+    }
+
+    private void UploadPictures()
+    {
+        // Implement the logic to upload the images to the server
+        // You can use the uploadedImages list to get the selected images
+        // and send them to the server using HttpClient or another method
+        // For demonstration purposes, we're just printing the image URLs
+        foreach (var imageUrl in uploadedImages)
+        {
+            Console.WriteLine(imageUrl);
+        }
     }
 }
