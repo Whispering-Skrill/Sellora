@@ -38,6 +38,7 @@
     </div>
 </body>
 
+
 <AuthorizeView>
     <NotAuthorized>
         <div class="login-div-container">
@@ -99,6 +100,8 @@
     </Authorized>
 </AuthorizeView>
 
+
+
 @*
     <div class="listings-container">
     <div class="row" style="margin:auto;">
@@ -157,6 +160,16 @@
 
 @code
 {
+    [CascadingParameter] public Task<AuthenticationState> AuthTask { get; set; }
+
+    private System.Security.Claims.ClaimsPrincipal user;
+
+    protected async override Task OnInitializedAsync()
+    {
+        var authState = await AuthTask;
+        this.user = authState.User;
+    }
+
     private Timer timer;
 
     protected override void OnInitialized()
