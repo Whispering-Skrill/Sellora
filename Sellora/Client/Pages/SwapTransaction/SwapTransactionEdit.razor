@@ -4,6 +4,8 @@
 @inject NavigationManager _navManager
 @using Sellora.Client.Components
 @attribute [Authorize]
+@inject HttpInterceptorService _interceptor
+@implements IDisposable
 
 <PageTitle>Editing Swap Transaction @swaptransaction.Id</PageTitle>
 
@@ -25,6 +27,11 @@
     // Creation of SwapTransaction object used by the form component
     SwapTransaction? swaptransaction = new SwapTransaction();
 
+    protected async override Task OnInitializedAsync()
+    {
+        _interceptor.MonitorEvent();
+    }
+
     // This method activates when all parameters have been set, the function then loads a specific tuple of data by its Id, assigning it to the swaptransaction object
     protected async override Task OnParametersSetAsync()
     {
@@ -39,5 +46,10 @@
 
         // Redirects user back to swaptransactions page
         _navManager.NavigateTo("/swaptransactions/");
+    }
+
+    public void Dispose()
+    {
+        _interceptor.DisposeEvent();
     }
 }

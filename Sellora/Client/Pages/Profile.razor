@@ -9,7 +9,15 @@
                 <div class="profile-picture">
                     <img src="https://placekitten.com/300/300" alt="Profile Picture">
                 </div>
-                <h1 class="user-name">@context.User.Identity.Name</h1>
+                <h1 class="user-name">Hello! @user.Identity.Name</h1>
+                @if (user.IsInRole("Administrator"))
+                {
+                    <p class="user-description">You have <b>Administrator</b> Privileges.</p>
+                }
+                @if (user.IsInRole("User"))
+                {
+                    <p class="user-description">You have <b>User</b> Privileges.</p>
+                }
                 <p class="user-description">Full Stack Development</p>
 
                 <div class="social-icons">
@@ -25,5 +33,13 @@
 </AuthorizeView>
 
 @code {
+    [CascadingParameter] public Task<AuthenticationState> AuthTask { get; set; }
 
+    private System.Security.Claims.ClaimsPrincipal user;
+
+    protected async override Task OnInitializedAsync()
+    {
+        var authState = await AuthTask;
+        this.user = authState.User;
+    }
 }

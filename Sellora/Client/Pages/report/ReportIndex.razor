@@ -1,10 +1,11 @@
 @*ASPNetr-yanWorks*@
 @page "/reports/"
 @inject HttpClient _client
+@inject IJSRuntime js
 @inject HttpInterceptorService _interceptor
 @implements IDisposable
-@inject IJSRuntime js
-@attribute [Authorize]
+@attribute [Authorize(Roles = "Administrator")]
+
 
 <PageTitle>Reports</PageTitle>
 
@@ -14,8 +15,6 @@
         <span class="oi oi-plus" style="margin-top: 5px;"></span>
     </a>
 </div>
-
-
 
 <div style="margin-top: 10px;">
     @if (Reports == null)

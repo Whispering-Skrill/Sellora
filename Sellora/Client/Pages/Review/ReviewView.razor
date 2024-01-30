@@ -4,6 +4,8 @@
 @inject NavigationManager _navManager
 @using Sellora.Client.Components
 @attribute [Authorize]
+@inject HttpInterceptorService _interceptor
+@implements IDisposable
 
 <PageTitle>Viewing Review @review.Id</PageTitle>
 
@@ -23,8 +25,18 @@
 
     Review? review = new Review();
 
+    protected async override Task OnInitializedAsync()
+    {
+        _interceptor.MonitorEvent();
+    }
+
     protected async override Task OnParametersSetAsync()
     {
         review = await _client.GetFromJsonAsync<Review>($"{Endpoints.ReviewsEndpoint}/{id}");
+    }
+
+    public void Dispose()
+    {
+        _interceptor.DisposeEvent();
     }
 }

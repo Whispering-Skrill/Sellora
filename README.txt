@@ -2,9 +2,14 @@
 2 - [COMPLETE] Remove Date Change option when CREATING reports, reviews, swaptransactions
 3 - [COMPLETE] Add authorisation to navbar 
 4 - [COMPLETE] Add About Page, Unauthorised Landing Page
-5 - DataTables error
+5 - [COMPLETE] DataTables error
 6 - All Categories paging?
-7 - Fix NotFound system
+7 - [COMPLETE] Fix NotFound system
+8 - [COMPLETE] Role Authorisation
+9 - [COMPLETE] Add Role name in ASPNetUser Profile Page
+10 - Item Seeding
+11 - Check Domain [Required]
+12 - Contact Form?
 
 
 
@@ -119,3 +124,17 @@ Ryan - Standardised all Ryan-Entities
 Ryan - Added Categorical Pages
 
 Lucas - Added JS Interop to Lucas-Entities
+
+Lucas - Added Validation to Lucas-Entities
+
+Ryan - Added User Role Authentication System
+
+Ryan - Implemented User Role Authentication onto NavMenu
+
+Ryan - Implemented User Role Authentication onto Report Creation
+
+Ryan - Implemented User Role Authentication onto Review Index Page
+
+Ryan - Redid ASPNetUser Profile Page
+
+Ryan - Completely Implemented User Role Authentication for Ryan-Entities

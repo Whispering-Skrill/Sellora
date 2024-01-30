@@ -1,0 +1,15 @@
+﻿.report-title {
+    font-weight: bold;
+    font-family: 'Microsoft Sans Serif';
+    letter-spacing: 1px;
+    flex: 1;
+}
+
+.report-topbar {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+body {
+}

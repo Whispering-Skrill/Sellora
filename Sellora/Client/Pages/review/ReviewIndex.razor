@@ -1,10 +1,10 @@
 @*ASPNetr-yanWorks*@
 @page "/reviews/"
 @inject HttpClient _client
-@inject HttpInterceptorService _interceptor
-@implements IDisposable
 @inject IJSRuntime js
 @attribute [Authorize]
+@inject HttpInterceptorService _interceptor
+@implements IDisposable
 
 <PageTitle>Reviews</PageTitle>
 
@@ -47,14 +47,16 @@
                             More Details
                         </a>
                     </div>
-                    <div class="review-box-control-bottom">
-                        <a href="/reviews/edit/@review.Id" class="btn btn-warning" style="width:100%; margin-right:5px;">
-                            <span class="oi oi-pencil"></span>
-                        </a>
-                        <button class="btn btn-danger" style="width:100%; margin-left:5px;" @onclick="@(()=>Delete(review.Id))">
-                            <span class="oi oi-delete"></span>
-                        </button>
-                    </div>
+                    <AuthorizeView Roles="Administrator">
+                        <div class="review-box-control-bottom">
+                            <a href="/reviews/edit/@review.Id" class="btn btn-warning" style="width:100%; margin-right:5px;">
+                                <span class="oi oi-pencil"></span>
+                            </a>
+                            <button class="btn btn-danger" style="width:100%; margin-left:5px;" @onclick="@(()=>Delete(review.Id))">
+                                <span class="oi oi-delete"></span>
+                            </button>
+                        </div>
+                    </AuthorizeView>
                 </div>
             </div>
         }

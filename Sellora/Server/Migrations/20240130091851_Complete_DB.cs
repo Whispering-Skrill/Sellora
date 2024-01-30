@@ -20,13 +20,13 @@ namespace Sellora.Server.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UserFirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UserLastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    UserEmail = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserFirstName = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    UserLastName = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
+                    UserEmail = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     UserPassword = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserHPNum = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     UserRegDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UserDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserDescription = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     UserLastOnline = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DateCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DateUpdated = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -88,7 +88,7 @@ namespace Sellora.Server.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CategoryName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CategoryName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     DateCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
                     DateUpdated = table.Column<DateTime>(type: "datetime2", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
@@ -292,12 +292,12 @@ namespace Sellora.Server.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ItemName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ItemName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     ItemPrice = table.Column<int>(type: "int", nullable: false),
-                    Condition = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Condition = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     ItemDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    ItemDescription = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ItemLocation = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ItemDescription = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    ItemLocation = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     ImageUrl = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ItemLikes = table.Column<int>(type: "int", nullable: false),
                     ItemClicks = table.Column<int>(type: "int", nullable: false),
@@ -333,7 +333,6 @@ namespace Sellora.Server.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     TransactionDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    TransactionType = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     AppUserId = table.Column<int>(type: "int", nullable: true),
                     ItemId = table.Column<int>(type: "int", nullable: true),
                     DateCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
@@ -490,11 +489,11 @@ namespace Sellora.Server.Migrations
                 columns: new[] { "Id", "CreatedBy", "DateCreated", "DateUpdated", "UpdatedBy", "UserDescription", "UserEmail", "UserFirstName", "UserHPNum", "UserLastName", "UserLastOnline", "UserName", "UserPassword", "UserRegDate" },
                 values: new object[,]
                 {
-                    { 1, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Passionate about all things digital and SEO wizardry 🚀 | Helping businesses climb the search engine ranks 📈 | Coffee enthusiast ☕ | Explorer of new tech and trends 🌐 | #SEOExpert #DigitalMarketing", "sy123@gmail.com", "Seo", "88123123", "Yeong", new DateTime(2024, 1, 30, 11, 32, 3, 367, DateTimeKind.Local).AddTicks(1956), "SeoCoolSeoYeong", "AQAAAAIAAYagAAAAEF7n+V4+QLpR9LbxL4lBOnrPETZKEjGcjNlb/MuhGzDs/cttzjMOP6+yiGPtM2BebQ==", new DateTime(2024, 1, 30, 11, 32, 3, 367, DateTimeKind.Local).AddTicks(1943) },
-                    { 2, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Creative soul navigating the digital realm 🌟 | Graphic designer by day, dreamer by night ✨ | Turning ideas into visual wonders 🎨 | Coffee addict ☕ | Embracing the beauty of design and storytelling 🖌️ | #GraphicDesigner #Dreamer", "tt123@gmail.com", "Tina", "88445566", "Tan", new DateTime(2024, 1, 30, 11, 32, 3, 436, DateTimeKind.Local).AddTicks(8425), "TT_4Me", "AQAAAAIAAYagAAAAEPEc+BPQY1jlCjNy/GLUw1cOhMs+JNIkuKWZnrEcoYsU+BfepwiHLkfzcAX5iKIpXw==", new DateTime(2024, 1, 30, 11, 32, 3, 436, DateTimeKind.Local).AddTicks(8412) },
-                    { 3, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Adventurous spirit with a flair for tech and innovation 🚀 | Coding maestro by day, gaming wizard by night 🎮 | Constantly exploring the digital frontier 💻 | Fuelled by curiosity and a love for challenges 🌐 | Living life one line of code at a time! #TechExplorer #GamingEnthusiast", "kl23@gmail.com", "Kaynan", "85445666", "Loh", new DateTime(2024, 1, 30, 11, 32, 3, 518, DateTimeKind.Local).AddTicks(1669), "Kay_today", "AQAAAAIAAYagAAAAEAQZ0wwyw6fgjcTvIKXThS1qil+e1aj6fQzXR4gd3nHlOiHcv14ih4KP9fqdfJ7Wpw==", new DateTime(2024, 1, 30, 11, 32, 3, 518, DateTimeKind.Local).AddTicks(1656) },
-                    { 4, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Passionate about coding adventures and tech wonders 🌟 | Coffee-fueled developer by day, gaming enthusiast by night 🎮 | Embracing challenges and turning ideas into reality 💡 | #CodeExplorer #TechEnthusiast", "alex.smith@example.com", "Alex", "9876543210", "Smith", new DateTime(2024, 1, 30, 11, 32, 3, 586, DateTimeKind.Local).AddTicks(4028), "AdventureCoder", "AQAAAAIAAYagAAAAEPO6ihPJfdOGVJmU54YyveD1nHrQq3vy+QzqU8hZM4gdcfThpLbt96Ozp+O2MEABvA==", new DateTime(2024, 1, 30, 11, 32, 3, 586, DateTimeKind.Local).AddTicks(4016) },
-                    { 5, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Digital nomad exploring the virtual realms 🌍 | Coding on-the-go and crafting unique digital experiences ✨ | Passionate about connecting through technology 🚀 | #DigitalNomad #CodeExplorer", "emma.johnson@example.com", "Emma", "8765432109", "Johnson", new DateTime(2024, 1, 30, 11, 32, 3, 654, DateTimeKind.Local).AddTicks(6593), "DigitalNomad21", "AQAAAAIAAYagAAAAEDzDpsXtknLnTtpYpV/dmlk9HgYyshXSOUoOo8wCHW4/qSdxM5BLdrWUQ4wOrJl8mQ==", new DateTime(2024, 1, 30, 11, 32, 3, 654, DateTimeKind.Local).AddTicks(6581) }
+                    { 1, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Passionate about all things digital and SEO wizardry 🚀 | Helping businesses climb the search engine ranks 📈 | Coffee enthusiast ☕ | Explorer of new tech and trends 🌐 | #SEOExpert #DigitalMarketing", "sy123@gmail.com", "Seo", "88123123", "Yeong", new DateTime(2024, 1, 30, 17, 18, 51, 627, DateTimeKind.Local).AddTicks(2673), "SeoCoolSeoYeong", "AQAAAAIAAYagAAAAEI/OEIbIpkQtMUr+fyoeUszKjZXbMBfKlpLG9lulVZYqdOL3nve5VViS0y2xqF34nA==", new DateTime(2024, 1, 30, 17, 18, 51, 627, DateTimeKind.Local).AddTicks(2649) },
+                    { 2, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Creative soul navigating the digital realm 🌟 | Graphic designer by day, dreamer by night ✨ | Turning ideas into visual wonders 🎨 | Coffee addict ☕ | Embracing the beauty of design and storytelling 🖌️ | #GraphicDesigner #Dreamer", "tt123@gmail.com", "Tina", "88445566", "Tan", new DateTime(2024, 1, 30, 17, 18, 51, 675, DateTimeKind.Local).AddTicks(1932), "TT_4Me", "AQAAAAIAAYagAAAAEJIiSsxb2/hMJFnHHirCf4lq9hmlTkVc1WrIWf3dYOFt3kRRMiTmi862xy9Pj1erVA==", new DateTime(2024, 1, 30, 17, 18, 51, 675, DateTimeKind.Local).AddTicks(1904) },
+                    { 3, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Adventurous spirit with a flair for tech and innovation 🚀 | Coding maestro by day, gaming wizard by night 🎮 | Constantly exploring the digital frontier 💻 | Fuelled by curiosity and a love for challenges 🌐 | Living life one line of code at a time! #TechExplorer #GamingEnthusiast", "kl23@gmail.com", "Kaynan", "85445666", "Loh", new DateTime(2024, 1, 30, 17, 18, 51, 723, DateTimeKind.Local).AddTicks(4493), "Kay_today", "AQAAAAIAAYagAAAAEKSo0amnkDndp/6nBadDpF/XK9f8Pd59Y1ADEfPV9hsM4FcKOdwt+49k1gv4D4SbQQ==", new DateTime(2024, 1, 30, 17, 18, 51, 723, DateTimeKind.Local).AddTicks(4465) },
+                    { 4, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Passionate about coding adventures and tech wonders 🌟 | Coffee-fueled developer by day, gaming enthusiast by night 🎮 | Embracing challenges and turning ideas into reality 💡 | #CodeExplorer #TechEnthusiast", "alex.smith@example.com", "Alex", "9876543210", "Smith", new DateTime(2024, 1, 30, 17, 18, 51, 768, DateTimeKind.Local).AddTicks(9344), "AdventureCoder", "AQAAAAIAAYagAAAAEBmAKHjolfexkLuuCwkuvkIeh83r7zKnKhixBKyzvX4Wsa/xjjBHjZD9y3fMRyeWgA==", new DateTime(2024, 1, 30, 17, 18, 51, 768, DateTimeKind.Local).AddTicks(9316) },
+                    { 5, null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), null, "Digital nomad exploring the virtual realms 🌍 | Coding on-the-go and crafting unique digital experiences ✨ | Passionate about connecting through technology 🚀 | #DigitalNomad #CodeExplorer", "emma.johnson@example.com", "Emma", "8765432109", "Johnson", new DateTime(2024, 1, 30, 17, 18, 51, 814, DateTimeKind.Local).AddTicks(3141), "DigitalNomad21", "AQAAAAIAAYagAAAAENllfzgy/yzL8ycWH8HUh3hQV6qV6rDfxipWF8BlOfUingO59zFUeQ7j+eRzxGEf2g==", new DateTime(2024, 1, 30, 17, 18, 51, 814, DateTimeKind.Local).AddTicks(3113) }
                 });
 
             migrationBuilder.InsertData(
@@ -512,8 +511,8 @@ namespace Sellora.Server.Migrations
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserDescription", "UserFirstName", "UserLastName", "UserLastOnline", "UserName", "UserRegDate" },
                 values: new object[,]
                 {
-                    { "3781efa7-66dc-47f0-860f-e506d04102e4", 0, "ec73406f-ebc6-47de-afee-bf8a844a8051", "admin@localhost.com", false, false, null, "ADMIN@LOCALHOST.COM", "ADMIN", "AQAAAAIAAYagAAAAEByTSLP4gs5Ry8OizXUXFTLo2klmvYWPSAVDtAGS5IX1KEN/0xCQfAN34RUZneEUqg==", null, false, "337f2097-176d-421b-9a14-9c63d4ccb31b", false, null, "Admin", "User", new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(613), "Admin", new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(612) },
-                    { "b1675205-1948-44ec-8b55-b0cb71d1f84e", 0, "8420c10a-3de0-4b34-9094-5c6b0221017e", "user@localhost.com", false, false, null, "USER@LOCALHOST.COM", "USER", "AQAAAAIAAYagAAAAEMiqwKucu4pOzMT4xYdnT8M6DkWHTz1ED8oqwafaGKHMNJnSLJnIpSVZAx2iJnBmVg==", null, false, "abd8960b-a7b2-4c47-8352-6f10b33aa3a4", false, null, "User", "User", new DateTime(2024, 1, 30, 11, 32, 3, 201, DateTimeKind.Local).AddTicks(2105), "user", new DateTime(2024, 1, 30, 11, 32, 3, 201, DateTimeKind.Local).AddTicks(2094) }
+                    { "3781efa7-66dc-47f0-860f-e506d04102e4", 0, "a57ed42e-343b-49cd-983b-cfeed40c1b9a", "admin@localhost.com", false, false, null, "ADMIN@LOCALHOST.COM", "ADMIN", "AQAAAAIAAYagAAAAENFIMTHM12fXACrZwgjXlMya5PSPQDH9tVGMKSSgfc+s14/ii+8JjECqss2o7r+ToQ==", null, false, "478bd015-60cb-437a-97e8-1032b4a003a3", false, null, "Admin", "User", new DateTime(2024, 1, 30, 17, 18, 51, 483, DateTimeKind.Local).AddTicks(1095), "Admin", new DateTime(2024, 1, 30, 17, 18, 51, 483, DateTimeKind.Local).AddTicks(1081) },
+                    { "b1675205-1948-44ec-8b55-b0cb71d1f84e", 0, "a7ec0236-e223-4ced-9923-82803088804e", "user@localhost.com", false, false, null, "USER@LOCALHOST.COM", "USER", "AQAAAAIAAYagAAAAENqkf83T56va9qXE5G9YG4AxjIyv7rz7GYmJrFkKhmKjyDLJlCg3bvJ/O0vM3plQ3w==", null, false, "a5933ff7-20be-4503-8b54-045a17d370db", false, null, "User", "User", new DateTime(2024, 1, 30, 17, 18, 51, 530, DateTimeKind.Local).AddTicks(8215), "user", new DateTime(2024, 1, 30, 17, 18, 51, 530, DateTimeKind.Local).AddTicks(8192) }
                 });
 
             migrationBuilder.InsertData(
@@ -521,21 +520,21 @@ namespace Sellora.Server.Migrations
                 columns: new[] { "Id", "CategoryName", "CreatedBy", "DateCreated", "DateUpdated", "UpdatedBy" },
                 values: new object[,]
                 {
-                    { 1, "Cars", "System", new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(304), new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(305), "System" },
-                    { 2, "Services", "System", new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(308), new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(308), "System" },
-                    { 3, "Property", "System", new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(314), new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(314), "System" },
-                    { 4, "Electronics", "System", new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(315), new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(318), "System" },
-                    { 5, "Fashion", "System", new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(328), new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(329), "System" },
-                    { 6, "Luxury", "System", new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(330), new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(330), "System" },
-                    { 7, "Toys & Hobbies", "System", new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(332), new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(333), "System" },
-                    { 8, "Games & Gaming", "System", new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(334), new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(334), "System" },
-                    { 9, "Home Living", "System", new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(336), new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(336), "System" },
-                    { 10, "Appliances", "System", new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(337), new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(338), "System" },
-                    { 11, "Parenthood", "System", new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(339), new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(339), "System" },
-                    { 12, "Health & Food", "System", new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(341), new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(341), "System" },
-                    { 13, "Sports", "System", new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(342), new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(343), "System" },
-                    { 14, "Pet Supplies", "System", new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(344), new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(344), "System" },
-                    { 15, "Jobs", "System", new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(345), new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(346), "System" }
+                    { 1, "Cars", "System", new DateTime(2024, 1, 30, 17, 18, 51, 483, DateTimeKind.Local).AddTicks(404), new DateTime(2024, 1, 30, 17, 18, 51, 483, DateTimeKind.Local).AddTicks(433), "System" },
+                    { 2, "Services", "System", new DateTime(2024, 1, 30, 17, 18, 51, 483, DateTimeKind.Local).AddTicks(456), new DateTime(2024, 1, 30, 17, 18, 51, 483, DateTimeKind.Local).AddTicks(466), "System" },
+                    { 3, "Property", "System", new DateTime(2024, 1, 30, 17, 18, 51, 483, DateTimeKind.Local).AddTicks(480), new DateTime(2024, 1, 30, 17, 18, 51, 483, DateTimeKind.Local).AddTicks(490), "System" },
+                    { 4, "Electronics", "System", new DateTime(2024, 1, 30, 17, 18, 51, 483, DateTimeKind.Local).AddTicks(503), new DateTime(2024, 1, 30, 17, 18, 51, 483, DateTimeKind.Local).AddTicks(513), "System" },
+                    { 5, "Fashion", "System", new DateTime(2024, 1, 30, 17, 18, 51, 483, DateTimeKind.Local).AddTicks(527), new DateTime(2024, 1, 30, 17, 18, 51, 483, DateTimeKind.Local).AddTicks(537), "System" },
+                    { 6, "Luxury", "System", new DateTime(2024, 1, 30, 17, 18, 51, 483, DateTimeKind.Local).AddTicks(551), new DateTime(2024, 1, 30, 17, 18, 51, 483, DateTimeKind.Local).AddTicks(561), "System" },
+                    { 7, "Toys & Hobbies", "System", new DateTime(2024, 1, 30, 17, 18, 51, 483, DateTimeKind.Local).AddTicks(570), new DateTime(2024, 1, 30, 17, 18, 51, 483, DateTimeKind.Local).AddTicks(584), "System" },
+                    { 8, "Games & Gaming", "System", new DateTime(2024, 1, 30, 17, 18, 51, 483, DateTimeKind.Local).AddTicks(593), new DateTime(2024, 1, 30, 17, 18, 51, 483, DateTimeKind.Local).AddTicks(607), "System" },
+                    { 9, "Home Living", "System", new DateTime(2024, 1, 30, 17, 18, 51, 483, DateTimeKind.Local).AddTicks(617), new DateTime(2024, 1, 30, 17, 18, 51, 483, DateTimeKind.Local).AddTicks(631), "System" },
+                    { 10, "Appliances", "System", new DateTime(2024, 1, 30, 17, 18, 51, 483, DateTimeKind.Local).AddTicks(641), new DateTime(2024, 1, 30, 17, 18, 51, 483, DateTimeKind.Local).AddTicks(651), "System" },
+                    { 11, "Parenthood", "System", new DateTime(2024, 1, 30, 17, 18, 51, 483, DateTimeKind.Local).AddTicks(665), new DateTime(2024, 1, 30, 17, 18, 51, 483, DateTimeKind.Local).AddTicks(674), "System" },
+                    { 12, "Health & Food", "System", new DateTime(2024, 1, 30, 17, 18, 51, 483, DateTimeKind.Local).AddTicks(688), new DateTime(2024, 1, 30, 17, 18, 51, 483, DateTimeKind.Local).AddTicks(697), "System" },
+                    { 13, "Sports", "System", new DateTime(2024, 1, 30, 17, 18, 51, 483, DateTimeKind.Local).AddTicks(711), new DateTime(2024, 1, 30, 17, 18, 51, 483, DateTimeKind.Local).AddTicks(721), "System" },
+                    { 14, "Pet Supplies", "System", new DateTime(2024, 1, 30, 17, 18, 51, 483, DateTimeKind.Local).AddTicks(731), new DateTime(2024, 1, 30, 17, 18, 51, 483, DateTimeKind.Local).AddTicks(745), "System" },
+                    { 15, "Jobs", "System", new DateTime(2024, 1, 30, 17, 18, 51, 483, DateTimeKind.Local).AddTicks(755), new DateTime(2024, 1, 30, 17, 18, 51, 483, DateTimeKind.Local).AddTicks(769), "System" }
                 });
 
             migrationBuilder.InsertData(
@@ -543,10 +542,10 @@ namespace Sellora.Server.Migrations
                 columns: new[] { "Id", "CreatedBy", "DateCreated", "DateUpdated", "StaffAddress", "StaffDepartment", "StaffEmail", "StaffFirstName", "StaffHPNum", "StaffHireDate", "StaffLastName", "StaffPosition", "UpdatedBy" },
                 values: new object[,]
                 {
-                    { 1, "System", new DateTime(2024, 1, 30, 11, 32, 3, 133, DateTimeKind.Local).AddTicks(9855), new DateTime(2024, 1, 30, 11, 32, 3, 133, DateTimeKind.Local).AddTicks(9857), "Temasek Polytechnic", "Full Stack Development", "2102197G@student.tp.edu.sg", "Ryan", "99991111", new DateTime(2024, 1, 30, 11, 32, 3, 133, DateTimeKind.Local).AddTicks(9854), "Chong", "Lead Developer", "System" },
-                    { 2, "System", new DateTime(2024, 1, 30, 11, 32, 3, 133, DateTimeKind.Local).AddTicks(9860), new DateTime(2024, 1, 30, 11, 32, 3, 133, DateTimeKind.Local).AddTicks(9861), "Temasek Polytechnic", "Full Stack Development", "2203567i@student.tp.edu.sg", "Lucas", "99992222", new DateTime(2024, 1, 30, 11, 32, 3, 133, DateTimeKind.Local).AddTicks(9859), "Do", "Lead Developer", "System" },
-                    { 3, "System", new DateTime(2024, 1, 30, 11, 32, 3, 133, DateTimeKind.Local).AddTicks(9864), new DateTime(2024, 1, 30, 11, 32, 3, 133, DateTimeKind.Local).AddTicks(9864), "Design Avenue", "User Experience Design", "emily.ng@example.com", "Emily", "88882222", new DateTime(2024, 1, 30, 11, 32, 3, 133, DateTimeKind.Local).AddTicks(9863), "Ng", "Senior UI/UX Designer", "System" },
-                    { 4, "System", new DateTime(2024, 1, 30, 11, 32, 3, 133, DateTimeKind.Local).AddTicks(9867), new DateTime(2024, 1, 30, 11, 32, 3, 133, DateTimeKind.Local).AddTicks(9867), "Data Center Lane", "Database Management", "daniel.liu@example.com", "Daniel", "77773333", new DateTime(2024, 1, 30, 11, 32, 3, 133, DateTimeKind.Local).AddTicks(9866), "Liu", "Database Administrator", "System" }
+                    { 1, "System", new DateTime(2024, 1, 30, 17, 18, 51, 482, DateTimeKind.Local).AddTicks(9788), new DateTime(2024, 1, 30, 17, 18, 51, 482, DateTimeKind.Local).AddTicks(9798), "Temasek Polytechnic", "Full Stack Development", "2102197G@student.tp.edu.sg", "Ryan", "99991111", new DateTime(2024, 1, 30, 17, 18, 51, 482, DateTimeKind.Local).AddTicks(9774), "Chong", "Lead Developer", "System" },
+                    { 2, "System", new DateTime(2024, 1, 30, 17, 18, 51, 482, DateTimeKind.Local).AddTicks(9837), new DateTime(2024, 1, 30, 17, 18, 51, 482, DateTimeKind.Local).AddTicks(9851), "Temasek Polytechnic", "Full Stack Development", "2203567i@student.tp.edu.sg", "Lucas", "99992222", new DateTime(2024, 1, 30, 17, 18, 51, 482, DateTimeKind.Local).AddTicks(9827), "Do", "Lead Developer", "System" },
+                    { 3, "System", new DateTime(2024, 1, 30, 17, 18, 51, 482, DateTimeKind.Local).AddTicks(9888), new DateTime(2024, 1, 30, 17, 18, 51, 482, DateTimeKind.Local).AddTicks(9903), "Design Avenue", "User Experience Design", "emily.ng@example.com", "Emily", "88882222", new DateTime(2024, 1, 30, 17, 18, 51, 482, DateTimeKind.Local).AddTicks(9878), "Ng", "Senior UI/UX Designer", "System" },
+                    { 4, "System", new DateTime(2024, 1, 30, 17, 18, 51, 482, DateTimeKind.Local).AddTicks(9936), new DateTime(2024, 1, 30, 17, 18, 51, 482, DateTimeKind.Local).AddTicks(9950), "Data Center Lane", "Database Management", "daniel.liu@example.com", "Daniel", "77773333", new DateTime(2024, 1, 30, 17, 18, 51, 482, DateTimeKind.Local).AddTicks(9922), "Liu", "Database Administrator", "System" }
                 });
 
             migrationBuilder.InsertData(

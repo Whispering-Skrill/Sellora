@@ -3,7 +3,9 @@
 @inject HttpClient _client
 @inject NavigationManager _navManager
 @using Sellora.Client.Components
-@attribute [Authorize]
+@attribute [Authorize(Roles = "Administrator")]
+@inject HttpInterceptorService _interceptor
+@implements IDisposable
 
 <PageTitle>Viewing Staff @staff.Id</PageTitle>
 
@@ -23,8 +25,18 @@
 
     Staff? staff = new Staff();
 
+    protected async override Task OnInitializedAsync()
+    {
+        _interceptor.MonitorEvent();
+    }
+
     protected async override Task OnParametersSetAsync()
     {
         staff = await _client.GetFromJsonAsync<Staff>($"{Endpoints.StaffsEndpoint}/{id}");
+    }
+
+    public void Dispose()
+    {
+        _interceptor.DisposeEvent();
     }
 }

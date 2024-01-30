@@ -3,7 +3,9 @@
 @inject HttpClient _client
 @inject NavigationManager _navManager
 @using Sellora.Client.Components
-@attribute [Authorize]
+@attribute [Authorize(Roles = "Administrator")]
+@inject HttpInterceptorService _interceptor
+@implements IDisposable
 
 <PageTitle>Viewing Report @report.Id</PageTitle>
 
@@ -23,8 +25,18 @@
 
     Report? report = new Report();
 
+    protected async override Task OnInitializedAsync()
+    {
+        _interceptor.MonitorEvent();
+    }
+
     protected async override Task OnParametersSetAsync()
     {
         report = await _client.GetFromJsonAsync<Report>($"{Endpoints.ReportsEndpoint}/{id}");
+    }
+
+    public void Dispose()
+    {
+        _interceptor.DisposeEvent();
     }
 }

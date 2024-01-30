@@ -17,7 +17,7 @@ namespace Sellora.Client.Services
 
         public void MonitorEvent() => interceptor.AfterSend += InterceptResponse;
 
-        private void InterceptResponse(object? sender, HttpClientInterceptorEventArgs e)
+        private void InterceptResponse(object sender, HttpClientInterceptorEventArgs e)
         {
             string message = string.Empty;
             if (!e.Response.IsSuccessStatusCode)
@@ -31,9 +31,12 @@ namespace Sellora.Client.Services
                         message = "The requested resource was not found.";
                         break;
                     case HttpStatusCode.Unauthorized:
+                        navManager.NavigateTo("/unauthorized");
+                        message = "You are not authorised to access this resource.";
+                        break;
                     case HttpStatusCode.Forbidden:
                         navManager.NavigateTo("/unauthorized");
-                        message = "You are not authorized to access this resource. ";
+                        message = "You are not authorised to access this resource.";
                         break;
                     default:
                         navManager.NavigateTo("/500");

@@ -25,7 +25,7 @@ namespace Sellora.Shared.Domain
         public int AppUserID { get; set; }
         public virtual AppUser ? AppUser { get; set; }
 
-        public int StaffID { get; set; }
+        public int StaffID { get; set; } = 0;
         public virtual Staff ? Staff { get; set; }
 
         public int? SaleTransactionID { get; set; }

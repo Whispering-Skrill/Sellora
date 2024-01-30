@@ -4,6 +4,8 @@
 @inject NavigationManager _navManager
 @using Sellora.Client.Components
 @attribute [Authorize]
+@inject HttpInterceptorService _interceptor
+@implements IDisposable
 
 <PageTitle>Create a Transaction</PageTitle>
 
@@ -27,6 +29,8 @@
 
     protected async Task OnIntializedAsync()
     {
+        _interceptor.MonitorEvent();
+
         AppUsers = await _client.GetFromJsonAsync<List<AppUser>>($"{Endpoints.AppUsersEndpoint}");
         Staffs = await _client.GetFromJsonAsync<List<Staff>>($"{Endpoints.StaffsEndpoint}");
         Items = await _client.GetFromJsonAsync<List<Item>>($"{Endpoints.ItemsEndpoint}");
@@ -36,5 +40,10 @@
     {
         await _client.PostAsJsonAsync(Endpoints.SwapTransactionsEndpoint, swaptransaction);
         _navManager.NavigateTo("/swaptransactions/");
+    }
+
+    public void Dispose()
+    {
+        _interceptor.DisposeEvent();
     }
 }

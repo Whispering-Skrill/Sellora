@@ -3,7 +3,9 @@
 @inject HttpClient _client
 @inject NavigationManager _navManager
 @using Sellora.Client.Components
-@attribute [Authorize]
+@attribute [Authorize(Roles = "Administrator")]
+@inject HttpInterceptorService _interceptor
+@implements IDisposable
 
 <PageTitle>Editing Report @report.Id</PageTitle>
 
@@ -25,6 +27,11 @@
     // Creation of Report object used by the form component
     Report? report = new Report();
 
+    protected async override Task OnInitializedAsync()
+    {
+        _interceptor.MonitorEvent();
+    }
+
     // This method activates when all parameters have been set, the function then loads a specific tuple of data by its Id, assigning it to the report object
     protected async override Task OnParametersSetAsync()
     {
@@ -39,5 +46,10 @@
 
         // Redirects user back to reports page
         _navManager.NavigateTo("/reports/");
+    }
+
+    public void Dispose()
+    {
+        _interceptor.DisposeEvent();
     }
 }

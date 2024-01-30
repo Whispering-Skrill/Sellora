@@ -1,8 +1,9 @@
+@*ASPNetr-yanWorks*@
 @page "/swaptransactions/"
 @inject HttpClient _client
+@inject IJSRuntime js
 @inject HttpInterceptorService _interceptor
 @implements IDisposable
-@inject IJSRuntime js
 @attribute [Authorize]
 
 <PageTitle>Swap Transactions</PageTitle>
@@ -35,7 +36,10 @@ else
                 <th>Item 1</th>
                 <th>User 2</th>
                 <th>Item 2</th>
-                <th>Actions</th>
+                <AuthorizeView Roles="Administrator">
+                    <th>Actions</th>
+                </AuthorizeView>
+                <th>View Transaction</th>
             </tr>
         </thead>
         <tbody>
@@ -51,12 +55,14 @@ else
                         <a href="/swaptransactions/view/@swaptransaction.Id" class="btn btn-primary">
                             <span class="oi oi-book"></span>
                         </a>
-                        <a href="/swaptransactions/edit/@swaptransaction.Id" class="btn btn-warning">
-                            <span class="oi oi-pencil"></span>
-                        </a>
-                        <button class="btn btn-danger" @onclick="@(()=>Delete(swaptransaction.Id))">
-                            <span class="oi oi-delete"></span>
-                        </button>
+                        <AuthorizeView Roles="Administrator">
+                            <a href="/swaptransactions/edit/@swaptransaction.Id" class="btn btn-warning">
+                                <span class="oi oi-pencil"></span>
+                            </a>
+                            <button class="btn btn-danger" @onclick="@(()=>Delete(swaptransaction.Id))">
+                                <span class="oi oi-delete"></span>
+                            </button>
+                        </AuthorizeView>
                     </td>
                 </tr>
             }
@@ -99,6 +105,6 @@ else
     {
         // For JS datatable script
         js.InvokeVoidAsync("DataTablesDispose", "#swapTable");
-        //_interceptor.DisposeEvent();
+        _interceptor.DisposeEvent();
     }
 }

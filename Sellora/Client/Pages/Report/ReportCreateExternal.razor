@@ -1,18 +1,19 @@
 ﻿@*ASPNetr-yanWorks*@
 @using Sellora.Client.Components
-@page "/reports/create"
+@page "/reports/createreport"
 @inject HttpClient _client
 @inject NavigationManager _navManager
 @inject HttpInterceptorService _interceptor
 @implements IDisposable
-@attribute [Authorize(Roles = "Administrator")]
-
+@attribute [Authorize]
 
 <PageTitle>File a Report</PageTitle>
 
 <div class="report-topbar">
     <h2 class="report-title">File a Report</h2>
-    <BackToList Target="reports" />
+    <a href="/" class="btn btn-secondary">
+        <span class="oi oi-account-logout" style="margin-top: 4px; margin-bottom:4px;"></span>
+    </a>
 </div>
 
 <div style="border-bottom:solid black 1px; padding-top:3px; margin-bottom:10px;">
@@ -43,7 +44,7 @@
     private async Task CreateReport()
     {
         await _client.PostAsJsonAsync(Endpoints.ReportsEndpoint, report);
-        _navManager.NavigateTo("/reports/");
+        _navManager.NavigateTo("");
     }
 
     public void Dispose()

@@ -1,10 +1,10 @@
 ﻿@*ASPNetr-yanWorks*@
 @page "/staffs/"
 @inject HttpClient _client
-@inject HttpInterceptorService _interceptor
-@implements IDisposable
 @inject IJSRuntime js
 @attribute [Authorize]
+@inject HttpInterceptorService _interceptor
+@implements IDisposable
 
 <PageTitle>The Staff of Sellora</PageTitle>
 
@@ -12,9 +12,11 @@
     <div style="flex:1">
         <h2 class="staff-title">Our Staff</h2>
     </div>
-    <a href="/staffs/create" class="btn btn-secondary" style="align-self:flex-start;2">
-        <span class="oi oi-plus" style="margin-top: 5px;"></span>
-    </a>
+    <AuthorizeView Roles="Administrator">
+        <a href="/staffs/create" class="btn btn-secondary" style="align-self:flex-start;2">
+            <span class="oi oi-plus" style="margin-top: 5px;"></span>
+        </a>
+    </AuthorizeView>
 </div>
 
 <div style="border-bottom:solid black 1px; padding-top:3px;">
@@ -33,13 +35,17 @@ else
             <tr>
                 <th>First Name</th>
                 <th>Last Name</th>
-                <th>Email</th>
-                <th>Hire Date</th>
+                <AuthorizeView Roles="Administrator">
+                    <th>Email</th>
+                    <th>Hire Date</th>
+                </AuthorizeView>
                 <th>Position</th>
-                <th>Address</th>
-                <th>Contact</th>
-                <th>Department</th>
-                <th>Actions</th>
+                <AuthorizeView Roles="Administrator">
+                    <th>Address</th>
+                    <th>Contact</th>
+                    <th>Department</th>
+                    <th>Actions</th>
+                </AuthorizeView>
             </tr>
         </thead>
         <tbody>
@@ -48,23 +54,27 @@ else
                 <tr>
                     <td>@staff.StaffFirstName</td>
                     <td>@staff.StaffLastName</td>
-                    <td>@staff.StaffEmail</td>
-                    <td>@staff.StaffHireDate</td>
+                    <AuthorizeView Roles="Administrator">
+                        <td>@staff.StaffEmail</td>
+                        <td>@staff.StaffHireDate</td>
+                    </AuthorizeView>
                     <td>@staff.StaffPosition</td>
-                    <td>@staff.StaffAddress</td>
-                    <td>@staff.StaffHPNum</td>
-                    <td>@staff.StaffDepartment</td>
-                    <td>
-                        <a href="/staffs/view/@staff.Id" class="btn btn-primary">
-                            <span class="oi oi-book"></span>
-                        </a>
-                        <a href="/staffs/edit/@staff.Id" class="btn btn-warning">
-                            <span class="oi oi-pencil"></span>
-                        </a>
-                        <button class ="btn btn-danger" @onclick="@(()=>Delete(staff.Id))">
-                            <span class="oi oi-delete"></span>
-                        </button>
-                    </td>
+                    <AuthorizeView Roles="Administrator">
+                        <td>@staff.StaffAddress</td>
+                        <td>@staff.StaffHPNum</td>
+                        <td>@staff.StaffDepartment</td>
+                        <td>
+                            <a href="/staffs/view/@staff.Id" class="btn btn-primary">
+                                <span class="oi oi-book"></span>
+                            </a>
+                            <a href="/staffs/edit/@staff.Id" class="btn btn-warning">
+                                <span class="oi oi-pencil"></span>
+                            </a>
+                            <button class="btn btn-danger" @onclick="@(()=>Delete(staff.Id))">
+                                <span class="oi oi-delete"></span>
+                            </button>
+                        </td>
+                    </AuthorizeView>
                 </tr>
             }
         </tbody>
@@ -106,6 +116,6 @@ else
     {
         // For JS datatable script
         js.InvokeVoidAsync("DataTablesDispose", "#staffTable");
-        //_interceptor.DisposeEvent();
+        _interceptor.DisposeEvent();
     }
 }

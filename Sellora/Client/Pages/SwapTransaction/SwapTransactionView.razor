@@ -4,6 +4,8 @@
 @inject NavigationManager _navManager
 @using Sellora.Client.Components
 @attribute [Authorize]
+@inject HttpInterceptorService _interceptor
+@implements IDisposable
 
 <PageTitle>Viewing Swap Transaction @swaptransaction.Id</PageTitle>
 
@@ -23,8 +25,18 @@
 
     SwapTransaction? swaptransaction = new SwapTransaction();
 
+    protected async override Task OnInitializedAsync()
+    {
+        _interceptor.MonitorEvent();
+    }
+
     protected async override Task OnParametersSetAsync()
     {
         swaptransaction = await _client.GetFromJsonAsync<SwapTransaction>($"{Endpoints.SwapTransactionsEndpoint}/{id}");
+    }
+
+    public void Dispose()
+    {
+        _interceptor.DisposeEvent();
     }
 }

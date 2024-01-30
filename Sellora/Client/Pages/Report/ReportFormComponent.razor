@@ -47,22 +47,25 @@
                 <ValidationMessage For="@(() => report.AppUserID)" />
             </div>
         </div>
-        <div class="form-group">
-            <label>Staff-in-Charge: </label>
-            <div>
-                <InputSelect @bind-Value="report.StaffID" class="form-control">
-                    <option value="">-- Select Staff in Charge --</option>
-                    @if (Staffs != null)
-                    {
-                        foreach (var staff in Staffs)
+        @if (user.IsInRole("Administrator"))
+        {
+            <div class="form-group">
+                <label>Staff-in-Charge: </label>
+                <div>
+                    <InputSelect @bind-Value="report.StaffID" class="form-control">
+                        <option value="">-- Select Staff in Charge --</option>
+                        @if (Staffs != null)
                         {
-                            <option value="@staff.Id">ID: @staff.Id ( @staff.StaffFirstName @staff.StaffLastName )</option>
+                            foreach (var staff in Staffs)
+                            {
+                                <option value="@staff.Id">ID: @staff.Id ( @staff.StaffFirstName @staff.StaffLastName )</option>
+                            }
                         }
-                    }
-                </InputSelect>
-                <ValidationMessage For="@(() => report.StaffID)" />
+                    </InputSelect>
+                    <ValidationMessage For="@(() => report.StaffID)" />
+                </div>
             </div>
-        </div>
+        }
         <div class="form-group">
             <label>Swap Transaction: </label>
             <div>
@@ -117,8 +120,14 @@
     private IList<SwapTransaction>? SwapTransactions;
     private IList<SaleTransaction>? SaleTransactions;
 
+    [CascadingParameter] public Task<AuthenticationState> AuthTask { get; set; }
+
+    private System.Security.Claims.ClaimsPrincipal user;
+
     protected async override Task OnInitializedAsync()
     {
+        var authState = await AuthTask;
+        this.user = authState.User;
         AppUsers = await _client.GetFromJsonAsync<List<AppUser>>($"{Endpoints.AppUsersEndpoint}");
         Staffs = await _client.GetFromJsonAsync<List<Staff>>($"{Endpoints.StaffsEndpoint}");
         SwapTransactions = await _client.GetFromJsonAsync<List<SwapTransaction>>($"{Endpoints.SwapTransactionsEndpoint}");
