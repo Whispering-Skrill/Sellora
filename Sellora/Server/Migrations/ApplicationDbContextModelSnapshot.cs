@@ -416,41 +416,41 @@ namespace Sellora.Server.Migrations
                         {
                             Id = "3781efa7-66dc-47f0-860f-e506d04102e4",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "58aa1f41-165e-4d3e-a826-bf2d290f9337",
+                            ConcurrencyStamp = "ec73406f-ebc6-47de-afee-bf8a844a8051",
                             Email = "admin@localhost.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@LOCALHOST.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEJIvkuzIwenlBuz8Do9he66yVcdvpFy7PiVf1E5hP0tdnAZuCc+EX0k5iCyvS66sOw==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEByTSLP4gs5Ry8OizXUXFTLo2klmvYWPSAVDtAGS5IX1KEN/0xCQfAN34RUZneEUqg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "30a956f1-1023-4359-99e2-9853698fe198",
+                            SecurityStamp = "337f2097-176d-421b-9a14-9c63d4ccb31b",
                             TwoFactorEnabled = false,
                             UserFirstName = "Admin",
                             UserLastName = "User",
-                            UserLastOnline = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(2274),
+                            UserLastOnline = new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(613),
                             UserName = "Admin",
-                            UserRegDate = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(2265)
+                            UserRegDate = new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(612)
                         },
                         new
                         {
                             Id = "b1675205-1948-44ec-8b55-b0cb71d1f84e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "0c76f69d-e8f5-4fd1-894c-1690e486e3f0",
+                            ConcurrencyStamp = "8420c10a-3de0-4b34-9094-5c6b0221017e",
                             Email = "user@localhost.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@LOCALHOST.COM",
                             NormalizedUserName = "USER",
-                            PasswordHash = "AQAAAAIAAYagAAAAEEdKRMd0LDaZ4ugQayMimAt/LymfuUgeGTWVeR+NRBfcFDx3s5fZNL0huZtrJg37bg==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEMiqwKucu4pOzMT4xYdnT8M6DkWHTz1ED8oqwafaGKHMNJnSLJnIpSVZAx2iJnBmVg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "63be4a37-ce93-402b-85bd-50e9ceb9f49a",
+                            SecurityStamp = "abd8960b-a7b2-4c47-8352-6f10b33aa3a4",
                             TwoFactorEnabled = false,
                             UserFirstName = "User",
                             UserLastName = "User",
-                            UserLastOnline = new DateTime(2024, 1, 28, 1, 14, 33, 852, DateTimeKind.Local).AddTicks(4857),
+                            UserLastOnline = new DateTime(2024, 1, 30, 11, 32, 3, 201, DateTimeKind.Local).AddTicks(2105),
                             UserName = "user",
-                            UserRegDate = new DateTime(2024, 1, 28, 1, 14, 33, 852, DateTimeKind.Local).AddTicks(4829)
+                            UserRegDate = new DateTime(2024, 1, 30, 11, 32, 3, 201, DateTimeKind.Local).AddTicks(2094)
                         });
                 });
 
@@ -516,10 +516,10 @@ namespace Sellora.Server.Migrations
                             UserFirstName = "Seo",
                             UserHPNum = "88123123",
                             UserLastName = "Yeong",
-                            UserLastOnline = new DateTime(2024, 1, 28, 1, 14, 33, 945, DateTimeKind.Local).AddTicks(5255),
+                            UserLastOnline = new DateTime(2024, 1, 30, 11, 32, 3, 367, DateTimeKind.Local).AddTicks(1956),
                             UserName = "SeoCoolSeoYeong",
-                            UserPassword = "AQAAAAIAAYagAAAAENa5FAovCQgz6DS+AVWJoQlypVQ0cIvw4HBQadjyfAn39KajRd5jS1haGOu77P0SZA==",
-                            UserRegDate = new DateTime(2024, 1, 28, 1, 14, 33, 945, DateTimeKind.Local).AddTicks(5226)
+                            UserPassword = "AQAAAAIAAYagAAAAEF7n+V4+QLpR9LbxL4lBOnrPETZKEjGcjNlb/MuhGzDs/cttzjMOP6+yiGPtM2BebQ==",
+                            UserRegDate = new DateTime(2024, 1, 30, 11, 32, 3, 367, DateTimeKind.Local).AddTicks(1943)
                         },
                         new
                         {
@@ -531,10 +531,10 @@ namespace Sellora.Server.Migrations
                             UserFirstName = "Tina",
                             UserHPNum = "88445566",
                             UserLastName = "Tan",
-                            UserLastOnline = new DateTime(2024, 1, 28, 1, 14, 33, 991, DateTimeKind.Local).AddTicks(8655),
+                            UserLastOnline = new DateTime(2024, 1, 30, 11, 32, 3, 436, DateTimeKind.Local).AddTicks(8425),
                             UserName = "TT_4Me",
-                            UserPassword = "AQAAAAIAAYagAAAAEL29YgQkDNgULa61eLhOlhiaKDdZ3w75nY/nbN7EgeUQQKORr5zdUVY4n8UegQbLog==",
-                            UserRegDate = new DateTime(2024, 1, 28, 1, 14, 33, 991, DateTimeKind.Local).AddTicks(8617)
+                            UserPassword = "AQAAAAIAAYagAAAAEPEc+BPQY1jlCjNy/GLUw1cOhMs+JNIkuKWZnrEcoYsU+BfepwiHLkfzcAX5iKIpXw==",
+                            UserRegDate = new DateTime(2024, 1, 30, 11, 32, 3, 436, DateTimeKind.Local).AddTicks(8412)
                         },
                         new
                         {
@@ -546,10 +546,10 @@ namespace Sellora.Server.Migrations
                             UserFirstName = "Kaynan",
                             UserHPNum = "85445666",
                             UserLastName = "Loh",
-                            UserLastOnline = new DateTime(2024, 1, 28, 1, 14, 34, 38, DateTimeKind.Local).AddTicks(4615),
+                            UserLastOnline = new DateTime(2024, 1, 30, 11, 32, 3, 518, DateTimeKind.Local).AddTicks(1669),
                             UserName = "Kay_today",
-                            UserPassword = "AQAAAAIAAYagAAAAED8BMEirX04VPlCx2uvW4lbmUoC3EXKwftSzldl35MnqJUkqEsMWwV/+mdt82ZTuvg==",
-                            UserRegDate = new DateTime(2024, 1, 28, 1, 14, 34, 38, DateTimeKind.Local).AddTicks(4582)
+                            UserPassword = "AQAAAAIAAYagAAAAEAQZ0wwyw6fgjcTvIKXThS1qil+e1aj6fQzXR4gd3nHlOiHcv14ih4KP9fqdfJ7Wpw==",
+                            UserRegDate = new DateTime(2024, 1, 30, 11, 32, 3, 518, DateTimeKind.Local).AddTicks(1656)
                         },
                         new
                         {
@@ -561,10 +561,10 @@ namespace Sellora.Server.Migrations
                             UserFirstName = "Alex",
                             UserHPNum = "9876543210",
                             UserLastName = "Smith",
-                            UserLastOnline = new DateTime(2024, 1, 28, 1, 14, 34, 86, DateTimeKind.Local).AddTicks(576),
+                            UserLastOnline = new DateTime(2024, 1, 30, 11, 32, 3, 586, DateTimeKind.Local).AddTicks(4028),
                             UserName = "AdventureCoder",
-                            UserPassword = "AQAAAAIAAYagAAAAENuvm1m1khBdTuil/8UZ62blKuCElTQVc/n5ONhsIElkg4TH5HQrctjuyJRtV1lpXw==",
-                            UserRegDate = new DateTime(2024, 1, 28, 1, 14, 34, 86, DateTimeKind.Local).AddTicks(549)
+                            UserPassword = "AQAAAAIAAYagAAAAEPO6ihPJfdOGVJmU54YyveD1nHrQq3vy+QzqU8hZM4gdcfThpLbt96Ozp+O2MEABvA==",
+                            UserRegDate = new DateTime(2024, 1, 30, 11, 32, 3, 586, DateTimeKind.Local).AddTicks(4016)
                         },
                         new
                         {
@@ -576,10 +576,10 @@ namespace Sellora.Server.Migrations
                             UserFirstName = "Emma",
                             UserHPNum = "8765432109",
                             UserLastName = "Johnson",
-                            UserLastOnline = new DateTime(2024, 1, 28, 1, 14, 34, 133, DateTimeKind.Local).AddTicks(1405),
+                            UserLastOnline = new DateTime(2024, 1, 30, 11, 32, 3, 654, DateTimeKind.Local).AddTicks(6593),
                             UserName = "DigitalNomad21",
-                            UserPassword = "AQAAAAIAAYagAAAAEDSALryqFiOU7mR9EqdRru+ZNDjcYAwU5Z7Bw7OKZIEUF2RWRiOlOOzxDQgzeLrocw==",
-                            UserRegDate = new DateTime(2024, 1, 28, 1, 14, 34, 133, DateTimeKind.Local).AddTicks(1373)
+                            UserPassword = "AQAAAAIAAYagAAAAEDzDpsXtknLnTtpYpV/dmlk9HgYyshXSOUoOo8wCHW4/qSdxM5BLdrWUQ4wOrJl8mQ==",
+                            UserRegDate = new DateTime(2024, 1, 30, 11, 32, 3, 654, DateTimeKind.Local).AddTicks(6581)
                         });
                 });
 
@@ -616,8 +616,8 @@ namespace Sellora.Server.Migrations
                             Id = 1,
                             CategoryName = "Cars",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1744),
-                            DateUpdated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1754),
+                            DateCreated = new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(304),
+                            DateUpdated = new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(305),
                             UpdatedBy = "System"
                         },
                         new
@@ -625,8 +625,8 @@ namespace Sellora.Server.Migrations
                             Id = 2,
                             CategoryName = "Services",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1768),
-                            DateUpdated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1782),
+                            DateCreated = new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(308),
+                            DateUpdated = new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(308),
                             UpdatedBy = "System"
                         },
                         new
@@ -634,8 +634,8 @@ namespace Sellora.Server.Migrations
                             Id = 3,
                             CategoryName = "Property",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1792),
-                            DateUpdated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1802),
+                            DateCreated = new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(314),
+                            DateUpdated = new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(314),
                             UpdatedBy = "System"
                         },
                         new
@@ -643,8 +643,8 @@ namespace Sellora.Server.Migrations
                             Id = 4,
                             CategoryName = "Electronics",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1815),
-                            DateUpdated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1825),
+                            DateCreated = new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(315),
+                            DateUpdated = new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(318),
                             UpdatedBy = "System"
                         },
                         new
@@ -652,8 +652,8 @@ namespace Sellora.Server.Migrations
                             Id = 5,
                             CategoryName = "Fashion",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1839),
-                            DateUpdated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1849),
+                            DateCreated = new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(328),
+                            DateUpdated = new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(329),
                             UpdatedBy = "System"
                         },
                         new
@@ -661,8 +661,8 @@ namespace Sellora.Server.Migrations
                             Id = 6,
                             CategoryName = "Luxury",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1858),
-                            DateUpdated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1872),
+                            DateCreated = new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(330),
+                            DateUpdated = new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(330),
                             UpdatedBy = "System"
                         },
                         new
@@ -670,8 +670,8 @@ namespace Sellora.Server.Migrations
                             Id = 7,
                             CategoryName = "Toys & Hobbies",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1881),
-                            DateUpdated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1891),
+                            DateCreated = new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(332),
+                            DateUpdated = new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(333),
                             UpdatedBy = "System"
                         },
                         new
@@ -679,8 +679,8 @@ namespace Sellora.Server.Migrations
                             Id = 8,
                             CategoryName = "Games & Gaming",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1906),
-                            DateUpdated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1915),
+                            DateCreated = new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(334),
+                            DateUpdated = new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(334),
                             UpdatedBy = "System"
                         },
                         new
@@ -688,8 +688,8 @@ namespace Sellora.Server.Migrations
                             Id = 9,
                             CategoryName = "Home Living",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1924),
-                            DateUpdated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1938),
+                            DateCreated = new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(336),
+                            DateUpdated = new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(336),
                             UpdatedBy = "System"
                         },
                         new
@@ -697,8 +697,8 @@ namespace Sellora.Server.Migrations
                             Id = 10,
                             CategoryName = "Appliances",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1948),
-                            DateUpdated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1962),
+                            DateCreated = new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(337),
+                            DateUpdated = new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(338),
                             UpdatedBy = "System"
                         },
                         new
@@ -706,8 +706,8 @@ namespace Sellora.Server.Migrations
                             Id = 11,
                             CategoryName = "Parenthood",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1971),
-                            DateUpdated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1981),
+                            DateCreated = new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(339),
+                            DateUpdated = new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(339),
                             UpdatedBy = "System"
                         },
                         new
@@ -715,8 +715,8 @@ namespace Sellora.Server.Migrations
                             Id = 12,
                             CategoryName = "Health & Food",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1996),
-                            DateUpdated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(2005),
+                            DateCreated = new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(341),
+                            DateUpdated = new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(341),
                             UpdatedBy = "System"
                         },
                         new
@@ -724,8 +724,8 @@ namespace Sellora.Server.Migrations
                             Id = 13,
                             CategoryName = "Sports",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(2015),
-                            DateUpdated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(2028),
+                            DateCreated = new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(342),
+                            DateUpdated = new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(343),
                             UpdatedBy = "System"
                         },
                         new
@@ -733,8 +733,8 @@ namespace Sellora.Server.Migrations
                             Id = 14,
                             CategoryName = "Pet Supplies",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(2038),
-                            DateUpdated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(2052),
+                            DateCreated = new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(344),
+                            DateUpdated = new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(344),
                             UpdatedBy = "System"
                         },
                         new
@@ -742,8 +742,8 @@ namespace Sellora.Server.Migrations
                             Id = 15,
                             CategoryName = "Jobs",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(2061),
-                            DateUpdated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(2071),
+                            DateCreated = new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(345),
+                            DateUpdated = new DateTime(2024, 1, 30, 11, 32, 3, 134, DateTimeKind.Local).AddTicks(346),
                             UpdatedBy = "System"
                         });
                 });
@@ -843,8 +843,8 @@ namespace Sellora.Server.Migrations
 
                     b.Property<string>("ReportTitle")
                         .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<int?>("SaleTransactionID")
                         .HasColumnType("int");
@@ -905,8 +905,8 @@ namespace Sellora.Server.Migrations
 
                     b.Property<string>("ReviewTitle")
                         .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<int?>("SaleTransactionID")
                         .HasColumnType("int");
@@ -1034,14 +1034,14 @@ namespace Sellora.Server.Migrations
                         {
                             Id = 1,
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1253),
-                            DateUpdated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1267),
+                            DateCreated = new DateTime(2024, 1, 30, 11, 32, 3, 133, DateTimeKind.Local).AddTicks(9855),
+                            DateUpdated = new DateTime(2024, 1, 30, 11, 32, 3, 133, DateTimeKind.Local).AddTicks(9857),
                             StaffAddress = "Temasek Polytechnic",
                             StaffDepartment = "Full Stack Development",
                             StaffEmail = "2102197G@student.tp.edu.sg",
                             StaffFirstName = "Ryan",
                             StaffHPNum = "99991111",
-                            StaffHireDate = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1238),
+                            StaffHireDate = new DateTime(2024, 1, 30, 11, 32, 3, 133, DateTimeKind.Local).AddTicks(9854),
                             StaffLastName = "Chong",
                             StaffPosition = "Lead Developer",
                             UpdatedBy = "System"
@@ -1050,14 +1050,14 @@ namespace Sellora.Server.Migrations
                         {
                             Id = 2,
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1299),
-                            DateUpdated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1309),
+                            DateCreated = new DateTime(2024, 1, 30, 11, 32, 3, 133, DateTimeKind.Local).AddTicks(9860),
+                            DateUpdated = new DateTime(2024, 1, 30, 11, 32, 3, 133, DateTimeKind.Local).AddTicks(9861),
                             StaffAddress = "Temasek Polytechnic",
                             StaffDepartment = "Full Stack Development",
                             StaffEmail = "2203567i@student.tp.edu.sg",
                             StaffFirstName = "Lucas",
                             StaffHPNum = "99992222",
-                            StaffHireDate = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1290),
+                            StaffHireDate = new DateTime(2024, 1, 30, 11, 32, 3, 133, DateTimeKind.Local).AddTicks(9859),
                             StaffLastName = "Do",
                             StaffPosition = "Lead Developer",
                             UpdatedBy = "System"
@@ -1066,14 +1066,14 @@ namespace Sellora.Server.Migrations
                         {
                             Id = 3,
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1348),
-                            DateUpdated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1357),
+                            DateCreated = new DateTime(2024, 1, 30, 11, 32, 3, 133, DateTimeKind.Local).AddTicks(9864),
+                            DateUpdated = new DateTime(2024, 1, 30, 11, 32, 3, 133, DateTimeKind.Local).AddTicks(9864),
                             StaffAddress = "Design Avenue",
                             StaffDepartment = "User Experience Design",
                             StaffEmail = "emily.ng@example.com",
                             StaffFirstName = "Emily",
                             StaffHPNum = "88882222",
-                            StaffHireDate = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1333),
+                            StaffHireDate = new DateTime(2024, 1, 30, 11, 32, 3, 133, DateTimeKind.Local).AddTicks(9863),
                             StaffLastName = "Ng",
                             StaffPosition = "Senior UI/UX Designer",
                             UpdatedBy = "System"
@@ -1082,14 +1082,14 @@ namespace Sellora.Server.Migrations
                         {
                             Id = 4,
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1394),
-                            DateUpdated = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1403),
+                            DateCreated = new DateTime(2024, 1, 30, 11, 32, 3, 133, DateTimeKind.Local).AddTicks(9867),
+                            DateUpdated = new DateTime(2024, 1, 30, 11, 32, 3, 133, DateTimeKind.Local).AddTicks(9867),
                             StaffAddress = "Data Center Lane",
                             StaffDepartment = "Database Management",
                             StaffEmail = "daniel.liu@example.com",
                             StaffFirstName = "Daniel",
                             StaffHPNum = "77773333",
-                            StaffHireDate = new DateTime(2024, 1, 28, 1, 14, 33, 805, DateTimeKind.Local).AddTicks(1380),
+                            StaffHireDate = new DateTime(2024, 1, 30, 11, 32, 3, 133, DateTimeKind.Local).AddTicks(9866),
                             StaffLastName = "Liu",
                             StaffPosition = "Database Administrator",
                             UpdatedBy = "System"

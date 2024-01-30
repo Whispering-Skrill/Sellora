@@ -80,7 +80,6 @@ namespace Sellora.Server.Controllers
             //{
             //    return NotFound();
             //}
-
             // This checks if a tuple with the specified ID exists in the Staff Table
             var staff = await _unitOfWork.Staffs.Get(q => q.Id == id);
             if (staff == null)

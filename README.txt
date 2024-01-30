@@ -4,6 +4,7 @@
 4 - [COMPLETE] Add About Page, Unauthorised Landing Page
 5 - DataTables error
 6 - All Categories paging?
+7 - Fix NotFound system
 
 
 
@@ -116,3 +117,5 @@ Lucas - Created Form Components for Lucas-Entities
 Ryan - Standardised all Ryan-Entities
 
 Ryan - Added Categorical Pages
+
+Lucas - Added JS Interop to Lucas-Entities

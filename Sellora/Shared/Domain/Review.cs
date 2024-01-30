@@ -10,7 +10,7 @@ namespace Sellora.Shared.Domain
     public class Review : BaseDomainModel, IValidatableObject
     {
         [Required]
-        [StringLength(30, ErrorMessage = "Title cannot be longer than 30 Characters.")]
+        [StringLength(100, ErrorMessage = "Title cannot be longer than 100 Characters.")]
         public string? ReviewTitle { get; set; }
 
         [Required]
