@@ -48,10 +48,10 @@ else
                     <td>@swaptransaction.AppUser2.UserName</td>
                     <td>@swaptransaction.SwapItem2.ItemName</td>
                     <td>
-                        <a href="/staffs/view/@swaptransaction.Id" class="btn btn-primary">
+                        <a href="/swaptransactions/view/@swaptransaction.Id" class="btn btn-primary">
                             <span class="oi oi-book"></span>
                         </a>
-                        <a href="/staffs/edit/@swaptransaction.Id" class="btn btn-warning">
+                        <a href="/swaptransactions/edit/@swaptransaction.Id" class="btn btn-warning">
                             <span class="oi oi-pencil"></span>
                         </a>
                         <button class="btn btn-danger" @onclick="@(()=>Delete(swaptransaction.Id))">

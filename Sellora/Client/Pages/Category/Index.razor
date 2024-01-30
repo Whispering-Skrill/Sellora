@@ -44,6 +44,9 @@ else
                         <button class="btn btn-danger" @onclick="@(()=>Delete(category.Id))">
                             <span class="oi oi-delete"></span>
                         </button>
+                        <a href="/listings/@category.Id" class="btn btn-warning">
+                            <span class="oi oi-list"></span>
+                        </a>
                     </td>
                 </tr>
             }

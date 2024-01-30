@@ -17,8 +17,8 @@ function AddModifiedDataTable(table) {
         $(table).DataTable({
             destroy: true,
             language: { search: "" },
-            ordering: false,
-            pageLength: 30,
+            ordering: true,
+            pageLength: 10,
             lengthChange: false,
             dom:"<'row'<'col-sm-12'tr>>" +
                 "<'row'<'col-sm-5'i><'col-sm-5'p><'col-sm'f>>"
