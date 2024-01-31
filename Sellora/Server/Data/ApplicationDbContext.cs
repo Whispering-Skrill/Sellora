@@ -30,7 +30,7 @@ namespace Sellora.Server.Data
         {
             base.OnModelCreating(builder);
 
-            builder.ApplyConfiguration(new StaffSeedConfiguration());
+            builder.ApplyConfiguration(new ItemSeedConfiguration());
 
             builder.ApplyConfiguration(new CategorySeedConfiguration());
 

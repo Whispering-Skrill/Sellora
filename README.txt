@@ -139,3 +139,5 @@ Ryan - Implemented User Role Authentication onto Review Index Page
 Ryan - Redid ASPNetUser Profile Page
 
 Ryan - Completely Implemented User Role Authentication for Ryan-Entities
+
+Ryan - Added Item Seed
