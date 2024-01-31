@@ -1,50 +1,64 @@
 ﻿@*ASPNetr-yanWorks*@
 @page "/reviews/create"
+@implements IDisposable
 @inject HttpClient _client
 @inject NavigationManager _navManager
-@using Sellora.Client.Components
-@attribute [Authorize]
 @inject HttpInterceptorService _interceptor
-@implements IDisposable
+@attribute [Authorize]
 
+<!-- Page Title -->
 <PageTitle>Describe your Experience</PageTitle>
 
+<!-- Topbar with the title and a back-to-list button -->
 <div class="review-topbar">
     <h2 class="review-title">Leave a Review</h2>
     <BackToList Target="reviews" />
 </div>
 
 <div style="border-bottom:solid black 1px; padding-top:3px; margin-bottom:10px;">
-    @*FOR SPACING*@
+    <!-- Separator for spacing -->
 </div>
 
+<!-- This Generates a Review Formcomponent with Creation Parameters -->
 <ReviewFormComponent ButtonText="Submit" review="review" OnValidSubmit="@CreateReview" />
 
 
 @code {
+    // An instance of the Review class to store review information
     Review review = new Review();
 
+    // Collections to store data fetched from the server
     private IList<AppUser>? Users;
     private IList<SwapTransaction>? SwapTransactions;
     private IList<SaleTransaction>? SaleTransactions;
 
+    // This runs asynchronously when the component/page is initialised
     protected async Task OnIntializedAsync()
     {
+        // Initialises the interceptor module
+        // This monitors HTTP Events for Global Error Handling
         _interceptor.MonitorEvent();
 
+        // This fetches data from Server Endpoints using HttpClient
         Users = await _client.GetFromJsonAsync<List<AppUser>>($"{Endpoints.AppUsersEndpoint}");
         SwapTransactions = await _client.GetFromJsonAsync<List<SwapTransaction>>($"{Endpoints.SwapTransactionsEndpoint}");
         SaleTransactions = await _client.GetFromJsonAsync<List<SaleTransaction>>($"{Endpoints.SaleTransactionsEndpoint}");
     }
 
+    // Method to Create a Review, this will navigate users back to the reviews page when complete
     private async Task CreateReview()
     {
+        // Send a POST request to the server to create a review
         await _client.PostAsJsonAsync(Endpoints.ReviewsEndpoint, review);
+
+        // Navigate back to the reviews page after successful submission
         _navManager.NavigateTo("/reviews/");
     }
 
+    // Disposes of resources when the component is disposed
     public void Dispose()
     {
+        // This disposes of global error handling events
         _interceptor.DisposeEvent();
     }
 }

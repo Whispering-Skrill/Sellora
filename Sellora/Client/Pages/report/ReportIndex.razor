@@ -1,14 +1,16 @@
 @*ASPNetr-yanWorks*@
 @page "/reports/"
-@inject HttpClient _client
-@inject IJSRuntime js
-@inject HttpInterceptorService _interceptor
 @implements IDisposable
+@inject IJSRuntime js
+@inject HttpClient _client
+@inject NavigationManager _navManager
+@inject HttpInterceptorService _interceptor
 @attribute [Authorize(Roles = "Administrator")]
 
-
+<!-- Page Title -->
 <PageTitle>Reports</PageTitle>
 
+<!-- Topbar with the title and a button to create a new report -->
 <div class="report-topbar">
     <h2 class="report-title">Reports</h2>
     <a href="/reports/create" class="btn btn-secondary">
@@ -19,18 +21,23 @@
 <div style="margin-top: 10px;">
     @if (Reports == null)
     {
+        <!-- Displays a loading message if reports are still loading -->
         <div class="alert alert-info">Loading Reports...</div>
     }
     else
     {
+        <!-- Displays each report in a box -->
         @foreach (var report in Reports)
         {
             <div class="report-box">
+                <!-- Inner container for report details -->
                 <div class="report-box-innercontainer">
                     <h4 class="report-box-title">@report.ReportTitle</h4>
                     <p class="report-box-details">@report.AppUser.UserName ------- @report.ReportDate.Day / @report.ReportDate.Month / @report.ReportDate.Year</p>
                     <p class="report-box-content">@report.ReportContent</p>
                 </div>
+
+                <!-- Controls for each report box -->
                 <div class="report-box-control-container">
                     <div class="report-box-detail-button">
                         <a href="/reports/view/@report.Id" class="btn btn-primary">
@@ -48,58 +55,25 @@
                 </div>
             </div>
         }
-        @*
-    <table class="table table-responsive">
-    <thead>
-    <tr>
-    <th>Report Title</th>
-    <th>Reporter ID</th>
-    <th>Report Date</th>
-    <th>Report Content</th>
-    <th>Sale Transaction ID</th>
-    <th>Swap Transaction ID</th>
-    <th>Actions</th>
-    </tr>
-    </thead>
-    <tbody>
-    @foreach (var report in Reports)
-    {
-    <tr>
-    <td>@report.ReportTitle</td>
-    <td>@report.User.Id</td>
-    <td>@report.ReportDate</td>
-    <td>@report.ReportContent</td>
-    <td>@report.SaleTransaction.Id</td>
-    <td>@report.SwapTransaction.Id</td>
-    <td>
-    <a href="/reports/view/@report.Id" class="btn btn-primary">
-    <span class="oi oi-book"></span>
-    </a>
-    <a href="/reports/edit/@report.Id" class="btn btn-warning">
-    <span class="oi oi-pencil"></span>
-    </a>
-    <button class="btn btn-danger" @onclick="@(()=>Delete(report.Id))">
-    <span class="oi oi-delete"></span>
-    </button>
-    </td>
-    </tr>
-    }
-    </tbody>
-    </table>
-    *@
     }
 </div>
 
 @code {
-    // Create a List based on Staff Table in Database
+    // List to store reports fetched from the server
     private List<Report>? Reports;
 
+    // This runs asynchronously when the component/page is initialized
     protected async override Task OnInitializedAsync()
     {
+        // Initialises the interceptor module
+        // This monitors HTTP Events for Global Error Handling
         _interceptor.MonitorEvent();
+
+        // Fetch data from Server Endpoints using HttpClient
         Reports = await _client.GetFromJsonAsync<List<Report>>($"{Endpoints.ReportsEndpoint}");
     }
 
+    // Method to handle report deletion with confirmation dialog
     async Task Delete(int reportID)
     {
         if (Reports != null)
@@ -108,14 +82,17 @@
             var confirm = await js.InvokeAsync<bool>("confirm", $"Do you want to delete Report {report.Id}, Dated: {report.ReportDate}?");
             if (confirm)
             {
+                // Deletes the report and refreshes the list
                 await _client.DeleteAsync($"{Endpoints.ReportsEndpoint}/{reportID}");
                 await OnInitializedAsync();
             }
         }
     }
 
+    // Disposes of resources when the component is disposed
     public void Dispose()
     {
+        // This disposes of global error handling events
         _interceptor.DisposeEvent();
     }
 }

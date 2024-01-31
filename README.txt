@@ -7,7 +7,7 @@
 7 - [COMPLETE] Fix NotFound system
 8 - [COMPLETE] Role Authorisation
 9 - [COMPLETE] Add Role name in ASPNetUser Profile Page
-10 - Item Seeding
+10 - [COMPLETE] Item Seeding
 11 - Check Domain [Required]
 12 - Contact Form?
 13 - 5 stars?
@@ -141,3 +141,5 @@ Ryan - Redid ASPNetUser Profile Page
 Ryan - Completely Implemented User Role Authentication for Ryan-Entities
 
 Ryan - Added Item Seed
+
+Ryan - Shifted @using Sellora.Client.Components to Global Imports

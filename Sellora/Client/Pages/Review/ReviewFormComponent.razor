@@ -1,10 +1,15 @@
 ﻿@*ASPNetr-yanWorks*@
 @inject HttpClient _client
 
+<!-- EditForm for managing review details -->
 <EditForm Model="@review" OnValidSubmit="@OnValidSubmit">
     <DataAnnotationsValidator />
     <ValidationSummary />
+
+    <!-- Fieldset to disable form controls if Disabled is true -->
     <fieldset disabled="@Disabled">
+
+        <!-- Title of Review -->
         <div class="form-group">
             <label>Title of Review: </label>
             <div>
@@ -12,6 +17,8 @@
                 <ValidationMessage For="@(() => review.ReviewTitle)" />
             </div>
         </div>
+
+        <!-- Review rating -->
         <div class="form-group">
             <label>Rating: </label>
             <div>
@@ -19,14 +26,17 @@
                 <ValidationMessage For="@(() => review.ReviewRating)" />
             </div>
         </div>
+
+        <!-- Description of the review (textarea) -->
         <div class="form-group">
             <label>Describe your Experience: </label>
             <div>
-                @*<InputText @bind-Value="@review.ReviewDescription" class="form-control" />*@
                 <textarea @bind="@review.ReviewDescription" class="form-control" id="exampleFormControlTextarea1" rows="4"></textarea>
                 <ValidationMessage For="@(() => review.ReviewDescription)" />
             </div>
         </div>
+
+        <!-- Date of the review ((visible only if editing an existing review) -->
         @if (review.Id > 0)
         {
             <div class="form-group">
@@ -37,6 +47,8 @@
                 </div>
             </div>
         }
+
+        <!-- Reviewer (AppUser) selection -->
         <div class="form-group">
             <label>Reviewer: </label>
             <div>
@@ -53,6 +65,8 @@
                 <ValidationMessage For="@(() => review.AppUserID)" />
             </div>
         </div>
+
+        <!-- Swap Transaction selection -->
         <div class="form-group">
             <label>Swap Transaction: </label>
             <div>
@@ -69,6 +83,8 @@
                 <ValidationMessage For="@(() => review.SwapTransactionID)" />
             </div>
         </div>
+
+        <!-- Sale Transaction selection -->
         <div class="form-group">
             <label>Sale Transaction: </label>
             <div>
@@ -86,8 +102,10 @@
             </div>
         </div>
     </fieldset>
+
     <br />
 
+    <!-- Submit button (visible only if the form is not disabled) -->
     @if (!Disabled)
     {
         <button type="submit" class="btn btn-success btn-block">
@@ -97,21 +115,23 @@
 </EditForm>
 
 @code {
-    [Parameter] public bool Disabled { get; set; } = false;
-    [Parameter] public Review ? review { get; set; }
-    [Parameter] public string ButtonText { get; set; } = "Save";
-    [Parameter] public EventCallback OnValidSubmit { get; set; }
+    // Parameters for the component
+    [Parameter] public bool Disabled { get; set; } = false;         // Determines whether form controls should be disabled
+    [Parameter] public Review ? review { get; set; }                // This parameters store the review details
+    [Parameter] public string ButtonText { get; set; } = "Save";    // This sets up what the button does
+    [Parameter] public EventCallback OnValidSubmit { get; set; }    // EventCallback to handle Form Submission
 
+    // Collections to store data fetched from the server
     private IList<AppUser>? AppUsers;
     private IList<Staff>? Staffs;
     private IList<SwapTransaction>? SwapTransactions;
     private IList<SaleTransaction>? SaleTransactions;
 
+    // Fetch data for dropdowns when the component is initialized
     protected async override Task OnInitializedAsync()
     {
         AppUsers = await _client.GetFromJsonAsync<List<AppUser>>($"{Endpoints.AppUsersEndpoint}");
         Staffs = await _client.GetFromJsonAsync<List<Staff>>($"{Endpoints.StaffsEndpoint}");
         SwapTransactions = await _client.GetFromJsonAsync<List<SwapTransaction>>($"{Endpoints.SwapTransactionsEndpoint}");
-        SaleTransactions = await _client.GetFromJsonAsync<List<SaleTransaction>>($"{Endpoints.SaleTransactionsEndpoint}");
     }
 }

@@ -1,13 +1,16 @@
 @*ASPNetr-yanWorks*@
 @page "/reviews/"
-@inject HttpClient _client
-@inject IJSRuntime js
-@attribute [Authorize]
-@inject HttpInterceptorService _interceptor
 @implements IDisposable
+@inject IJSRuntime js
+@inject HttpClient _client
+@inject NavigationManager _navManager
+@inject HttpInterceptorService _interceptor
+@attribute [Authorize]
 
+<!-- Page Title -->
 <PageTitle>Reviews</PageTitle>
 
+<!-- Topbar with the title and a button to create a new review -->
 <div class="review-topbar">
     <h2 class="review-title">Reviews</h2>
     <a href="/reviews/create" class="btn btn-secondary">
@@ -18,13 +21,16 @@
 <div style="margin-top: 10px;">
     @if (Reviews == null)
     {
+        <!-- Displays a loading message if reviews are still loading -->
         <div class="alert alert-info">Loading Reviews...</div>
     }
     else
     {
+        <!-- Displays each review in a box -->
         @foreach (var review in Reviews)
         {
             <div class="review-box">
+                <!-- Inner container for review details -->
                 <div class="review-box-innercontainer">
                     @if (review.SwapTransaction != null)
                     {
@@ -41,12 +47,16 @@
                     <p class="review-box-details">@review.AppUser.UserName ------- @review.ReviewDate.Day / @review.ReviewDate.Month / @review.ReviewDate.Year</p>
                     <p class="review-box-content">@review.ReviewDescription</p>
                 </div>
+
+                <!-- Controls for each review box -->
                 <div class="review-box-control-container">
                     <div class="review-box-detail-button">
                         <a href="/reviews/view/@review.Id" class="btn btn-primary">
                             More Details
                         </a>
                     </div>
+
+                    <!-- This prevents user-role level users from editing reviews -->
                     <AuthorizeView Roles="Administrator">
                         <div class="review-box-control-bottom">
                             <a href="/reviews/edit/@review.Id" class="btn btn-warning" style="width:100%; margin-right:5px;">
@@ -60,60 +70,25 @@
                 </div>
             </div>
         }
-        @*
-    <table class="table table-responsive">
-    <thead>
-    <tr>
-    <th>Review Title</th>
-    <th>Reviewer ID</th>
-    <th>Review Date</th>
-    <th>Review Rating</th>
-    <th>Review Description</th>
-    <th>Sale Transaction ID</th>
-    <th>Swap Transaction ID</th>
-    <th>Actions</th>
-    </tr>
-    </thead>
-    <tbody>
-    @foreach (var review in Reviews)
-    {
-    <tr>
-    <td>@review.ReviewTitle</td>
-    <td>@review.User.Id</td>
-    <td>@review.ReviewDate</td>
-    <td>@review.ReviewRating</td>
-    <td>@review.ReviewDescription</td>
-    <td>@review.SaleTransaction.Id</td>
-    <td>@review.SwapTransaction.Id</td>
-    <td>
-    <a href="/staffs/view/@review.Id" class="btn btn-primary">
-    <span class="oi oi-book"></span>
-    </a>
-    <a href="/staffs/edit/@review.Id" class="btn btn-warning">
-    <span class="oi oi-pencil"></span>
-    </a>
-    <button class="btn btn-danger" @onclick="@(()=>Delete(review.Id))">
-    <span class="oi oi-delete"></span>
-    </button>
-    </td>
-    </tr>
-    }
-    </tbody>
-    </table>
-    *@
     }
 </div>
 
 @code {
-    // Create a List based on Staff Table in Database
+    // List to store reviews fetched from the server
     private List<Review>? Reviews;
 
+    // This runs asynchronously when the component/page is initialized
     protected async override Task OnInitializedAsync()
     {
+        // Initialises the interceptor module
+        // This monitors HTTP Events for Global Error Handling
         _interceptor.MonitorEvent();
+        
+        // Fetch data from Server Endpoints using HttpClient
         Reviews = await _client.GetFromJsonAsync<List<Review>>($"{Endpoints.ReviewsEndpoint}");
     }
 
+    // Method to handle review deletion with confirmation dialog
     async Task Delete(int reviewsID)
     {
         if (Reviews != null)
@@ -122,14 +97,17 @@
             var confirm = await js.InvokeAsync<bool>("confirm", $"Do you want to delete review created by user {review.AppUserID}?");
             if (confirm)
             {
+                // Deletes the review and refreshes the list
                 await _client.DeleteAsync($"{Endpoints.ReviewsEndpoint}/{reviewsID}");
                 await OnInitializedAsync();
             }
         }
     }
 
+    // Disposes of resources when the component is disposed
     public void Dispose()
     {
+        // This disposes of global error handling events
         _interceptor.DisposeEvent();
     }
 }

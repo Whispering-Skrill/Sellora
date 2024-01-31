@@ -1,16 +1,23 @@
 ﻿@*ASPNetr-yanWorks*@
 
+<!-- EditForm for managing staff details -->
 <EditForm Model="@staff" OnValidSubmit="@OnValidSubmit">
     <DataAnnotationsValidator />
     <ValidationSummary />
+
+    <!-- Fieldset to disable form controls if Disabled is true -->
     <fieldset disabled="@Disabled">
         <div class="form-group">
+
+            <!-- First Name -->
             <label>First Name: </label>
             <div>
                 <InputText @bind-Value="@staff.StaffFirstName" class="form-control"/>
                 <ValidationMessage For="@(() => staff.StaffFirstName)" />
             </div>
         </div>
+
+        <!-- Last Name -->
         <div class="form-group">
             <label>Last Name: </label>
             <div>
@@ -18,6 +25,8 @@
                 <ValidationMessage For="@(() => staff.StaffLastName)" />
             </div>
         </div>
+
+        <!-- Email -->
         <div class="form-group">
             <label>Email: </label>
             <div>
@@ -25,6 +34,8 @@
                 <ValidationMessage For="@(() => staff.StaffEmail)" />
             </div>
         </div>
+
+        <!-- Date of Hire -->
         <div class="form-group">
             <label>Date of Hire: </label>
             <div>
@@ -32,6 +43,8 @@
                 <ValidationMessage For="@(() => staff.StaffHireDate)" />
             </div>
         </div>
+
+        <!-- Position -->
         <div class="form-group">
             <label>Position: </label>
             <div>
@@ -39,6 +52,8 @@
                 <ValidationMessage For="@(() => staff.StaffPosition)" />
             </div>
         </div>
+
+        <!-- Address -->
         <div class="form-group">
             <label>Address: </label>
             <div>
@@ -46,6 +61,8 @@
                 <ValidationMessage For="@(() => staff.StaffAddress)" />
             </div>
         </div>
+
+        <!-- Contact -->
         <div class="form-group">
             <label>Contact: </label>
             <div>
@@ -53,6 +70,8 @@
                 <ValidationMessage For="@(() => staff.StaffHPNum)" />
             </div>
         </div>
+
+        <!-- Department -->
         <div class="form-group">
             <label>Department: </label>
             <div>
@@ -63,6 +82,7 @@
     </fieldset>
     <br />
 
+    <!-- Submit button (visible only if the form is not disabled) -->
     @if (!Disabled)
     {
         <button type="submit" class="btn btn-success btn-block">
@@ -72,8 +92,9 @@
 </EditForm>
 
 @code {
-    [Parameter] public bool Disabled { get; set; } = false;
-    [Parameter] public Staff ? staff { get; set; }
-    [Parameter] public string ButtonText { get; set; } = "Save";
-    [Parameter] public EventCallback OnValidSubmit { get; set; }
+    // Parameters for the component
+    [Parameter] public bool Disabled { get; set; } = false;         // Determines whether form controls should be disabled
+    [Parameter] public Staff? staff { get; set; }                   // This parameters store the staff details
+    [Parameter] public string ButtonText { get; set; } = "Save";    // This sets up what the button does
+    [Parameter] public EventCallback OnValidSubmit { get; set; }    // EventCallback to handle Form Submission
 }
