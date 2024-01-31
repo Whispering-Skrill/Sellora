@@ -8,13 +8,15 @@
  8 - [COMPLETE] Role Authorisation
  9 - [COMPLETE] Add Role name in ASPNetUser Profile Page
 10 - [COMPLETE] Item Seeding
-11 - Check Domain [Required]
+11 - [COMPLETE] Check Domain [Required]
 12 - Contact Form
 13 - 5 Stars on Reviews
 14 - Check on Unauthorised Error Handling
 15 - Create User side Item View Page
-16 - Comment Everything
+16 - [COMPLETE] Comment Everything
 17 - Implement Searchbar
+18 - Update Reports Display to include transaction
+19 - Update Reviews Display to have cool swap vs sale transaction stuff
 
 
 
@@ -147,3 +149,11 @@ Ryan - Completely Implemented User Role Authentication for Ryan-Entities
 Ryan - Added Item Seed
 
 Ryan - Shifted @using Sellora.Client.Components to Global Imports
+
+Ryan - Organised Pages Folder
+
+Ryan - Commented All Ryan-Entities, Created Pages and Application Layer Pages
+
+Ryan - Added STRICT logic on Swaptransaction, Review Form Components
+
+Ryan - Reconfigured Validation on Ryan-Entities

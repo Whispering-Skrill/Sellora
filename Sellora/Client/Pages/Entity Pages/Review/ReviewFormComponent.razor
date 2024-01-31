@@ -76,7 +76,10 @@
                     {
                         foreach (var swaptransaction in SwapTransactions)
                         {
-                            <option value="@swaptransaction.Id">Swap Transaction: @swaptransaction.Id</option>
+                            if (swaptransaction.AppUser1Id == review.AppUserID || swaptransaction.AppUser2Id == review.AppUserID)
+                            {
+                                <option value="@swaptransaction.Id">Swap Transaction: @swaptransaction.Id</option>
+                            }
                         }
                     }
                 </InputSelect>
@@ -94,7 +97,10 @@
                     {
                         foreach (var saletransaction in SaleTransactions)
                         {
-                            <option value="@saletransaction.Id">Sale Transaction: @saletransaction.Id</option>
+                            if (saletransaction.AppUserId == review.AppUserID)
+                            {
+                                <option value="@saletransaction.Id">Swap Transaction: @saletransaction.Id</option>
+                            }
                         }
                     }
                 </InputSelect>
@@ -134,5 +140,6 @@
         AppUsers = await _client.GetFromJsonAsync<List<AppUser>>($"{Endpoints.AppUsersEndpoint}");
         Staffs = await _client.GetFromJsonAsync<List<Staff>>($"{Endpoints.StaffsEndpoint}");
         SwapTransactions = await _client.GetFromJsonAsync<List<SwapTransaction>>($"{Endpoints.SwapTransactionsEndpoint}");
+        SaleTransactions = await _client.GetFromJsonAsync<List<SaleTransaction>>($"{Endpoints.SaleTransactionsEndpoint}");
     }
 }

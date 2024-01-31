@@ -6,6 +6,7 @@ using Microsoft.Extensions.Options;
 using Sellora.Server.Configurations.Entities;
 using Sellora.Server.Models;
 using Sellora.Shared.Domain;
+using System.Reflection.Emit;
 
 namespace Sellora.Server.Data
 {
@@ -35,6 +36,8 @@ namespace Sellora.Server.Data
 
             // Applying seed configurations for specific entities
 
+            builder.ApplyConfiguration(new StaffSeedConfiguration());
+
             builder.ApplyConfiguration(new ItemSeedConfiguration());
 
             builder.ApplyConfiguration(new CategorySeedConfiguration());
@@ -46,6 +49,31 @@ namespace Sellora.Server.Data
             builder.ApplyConfiguration(new UserRoleSeedConfiguration());
 
             builder.ApplyConfiguration(new UserSeedConfiguration());
+
+            // Configure SwapTransaction relationships to Not Cascade on Delete
+            builder.Entity<SwapTransaction>()
+                .HasOne(st => st.AppUser1)
+                .WithMany()
+                .HasForeignKey(st => st.AppUser1Id)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<SwapTransaction>()
+                .HasOne(st => st.SwapItem1)
+                .WithMany()
+                .HasForeignKey(st => st.SwapItem1Id)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<SwapTransaction>()
+                .HasOne(st => st.AppUser2)
+                .WithMany()
+                .HasForeignKey(st => st.AppUser2Id)
+                .OnDelete(DeleteBehavior.Restrict);
+
+            builder.Entity<SwapTransaction>()
+                .HasOne(st => st.SwapItem2)
+                .WithMany()
+                .HasForeignKey(st => st.SwapItem2Id)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

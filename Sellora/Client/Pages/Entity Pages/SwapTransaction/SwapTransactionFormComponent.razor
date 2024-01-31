@@ -49,7 +49,14 @@
                     {
                         foreach (var item in Items)
                         {
-                            <option value="@item.Id">ID: @item.Id ( @item.ItemName )</option>
+                            <!-- The items displayed will depend on AppUser1 -->
+                            if (swaptransaction.AppUser1Id != null)
+                            {
+                                if (item.AppUserId == swaptransaction.AppUser1Id)
+                                {
+                                    <option value="@item.Id">ID: @item.Id ( @item.ItemName )</option>
+                                }
+                            }
                         }
                     }
                 </InputSelect>
@@ -85,7 +92,14 @@
                     {
                         foreach (var item in Items)
                         {
-                            <option value="@item.Id">ID: @item.Id ( @item.ItemName )</option>
+                            <!-- The items displayed will depend on AppUser2 -->
+                            if (swaptransaction.AppUser2Id != null)
+                            {
+                                if (item.AppUserId == swaptransaction.AppUser2Id)
+                                {
+                                    <option value="@item.Id">ID: @item.Id ( @item.ItemName )</option>
+                                }
+                            }
                         }
                     }
                 </InputSelect>
