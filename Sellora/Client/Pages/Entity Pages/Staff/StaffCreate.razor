@@ -1,0 +1,53 @@
+﻿@*ASPNetr-yanWorks*@
+@page "/staffs/create"
+@implements IDisposable
+@inject HttpClient _client
+@inject NavigationManager _navManager
+@inject HttpInterceptorService _interceptor
+@attribute [Authorize(Roles = "Administrator")]
+
+<!-- Page Title -->
+<PageTitle>Add a Staff Member</PageTitle>
+
+<!-- Topbar with the title and a back-to-list button -->
+<div class="staff-topbar">
+    <h2 class="staff-title">Create Staff</h2>
+    <BackToList Target="staffs" />
+</div>
+
+<div style="border-bottom:solid black 1px; padding-top:3px; margin-bottom:10px;">
+    <!-- Separator for spacing -->
+</div>
+
+<!-- This Generates a Staff Form Component with Creation Parameters -->
+<StaffFormComponent ButtonText="Create Staff" staff="staff" OnValidSubmit="@CreateStaff" />
+
+@code {
+    // An instance of the Staff class to store staff information
+    Staff staff = new Staff();
+
+    // This runs asynchronously when the component/page is initialised
+    protected async override Task OnInitializedAsync()
+    {
+        // Initialises the interceptor module
+        // This monitors HTTP Events for Global Error Handling
+        _interceptor.MonitorEvent();
+    }
+
+    // Method to Create a new Staff Member, this will navigate users back to the staffs page when complete
+    private async Task CreateStaff()
+    {
+        // Send a POST request to the server to create a Staff Member
+        await _client.PostAsJsonAsync(Endpoints.StaffsEndpoint, staff);
+
+        // Navigate back to the staffs page after successful submission
+        _navManager.NavigateTo("/staffs/");
+    }
+
+    // Disposes of resources when the component is disposed
+    public void Dispose()
+    {
+        // This disposes of global error handling events
+        _interceptor.DisposeEvent();
+    }
+}

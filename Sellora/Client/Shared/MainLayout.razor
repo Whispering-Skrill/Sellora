@@ -1,13 +1,20 @@
 ﻿@inherits LayoutComponentBase
+
+<!-- This razor file describes the main layout / overlay of the page -->
 <div class="page">
+
+    <!-- This contains the sidebar / navmenu -->
     <div class="sidebar" style="height:100%;">
         <NavMenu />
     </div>
     
+    <!-- This contains the 'topbar' -->
     <main>
         <div style="min-height:75vh;">
             <div class="top-row px-0">
                 <div class="top-cat px-0 auth">
+
+                    <!-- Below are links to various categories -->
                     <div class="cat-item px-0">
                         <NavLink class="nav-link" href="/listings/5">
                             <b>Fashion</b>
@@ -33,22 +40,26 @@
                             <b>Services</b>
                         </NavLink>
                     </div>
-
-
-                    @* "About" Section - removed cause we don't need it*@
-                    @*<div class="main-item px-0">
-                    <NavLink class="nav-link" href="https://docs.microsoft.com/aspnet/">
-                    <span class="oi oi-person" aria-hidden="true"></span> About
-                    </NavLink>
-                    </div>*@
-
                 </div>
+
+                <!-- This contains the administrative part of the topbar (login, register, logout) -->
                 <div class="top-login px-0 auth">
-                    @* LoginDisplay is the general top bar layout, depending on the authorisation of the user.*@
                     <LoginDisplay />
                 </div>
             </div>
-            @* Removed Temporarily - Pending Move to Index.razor (Landing Page)
+
+            <!-- This contains the content of the current page -->
+            <article class="content">
+                @Body
+            </article>
+        </div>
+
+        <!-- The Footer displays references and links -->
+        <Footer />
+    </main>
+</div>
+
+@* Removed Temporarily - Pending Move to Index.razor (Landing Page)
             <div class="searchbar">
             <style>
             input[type=text], select {
@@ -67,11 +78,3 @@
             </form>
             </div>
             *@
-
-            <article class="content">
-                @Body
-            </article>
-        </div>
-        <Footer />
-    </main>
-</div>

@@ -1,0 +1,77 @@
+﻿@* This allows for the landing page to contain listings dynamically *@
+@*ASPNetr-yanWorks*@
+@implements IDisposable
+@inject IJSRuntime js
+@inject HttpClient _client
+@inject HttpInterceptorService _interceptor
+
+<!-- Page Title -->
+<PageTitle>Browse Listings</PageTitle>
+
+<head>
+    <!--FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<!-- Listings -->
+<div class="listing-section">
+    <div class="listing-container">
+        @if (Items == null)
+        {
+            <div class="alert alert-info">Loading Items...</div>
+        }
+        else
+        {
+            @foreach (var item in Items)
+            {
+                <div class="listing-box">
+                    <a href="/items/view/@item.Id" style="text-decoration:none;">
+                        <div class="listingitem-inner">
+                            <p class="listingitem-username">@item.AppUser.UserName</p>
+                            <img src="@item.ImageUrl" class="card-img-top" style="border-radius:10px; width:100%; height:100%">
+                            <div class="listingitem-content">
+                                <h5 class="listingitem-title">@item.ItemName</h5>
+                                @if (item.ItemPrice == 0)
+                                {
+                                    <p class="listingitem-price">Free</p>
+                                }
+                                else
+                                {
+                                    <p class="listingitem-price">$@item.ItemPrice</p>
+                                }
+                                <p class="listing-condition">@item.Condition</p>
+                                <div class="listingitem-likescontainer">
+                                    <i class="fa fa-heart-o" style="font-size:20px; margin-left:0.1vh;"></i>
+                                    <p style="margin-left:5px; margin-top:-5px; font-size:125%;">@item.ItemLikes</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            }
+        }
+    </div>
+</div>
+
+@code {
+    // List to store items fetched from the server
+    private List<Sellora.Shared.Domain.Item>? Items;
+
+    // This runs asynchronously when the component/page is initialized
+    protected async override Task OnInitializedAsync()
+    {
+        // Initialises the interceptor module
+        // This monitors HTTP Events for Global Error Handling
+        _interceptor.MonitorEvent();
+
+        // This fetches data from Server Endpoints using HttpClient
+        Items = await _client.GetFromJsonAsync<List<Sellora.Shared.Domain.Item>>($"{Endpoints.ItemsEndpoint}");
+    }
+
+    // Disposes of resources when the component is disposed
+    public void Dispose()
+    {
+        // This disposes of global error handling events
+        _interceptor.DisposeEvent();
+    }
+}

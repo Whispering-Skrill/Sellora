@@ -1,0 +1,62 @@
+﻿@* This page is the user-level category page where users can browse items by category *@
+@*ASPNetr-yanWorks*@
+@page "/categorynav/"
+@implements IDisposable
+@inject IJSRuntime js
+@inject HttpClient _client
+@inject HttpInterceptorService _interceptor
+@attribute [Authorize]
+
+<!-- Page Title -->
+<PageTitle>Browse by Category</PageTitle>
+
+<!-- Page Header -->
+<div class="category-topbar">
+    <h2 class="category-title">Browse Items by Category</h2>
+</div>
+
+<!-- Categories Container -->
+<div class="category-section">
+    <div class="category-container">
+        @if (Categories == null)
+        {
+            <div class="alert alert-info">Loading Categories...</div>
+        }
+        else
+        {
+            @foreach (var category in Categories)
+            {
+                <div class="category-box">
+                    <a href="/listings/@category.Id" style="text-decoration:none;">
+                        <div class="category-box-inner">
+                            <h3 class="category-name">@category.CategoryName</h3>
+                        </div>
+                    </a>
+                </div>
+            }
+        }
+    </div>
+</div>
+
+@code {
+    // List to store categories fetched from the server
+    private List<Category>? Categories;
+
+    // This runs asynchronously when the component/page is initialized
+    protected async override Task OnInitializedAsync()
+    {
+        // Initialises the interceptor module
+        // This monitors HTTP Events for Global Error Handling
+        _interceptor.MonitorEvent();
+        
+        // This fetches data from Server Endpoints using HttpClient
+        Categories = await _client.GetFromJsonAsync<List<Category>>($"{Endpoints.CategoriesEndpoint}");
+    }
+
+    // Disposes of resources when the component is disposed
+    public void Dispose()
+    {
+        // This disposes of global error handling events
+        _interceptor.DisposeEvent();
+    }
+}

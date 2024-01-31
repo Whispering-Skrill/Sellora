@@ -17,6 +17,7 @@ namespace Sellora.Server.Data
         {
         }
 
+        // DbSet properties for various entities in the application
         public DbSet<AppUser> AppUsers { get; set; }
         public DbSet<Item> Items { get; set; }
         public DbSet<Staff> Staff { get; set; }
@@ -26,9 +27,13 @@ namespace Sellora.Server.Data
         public DbSet<Review> Reviews { get; set; }
         public DbSet<Category> Categories { get; set; }
 
+        // Method for configuring the model using Fluent API
         protected override void OnModelCreating(ModelBuilder builder)
         {
+            // Call the base class method to ensure base configurations are applied
             base.OnModelCreating(builder);
+
+            // Applying seed configurations for specific entities
 
             builder.ApplyConfiguration(new ItemSeedConfiguration());
 

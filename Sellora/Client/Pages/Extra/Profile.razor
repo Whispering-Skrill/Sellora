@@ -1,0 +1,51 @@
+﻿@*ASPNetr-yanWorks*@
+@page "/profile/"
+
+<!-- Page Title -->
+<PageTitle>Profile</PageTitle>
+
+<!-- Logged in User Information Section -->
+<AuthorizeView>
+    <Authorized>
+        <body>
+            <div class="profile-container">
+                <div class="profile-picture">
+                    <img src="https://placekitten.com/300/300" alt="Profile Picture">
+                </div>
+                <h1 class="user-name">Hello! @user.Identity.Name</h1>
+                @if (user.IsInRole("Administrator"))
+                {
+                    <p class="user-description">You have <b>Administrator</b> Privileges.</p>
+                }
+                @if (user.IsInRole("User"))
+                {
+                    <p class="user-description">You have <b>User</b> Privileges.</p>
+                }
+                <p class="user-description">Full Stack Development</p>
+
+                <div class="social-icons">
+                    <a href="#" target="_blank">🌐</a>
+                    <a href="#" target="_blank">📷</a>
+                    <a href="#" target="_blank">🐦</a>
+                </div>
+                <a href="" class="nice-button">Back</a>
+            </div>
+
+        </body>
+    </Authorized>
+</AuthorizeView>
+
+@code {
+    // Parameter to store AuthenticationState Module
+    [CascadingParameter] public Task<AuthenticationState> AuthTask { get; set; }
+
+    // ClaimsPrincipal for Role Claims functionality
+    private System.Security.Claims.ClaimsPrincipal user;
+
+    // Initialize data asynchronously when the component/page is initialized
+    protected async override Task OnInitializedAsync()
+    {
+        var authState = await AuthTask;
+        this.user = authState.User;
+    }
+}

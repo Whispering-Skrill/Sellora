@@ -1,0 +1,150 @@
+﻿@*ASPNetr-yanWorks*@
+@page "/staffs/"
+@implements IDisposable
+@inject IJSRuntime js
+@inject HttpClient _client
+@inject NavigationManager _navManager
+@inject HttpInterceptorService _interceptor
+@attribute [Authorize]
+
+<!-- Page Title -->
+<PageTitle>The Staff of Sellora</PageTitle>
+
+<!-- Topbar with the title and a button to create a new Staff Member -->
+<div class="staff-topbar">
+    <div style="flex:1">
+        <h2 class="staff-title">Our Staff</h2>
+    </div>
+
+    <!-- This prevents non-Administrator users from creating Staff Members-->
+    <AuthorizeView Roles="Administrator">
+        <a href="/staffs/create" class="btn btn-secondary" style="align-self:flex-start;2">
+            <span class="oi oi-plus" style="margin-top: 5px;"></span>
+        </a>
+    </AuthorizeView>
+</div>
+
+<div style="border-bottom:solid black 1px; padding-top:3px;">
+    <!-- Separator for spacing -->
+</div>
+
+@if (Staffs == null)
+{
+    <!-- Displays a loading message if staff members are still loading -->
+    <div class="alert alert-info">Loading Staff...</div>
+}
+else
+{
+    <!-- Displays each staff member and related details in a table -->
+    <table class ="table table-responsive" id="staffTable">
+
+        <!-- The AuthorizeView sections prevent non-Administrator users from viewing confidential staff information -->
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <AuthorizeView Roles="Administrator">
+                    <th>Email</th>
+                    <th>Hire Date</th>
+                </AuthorizeView>
+                <th>Position</th>
+                <AuthorizeView Roles="Administrator">
+                    <th>Address</th>
+                    <th>Contact</th>
+                    <th>Department</th>
+                    <th>Actions</th>
+                </AuthorizeView>
+            </tr>
+        </thead>
+
+        <!-- The AuthorizeView sections prevent non-Administrator users from viewing confidential staff information -->
+        <tbody>
+            @foreach (var staff in Staffs)
+            {
+                <tr>
+                    <td>@staff.StaffFirstName</td>
+                    <td>@staff.StaffLastName</td>
+
+                    <!-- This prevents non-Administrator users from viewing confidential staff information -->
+                    <AuthorizeView Roles="Administrator">
+                        <td>@staff.StaffEmail</td>
+                        <td>@staff.StaffHireDate</td>
+                    </AuthorizeView>
+                    <td>@staff.StaffPosition</td>
+
+                    <!-- This prevents non-Administrator users from editing staff information -->
+                    <AuthorizeView Roles="Administrator">
+                        <td>@staff.StaffAddress</td>
+                        <td>@staff.StaffHPNum</td>
+                        <td>@staff.StaffDepartment</td>
+
+                        <!-- Controls for each staff member -->
+                        <td>
+                            <a href="/staffs/view/@staff.Id" class="btn btn-primary">
+                                <span class="oi oi-book"></span>
+                            </a>
+                            <a href="/staffs/edit/@staff.Id" class="btn btn-warning">
+                                <span class="oi oi-pencil"></span>
+                            </a>
+                            <button class="btn btn-danger" @onclick="@(()=>Delete(staff.Id))">
+                                <span class="oi oi-delete"></span>
+                            </button>
+                        </td>
+                    </AuthorizeView>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    // List to store staff information fetched from the server
+    private List<Staff>? Staffs;
+
+    // This runs asynchronously when the component/page is initialized
+    protected async override Task OnInitializedAsync()
+    {
+        // Initialises the interceptor module
+        // This monitors HTTP Events for Global Error Handling
+        _interceptor.MonitorEvent();
+        
+        // This fetches data from Server Endpoints using HttpClient
+        Staffs = await _client.GetFromJsonAsync<List<Staff>>($"{Endpoints.StaffsEndpoint}");
+    }
+
+    // Method to handle staff member deletion with confirmation dialog
+    async Task Delete(int staffID)
+    {
+        if (Staffs != null)
+        {
+            var staff = Staffs.First(q => q.Id == staffID);
+            var confirm = await js.InvokeAsync<bool>("confirm", $"Do you want to delete {staff.StaffFirstName} {staff.StaffLastName}?");
+            if (confirm)
+            {
+                // This disposes the table on reload to prevent errors
+                Dispose();
+                
+                // Deletes the staff member and refreshes the list
+                await _client.DeleteAsync($"{Endpoints.StaffsEndpoint}/{staffID}");
+                await OnInitializedAsync();
+            }
+        }
+    }
+
+    // This runs asynchronously when the component/page is rendered
+    protected async override Task OnAfterRenderAsync(bool firstRender)
+    {
+        // This invokes the AddModifiedDataTable function in the DataTable Javascript
+        await js.InvokeVoidAsync("AddModifiedDataTable", "#staffTable");
+    }
+
+    // Disposes of resources when the component is disposed
+    public void Dispose()
+    {
+        // This invokes the DataTablesDispose function in the DataTable Javascript
+        js.InvokeVoidAsync("DataTablesDispose", "#staffTable");
+        
+        // This disposes of global error handling events
+        _interceptor.DisposeEvent();
+    }
+}

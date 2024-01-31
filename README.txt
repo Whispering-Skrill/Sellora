@@ -1,16 +1,20 @@
-1 - [COMPLETE] Add Wide height input bar for Review and Report description.
-2 - [COMPLETE] Remove Date Change option when CREATING reports, reviews, swaptransactions
-3 - [COMPLETE] Add authorisation to navbar 
-4 - [COMPLETE] Add About Page, Unauthorised Landing Page
-5 - [COMPLETE] DataTables error
-6 - [COMPLETE] All Categories paging?
-7 - [COMPLETE] Fix NotFound system
-8 - [COMPLETE] Role Authorisation
-9 - [COMPLETE] Add Role name in ASPNetUser Profile Page
+ 1 - [COMPLETE] Add Wide height input bar for Review and Report description.
+ 2 - [COMPLETE] Remove Date Change option when CREATING reports, reviews, swaptransactions
+ 3 - [COMPLETE] Add authorisation to navbar 
+ 4 - [COMPLETE] Add About Page, Unauthorised Landing Page
+ 5 - [COMPLETE] DataTables error
+ 6 - [COMPLETE] All Categories paging?
+ 7 - [COMPLETE] Fix NotFound system
+ 8 - [COMPLETE] Role Authorisation
+ 9 - [COMPLETE] Add Role name in ASPNetUser Profile Page
 10 - [COMPLETE] Item Seeding
 11 - Check Domain [Required]
-12 - Contact Form?
-13 - 5 stars?
+12 - Contact Form
+13 - 5 Stars on Reviews
+14 - Check on Unauthorised Error Handling
+15 - Create User side Item View Page
+16 - Comment Everything
+17 - Implement Searchbar
 
 
 

@@ -9,73 +9,33 @@ using Sellora.Server.Data;
 using Sellora.Server.IRepository;
 using Sellora.Shared.Domain;
 
+// This is the Reports Contoller [Refactored]
 namespace Sellora.Server.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
     public class ReportsController : ControllerBase
     {
-        // Refactored - Create UnitOfWork instance
-        //private readonly ApplicationDbContext _context;
         private readonly IUnitOfWork _unitOfWork;
 
-        // Refactored - Dependency injection
-        //public ReportsController(ApplicationDbContext context)
         public ReportsController(IUnitOfWork unitOfWork)
         {
-            // Refactored
-            //_context = context;
             _unitOfWork = unitOfWork;
         }
 
         // GET: api/Reports - This method gets all values/data within the Reports Table of the Database
         [HttpGet]
-        // Refactored
-        //public async Task<ActionResult<IEnumerable<Report>>> GetReports()
         public async Task<IActionResult> GetReports()
         {
-            // Refactored
-            //if (_context.Reports == null)
-            //{
-            //    return NotFound();
-            //}
-            //  return await _context.Reports.ToListAsync();
-
-            // This returns a 404 if the Reviews table is empty
-            //if (_unitOfWork.Reports == null)
-            //{
-            //    return NotFound();
-            //}
             var reports = await _unitOfWork.Reports.GetAll(includes:q=>q.Include(x=>x.AppUser).Include(x=>x.Staff).Include(x=>x.SwapTransaction).Include(x=>x.SaleTransaction));
             return Ok(reports);
         }
 
-        // GET: api/Reports/5 - This method gets the data of specific tuple/row within the Reports table by specifying the ID
+        // GET: api/Reports/5 - This method gets the data of specific tuple/row within the
+        // Reports table by specifying the ID
         [HttpGet("{id}")]
-        // Refactored
-        //public async Task<ActionResult<Report>> GetReport(int id)
         public async Task<ActionResult> GetReport(int id)
         {
-            // Refactored
-            //if (_context.Reports == null)
-            //{
-            //    return NotFound();
-            //}
-            //  var report = await _context.Reports.FindAsync(id);
-
-            //  if (report == null)
-            //  {
-            //      return NotFound();
-            //  }
-
-            //  return report;
-
-            // This returns a 404 if the Reviews table is empty
-            //if (_unitOfWork.Reports == null)
-            //{
-            //    return NotFound();
-            //}
-
             // This checks if a tuple with the specified ID exists in the Report Table
             var report = await _unitOfWork.Reports.Get(q => q.Id == id);
             if (report == null)
@@ -99,23 +59,15 @@ namespace Sellora.Server.Controllers
                 return BadRequest();
             }
 
-            // Refactored
-            //_context.Entry(report).State = EntityState.Modified;
-
             // This updates the Report Table
             _unitOfWork.Reports.Update(report);
 
             try
             {
-                // Refactored
-                //await _context.SaveChangesAsync();
                 await _unitOfWork.Save(HttpContext);
             }
             catch (DbUpdateConcurrencyException)
             {
-                // Refactored
-                //if (!ReportExists(id))
-
                 // This checks if there are values in the Report Table with a specified ID
                 if (!await ReportExists(id))
                 {
@@ -131,24 +83,12 @@ namespace Sellora.Server.Controllers
             return NoContent();
         }
 
-        // POST: api/Reports - This method creates a new tuple/resource within the Report table with a user input or data from the browser
+        // POST: api/Reports - This method creates a new tuple/resource within the Report table with a
+        // user input or data from the browser
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Report>> PostReport(Report report)
         {
-            // Refactored
-            //if (_context.Reports == null)
-
-            // This returns a 404 if the Reviews table is empty
-            //if (_unitOfWork.Reports == null)
-            //{
-            //    return Problem("Entity set 'ApplicationDbContext.Reports'  is null.");
-            //}
-
-            // Refactored
-            //_context.Reports.Add(report);
-            //await _context.SaveChangesAsync();
-
             // This adds/inserts a new value/row/tuple into the Report Table
             await _unitOfWork.Reports.Insert(report);
             await _unitOfWork.Save(HttpContext);
@@ -156,22 +96,11 @@ namespace Sellora.Server.Controllers
             return CreatedAtAction("GetReport", new { id = report.Id }, report);
         }
 
-        // DELETE: api/Reports/5 - This method is called to delete a tuple within the Report table, this tuple is specified by the ID of the tuple
+        // DELETE: api/Reports/5 - This method is called to delete a tuple within the Report table,
+        // this tuple is specified by the ID of the tuple
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteReport(int id)
         {
-            // Refactored
-            //if (_context.Reports == null)
-
-            // This returns a 404 if the Reviews table is empty
-            //if (_unitOfWork.Reports == null)
-            //{
-            //    return NotFound();
-            //}
-
-            // Refactored
-            //var report = await _context.Reports.FindAsync(id);
-
             // This checks if a tuple with the specified ID exists in the Report Table
             var report = await _unitOfWork.Reports.Get(q => q.Id == id);
             if (report == null)
@@ -180,10 +109,6 @@ namespace Sellora.Server.Controllers
                 return NotFound();
             }
 
-            // Refactored
-            //_context.Reports.Remove(report);
-            //await _context.SaveChangesAsync();
-
             // This deletes the tuple specified by the ID
             await _unitOfWork.Reports.Delete(id);
             await _unitOfWork.Save(HttpContext);
@@ -191,13 +116,10 @@ namespace Sellora.Server.Controllers
             return NoContent();
         }
 
-        // Report Exists - This method is called by the above methods to check if a tuple/data with a specified ID exists within the SwapTransaction Table
-        // Refactored
-        //private bool ReportExists(int id)
+        // Report Exists - This method is called by the above methods to check if a tuple/data with
+        // a specified ID exists within the Reports Table
         private async Task<bool> ReportExists(int id)
         {
-            // Refactored
-            //return (_context.Reports?.Any(e => e.Id == id)).GetValueOrDefault();
             var report = await _unitOfWork.Reports.Get(q => q.Id == id);
             return report != null;
         }

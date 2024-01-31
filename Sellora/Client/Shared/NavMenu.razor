@@ -1,7 +1,4 @@
-﻿@using Microsoft.AspNetCore.Components.Authorization
-@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
-
-@*This is the main top aligning navigation bar - features the SELLORA logo*@
+﻿<!-- This contains the top of the navmenu/sidebar, it features the Sellora Logo -->
 <div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">S E L L O R A</a>
@@ -11,6 +8,7 @@
     </div>
 </div>
 
+<!-- Authorisation Section: This changes depending on the role level of the user -->
 <AuthorizeView Roles="Administrator">
     <div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
         <nav class="flex-column">
@@ -105,7 +103,6 @@
         </nav>
     </div>
 </AuthorizeView>
-
 <AuthorizeView>
     <NotAuthorized>
         <div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
@@ -120,15 +117,14 @@
     </NotAuthorized>
 </AuthorizeView>
 
-@*These are navigation buttons to the respective pages associated with SELLORA*@
-
-@*This is the c# code section that allows the navigation bars to function*@
-
 @code {
+    // Flag to determine whether the navigation menu is collapsed or not
     private bool collapseNavMenu = true;
 
+    // Property to dynamically set the CSS class for the navigation menu based on its collapsed state
     private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
+    // Method to toggle the state of the navigation menu between collapsed and expanded
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;

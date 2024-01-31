@@ -1,0 +1,69 @@
+﻿@* This Version of Report Create is for the link at the footer section *@
+@*ASPNetr-yanWorks*@
+@page "/reports/createreport"
+@implements IDisposable
+@inject HttpClient _client
+@inject NavigationManager _navManager
+@inject HttpInterceptorService _interceptor
+@attribute [Authorize]
+
+<!-- Page Title -->
+<PageTitle>File a Report</PageTitle>
+
+<!-- Topbar with the title and a back-to-list button -->
+<div class="report-topbar">
+    <h2 class="report-title">File a Report</h2>
+    <a href="/" class="btn btn-secondary">
+        <span class="oi oi-account-logout" style="margin-top: 4px; margin-bottom:4px;"></span>
+    </a>
+</div>
+
+<div style="border-bottom:solid black 1px; padding-top:3px; margin-bottom:10px;">
+    <!-- Separator for spacing -->
+</div>
+
+<!-- This Generates a Report Formcomponent with Creation Parameters -->
+<ReportFormComponent ButtonText="Submit" report="report" OnValidSubmit="@CreateReport" />
+
+
+@code {
+    // Instance of the Report class to store report information
+    Report report = new Report();
+
+    // Collections to store data fetched from the server
+    private IList<AppUser>? Users;
+    private IList<Staff>? Staffs;
+    private IList<SwapTransaction>? SwapTransactions;
+    private IList<SaleTransaction>? SaleTransactions;
+
+    // This runs asynchronously when the component/page is initialised
+    protected async Task OnIntializedAsync()
+    {
+        // Initialises the interceptor module
+        // This monitors HTTP Events for Global Error Handling
+        _interceptor.MonitorEvent();
+
+        // Fetch data from Server Endpoints using HttpClient
+        Users = await _client.GetFromJsonAsync<List<AppUser>>($"{Endpoints.AppUsersEndpoint}");
+        Staffs = await _client.GetFromJsonAsync<List<Staff>>($"{Endpoints.StaffsEndpoint}");
+        SwapTransactions = await _client.GetFromJsonAsync<List<SwapTransaction>>($"{Endpoints.SwapTransactionsEndpoint}");
+        SaleTransactions = await _client.GetFromJsonAsync<List<SaleTransaction>>($"{Endpoints.SaleTransactionsEndpoint}");
+    }
+
+    // Method to File a Report, this will navigate users back to the home page when complete
+    private async Task CreateReport()
+    {
+        // Send a POST request to the server to create a report
+        await _client.PostAsJsonAsync(Endpoints.ReportsEndpoint, report);
+
+        // Navigate back to the home page after successful submission
+        _navManager.NavigateTo("");
+    }
+
+    // Disposes of resources when the component is disposed
+    public void Dispose()
+    {
+        // This disposes of global error handling events
+        _interceptor.DisposeEvent();
+    }
+}

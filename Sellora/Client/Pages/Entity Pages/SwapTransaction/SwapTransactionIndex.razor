@@ -1,0 +1,135 @@
+@*ASPNetr-yanWorks*@
+@page "/swaptransactions/"
+@implements IDisposable
+@inject IJSRuntime js
+@inject HttpClient _client
+@inject NavigationManager _navManager
+@inject HttpInterceptorService _interceptor
+@attribute [Authorize]
+
+<!-- Page Title -->
+<PageTitle>Swap Transactions</PageTitle>
+
+<!-- Topbar with the title and a button to create a new Swap Transaction -->
+<div class="swaptransaction-topbar">
+    <div style="flex:1">
+        <h2 class="swaptransaction-title">Swap Transactions</h2>
+    </div>
+    <a href="/swaptransactions/create" class="btn btn-secondary">
+        <span class="oi oi-plus" style="margin-top: 5px;"></span>
+    </a>
+</div>
+
+<div style="border-bottom:solid black 1px; padding-top:3px;">
+    <!-- Separator for spacing -->
+</div>
+
+@if (SwapTransactions == null)
+{
+    <!-- Displays a loading message if swaptransactions are still loading -->
+    <div class="alert alert-info">Loading Swap Transactions...</div>
+}
+else
+{
+    <!-- Displays each swaptransaction and related details in a table -->
+    <table class="table table-responsive" id="swapTable">
+
+        <!-- The AuthorizeView sections prevent non-Administrator users from editing swaptransaction information -->
+        <thead>
+            <tr>
+                <th>Transaction Date</th>
+                <th>User 1</th>
+                <th>Item 1</th>
+                <th>User 2</th>
+                <th>Item 2</th>
+                <AuthorizeView Roles="Administrator">
+                    <th>Actions</th>
+                </AuthorizeView>
+                <AuthorizeView Roles="User">
+                    <th>View Transaction</th>
+                </AuthorizeView>
+            </tr>
+        </thead>
+
+        <!-- The AuthorizeView sections prevent non-Administrator users from editing swaptransaction information -->
+        <tbody>
+            @foreach (var swaptransaction in SwapTransactions)
+            {
+                <tr>
+                    <td>@swaptransaction.TransactionDate</td>
+                    <td>@swaptransaction.AppUser1.UserName</td>
+                    <td>@swaptransaction.SwapItem1.ItemName</td>
+                    <td>@swaptransaction.AppUser2.UserName</td>
+                    <td>@swaptransaction.SwapItem2.ItemName</td>
+
+                    <!-- Controls for each swaptransaction -->
+                    <td>
+                        <a href="/swaptransactions/view/@swaptransaction.Id" class="btn btn-primary">
+                            <span class="oi oi-book"></span>
+                        </a>
+                        <AuthorizeView Roles="Administrator">
+                            <a href="/swaptransactions/edit/@swaptransaction.Id" class="btn btn-warning">
+                                <span class="oi oi-pencil"></span>
+                            </a>
+                            <button class="btn btn-danger" @onclick="@(()=>Delete(swaptransaction.Id))">
+                                <span class="oi oi-delete"></span>
+                            </button>
+                        </AuthorizeView>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    // List to store swaptransaction information fetched from the server
+    private List<SwapTransaction>? SwapTransactions;
+
+    // This runs asynchronously when the component/page is initialized
+    protected async override Task OnInitializedAsync()
+    {
+        // Initialises the interceptor module
+        // This monitors HTTP Events for Global Error Handling
+        _interceptor.MonitorEvent();
+        
+        // This fetches data from Server Endpoints using HttpClient
+        SwapTransactions = await _client.GetFromJsonAsync<List<SwapTransaction>>($"{Endpoints.SwapTransactionsEndpoint}");
+    }
+
+    // Method to handle swaptransaction deletion with confirmation dialog
+    async Task Delete(int swaptransactionsID)
+    {
+        if (SwapTransactions != null)
+        {
+            var swaptransaction = SwapTransactions.First(q => q.Id == swaptransactionsID);
+            var confirm = await js.InvokeAsync<bool>("confirm", $"Do you want to delete transactiond dated {swaptransaction.TransactionDate}?");
+            if (confirm)
+            {
+                // This disposes the table on reload to prevent errors
+                Dispose();
+
+                // Deletes the swaptransaction and refreshes the list
+                await _client.DeleteAsync($"{Endpoints.SwapTransactionsEndpoint}/{swaptransactionsID}");
+                await OnInitializedAsync();
+            }
+        }
+    }
+
+    // This runs asynchronously when the component/page is rendered
+    protected async override Task OnAfterRenderAsync(bool firstRender)
+    {
+        // This invokes the AddModifiedDataTable function in the DataTable Javascript
+        await js.InvokeVoidAsync("AddModifiedDataTable", "#swapTable");
+    }
+
+    // Disposes of resources when the component is disposed
+    public void Dispose()
+    {
+        // This invokes the DataTablesDispose function in the DataTable Javascript
+        js.InvokeVoidAsync("DataTablesDispose", "#swapTable");
+        
+        // This disposes of global error handling events
+        _interceptor.DisposeEvent();
+    }
+}
