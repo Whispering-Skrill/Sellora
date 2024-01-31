@@ -144,6 +144,15 @@ namespace Sellora.Server.Configurations.Entities
                 DateUpdated = DateTime.Now,
                 CreatedBy = "System",
                 UpdatedBy = "System"
+            },
+            new Category
+            {
+                Id = 16,
+                CategoryName = "Other Items",
+                DateCreated = DateTime.Now,
+                DateUpdated = DateTime.Now,
+                CreatedBy = "System",
+                UpdatedBy = "System"
             }
         );
         }

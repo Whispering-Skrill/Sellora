@@ -3,7 +3,7 @@
 3 - [COMPLETE] Add authorisation to navbar 
 4 - [COMPLETE] Add About Page, Unauthorised Landing Page
 5 - [COMPLETE] DataTables error
-6 - All Categories paging?
+6 - [COMPLETE] All Categories paging?
 7 - [COMPLETE] Fix NotFound system
 8 - [COMPLETE] Role Authorisation
 9 - [COMPLETE] Add Role name in ASPNetUser Profile Page
