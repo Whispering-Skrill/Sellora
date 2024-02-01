@@ -32,10 +32,10 @@
 }
 
 .category-box {
-    background-color: white;
+    background-color: #E9E9E9;
     flex: 1;
     margin: 0.5vh;
-    margin-bottom: 0px;
+    margin-bottom: 10px;
     min-width: 40%;
     max-width: 40%;
     height: auto;
@@ -43,8 +43,13 @@
     transition: 0.5s;
 }
 
-    .category-box :hover {
-        background-color: #E9E9E9;
+    .category-box:hover {
+        background-color: #7c0000;
+        color: white;
+    }
+
+    .category-box:hover .category-box-inner{
+        color: white;
     }
 
 .category-box-inner {
@@ -53,9 +58,11 @@
     padding: 1.5vh;
     color: black;
     border-radius: 10px;
+    transition: 0.2s;
 }
 
 .category-name {
+    margin-top: 10px;
     font-family: 'Microsoft Sans Serif';
     font-weight: bold;
 }

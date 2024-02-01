@@ -1,0 +1,121 @@
+﻿.complete-upper-container {
+    display: flex;
+    justify-content: center;
+    min-height: 100%;
+}
+
+.listing-top-section {
+    min-width: 100vh;
+    max-width: 100vh;
+    display: flex;
+}
+
+.listing-image-container {
+    flex: 1;
+    padding-right: 10px;
+}
+
+.listing-main-container {
+    flex: 1;
+    padding-left: 10px;
+}
+
+.listing-main {
+    display: flex;
+    margin: 15px;
+}
+
+.listing-username {
+    flex: 1;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-family: 'Microsoft Sans Serif';
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    transition: 0.2s;
+}
+
+    .listing-username :hover {
+        color: #7c0000;
+    }
+
+.listing-backbutton {
+    flex: 1;
+    padding-right: 6px;
+    display: flex;
+    justify-content: right;
+}
+
+.listing-description {
+    margin: 15px;
+    height: 85%;
+}
+
+.listing-description-title {
+    font-family: 'Microsoft Sans Serif';
+    font-weight: bold;
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.listing-description-content {
+    height: 96.7%;
+    border-radius: 15px;
+    background-color: #E5E5E5;
+    padding: 17px;
+    margin: 3px;
+    font-size: 17px;
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.complete-lower-container {
+}
+
+.listing-bottom-section {
+    margin: 15px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.listing-title {
+    margin-left: 10px;
+    font-family: 'Microsoft Sans Serif';
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.listing-details-container {
+    margin-top: 15px;
+    display: flex;
+    line-height: 25px;
+    font-size: 20px;
+    background-color: #E5E5E5;
+    border-radius: 15px;
+}
+
+.listing-details-labels {
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    padding: 25px;
+    color: white;
+    background-color: #BA3B3B;
+    font-family: 'Microsoft Sans Serif';
+    font-weight: bold;
+    text-align: end;
+    letter-spacing: 2px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+}
+
+.listing-details {
+    padding-top: 25px;
+    font-family: 'Microsoft Sans Serif';
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding-left: 15px;
+    padding-bottom: 15px;
+}

@@ -1,0 +1,110 @@
+﻿@*ASPNetr-yanWorks*@
+@page "/listing/{itemID:int}"
+@implements IDisposable
+@inject IJSRuntime js
+@inject HttpClient _client
+@inject NavigationManager _navManager
+@inject HttpInterceptorService _interceptor
+@attribute [Authorize]
+
+<div class="complete-upper-container">
+    <div class="listing-top-section">
+        <div class="listing-image-container">
+            <img src="@item.ImageUrl" class="card-img-top" style="border-radius:10px; width:100%; height:100%">
+        </div>
+        <div class="listing-main-container">
+            <div class="listing-main">
+                <div class="listing-username">
+                    @if (AppUsers != null)
+                    {
+                        foreach (var appuser in AppUsers)
+                        {
+                            if (item.AppUserId == appuser.Id)
+                            {
+                                <a href="/users/view/@item.AppUserId" class="listing-username">
+                                    <span class="oi oi-person" style="font-size: 1.5em; margin-right: 10px; margin-left: 10px;"></span>
+                                    @appuser.UserName
+                                </a>
+                            }
+                        }
+                    }
+                </div>
+                <div class="listing-backbutton">
+                    <a href="/" class="btn btn-secondary">
+                        <span class="oi oi-account-logout" style="margin-top: 4px; margin-bottom:4px;"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="listing-description">
+                <h3 class="listing-description-title">Description:</h3>
+                <p class="listing-description-content">@item.ItemDescription</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="complete-lower-container">
+    <div class="listing-bottom-section">
+        <div class="listing-title">
+            @item.ItemName
+        </div>
+        <div class="listing-details-container">
+            <div class="listing-details-labels">
+                <p>Price:</p>
+                <p>Condition:</p>
+                <p>Date:</p>
+                <p>Category:</p>
+                <p>Location:</p>
+            </div>
+            <div class="listing-details">
+                <p>$@item.ItemPrice</p>
+                <p>@item.Condition</p>
+                <p>@item.ItemDate.Day / @item.ItemDate.Month / @item.ItemDate.Year</p>
+                @if (Categories != null)
+                {
+                    foreach (var category in Categories)
+                    {
+                        if (category.Id == item.CategoryId)
+                        {
+                            <p>@category.CategoryName</p>
+                        }
+                    }
+                }
+                <p>@item.ItemLocation</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    // Item object to store item details
+    Item? item = new Item();
+    private List<Sellora.Shared.Domain.AppUser>? AppUsers;
+    private List<Sellora.Shared.Domain.Category>? Categories;
+
+    // Parameter for receiving the item ID from the URL
+    [Parameter] public int itemID { get; set; }
+
+    // This runs asynchronously when the component/page is initialised
+    protected async override Task OnInitializedAsync()
+    {
+        // Initialises the interceptor module
+        // This monitors HTTP Events for Global Error Handling
+        _interceptor.MonitorEvent();
+    }
+
+    // This runs asynchronously when the parameters are initialised
+    protected async override Task OnParametersSetAsync()
+    {
+        // This fetches data from Server Endpoints using HttpClient
+        item = await _client.GetFromJsonAsync<Item>($"{Endpoints.ItemsEndpoint}/{itemID}");
+        AppUsers = await _client.GetFromJsonAsync<List<Sellora.Shared.Domain.AppUser>>($"{Endpoints.AppUsersEndpoint}");
+        Categories = await _client.GetFromJsonAsync<List<Sellora.Shared.Domain.Category>>($"{Endpoints.CategoriesEndpoint}");
+    }
+
+    // Disposes of resources when the component is disposed
+    public void Dispose()
+    {
+        // This disposes of global error handling events
+        _interceptor.DisposeEvent();
+    }
+}
