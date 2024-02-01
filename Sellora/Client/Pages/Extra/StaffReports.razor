@@ -1,0 +1,132 @@
+@* This page displays the reports handled by a certain staff member *@
+@*ASPNetr-yanWorks*@
+@page "/reports/{staffID:int}"
+@implements IDisposable
+@inject IJSRuntime js
+@inject HttpClient _client
+@inject NavigationManager _navManager
+@inject HttpInterceptorService _interceptor
+@attribute [Authorize(Roles = "Administrator")]
+
+<!-- Page Title -->
+<PageTitle>Reports</PageTitle>
+
+<!-- Topbar with the title and a button to create a new report -->
+<div class="report-topbar">
+    <h2 class="report-title">Reports</h2>
+    <a href="/staffs" class="btn btn-secondary">
+        <span class="oi oi-account-logout" style="margin-top: 5px;"></span>
+    </a>
+</div>
+
+<div style="margin-top: 10px;">
+    @if (Reports == null)
+    {
+        <!-- Displays a loading message if reports are still loading -->
+        <div class="alert alert-info">Loading Reports...</div>
+    }
+    else
+    {
+        <!-- Displays each report in a box -->
+        @foreach (var report in Reports)
+        {
+            if (report.StaffID == staffID)
+            {
+                <div class="report-box">
+                    <!-- Inner container for report details -->
+                    <div class="report-box-innercontainer">
+                        <h4 class="report-box-title">@report.ReportTitle</h4>
+                        <p class="report-box-content">@report.ReportContent</p>
+                    </div>
+                    <div class="report-box-inner">
+                        <!-- Inner container for report details -->
+                        <div class="report-box-innercontainer">
+                            <div class="report-box-detail-container">
+                                <div class="report-box-detail-innercontainer">
+                                    <p class="report-box-details-labels">Username:</p>
+                                    <p class="report-box-details-labels">Date of Report:</p>
+                                    <p class="report-box-details-labels">Staff-in-Charge:</p>
+                                    <p class="report-box-details-labels">Transaction:</p>
+                                </div>
+                                <div class="report-box-detail-innercontainer">
+                                    <p class="report-box-details">@report.AppUser.UserName</p>
+                                    <p class="report-box-details">@report.ReportDate.Day / @report.ReportDate.Month / @report.ReportDate.Year</p>
+                                    <p class="report-box-details">@report.Staff.StaffFirstName @report.Staff.StaffLastName ( @report.StaffID - @report.Staff.StaffDepartment )</p>
+                                    @if (report.SwapTransactionID != null)
+                                    {
+                                        <a href="swaptransactions/view/@report.SwapTransactionID" style="text-decoration:none;">
+                                            <p class="report-box-details" style="color: #00BDFF;">[Swap Transaction @report.SwapTransactionID]</p>
+                                        </a>
+                                    }
+                                    else if (report.SaleTransactionID != null)
+                                    {
+                                        <a href="swaptransactions/view/@report.SaleTransactionID" style="text-decoration:none;">
+                                            <p class="report-box-details" style="color: #00BDFF;">[Sale Transaction @report.SaleTransactionID]</p>
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <p class="report-box-details">Unknown Transaction</p>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Controls for each report box -->
+                        <div class="report-box-control-container">
+                            <div class="report-box-detail-button">
+                                <a href="/reports/view/@report.Id" class="btn btn-primary">
+                                    More Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    }
+</div>
+
+@code {
+    // List to store reports fetched from the server
+    private List<Report>? Reports;
+    private List<Sellora.Shared.Domain.Staff>? Staffs;
+
+    // Parameter for receiving the staff ID from the URL
+    [Parameter] public int staffID { get; set; }
+
+    // This runs asynchronously when the component/page is initialized
+    protected async override Task OnInitializedAsync()
+    {
+        // Initialises the interceptor module
+        // This monitors HTTP Events for Global Error Handling
+        _interceptor.MonitorEvent();
+
+        // This fetches data from Server Endpoints using HttpClient
+        Reports = await _client.GetFromJsonAsync<List<Report>>($"{Endpoints.ReportsEndpoint}");
+        Staffs = await _client.GetFromJsonAsync<List<Staff>>($"{Endpoints.StaffsEndpoint}");
+    }
+
+    // Method to handle report deletion with confirmation dialog
+    async Task Delete(int reportID)
+    {
+        if (Reports != null)
+        {
+            var report = Reports.First(q => q.Id == reportID);
+            var confirm = await js.InvokeAsync<bool>("confirm", $"Do you want to delete Report {report.Id}, Dated: {report.ReportDate}?");
+            if (confirm)
+            {
+                // Deletes the report and refreshes the list
+                await _client.DeleteAsync($"{Endpoints.ReportsEndpoint}/{reportID}");
+                await OnInitializedAsync();
+            }
+        }
+    }
+
+    // Disposes of resources when the component is disposed
+    public void Dispose()
+    {
+        // This disposes of global error handling events
+        _interceptor.DisposeEvent();
+    }
+}

@@ -11,7 +11,7 @@ namespace Sellora.Shared.Domain
     {
         [Required(ErrorMessage = "Please add a review title.")]
         [StringLength(100, ErrorMessage = "Title cannot be longer than 100 Characters.")]
-        public string? ReviewTitle { get; set; }
+        public string ReviewTitle { get; set; }
 
         [Required(ErrorMessage = "Please leave a rating.")]
         [Range(0, 5, ErrorMessage = "Rating must be a number from 0 to 5.")]
@@ -23,7 +23,7 @@ namespace Sellora.Shared.Domain
 
         [Required(ErrorMessage = "Please describe your experience.")]
         [StringLength(1000, ErrorMessage = "Description cannot be longer than 1000 Characters.")]
-        public string? ReviewDescription { get; set; }
+        public string ReviewDescription { get; set; }
 
         public int? SaleTransactionID { get; set; }
         public virtual SaleTransaction ? SaleTransaction { get; set; }
@@ -37,14 +37,10 @@ namespace Sellora.Shared.Domain
 
         public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
         {
-            // Not really required due to above variable value initialisation, but leaving just in case
-            if (ReviewDate != null)
+            // Validates that the Review creation date is not in the 'future'
+            if (ReviewDate > DateTime.Now)
             {
-                // Validates that the Review creation date is not in the 'future'
-                if (ReviewDate > DateTime.Now)
-                {
-                    yield return new ValidationResult("Date of Review cannot be greater than Current Date", new[] { "ReviewDate" });
-                }
+                yield return new ValidationResult("Date of Review cannot be greater than Current Date", new[] { "ReviewDate" });
             }
 
             // Validates the Review Rating range

@@ -50,6 +50,12 @@ namespace Sellora.Server.Data
 
             builder.ApplyConfiguration(new UserSeedConfiguration());
 
+            builder.ApplyConfiguration(new SwapSeedConfiguration());
+
+            builder.ApplyConfiguration(new ReviewSeedConfiguration());
+
+            builder.ApplyConfiguration(new ReportSeedConfiguration());
+
             // Configure SwapTransaction relationships to Not Cascade on Delete
             builder.Entity<SwapTransaction>()
                 .HasOne(st => st.AppUser1)
