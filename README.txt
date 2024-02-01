@@ -11,7 +11,7 @@
 11 - [COMPLETE] Check Domain [Required]
 12 - Contact Form
 13 - 5 Stars on Reviews
-14 - Check on Unauthorised Error Handling
+14 - [Complete] Check on Unauthorised Error Handling
 15 - Create User side Item View Page
 16 - [COMPLETE] Comment Everything
 17 - Implement Searchbar
