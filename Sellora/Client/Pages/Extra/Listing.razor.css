@@ -5,8 +5,9 @@
 }
 
 .listing-top-section {
-    min-width: 100vh;
-    max-width: 100vh;
+    margin: 15px;
+    margin-left: 40px;
+    margin-right: 40px;
     display: flex;
 }
 
@@ -62,7 +63,7 @@
 }
 
 .listing-description-content {
-    height: 96.7%;
+    height: 92.6%;
     border-radius: 15px;
     background-color: #E5E5E5;
     padding: 17px;
@@ -70,6 +71,7 @@
     font-size: 17px;
     font-weight: bold;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-bottom: 0px;
 }
 
 .complete-lower-container {
