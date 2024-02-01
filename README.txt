@@ -15,7 +15,7 @@
 15 - Create User side Item View Page
 16 - [COMPLETE] Comment Everything
 17 - Implement Searchbar
-18 - Update Reports Display to include transaction
+18 - [COMPLETE] Update Reports Display to include transaction
 19 - Update Reviews Display to have cool swap vs sale transaction stuff
 
 
