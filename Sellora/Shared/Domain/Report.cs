@@ -14,7 +14,7 @@ namespace Sellora.Shared.Domain
         public string? ReportTitle { get; set; }
 
         [Required(ErrorMessage = "Report Content is required.")]
-        [StringLength(500, ErrorMessage = "Report cannot be longer than 500 Characters.")]
+        [StringLength(1000, ErrorMessage = "Report cannot be longer than 1000 Characters.")]
         public string? ReportContent { get; set; }
 
         [Required]

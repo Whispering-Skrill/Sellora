@@ -33,24 +33,57 @@
                 <!-- Inner container for report details -->
                 <div class="report-box-innercontainer">
                     <h4 class="report-box-title">@report.ReportTitle</h4>
-                    <p class="report-box-details">@report.AppUser.UserName ------- @report.ReportDate.Day / @report.ReportDate.Month / @report.ReportDate.Year</p>
                     <p class="report-box-content">@report.ReportContent</p>
                 </div>
-
-                <!-- Controls for each report box -->
-                <div class="report-box-control-container">
-                    <div class="report-box-detail-button">
-                        <a href="/reports/view/@report.Id" class="btn btn-primary">
-                            More Details
-                        </a>
+                <div class="report-box-inner">
+                    <!-- Inner container for report details -->
+                    <div class="report-box-innercontainer">
+                        <div class="report-box-detail-container">
+                            <div class="report-box-detail-innercontainer">
+                                <p class="report-box-details-labels">Username:</p>
+                                <p class="report-box-details-labels">Date of Report:</p>
+                                <p class="report-box-details-labels">Staff-in-Charge:</p>
+                                <p class="report-box-details-labels">Transaction:</p>
+                            </div>
+                            <div class="report-box-detail-innercontainer">
+                                <p class="report-box-details">@report.AppUser.UserName</p>
+                                <p class="report-box-details">@report.ReportDate.Day / @report.ReportDate.Month / @report.ReportDate.Year</p>
+                                <p class="report-box-details">@report.Staff.StaffFirstName @report.Staff.StaffLastName ( @report.StaffID - @report.Staff.StaffDepartment )</p>
+                                @if (report.SwapTransactionID != null)
+                                {
+                                    <a href="swaptransactions/view/@report.SwapTransactionID" style="text-decoration:none;">
+                                        <p class="report-box-details" style="color: #00BDFF;">[Swap Transaction @report.SwapTransactionID]</p>
+                                    </a>
+                                }
+                                else if (report.SaleTransactionID != null)
+                                {
+                                    <a href="swaptransactions/view/@report.SaleTransactionID" style="text-decoration:none;">
+                                        <p class="report-box-details" style="color: #00BDFF;">[Sale Transaction @report.SaleTransactionID]</p>
+                                    </a>
+                                }
+                                else
+                                {
+                                    <p class="report-box-details">Unknown Transaction</p>
+                                }
+                            </div>
+                        </div>
                     </div>
-                    <div class="report-box-control-bottom">
-                        <a href="/reports/edit/@report.Id" class="btn btn-warning" style="width:100%; margin-right:5px;">
-                            <span class="oi oi-pencil"></span>
-                        </a>
-                        <button class="btn btn-danger" style="width:100%; margin-left:5px;" @onclick="@(()=>Delete(report.Id))">
-                            <span class="oi oi-delete"></span>
-                        </button>
+
+                    <!-- Controls for each report box -->
+                    <div class="report-box-control-container">
+                        <div class="report-box-detail-button">
+                            <a href="/reports/view/@report.Id" class="btn btn-primary">
+                                More Details
+                            </a>
+                        </div>
+                        <div class="report-box-control-bottom">
+                            <a href="/reports/edit/@report.Id" class="btn btn-warning" style="width:100%; margin-right:5px;">
+                                <span class="oi oi-pencil"></span>
+                            </a>
+                            <button class="btn btn-danger" style="width:100%; margin-left:5px;" @onclick="@(()=>Delete(report.Id))">
+                                <span class="oi oi-delete"></span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

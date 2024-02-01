@@ -16,7 +16,8 @@
 16 - [COMPLETE] Comment Everything
 17 - Implement Searchbar
 18 - [COMPLETE] Update Reports Display to include transaction
-19 - Update Reviews Display to have cool swap vs sale transaction stuff
+19 - [COMPLETE] Update Reviews Display to have cool swap vs sale transaction stuff
+20 - Add Reports Check for Staffs
 
 
 

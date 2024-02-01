@@ -22,7 +22,7 @@ namespace Sellora.Shared.Domain
         public DateTime ReviewDate { get; set; } = DateTime.Now;
 
         [Required(ErrorMessage = "Please describe your experience.")]
-        [StringLength(500, ErrorMessage = "Description cannot be longer than 500 Characters.")]
+        [StringLength(1000, ErrorMessage = "Description cannot be longer than 1000 Characters.")]
         public string? ReviewDescription { get; set; }
 
         public int? SaleTransactionID { get; set; }
