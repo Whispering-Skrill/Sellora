@@ -31,20 +31,94 @@
         {
             <div class="review-box">
                 <!-- Inner container for review details -->
-                <div class="review-box-innercontainer">
+                <div class="review-box-innercontainer1">
                     @if (review.SwapTransaction != null)
                     {
-                        <h4 class="review-box-title">Swap Transaction: @review.SwapTransaction.Id</h4>
+                        foreach (var swaptransaction in SwapTransactions)
+                        {
+                            if (swaptransaction.Id == review.SwapTransactionID)
+                            {
+                                <div class="review-box-swaptransaction-container">
+                                    <div>
+                                        <div class="review-box-itemname-container">
+                                            <p>@swaptransaction.SwapItem1.ItemName</p>
+                                        </div>
+                                        <div class="review-box-itemimage-container">
+                                            <img src="@swaptransaction.SwapItem1.ImageUrl" class="card-img-top" style="border-radius:10px; width:100%; height:100%">
+                                        </div>
+                                        <div class="review-box-username-container">
+                                            @swaptransaction.AppUser1.UserName
+                                        </div>
+                                    </div>
+                                    <div class="review-box-swapsymbol-container">
+                                        <span class="oi oi-random" style="font-size: 40px;"></span>
+                                    </div>
+                                    <div>
+                                        <div class="review-box-itemname-container">
+                                            <p>@swaptransaction.SwapItem2.ItemName</p>
+                                        </div>
+                                        <div class="review-box-itemimage-container">
+                                            <img src="@swaptransaction.SwapItem2.ImageUrl" class="card-img-top" style="border-radius:10px; width:100%; height:100%">
+                                        </div>
+                                        <div class="review-box-username-container">
+                                            @swaptransaction.AppUser2.UserName
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
                     }
                     else if (review.SaleTransaction != null)
                     {
-                        <h4 class="review-box-title">Sale Transaction: @review.SaleTransaction.Id</h4>
+                        foreach (var saletransaction in SaleTransactions)
+                        {
+                            if (saletransaction.Id == review.SaleTransactionID)
+                            {
+                                <div class="review-box-swaptransaction-container">
+                                    <div>
+                                        <div class="review-box-itemname-container">
+                                            <p>@saletransaction.Item.ItemName</p>
+                                        </div>
+                                        <div class="review-box-itemimage-container">
+                                            <img src="@saletransaction.Item.ImageUrl" class="card-img-top" style="border-radius:10px; width:100%; height:100%">
+                                        </div>
+                                        <div class="review-box-username-container">
+                                            @foreach (var item in Items)
+                                            {
+                                                if (saletransaction.ItemId == item.Id)
+                                                {
+                                                    @item.AppUser.UserName
+                                                }
+                                            }
+                                        </div>
+                                    </div>
+                                    <div class="review-box-swapsymbol-container">
+                                        <span class="oi oi-arrow-thick-right" style="font-size: 50px;"></span>
+                                    </div>
+                                    <div>
+                                        <div class="review-box-itemname-container">
+                                            <p>Paid By:</p>
+                                        </div>
+                                        <div class="review-box-itemimage-container">
+                                            <div style="display:flex; justify-content: center; align-items: center; height:100%; min-height:13em;">
+                                                <span class="oi oi-dollar" style="font-size: 130px; padding-bottom: 40px; padding-left:20px"></span>
+                                            </div>
+                                        </div>
+                                        <div class="review-box-username-container">
+                                            @saletransaction.AppUser.UserName
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
                     }
                     else
                     {
                         <h4 class="review-box-title">TRANSACTION MISSING</h4>
                     }
-                    <p class="review-box-details">@review.AppUser.UserName ------- @review.ReviewDate.Day / @review.ReviewDate.Month / @review.ReviewDate.Year</p>
+                </div>
+                <div class="review-box-innercontainer2">
+                    <p class="review-box-details">Written by: @review.AppUser.UserName ------- @review.ReviewDate.Day / @review.ReviewDate.Month / @review.ReviewDate.Year</p>
                     <p class="review-box-content">@review.ReviewDescription</p>
                 </div>
 
@@ -76,6 +150,9 @@
 @code {
     // List to store reviews fetched from the server
     private List<Review>? Reviews;
+    private List<SwapTransaction>? SwapTransactions;
+    private List<SaleTransaction>? SaleTransactions;
+    private List<Item>? Items;
 
     // This runs asynchronously when the component/page is initialized
     protected async override Task OnInitializedAsync()
@@ -86,6 +163,9 @@
         
         // This fetches data from Server Endpoints using HttpClient
         Reviews = await _client.GetFromJsonAsync<List<Review>>($"{Endpoints.ReviewsEndpoint}");
+        SwapTransactions = await _client.GetFromJsonAsync<List<SwapTransaction>>($"{Endpoints.SwapTransactionsEndpoint}");
+        SaleTransactions = await _client.GetFromJsonAsync<List<SaleTransaction>>($"{Endpoints.SaleTransactionsEndpoint}");
+        Items = await _client.GetFromJsonAsync<List<Item>>($"{Endpoints.ItemsEndpoint}");
     }
 
     // Method to handle review deletion with confirmation dialog
