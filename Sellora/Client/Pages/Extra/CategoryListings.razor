@@ -1,0 +1,107 @@
+﻿@* This is the category listings page, where listings are only displayed if they are under a certain category *@
+@*ASPNetr-yanWorks*@
+@page "/listings/{categoryID:int}"
+@implements IDisposable
+@inject IJSRuntime js
+@inject HttpClient _client
+@inject HttpInterceptorService _interceptor
+@attribute [Authorize]
+
+<head>
+    <!--FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<!-- Dynamic Page Title -->
+@* The title is dependent on the category navigated to (Fashion, Luxury...) *@
+@if (Categories == null)
+{
+}
+else
+{
+    @foreach (var category in Categories)
+    {
+        @if (category.Id == categoryID)
+        {
+            <PageTitle>Browse Items in @category.CategoryName</PageTitle>
+            <div class="listingpage-topbar">
+                <h1 class="listingpage-title">@category.CategoryName Listings</h1>
+            </div>
+        }
+        else
+        {
+
+        }
+    }
+}
+
+<!-- Listings -->
+<div class="listing-section">
+    <div class="listing-container">
+        @if (Items == null)
+        {
+            <div class="alert alert-info">Loading Items...</div>
+        }
+        else
+        {
+            @foreach (var item in Items)
+            {
+                @if (item.CategoryId == categoryID)
+                {
+                    <div class="listing-box">
+                        <a href="/listing/@item.Id" style="text-decoration:none;">
+                            <div class="listingitem-inner">
+                                <p class="listingitem-username">@item.AppUser.UserName</p>
+                                <img src="https://via.placeholder.com/300" class="card-img-top" style="border-radius:10px;">
+                                <div class="listingitem-content">
+                                    <h5 class="listingitem-title">@item.ItemName</h5>
+                                    @if (item.ItemPrice == 0)
+                                    {
+                                        <p class="listingitem-price">Free</p>
+                                    }
+                                    else
+                                    {
+                                        <p class="listingitem-price">$@item.ItemPrice</p>
+                                    }
+                                    <p class="listing-condition">@item.Condition</p>
+                                    <div class="listingitem-likescontainer">
+                                        <i class="fa fa-heart-o" style="font-size:20px; margin-left:0.1vh;"></i>
+                                        <p style="margin-left:5px; margin-top:-5px; font-size:125%;">@item.ItemLikes</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                }
+            }
+        }
+    </div>
+</div>
+
+@code {
+    // Collections to store data fetched from the server
+    private List<Sellora.Shared.Domain.Item>? Items;
+    private List<Sellora.Shared.Domain.Category>? Categories;
+
+    // Parameter for receiving the category ID from the URL
+    [Parameter] public int categoryID { get; set; }
+
+    // This runs asynchronously when the component/page is initialised
+    protected async override Task OnInitializedAsync()
+    {
+        // Initialises the interceptor module
+        // This monitors HTTP Events for Global Error Handling
+        _interceptor.MonitorEvent();
+        
+        // This fetches data from Server Endpoints using HttpClient
+        Items = await _client.GetFromJsonAsync<List<Sellora.Shared.Domain.Item>>($"{Endpoints.ItemsEndpoint}");
+        Categories = await _client.GetFromJsonAsync<List<Sellora.Shared.Domain.Category>>($"{Endpoints.CategoriesEndpoint}");
+    }
+
+    // Disposes of resources when the component is disposed
+    public void Dispose()
+    {
+        // This disposes of global error handling events
+        _interceptor.DisposeEvent();
+    }
+}

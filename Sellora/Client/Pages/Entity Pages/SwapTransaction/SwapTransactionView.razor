@@ -1,0 +1,53 @@
+﻿@*ASPNetr-yanWorks*@
+@page "/swaptransactions/view/{id:int}"
+@implements IDisposable
+@inject HttpClient _client
+@inject NavigationManager _navManager
+@inject HttpInterceptorService _interceptor
+@attribute [Authorize]
+
+<!-- Page Title -->
+<PageTitle>Viewing Swap Transaction @swaptransaction.Id</PageTitle>
+
+<!-- Topbar with the title and a back-to-list button -->
+<div class="swaptransaction-topbar">
+    <h2 class="swaptransaction-title">View Swap Transaction with ID: @swaptransaction.Id</h2>
+    <BackToList Target="swaptransactions" />
+</div>
+
+<div style="border-bottom:solid black 1px; padding-top:3px; margin-bottom:10px;">
+    <!-- Separator for spacing -->
+</div>
+
+<!-- This Generates a SwapTransaction Form Component with Viewing Parameters -->
+<SwapTransactionFormComponent swaptransaction="swaptransaction" Disabled="true" />
+
+@code {
+    // Parameter for receiving the swaptransaction ID from the URL
+    [Parameter] public int id { get; set; }
+
+    // SwapTransaction object to store swaptransaction details
+    SwapTransaction? swaptransaction = new SwapTransaction();
+
+    // This runs asynchronously when the component/page is initialised
+    protected async override Task OnInitializedAsync()
+    {
+        // Initialises the interceptor module
+        // This monitors HTTP Events for Global Error Handling
+        _interceptor.MonitorEvent();
+    }
+
+    // This runs asynchronously when the parameters are initialised
+    protected async override Task OnParametersSetAsync()
+    {
+        // This fetches data from Server Endpoints using HttpClient
+        swaptransaction = await _client.GetFromJsonAsync<SwapTransaction>($"{Endpoints.SwapTransactionsEndpoint}/{id}");
+    }
+
+    // Disposes of resources when the component is disposed
+    public void Dispose()
+    {
+        // This disposes of global error handling events
+        _interceptor.DisposeEvent();
+    }
+}

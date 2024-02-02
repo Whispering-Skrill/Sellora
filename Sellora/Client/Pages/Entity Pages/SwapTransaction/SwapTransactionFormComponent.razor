@@ -1,0 +1,141 @@
+﻿@*ASPNetr-yanWorks*@
+@inject HttpClient _client
+
+<!-- EditForm for managing swaptransaction details -->
+<EditForm Model="@swaptransaction" OnValidSubmit="@OnValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <!-- Fieldset to disable form controls if Disabled is true -->
+    <fieldset disabled="@Disabled">
+
+        <!-- Date of the swaptransaction ((visible only if editing an existing swaptransaction) -->
+        @if (swaptransaction.Id > 0)
+        {
+            <div class="form-group">
+                <label>Date of Transaction: </label>
+                <div>
+                    <InputDate @bind-Value="@swaptransaction.TransactionDate" class="form-control" />
+                    <ValidationMessage For="@(() => swaptransaction.TransactionDate)" />
+                </div>
+            </div>
+        }
+
+        <!-- First User in the Swap Transaction -->
+        <div class="form-group">
+            <label>Transaction User 1: </label>
+            <div>
+                <InputSelect @bind-Value="swaptransaction.AppUser1Id" class="form-control">
+                    <option value="">-- Select User 1 --</option>
+                    @if (AppUsers != null)
+                    {
+                        foreach (var appuser in AppUsers)
+                        {
+                            <option value="@appuser.Id">ID: @appuser.Id ( @appuser.UserName )</option>
+                        }
+                    }
+                </InputSelect>
+                <ValidationMessage For="@(() => swaptransaction.AppUser1Id)" />
+            </div>
+        </div>
+
+        <!-- Item belonging to First User in the Swap Transaction -->
+        <div class="form-group">
+            <label>Swapped Item 1: </label>
+            <div>
+                <InputSelect @bind-Value="swaptransaction.SwapItem1Id" class="form-control">
+                    <option value="">-- Select Item 1 --</option>
+                    @if (Items != null)
+                    {
+                        foreach (var item in Items)
+                        {
+                            <!-- The items displayed will depend on AppUser1 -->
+                            if (swaptransaction.AppUser1Id != null)
+                            {
+                                if (item.AppUserId == swaptransaction.AppUser1Id)
+                                {
+                                    <option value="@item.Id">ID: @item.Id ( @item.ItemName )</option>
+                                }
+                            }
+                        }
+                    }
+                </InputSelect>
+                <ValidationMessage For="@(() => swaptransaction.SwapItem1Id)" />
+            </div>
+        </div>
+
+        <!-- Second User in the Swap Transaction -->
+        <div class="form-group">
+            <label>Transaction User 2: </label>
+            <div>
+                <InputSelect @bind-Value="swaptransaction.AppUser2Id" class="form-control">
+                    <option value="">-- Select User 2 --</option>
+                    @if (AppUsers != null)
+                    {
+                        foreach (var appuser in AppUsers)
+                        {
+                            <option value="@appuser.Id">ID: @appuser.Id ( @appuser.UserName )</option>
+                        }
+                    }
+                </InputSelect>
+                <ValidationMessage For="@(() => swaptransaction.AppUser2Id)" />
+            </div>
+        </div>
+
+        <!-- Item belonging to the Second User in the Swap Transaction -->
+        <div class="form-group">
+            <label>Swapped Item 2: </label>
+            <div>
+                <InputSelect @bind-Value="swaptransaction.SwapItem2Id" class="form-control">
+                    <option value="">-- Select Item 2 --</option>
+                    @if (Items != null)
+                    {
+                        foreach (var item in Items)
+                        {
+                            <!-- The items displayed will depend on AppUser2 -->
+                            if (swaptransaction.AppUser2Id != null)
+                            {
+                                if (item.AppUserId == swaptransaction.AppUser2Id)
+                                {
+                                    <option value="@item.Id">ID: @item.Id ( @item.ItemName )</option>
+                                }
+                            }
+                        }
+                    }
+                </InputSelect>
+                <ValidationMessage For="@(() => swaptransaction.SwapItem2Id)" />
+            </div>
+        </div>
+    </fieldset>
+    <br />
+
+    <!-- Submit button (visible only if the form is not disabled) -->
+    @if (!Disabled)
+    {
+        <button type="submit" class="btn btn-success btn-block">
+            @ButtonText
+        </button>
+    }
+</EditForm>
+
+@code {
+    // Parameters for the component
+    [Parameter] public bool Disabled { get; set; } = false;             // Determines whether form controls should be disabled
+    [Parameter] public SwapTransaction? swaptransaction { get; set; }   // This parameters store the swaptransaction details
+    [Parameter] public string ButtonText { get; set; } = "Save";        // This sets up what the button does
+    [Parameter] public EventCallback OnValidSubmit { get; set; }        // EventCallback to handle Form Submission
+
+    // Collections to store data fetched from the server
+    private IList<AppUser>? AppUsers;
+    private IList<Staff>? Staffs;
+    private IList<Item>? Items;
+
+    // This runs asynchronously when the component/page is initialized
+    protected async override Task OnInitializedAsync()
+    {
+        // This fetches data from Server Endpoints using HttpClient
+        AppUsers = await _client.GetFromJsonAsync<List<AppUser>>($"{Endpoints.AppUsersEndpoint}");
+        Staffs = await _client.GetFromJsonAsync<List<Staff>>($"{Endpoints.StaffsEndpoint}");
+        Items = await _client.GetFromJsonAsync<List<Item>>($"{Endpoints.ItemsEndpoint}");
+    }
+}

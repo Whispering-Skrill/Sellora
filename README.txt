@@ -1,16 +1,24 @@
-1 - [COMPLETE] Add Wide height input bar for Review and Report description.
-2 - [COMPLETE] Remove Date Change option when CREATING reports, reviews, swaptransactions
-3 - [COMPLETE] Add authorisation to navbar 
-4 - [COMPLETE] Add About Page, Unauthorised Landing Page
-5 - [COMPLETE] DataTables error
-6 - All Categories paging?
-7 - [COMPLETE] Fix NotFound system
-8 - [COMPLETE] Role Authorisation
-9 - [COMPLETE] Add Role name in ASPNetUser Profile Page
-10 - Item Seeding
-11 - Check Domain [Required]
-12 - Contact Form?
-13 - 5 stars?
+ 1 - [COMPLETE] Add Wide height input bar for Review and Report description.
+ 2 - [COMPLETE] Remove Date Change option when CREATING reports, reviews, swaptransactions
+ 3 - [COMPLETE] Add authorisation to navbar 
+ 4 - [COMPLETE] Add About Page, Unauthorised Landing Page
+ 5 - [COMPLETE] DataTables error
+ 6 - [COMPLETE] All Categories paging?
+ 7 - [COMPLETE] Fix NotFound system
+ 8 - [COMPLETE] Role Authorisation
+ 9 - [COMPLETE] Add Role name in ASPNetUser Profile Page
+10 - [COMPLETE] Item Seeding
+11 - [COMPLETE] Check Domain [Required]
+12 - Contact Form
+13 - 5 Stars on Reviews
+14 - [COMPLETE] Check on Unauthorised Error Handling
+15 - [COMPLETE] Create User side Item View Page
+16 - [COMPLETE] Comment Everything
+17 - Implement Searchbar
+18 - [COMPLETE] Update Reports Display to include transaction
+19 - [COMPLETE] Update Reviews Display to have cool swap vs sale transaction stuff
+20 - [COMPLETE] Add Reports Check for Staffs
+21 - Improve creation pages
 
 
 
@@ -139,3 +147,19 @@ Ryan - Implemented User Role Authentication onto Review Index Page
 Ryan - Redid ASPNetUser Profile Page
 
 Ryan - Completely Implemented User Role Authentication for Ryan-Entities
+
+Ryan - Added Item Seed
+
+Ryan - Shifted @using Sellora.Client.Components to Global Imports
+
+Ryan - Organised Pages Folder
+
+Ryan - Commented All Ryan-Entities, Created Pages and Application Layer Pages
+
+Ryan - Added Model Builder for SwapTransactions delete function
+
+Ryan - Added STRICT logic on Swaptransaction, Review Form Components
+
+Ryan - Reconfigured Validation on Ryan-Entities
+
+Ryan - Added Seeding for Ryan-Entities

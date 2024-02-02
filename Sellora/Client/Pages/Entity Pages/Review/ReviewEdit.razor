@@ -1,0 +1,63 @@
+﻿@*ASPNetr-yanWorks*@
+@page "/reviews/edit/{id:int}"
+@implements IDisposable
+@inject HttpClient _client
+@inject NavigationManager _navManager
+@inject HttpInterceptorService _interceptor
+@attribute [Authorize(Roles = "Administrator")]
+
+<!-- Page Title -->
+<PageTitle>Editing Review @review.Id</PageTitle>
+
+<!-- Topbar with the title and a back-to-list button -->
+<div class="review-topbar">
+    <h2 class="review-title">Edit Review with ID: @review.Id</h2>
+    <BackToList Target="reviews" />
+</div>
+
+<div style="border-bottom:solid black 1px; padding-top:3px; margin-bottom:10px;">
+    <!-- Separator for spacing -->
+</div>
+
+<!-- This Generates a Review Formcomponent with Updating Parameters -->
+<ReviewFormComponent ButtonText="Update" OnValidSubmit="EditReview" review="review"/>
+
+@code {
+    // Parameter for receiving the review ID from the URL
+    [Parameter] public int id { get; set; }
+
+    // An instance of the Review class to store review information
+    Review? review = new Review();
+
+    // This runs asynchronously when the component/page is initialised
+    protected async override Task OnInitializedAsync()
+    {
+        // Initialises the interceptor module
+        // This monitors HTTP Events for Global Error Handling
+        _interceptor.MonitorEvent();
+    }
+
+    // This runs asynchronously when the parameters are initialised
+    protected async override Task OnParametersSetAsync()
+    {
+        // This fetches data from Server Endpoints using HttpClient
+        review = await _client.GetFromJsonAsync<Review>($"{Endpoints.ReviewsEndpoint}/{id}");
+    }
+
+    // Method to Update a Review, this will navigate users back to the reviews page when complete
+    async Task EditReview()
+    {
+        // Send a PUT request to update the review on the server
+        await _client.PutAsJsonAsync($"{Endpoints.ReviewsEndpoint}/{id}", review);
+
+        // Navigate back to the reviews page after successful update
+        _navManager.NavigateTo("/reviews/");
+    }
+
+    // Disposes of resources when the component is disposed
+    public void Dispose()
+    {
+        // This disposes of global error handling events
+        _interceptor.DisposeEvent();
+    }
+}

@@ -2,20 +2,30 @@
 <html lang="en">
 
 <head>
+    <!-- Meta tags for character set and viewport -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <!-- Title of the application -->
     <title>Sellora</title>
+
+    <!-- Base URL for the application -->
     <base href="/" />
+
+    <!-- CSS and style components -->
     <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
     <link href="css/app.css" rel="stylesheet" />
     <link rel="icon" type="image/png" href="icon-192.png" />
     <link href="Sellora.Client.styles.css" rel="stylesheet" />
-    <link href="manifest.json" rel="manifest" />
     <link rel="apple-touch-icon" sizes="512x512" href="icon-512.png" />
     <link rel="apple-touch-icon" sizes="192x192" href="icon-192.png" />
+
+    <!-- Manifest file for PWA - Progressive Web App (Provides details about a web application) -->
+    <link href="manifest.json" rel="manifest" />
 </head>
 
 <body>
+    <!-- Loading progress indicator -->
     <div id="app">
         <svg class="loading-progress">
             <circle r="40%" cx="50%" cy="50%" />
@@ -24,22 +34,24 @@
         <div class="loading-progress-text"></div>
     </div>
 
+    <!-- Error UI for unhandled errors -->
     <div id="blazor-error-ui">
         An unhandled error has occurred.
         <a href="" class="reload">Reload</a>
         <a class="dismiss">🗙</a>
     </div>
 
+    <!-- External JavaScript libraries for DataTables and Carousel -->
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
     <script src="scripts/datatable.js"></script>
     <script src="scripts/carousel.js"></script>
 
+    <!-- Blazor WebAssembly scripts and service worker registration -->
     <script src="_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication/AuthenticationService.js"></script>
     <script src="_framework/blazor.webassembly.js"></script>
     <script>navigator.serviceWorker.register('service-worker.js');</script>
-
 </body>
 
 </html>

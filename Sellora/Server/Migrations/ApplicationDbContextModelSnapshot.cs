@@ -416,41 +416,41 @@ namespace Sellora.Server.Migrations
                         {
                             Id = "3781efa7-66dc-47f0-860f-e506d04102e4",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "e8bc5f67-1977-4cf9-ab40-49edbc0bcea2",
+                            ConcurrencyStamp = "75e186bf-64f3-413c-a132-44e9b6420575",
                             Email = "admin@localhost.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "ADMIN@LOCALHOST.COM",
                             NormalizedUserName = "ADMIN",
-                            PasswordHash = "AQAAAAIAAYagAAAAEDXt2GYnRwDzRB2oftJC4Gqh2/bjQsYb63R9kxdC1LeDRTYxVPtvANM6jjhK8TuFTA==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEKRP37Se8QOdOkhYbM+aU192DdqBqvyle++MODFQAVE+IL9RVM9hLFl3PC2nKJZnBw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "2ab3db7b-173b-43b2-a7ea-06a44f0050ef",
+                            SecurityStamp = "14a85b2d-b011-4b0b-a152-c6318405cedd",
                             TwoFactorEnabled = false,
                             UserFirstName = "Admin",
                             UserLastName = "User",
-                            UserLastOnline = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(4455),
+                            UserLastOnline = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(9328),
                             UserName = "Admin",
-                            UserRegDate = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(4454)
+                            UserRegDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(9319)
                         },
                         new
                         {
                             Id = "b1675205-1948-44ec-8b55-b0cb71d1f84e",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "6bf8a57e-7458-467e-b000-f5574495147d",
+                            ConcurrencyStamp = "518fb964-9da1-4acd-a828-bc70bf4a0e99",
                             Email = "user@localhost.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "USER@LOCALHOST.COM",
                             NormalizedUserName = "USER",
-                            PasswordHash = "AQAAAAIAAYagAAAAEPkdkxwMpW5AFUK+BQUbjYlPB7SuBXEePb7Ig9mS5qacaZo2PU9DeGuX8VA7n8NxYQ==",
+                            PasswordHash = "AQAAAAIAAYagAAAAEHhhQMuSp4jmR0HoyTVR7zTXXY5JpALxrdixl2IQ/QbyUBC5VwUtyqoZumWyBePxSw==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "6b9544ec-1c10-4899-a270-121fb5fb9cc6",
+                            SecurityStamp = "465dbba3-6363-47ae-8442-71075572ba3d",
                             TwoFactorEnabled = false,
                             UserFirstName = "User",
                             UserLastName = "User",
-                            UserLastOnline = new DateTime(2024, 1, 31, 11, 18, 12, 889, DateTimeKind.Local).AddTicks(5652),
+                            UserLastOnline = new DateTime(2024, 2, 2, 1, 26, 5, 104, DateTimeKind.Local).AddTicks(8307),
                             UserName = "user",
-                            UserRegDate = new DateTime(2024, 1, 31, 11, 18, 12, 889, DateTimeKind.Local).AddTicks(5635)
+                            UserRegDate = new DateTime(2024, 2, 2, 1, 26, 5, 104, DateTimeKind.Local).AddTicks(8288)
                         });
                 });
 
@@ -523,10 +523,10 @@ namespace Sellora.Server.Migrations
                             UserFirstName = "Seo",
                             UserHPNum = "88123123",
                             UserLastName = "Yeong",
-                            UserLastOnline = new DateTime(2024, 1, 31, 11, 18, 13, 60, DateTimeKind.Local).AddTicks(6204),
+                            UserLastOnline = new DateTime(2024, 2, 2, 1, 26, 5, 195, DateTimeKind.Local).AddTicks(1802),
                             UserName = "SeoCoolSeoYeong",
-                            UserPassword = "AQAAAAIAAYagAAAAELDObuyCbHjU3lt2V0nOEC9cJkrMZBkD9/83am7x1W82kyQ+4kf0OP6st/wuvR8PEA==",
-                            UserRegDate = new DateTime(2024, 1, 31, 11, 18, 13, 60, DateTimeKind.Local).AddTicks(6192)
+                            UserPassword = "AQAAAAIAAYagAAAAEDc3ETfAdkcMM4PQVIQ7rKDSIAdpB5ijQzRnxYGRvth0Pf27klYkrs+zIi8L/3xMsw==",
+                            UserRegDate = new DateTime(2024, 2, 2, 1, 26, 5, 195, DateTimeKind.Local).AddTicks(1788)
                         },
                         new
                         {
@@ -538,10 +538,10 @@ namespace Sellora.Server.Migrations
                             UserFirstName = "Tina",
                             UserHPNum = "88445566",
                             UserLastName = "Tan",
-                            UserLastOnline = new DateTime(2024, 1, 31, 11, 18, 13, 128, DateTimeKind.Local).AddTicks(3712),
+                            UserLastOnline = new DateTime(2024, 2, 2, 1, 26, 5, 240, DateTimeKind.Local).AddTicks(5594),
                             UserName = "TT_4Me",
-                            UserPassword = "AQAAAAIAAYagAAAAEIVrVLi3YJRxKHAtn3+JVt4+RXaskm9tZ+DlUO8Q63XbfuPj8N9jnU7iI94RRNLLYw==",
-                            UserRegDate = new DateTime(2024, 1, 31, 11, 18, 13, 128, DateTimeKind.Local).AddTicks(3697)
+                            UserPassword = "AQAAAAIAAYagAAAAEFL9TqmYTHSNuUp8IV/U44r03NApAPLqVrE6fMPhrhEMbgS93t5RWQgy8RJp+qGyew==",
+                            UserRegDate = new DateTime(2024, 2, 2, 1, 26, 5, 240, DateTimeKind.Local).AddTicks(5580)
                         },
                         new
                         {
@@ -553,10 +553,10 @@ namespace Sellora.Server.Migrations
                             UserFirstName = "Kaynan",
                             UserHPNum = "85445666",
                             UserLastName = "Loh",
-                            UserLastOnline = new DateTime(2024, 1, 31, 11, 18, 13, 209, DateTimeKind.Local).AddTicks(2531),
+                            UserLastOnline = new DateTime(2024, 2, 2, 1, 26, 5, 287, DateTimeKind.Local).AddTicks(1224),
                             UserName = "Kay_today",
-                            UserPassword = "AQAAAAIAAYagAAAAENxFMWZNhlCd1KfVX1CjANS5sSGlEq1Wurtp7WweM1NvyszE7JjnUM74wpOCr29asA==",
-                            UserRegDate = new DateTime(2024, 1, 31, 11, 18, 13, 209, DateTimeKind.Local).AddTicks(2517)
+                            UserPassword = "AQAAAAIAAYagAAAAEOhCMcQjXhgBLC/0nrhVi3qFbek262h38X6l/N6AUeDlnCRXcQ7+tru/2l5QIzz8iA==",
+                            UserRegDate = new DateTime(2024, 2, 2, 1, 26, 5, 287, DateTimeKind.Local).AddTicks(1209)
                         },
                         new
                         {
@@ -566,12 +566,12 @@ namespace Sellora.Server.Migrations
                             UserDescription = "Passionate about coding adventures and tech wonders 🌟 | Coffee-fueled developer by day, gaming enthusiast by night 🎮 | Embracing challenges and turning ideas into reality 💡 | #CodeExplorer #TechEnthusiast",
                             UserEmail = "alex.smith@example.com",
                             UserFirstName = "Alex",
-                            UserHPNum = "9876543210",
+                            UserHPNum = "98765210",
                             UserLastName = "Smith",
-                            UserLastOnline = new DateTime(2024, 1, 31, 11, 18, 13, 304, DateTimeKind.Local).AddTicks(9875),
+                            UserLastOnline = new DateTime(2024, 2, 2, 1, 26, 5, 332, DateTimeKind.Local).AddTicks(9684),
                             UserName = "AdventureCoder",
-                            UserPassword = "AQAAAAIAAYagAAAAENDZprhKJ7+k8O8JxC7SCOXplMzJhSsAK1J6NiT7vsL2KBw7pvRKTc8XOqjwMpxI/w==",
-                            UserRegDate = new DateTime(2024, 1, 31, 11, 18, 13, 304, DateTimeKind.Local).AddTicks(9863)
+                            UserPassword = "AQAAAAIAAYagAAAAEEjG6trH7JKRMeAIY/vNw7Wh9WTWp61ZRcJYzb4x54R/64JbkEgcuNzuZJNfHuhmyA==",
+                            UserRegDate = new DateTime(2024, 2, 2, 1, 26, 5, 332, DateTimeKind.Local).AddTicks(9670)
                         },
                         new
                         {
@@ -581,12 +581,387 @@ namespace Sellora.Server.Migrations
                             UserDescription = "Digital nomad exploring the virtual realms 🌍 | Coding on-the-go and crafting unique digital experiences ✨ | Passionate about connecting through technology 🚀 | #DigitalNomad #CodeExplorer",
                             UserEmail = "emma.johnson@example.com",
                             UserFirstName = "Emma",
-                            UserHPNum = "8765432109",
+                            UserHPNum = "87654109",
                             UserLastName = "Johnson",
-                            UserLastOnline = new DateTime(2024, 1, 31, 11, 18, 13, 391, DateTimeKind.Local).AddTicks(4123),
+                            UserLastOnline = new DateTime(2024, 2, 2, 1, 26, 5, 380, DateTimeKind.Local).AddTicks(517),
                             UserName = "DigitalNomad21",
-                            UserPassword = "AQAAAAIAAYagAAAAEB6Pz/DIyeFzz2SUmM3VpuHGBTLLhnwqWXcQDp7U/N84ZP4B+i9wf1MDNpfXn2eGNA==",
-                            UserRegDate = new DateTime(2024, 1, 31, 11, 18, 13, 391, DateTimeKind.Local).AddTicks(4107)
+                            UserPassword = "AQAAAAIAAYagAAAAEJt32WT8aJvjscIykT5bgOqJ08JBMu6BCwR//R2ztJnisgssW879Vx4Si3pjeK/muA==",
+                            UserRegDate = new DateTime(2024, 2, 2, 1, 26, 5, 380, DateTimeKind.Local).AddTicks(494)
+                        },
+                        new
+                        {
+                            Id = 6,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserDescription = "Tech enthusiast looking to swap and sell gadgets 📱💻 | Always up for the latest tech trends and innovations 🚀 | Let's connect and trade! #TechSwap #GadgetLover",
+                            UserEmail = "alex.smith@example.com",
+                            UserFirstName = "Alex",
+                            UserHPNum = "98763210",
+                            UserLastName = "Smith",
+                            UserLastOnline = new DateTime(2024, 2, 2, 1, 26, 5, 426, DateTimeKind.Local).AddTicks(3156),
+                            UserName = "TechEnthusiast",
+                            UserPassword = "AQAAAAIAAYagAAAAEGqrw9Xl0K3Hfi5gjDQFw7cVaLl4dGGu7CLV1degfPJhAtbIkWa+tHRYCryHEHhmaA==",
+                            UserRegDate = new DateTime(2024, 2, 2, 1, 26, 5, 426, DateTimeKind.Local).AddTicks(3142)
+                        },
+                        new
+                        {
+                            Id = 7,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserDescription = "Fashionista with a passion for style and trends 👗👠 | Closet cleanout and trendy swaps | Let's trade fashion finds! #FashionSwap #StyleExplorer",
+                            UserEmail = "sophie.miller@example.com",
+                            UserFirstName = "Sophie",
+                            UserHPNum = "87698765",
+                            UserLastName = "Miller",
+                            UserLastOnline = new DateTime(2024, 2, 2, 1, 26, 5, 473, DateTimeKind.Local).AddTicks(9998),
+                            UserName = "Fashionista23",
+                            UserPassword = "AQAAAAIAAYagAAAAEExvLdu92UngBfxt3SbDnYxIHIrqpMXYm8XhEb6d29VfgykL7pJ1Tdj01UR9rxekjA==",
+                            UserRegDate = new DateTime(2024, 2, 2, 1, 26, 5, 473, DateTimeKind.Local).AddTicks(9983)
+                        },
+                        new
+                        {
+                            Id = 8,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserDescription = "Gaming pro seeking to trade and sell video games 🎮 | From classics to the latest releases | Let's level up together! #GameSwap #GamerLife",
+                            UserEmail = "ryan.clark@example.com",
+                            UserFirstName = "Ryan",
+                            UserHPNum = "90345678",
+                            UserLastName = "Clark",
+                            UserLastOnline = new DateTime(2024, 2, 2, 1, 26, 5, 520, DateTimeKind.Local).AddTicks(2452),
+                            UserName = "GamingPro99",
+                            UserPassword = "AQAAAAIAAYagAAAAEAKz2Y6nahBnDiEtckZ9TPUP/B3M+2ldYQ8EvddnySjAXPcNQf49lRLlML73g3TqIg==",
+                            UserRegDate = new DateTime(2024, 2, 2, 1, 26, 5, 520, DateTimeKind.Local).AddTicks(2434)
+                        },
+                        new
+                        {
+                            Id = 9,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserDescription = "Bookworm passionate about literature 📚 | Looking to swap and sell books of all genres | Let's share the joy of reading! #BookSwap #LiteraryExplorer",
+                            UserEmail = "olivia.taylor@example.com",
+                            UserFirstName = "Olivia",
+                            UserHPNum = "87651256",
+                            UserLastName = "Taylor",
+                            UserLastOnline = new DateTime(2024, 2, 2, 1, 26, 5, 566, DateTimeKind.Local).AddTicks(8383),
+                            UserName = "BookWorm89",
+                            UserPassword = "AQAAAAIAAYagAAAAEE1inpFdKkh9KCrC7NG7A60W+C2xxmwl4aZT7KeXn4hodODPwLV3UwsgsAgYrJQenw==",
+                            UserRegDate = new DateTime(2024, 2, 2, 1, 26, 5, 566, DateTimeKind.Local).AddTicks(8369)
+                        },
+                        new
+                        {
+                            Id = 10,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserDescription = "Outdoor enthusiast and adventurer 🏞️ | Swapping and selling outdoor gear and equipment | Let's explore the world together! #AdventureSwap #NatureExplorer",
+                            UserEmail = "jake.anderson@example.com",
+                            UserFirstName = "Jake",
+                            UserHPNum = "90129854",
+                            UserLastName = "Anderson",
+                            UserLastOnline = new DateTime(2024, 2, 2, 1, 26, 5, 613, DateTimeKind.Local).AddTicks(6577),
+                            UserName = "OutdoorAdventurer",
+                            UserPassword = "AQAAAAIAAYagAAAAEED+O5CrOan8p6D4MDfe4RTF+K3I9fRDeJw2CwOJRBOUE+uKpQhWn6Y4HSeNRR0RQg==",
+                            UserRegDate = new DateTime(2024, 2, 2, 1, 26, 5, 613, DateTimeKind.Local).AddTicks(6563)
+                        },
+                        new
+                        {
+                            Id = 11,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserDescription = "Home decor enthusiast with a flair for design 🏡 | Swapping and selling unique decor pieces | Let's create stylish living spaces! #DecorSwap #HomeDesign",
+                            UserEmail = "mia.ramirez@example.com",
+                            UserFirstName = "Mia",
+                            UserHPNum = "87652012",
+                            UserLastName = "Ramirez",
+                            UserLastOnline = new DateTime(2024, 2, 2, 1, 26, 5, 662, DateTimeKind.Local).AddTicks(780),
+                            UserName = "HomeDecorGuru",
+                            UserPassword = "AQAAAAIAAYagAAAAELpe6hgrcH/qn9tYMT4BhEGrOLcGVzg2T4s42TENMSAbuLmoAsEfBBhY9N5Q1QMRNQ==",
+                            UserRegDate = new DateTime(2024, 2, 2, 1, 26, 5, 662, DateTimeKind.Local).AddTicks(771)
+                        },
+                        new
+                        {
+                            Id = 12,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserDescription = "Fitness enthusiast on a journey to a healthier life 💪 | Swapping and selling workout gear and accessories | Let's achieve our fitness goals together! #FitnessSwap #HealthyLiving",
+                            UserEmail = "brandon.harris@example.com",
+                            UserFirstName = "Brandon",
+                            UserHPNum = "90125432",
+                            UserLastName = "Harris",
+                            UserLastOnline = new DateTime(2024, 2, 2, 1, 26, 5, 709, DateTimeKind.Local).AddTicks(7333),
+                            UserName = "FitnessFreak2024",
+                            UserPassword = "AQAAAAIAAYagAAAAEKb4sx93s19RfTRF/vKxGZHRGYRlnDCNC6CApppAsUGeAid+Y2ewcVabO0V1vn7bPg==",
+                            UserRegDate = new DateTime(2024, 2, 2, 1, 26, 5, 709, DateTimeKind.Local).AddTicks(7324)
+                        },
+                        new
+                        {
+                            Id = 13,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserDescription = "Art lover and creative soul 🎨 | Swapping and selling unique artworks and handmade crafts | Let's appreciate and share the beauty of art! #ArtSwap #CreativeSpirit",
+                            UserEmail = "eva.chen@example.com",
+                            UserFirstName = "Eva",
+                            UserHPNum = "87655678",
+                            UserLastName = "Chen",
+                            UserLastOnline = new DateTime(2024, 2, 2, 1, 26, 5, 757, DateTimeKind.Local).AddTicks(7136),
+                            UserName = "ArtisticExplorer",
+                            UserPassword = "AQAAAAIAAYagAAAAEN/DmQD0m3zoRp10hjyN+lf8f7phdHsWixDoKmeF3pgPb5KBRATUGY0232C3SxBQQw==",
+                            UserRegDate = new DateTime(2024, 2, 2, 1, 26, 5, 757, DateTimeKind.Local).AddTicks(7122)
+                        },
+                        new
+                        {
+                            Id = 14,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserDescription = "Passionate vintage collector and enthusiast 🕰️ | Swapping and selling unique retro finds | Let's cherish the charm of the past! #VintageSwap #RetroCollector",
+                            UserEmail = "lillian.baker@example.com",
+                            UserFirstName = "Lillian",
+                            UserHPNum = "90128543",
+                            UserLastName = "Baker",
+                            UserLastOnline = new DateTime(2024, 2, 2, 1, 26, 5, 803, DateTimeKind.Local).AddTicks(1350),
+                            UserName = "VintageCollector",
+                            UserPassword = "AQAAAAIAAYagAAAAEIc+/AbhJyPtemkA0qORyXrKdYaBDpZPFhL7QnwkJwQ1YyzSkm3G4+27O2OAAnwU3A==",
+                            UserRegDate = new DateTime(2024, 2, 2, 1, 26, 5, 803, DateTimeKind.Local).AddTicks(1331)
+                        },
+                        new
+                        {
+                            Id = 15,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserDescription = "Animal lover and pet enthusiast 🐾 | Swapping and selling pet accessories and supplies | Let's pamper our furry friends together! #PetSwap #AnimalCare",
+                            UserEmail = "david.nguyen@example.com",
+                            UserFirstName = "David",
+                            UserHPNum = "87656789",
+                            UserLastName = "Nguyen",
+                            UserLastOnline = new DateTime(2024, 2, 2, 1, 26, 5, 849, DateTimeKind.Local).AddTicks(7154),
+                            UserName = "PetLover21",
+                            UserPassword = "AQAAAAIAAYagAAAAEPteNeDBBS96Web8+gk9HinPciJ228eMF3IQGCq9DhWBXHOUQxgbBP+K9g8Boxck0w==",
+                            UserRegDate = new DateTime(2024, 2, 2, 1, 26, 5, 849, DateTimeKind.Local).AddTicks(7135)
+                        },
+                        new
+                        {
+                            Id = 16,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserDescription = "Film buff and cinephile 🎬 | Swapping and selling DVDs, Blu-rays, and movie memorabilia | Let's share our favorite cinematic experiences! #FilmSwap #Cinephilia",
+                            UserEmail = "rachel.mitchell@example.com",
+                            UserFirstName = "Rachel",
+                            UserHPNum = "9012654321",
+                            UserLastName = "Mitchell",
+                            UserLastOnline = new DateTime(2024, 2, 2, 1, 26, 5, 896, DateTimeKind.Local).AddTicks(2163),
+                            UserName = "FilmBuff87",
+                            UserPassword = "AQAAAAIAAYagAAAAEMcyM3KTuq81Y7iMTxJWK6z7h1oqvdppbrtq81xhKNnW7sjNpU1tqvxd5Hr5J180qQ==",
+                            UserRegDate = new DateTime(2024, 2, 2, 1, 26, 5, 896, DateTimeKind.Local).AddTicks(2144)
+                        },
+                        new
+                        {
+                            Id = 17,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserDescription = "Music enthusiast and maestro 🎶 | Swapping and selling vinyl records, instruments, and music accessories | Let's create a symphony of sounds! #MusicSwap #MelodyMaker",
+                            UserEmail = "daniel.garcia@example.com",
+                            UserFirstName = "Daniel",
+                            UserHPNum = "8765567890",
+                            UserLastName = "Garcia",
+                            UserLastOnline = new DateTime(2024, 2, 2, 1, 26, 5, 941, DateTimeKind.Local).AddTicks(2803),
+                            UserName = "MusicMaestro",
+                            UserPassword = "AQAAAAIAAYagAAAAEC3dTpLP86/aaQEru3UUzU/fcZNgIe6ZWBaOcQLq/VZFmV43LRZWpC9APp0zmAk38g==",
+                            UserRegDate = new DateTime(2024, 2, 2, 1, 26, 5, 941, DateTimeKind.Local).AddTicks(2789)
+                        },
+                        new
+                        {
+                            Id = 18,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserDescription = "DIY crafts enthusiast and artisan ✂️ | Swapping and selling handmade crafts and DIY supplies | Let's unleash our creative spirits! #CraftSwap #DIYArtisan",
+                            UserEmail = "ava.turner@example.com",
+                            UserFirstName = "Ava",
+                            UserHPNum = "9012543210",
+                            UserLastName = "Turner",
+                            UserLastOnline = new DateTime(2024, 2, 2, 1, 26, 5, 986, DateTimeKind.Local).AddTicks(6334),
+                            UserName = "DIYCraftsman",
+                            UserPassword = "AQAAAAIAAYagAAAAEJBdlaHg7g/R5FVpmGfTYYTmqMbCcuAWAyV9CTGIBYSFThR5HCx3ns7z3pa178pMJQ==",
+                            UserRegDate = new DateTime(2024, 2, 2, 1, 26, 5, 986, DateTimeKind.Local).AddTicks(6316)
+                        },
+                        new
+                        {
+                            Id = 19,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserDescription = "Food lover and culinary adventurer 🍲 | Swapping and selling gourmet ingredients and kitchenware | Let's savor the flavors of the world! #FoodSwap #CulinaryExplorer",
+                            UserEmail = "isaac.evans@example.com",
+                            UserFirstName = "Isaac",
+                            UserHPNum = "8765678901",
+                            UserLastName = "Evans",
+                            UserLastOnline = new DateTime(2024, 2, 2, 1, 26, 6, 34, DateTimeKind.Local).AddTicks(4468),
+                            UserName = "FoodieExplorer",
+                            UserPassword = "AQAAAAIAAYagAAAAEHG9cK5iGu1rIPsK57pvNvJ40O9bzouKeYnMntW+AvTiyMMVhn9P/M853GlGfeSlJg==",
+                            UserRegDate = new DateTime(2024, 2, 2, 1, 26, 6, 34, DateTimeKind.Local).AddTicks(4454)
+                        },
+                        new
+                        {
+                            Id = 20,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserDescription = "Fitness fanatic committed to a healthy lifestyle 💪 | Swapping and selling workout plans and fitness gear | Let's crush our fitness goals together! #FitnessSwap #HealthJunkie",
+                            UserEmail = "lily.carter@example.com",
+                            UserFirstName = "Lily",
+                            UserHPNum = "9012432109",
+                            UserLastName = "Carter",
+                            UserLastOnline = new DateTime(2024, 2, 2, 1, 26, 6, 81, DateTimeKind.Local).AddTicks(2576),
+                            UserName = "FitnessFanatic",
+                            UserPassword = "AQAAAAIAAYagAAAAEJqqKYXHWwlQnhqbhv34/0DSfWGR8kW0dD4yI8+ae690mBMWAm3MJeT+v5qDdeVQHQ==",
+                            UserRegDate = new DateTime(2024, 2, 2, 1, 26, 6, 81, DateTimeKind.Local).AddTicks(2561)
+                        },
+                        new
+                        {
+                            Id = 21,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserDescription = "Tech geek exploring the latest gadgets and innovations 🤖 | Swapping and selling tech accessories and devices | Let's embrace the digital revolution! #TechSwap #GadgetGeek",
+                            UserEmail = "logan.thompson@example.com",
+                            UserFirstName = "Logan",
+                            UserHPNum = "8765789012",
+                            UserLastName = "Thompson",
+                            UserLastOnline = new DateTime(2024, 2, 2, 1, 26, 6, 125, DateTimeKind.Local).AddTicks(9870),
+                            UserName = "TechGeek2024",
+                            UserPassword = "AQAAAAIAAYagAAAAEG8RQ6LoqiGFFz1mA4mbZW3sh8Po8FoqWW6VM87IkzCvGPEqL4mVLiBQYqmWAki7jQ==",
+                            UserRegDate = new DateTime(2024, 2, 2, 1, 26, 6, 125, DateTimeKind.Local).AddTicks(9852)
+                        },
+                        new
+                        {
+                            Id = 22,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserDescription = "Plant enthusiast with a green thumb 🌿 | Swapping and selling unique plants and gardening tools | Let's cultivate our love for nature! #PlantSwap #GreenLiving",
+                            UserEmail = "sophia.williams@example.com",
+                            UserFirstName = "Sophia",
+                            UserHPNum = "9012321098",
+                            UserLastName = "Williams",
+                            UserLastOnline = new DateTime(2024, 2, 2, 1, 26, 6, 172, DateTimeKind.Local).AddTicks(7482),
+                            UserName = "PlantEnthusiast",
+                            UserPassword = "AQAAAAIAAYagAAAAEHLfmm7g5MMuPBZkmvFVGyu50eIORC45kgX2YCtHyHsJO3jCQinsStwws9lahrTQ8g==",
+                            UserRegDate = new DateTime(2024, 2, 2, 1, 26, 6, 172, DateTimeKind.Local).AddTicks(7468)
+                        },
+                        new
+                        {
+                            Id = 23,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserDescription = "Travel enthusiast with a passion for exploration ✈️ | Swapping and selling travel gear and accessories | Let's embark on new adventures! #TravelSwap #Wanderlust",
+                            UserEmail = "leo.hernandez@example.com",
+                            UserFirstName = "Leo",
+                            UserHPNum = "8765890123",
+                            UserLastName = "Hernandez",
+                            UserLastOnline = new DateTime(2024, 2, 2, 1, 26, 6, 219, DateTimeKind.Local).AddTicks(6887),
+                            UserName = "TravelExplorer",
+                            UserPassword = "AQAAAAIAAYagAAAAEMqihvDux/jGkPODV/7IFNCuWcHPwXhHSzJKYsGNvl4MGVnpoDQbJDoen6YdhfvWSQ==",
+                            UserRegDate = new DateTime(2024, 2, 2, 1, 26, 6, 219, DateTimeKind.Local).AddTicks(6859)
+                        },
+                        new
+                        {
+                            Id = 24,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserDescription = "Board game enthusiast and strategist 🎲 | Swapping and selling classic and modern board games | Let's have fun game nights! #GameSwap #BoardGameMaster",
+                            UserEmail = "sophie.turner@example.com",
+                            UserFirstName = "Sophie",
+                            UserHPNum = "9012210987",
+                            UserLastName = "Turner",
+                            UserLastOnline = new DateTime(2024, 2, 2, 1, 26, 6, 265, DateTimeKind.Local).AddTicks(7733),
+                            UserName = "BoardGameMaster",
+                            UserPassword = "AQAAAAIAAYagAAAAEKC2TY3Bmta7nGMIzh9hqjMWucYDT3G50p4STPPn/UDEb3wfw+icddMCXe4RXYT4RA==",
+                            UserRegDate = new DateTime(2024, 2, 2, 1, 26, 6, 265, DateTimeKind.Local).AddTicks(7713)
+                        },
+                        new
+                        {
+                            Id = 25,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserDescription = "Fashion-forward individual with an eye for style 👗🕶️ | Swapping and selling trendy fashion items | Let's stay ahead in the fashion game! #FashionSwap #StyleInnovator",
+                            UserEmail = "mason.ward@example.com",
+                            UserFirstName = "Mason",
+                            UserHPNum = "8765987654",
+                            UserLastName = "Ward",
+                            UserLastOnline = new DateTime(2024, 2, 2, 1, 26, 6, 316, DateTimeKind.Local).AddTicks(4669),
+                            UserName = "FashionForward",
+                            UserPassword = "AQAAAAIAAYagAAAAEO7m1YxQ9z4sKCUlptCNXEFMZ/CeKDLeavU68Lj4j8tRMt468J6GTfk+/lpH82kqrg==",
+                            UserRegDate = new DateTime(2024, 2, 2, 1, 26, 6, 316, DateTimeKind.Local).AddTicks(4655)
+                        },
+                        new
+                        {
+                            Id = 26,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserDescription = "Tech innovator and early adopter of cutting-edge tech 🚀 | Swapping and selling innovative gadgets | Let's redefine the digital experience! #TechSwap #InnovationGeek",
+                            UserEmail = "zoe.barnes@example.com",
+                            UserFirstName = "Zoe",
+                            UserHPNum = "9012109876",
+                            UserLastName = "Barnes",
+                            UserLastOnline = new DateTime(2024, 2, 2, 1, 26, 6, 363, DateTimeKind.Local).AddTicks(1239),
+                            UserName = "TechInnovator",
+                            UserPassword = "AQAAAAIAAYagAAAAEBBmCfTpv++5GbTreqtm1dRJSPYiuRryLGwPvEm81FqzpR671TN0d4D5LTcNWeBOMA==",
+                            UserRegDate = new DateTime(2024, 2, 2, 1, 26, 6, 363, DateTimeKind.Local).AddTicks(1221)
+                        },
+                        new
+                        {
+                            Id = 27,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserDescription = "Music explorer with a diverse taste in melodies 🎵 | Swapping and selling rare music albums and instruments | Let's discover new rhythms! #MusicSwap #SoundExplorer",
+                            UserEmail = "natalie.johnson@example.com",
+                            UserFirstName = "Natalie",
+                            UserHPNum = "8765098765",
+                            UserLastName = "Johnson",
+                            UserLastOnline = new DateTime(2024, 2, 2, 1, 26, 6, 408, DateTimeKind.Local).AddTicks(3110),
+                            UserName = "MusicExplorer",
+                            UserPassword = "AQAAAAIAAYagAAAAEOFdW1e1OKWloLC3bb/57Z+PEbpD24K7GT9fHTvR2Huq1Eb5sH7Owx1Pzp3OWd3nUg==",
+                            UserRegDate = new DateTime(2024, 2, 2, 1, 26, 6, 408, DateTimeKind.Local).AddTicks(3096)
+                        },
+                        new
+                        {
+                            Id = 28,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserDescription = "Artisan crafting unique handmade artworks and crafts 🎨 | Swapping and selling one-of-a-kind creations | Let's appreciate the beauty of craftsmanship! #ArtisanSwap #CraftedBeauty",
+                            UserEmail = "elijah.fisher@example.com",
+                            UserFirstName = "Elijah",
+                            UserHPNum = "9012987654",
+                            UserLastName = "Fisher",
+                            UserLastOnline = new DateTime(2024, 2, 2, 1, 26, 6, 453, DateTimeKind.Local).AddTicks(878),
+                            UserName = "ArtisanCrafts",
+                            UserPassword = "AQAAAAIAAYagAAAAEFRyRI7ZOBLBj2rjzLlLfKgPnBJxKixvc3ez7NYomHANMDtb2we6g5/9meHxN6UXGA==",
+                            UserRegDate = new DateTime(2024, 2, 2, 1, 26, 6, 453, DateTimeKind.Local).AddTicks(864)
+                        },
+                        new
+                        {
+                            Id = 29,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserDescription = "Culinary connoisseur and food enthusiast 🍳 | Swapping and selling gourmet ingredients and kitchen tools | Let's create delicious masterpieces! #CulinarySwap #FoodieDelight",
+                            UserEmail = "hannah.clark@example.com",
+                            UserFirstName = "Hannah",
+                            UserHPNum = "8765234012",
+                            UserLastName = "Clark",
+                            UserLastOnline = new DateTime(2024, 2, 2, 1, 26, 6, 497, DateTimeKind.Local).AddTicks(8931),
+                            UserName = "CulinaryConnoisseur",
+                            UserPassword = "AQAAAAIAAYagAAAAEIQMq9OojajC0L46BwLNXdDBvwhmvyf4Wuz5ra6MtQmI6uFYdL20TWWtCos100v9og==",
+                            UserRegDate = new DateTime(2024, 2, 2, 1, 26, 6, 497, DateTimeKind.Local).AddTicks(8917)
+                        },
+                        new
+                        {
+                            Id = 30,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            UserDescription = "Board game enthusiast organizing epic game nights 🎲 | Swapping and selling classic and strategy board games | Let's roll the dice and have fun! #BoardGameSwap #GameNightOrganizer",
+                            UserEmail = "caleb.roberts@example.com",
+                            UserFirstName = "Caleb",
+                            UserHPNum = "9012765432",
+                            UserLastName = "Roberts",
+                            UserLastOnline = new DateTime(2024, 2, 2, 1, 26, 6, 542, DateTimeKind.Local).AddTicks(7278),
+                            UserName = "BoardGameEnthusiast",
+                            UserPassword = "AQAAAAIAAYagAAAAEEvbWD54W9lgHB7wozzoDZPbOwAKKMCcNYJMtrywY/4YFrIu7UFcVWmRm6YOr7bYvQ==",
+                            UserRegDate = new DateTime(2024, 2, 2, 1, 26, 6, 542, DateTimeKind.Local).AddTicks(7263)
                         });
                 });
 
@@ -624,8 +999,8 @@ namespace Sellora.Server.Migrations
                             Id = 1,
                             CategoryName = "Cars",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(4145),
-                            DateUpdated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(4147),
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8708),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8717),
                             UpdatedBy = "System"
                         },
                         new
@@ -633,8 +1008,8 @@ namespace Sellora.Server.Migrations
                             Id = 2,
                             CategoryName = "Services",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(4150),
-                            DateUpdated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(4150),
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8731),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8741),
                             UpdatedBy = "System"
                         },
                         new
@@ -642,8 +1017,8 @@ namespace Sellora.Server.Migrations
                             Id = 3,
                             CategoryName = "Property",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(4152),
-                            DateUpdated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(4152),
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8755),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8765),
                             UpdatedBy = "System"
                         },
                         new
@@ -651,8 +1026,8 @@ namespace Sellora.Server.Migrations
                             Id = 4,
                             CategoryName = "Electronics",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(4154),
-                            DateUpdated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(4154),
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8774),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8783),
                             UpdatedBy = "System"
                         },
                         new
@@ -660,8 +1035,8 @@ namespace Sellora.Server.Migrations
                             Id = 5,
                             CategoryName = "Fashion",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(4155),
-                            DateUpdated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(4156),
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8793),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8802),
                             UpdatedBy = "System"
                         },
                         new
@@ -669,8 +1044,8 @@ namespace Sellora.Server.Migrations
                             Id = 6,
                             CategoryName = "Luxury",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(4157),
-                            DateUpdated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(4157),
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8812),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8822),
                             UpdatedBy = "System"
                         },
                         new
@@ -678,8 +1053,8 @@ namespace Sellora.Server.Migrations
                             Id = 7,
                             CategoryName = "Toys & Hobbies",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(4159),
-                            DateUpdated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(4159),
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8836),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8846),
                             UpdatedBy = "System"
                         },
                         new
@@ -687,8 +1062,8 @@ namespace Sellora.Server.Migrations
                             Id = 8,
                             CategoryName = "Games & Gaming",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(4160),
-                            DateUpdated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(4161),
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8855),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8864),
                             UpdatedBy = "System"
                         },
                         new
@@ -696,8 +1071,8 @@ namespace Sellora.Server.Migrations
                             Id = 9,
                             CategoryName = "Home Living",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(4162),
-                            DateUpdated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(4163),
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8873),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8883),
                             UpdatedBy = "System"
                         },
                         new
@@ -705,8 +1080,8 @@ namespace Sellora.Server.Migrations
                             Id = 10,
                             CategoryName = "Appliances",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(4164),
-                            DateUpdated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(4164),
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8892),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8907),
                             UpdatedBy = "System"
                         },
                         new
@@ -714,8 +1089,8 @@ namespace Sellora.Server.Migrations
                             Id = 11,
                             CategoryName = "Parenthood",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(4165),
-                            DateUpdated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(4166),
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8921),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8926),
                             UpdatedBy = "System"
                         },
                         new
@@ -723,8 +1098,8 @@ namespace Sellora.Server.Migrations
                             Id = 12,
                             CategoryName = "Health & Food",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(4167),
-                            DateUpdated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(4168),
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8940),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8949),
                             UpdatedBy = "System"
                         },
                         new
@@ -732,8 +1107,8 @@ namespace Sellora.Server.Migrations
                             Id = 13,
                             CategoryName = "Sports",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(4169),
-                            DateUpdated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(4169),
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8959),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8968),
                             UpdatedBy = "System"
                         },
                         new
@@ -741,8 +1116,8 @@ namespace Sellora.Server.Migrations
                             Id = 14,
                             CategoryName = "Pet Supplies",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(4171),
-                            DateUpdated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(4171),
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8978),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8987),
                             UpdatedBy = "System"
                         },
                         new
@@ -750,8 +1125,17 @@ namespace Sellora.Server.Migrations
                             Id = 15,
                             CategoryName = "Jobs",
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(4172),
-                            DateUpdated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(4173),
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8992),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(9006),
+                            UpdatedBy = "System"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            CategoryName = "Other Items",
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(9016),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(9024),
                             UpdatedBy = "System"
                         });
                 });
@@ -827,6 +1211,1448 @@ namespace Sellora.Server.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Items");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AppUserId = 1,
+                            CategoryId = 4,
+                            Condition = "Well Used",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 1334,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(6588),
+                            ItemDescription = "Very good Keyboard, Served me for many years. Hope to find a new good owner for it.",
+                            ItemLikes = 23,
+                            ItemLocation = "Tampines West Street 42",
+                            ItemName = "Tofu65 Keyboard",
+                            ItemPrice = 200,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AppUserId = 2,
+                            CategoryId = 5,
+                            Condition = "Excellent",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 987,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(6616),
+                            ItemDescription = "Stylish vintage leather jacket in excellent condition. A timeless fashion piece for any wardrobe.",
+                            ItemLikes = 45,
+                            ItemLocation = "Orchard Road, Singapore",
+                            ItemName = "Vintage Leather Jacket",
+                            ItemPrice = 80,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AppUserId = 3,
+                            CategoryId = 13,
+                            Condition = "Like New",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 1222,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(6639),
+                            ItemDescription = "Giant Talon mountain bike in excellent condition. Perfect for off-road adventures and trail riding.",
+                            ItemLikes = 78,
+                            ItemLocation = "Bukit Timah Nature Reserve",
+                            ItemName = "Mountain Bike - Giant Talon",
+                            ItemPrice = 500,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 4,
+                            AppUserId = 4,
+                            CategoryId = 9,
+                            Condition = "Used",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 876,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(6664),
+                            ItemDescription = "Complete smart home security system with cameras and sensors. Enhance your home's safety with advanced technology.",
+                            ItemLikes = 30,
+                            ItemLocation = "Jurong West Street 21",
+                            ItemName = "Smart Home Security System",
+                            ItemPrice = 150,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 5,
+                            AppUserId = 5,
+                            CategoryId = 7,
+                            Condition = "Good",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 543,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(6693),
+                            ItemDescription = "Beautiful antique chess set with intricate detailing. Perfect for chess enthusiasts and collectors.",
+                            ItemLikes = 15,
+                            ItemLocation = "Katong, Singapore",
+                            ItemName = "Antique Chess Set",
+                            ItemPrice = 120,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 6,
+                            AppUserId = 6,
+                            CategoryId = 10,
+                            Condition = "Slightly Used",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 654,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(6749),
+                            ItemDescription = "Powerful KitchenAid stand mixer, perfect for baking and cooking. In great condition, ready to mix up some delicious recipes.",
+                            ItemLikes = 40,
+                            ItemLocation = "Serangoon Avenue 4",
+                            ItemName = "KitchenAid Stand Mixer",
+                            ItemPrice = 250,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 7,
+                            AppUserId = 7,
+                            CategoryId = 11,
+                            Condition = "Excellent",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 765,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(6768),
+                            ItemDescription = "Chicco Bravo baby stroller in excellent condition. Stylish and comfortable for your little one.",
+                            ItemLikes = 25,
+                            ItemLocation = "Ang Mo Kio, Singapore",
+                            ItemName = "Baby Stroller - Chicco Bravo",
+                            ItemPrice = 180,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 8,
+                            AppUserId = 8,
+                            CategoryId = 12,
+                            Condition = "New",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 876,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(6792),
+                            ItemDescription = "Subscription to a healthy meal prep service. Enjoy nutritious and delicious meals delivered to your doorstep.",
+                            ItemLikes = 60,
+                            ItemLocation = "Novena, Singapore",
+                            ItemName = "Healthy Meal Prep Service",
+                            ItemPrice = 50,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 9,
+                            AppUserId = 9,
+                            CategoryId = 13,
+                            Condition = "Like New",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 987,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(6815),
+                            ItemDescription = "Complete yoga mat and accessories set. Everything you need for a fulfilling yoga practice.",
+                            ItemLikes = 35,
+                            ItemLocation = "Clementi, Singapore",
+                            ItemName = "Yoga Mat and Accessories Set",
+                            ItemPrice = 40,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 10,
+                            AppUserId = 10,
+                            CategoryId = 14,
+                            Condition = "Used",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 543,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(6834),
+                            ItemDescription = "Multi-level cat tree condo for your feline friend. Provides entertainment and a cozy space for your cat to relax.",
+                            ItemLikes = 18,
+                            ItemLocation = "Woodlands, Singapore",
+                            ItemName = "Cat Tree Condo",
+                            ItemPrice = 60,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 11,
+                            AppUserId = 11,
+                            CategoryId = 2,
+                            Condition = "Available",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 765,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(6858),
+                            ItemDescription = "Offering part-time graphic design services. Experienced designer ready to bring your ideas to life.",
+                            ItemLikes = 22,
+                            ItemLocation = "Chinatown, Singapore",
+                            ItemName = "Part-time Graphic Design Services",
+                            ItemPrice = 30,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 12,
+                            AppUserId = 12,
+                            CategoryId = 1,
+                            Condition = "Good",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 1102,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(6900),
+                            ItemDescription = "Xiaomi M365 electric scooter in good condition. Perfect for commuting and exploring the city with ease.",
+                            ItemLikes = 33,
+                            ItemLocation = "Raffles Place, Singapore",
+                            ItemName = "Electric Scooter - Xiaomi M365",
+                            ItemPrice = 300,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 13,
+                            AppUserId = 13,
+                            CategoryId = 4,
+                            Condition = "Like New",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 987,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(6924),
+                            ItemDescription = "Complete home theater system with surround sound speakers and HD projector. Elevate your movie nights at home.",
+                            ItemLikes = 42,
+                            ItemLocation = "Hougang, Singapore",
+                            ItemName = "Home Theater System",
+                            ItemPrice = 450,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 14,
+                            AppUserId = 14,
+                            CategoryId = 9,
+                            Condition = "Excellent",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 876,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(6943),
+                            ItemDescription = "L-shaped leather sofa in excellent condition. Stylish and comfortable for your living room.",
+                            ItemLikes = 38,
+                            ItemLocation = "Bedok, Singapore",
+                            ItemName = "Leather Sofa - L-Shaped",
+                            ItemPrice = 600,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 15,
+                            AppUserId = 15,
+                            CategoryId = 8,
+                            Condition = "Brand New",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 1234,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(6971),
+                            ItemDescription = "Brand new PlayStation 5 gaming console. Unopened and ready for an immersive gaming experience.",
+                            ItemLikes = 50,
+                            ItemLocation = "Yishun, Singapore",
+                            ItemName = "Gaming Console - PlayStation 5",
+                            ItemPrice = 700,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 16,
+                            AppUserId = 16,
+                            CategoryId = 6,
+                            Condition = "Used",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 654,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(6995),
+                            ItemDescription = "Vintage Polaroid camera in good working condition. Capture memories with the classic charm of instant photography.",
+                            ItemLikes = 25,
+                            ItemLocation = "Choa Chu Kang, Singapore",
+                            ItemName = "Vintage Polaroid Camera",
+                            ItemPrice = 80,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 17,
+                            AppUserId = 17,
+                            CategoryId = 4,
+                            Condition = "Like New",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 789,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7014),
+                            ItemDescription = "Apple Watch Series 6 in like-new condition. Stay connected and track your fitness with this advanced smartwatch.",
+                            ItemLikes = 28,
+                            ItemLocation = "Pasir Ris, Singapore",
+                            ItemName = "Smartwatch - Apple Watch Series 6",
+                            ItemPrice = 350,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 18,
+                            AppUserId = 18,
+                            CategoryId = 7,
+                            Condition = "Used",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 543,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7038),
+                            ItemDescription = "Bundle of classic board games for hours of family fun. Includes Monopoly, Scrabble, and Chess.",
+                            ItemLikes = 20,
+                            ItemLocation = "Tanjong Pagar, Singapore",
+                            ItemName = "Classic Board Games Bundle",
+                            ItemPrice = 40,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 19,
+                            AppUserId = 19,
+                            CategoryId = 13,
+                            Condition = "Slightly Used",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 876,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7061),
+                            ItemDescription = "Complete home gym equipment set including dumbbells, resistance bands, and yoga mat. Achieve your fitness goals at home.",
+                            ItemLikes = 36,
+                            ItemLocation = "Marina Bay, Singapore",
+                            ItemName = "Home Gym Equipment Set",
+                            ItemPrice = 300,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 20,
+                            AppUserId = 20,
+                            CategoryId = 9,
+                            Condition = "Good",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 654,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7081),
+                            ItemDescription = "Handcrafted wooden coffee table in good condition. Adds a touch of rustic charm to your living space.",
+                            ItemLikes = 15,
+                            ItemLocation = "Jurong East, Singapore",
+                            ItemName = "Handmade Wooden Coffee Table",
+                            ItemPrice = 120,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 21,
+                            AppUserId = 21,
+                            CategoryId = 10,
+                            Condition = "New",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 765,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7099),
+                            ItemDescription = "Compact and portable blender, perfect for making smoothies on the go. USB rechargeable for convenience.",
+                            ItemLikes = 23,
+                            ItemLocation = "Toa Payoh, Singapore",
+                            ItemName = "Portable Blender - USB Rechargeable",
+                            ItemPrice = 30,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 22,
+                            AppUserId = 22,
+                            CategoryId = 4,
+                            Condition = "Excellent",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 1102,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7118),
+                            ItemDescription = "Canon EOS digital camera in excellent condition. Capture stunning photos and videos with this high-quality camera.",
+                            ItemLikes = 42,
+                            ItemLocation = "Bishan, Singapore",
+                            ItemName = "Digital Camera - Canon EOS",
+                            ItemPrice = 600,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 23,
+                            AppUserId = 23,
+                            CategoryId = 5,
+                            Condition = "Like New",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 987,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7141),
+                            ItemDescription = "Fender Stratocaster electric guitar in like-new condition. Perfect for both beginners and experienced musicians.",
+                            ItemLikes = 38,
+                            ItemLocation = "Sentosa, Singapore",
+                            ItemName = "Electric Guitar - Fender Stratocaster",
+                            ItemPrice = 800,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 24,
+                            AppUserId = 24,
+                            CategoryId = 10,
+                            Condition = "Used",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 876,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7161),
+                            ItemDescription = "Samsung Family Hub smart refrigerator with touchscreen and smart home features. In good working condition.",
+                            ItemLikes = 55,
+                            ItemLocation = "Clementi, Singapore",
+                            ItemName = "Smart Refrigerator - Samsung Family Hub",
+                            ItemPrice = 1200,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 25,
+                            AppUserId = 25,
+                            CategoryId = 7,
+                            Condition = "Good",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 765,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7185),
+                            ItemDescription = "Set of collectible comic books in good condition. Dive into the world of superheroes and adventure.",
+                            ItemLikes = 20,
+                            ItemLocation = "Ang Mo Kio, Singapore",
+                            ItemName = "Collectible Comic Books Set",
+                            ItemPrice = 150,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 26,
+                            AppUserId = 26,
+                            CategoryId = 9,
+                            Condition = "Slightly Used",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 654,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7204),
+                            ItemDescription = "Roomba robot vacuum cleaner in great condition. Effortlessly keep your home clean with smart technology.",
+                            ItemLikes = 28,
+                            ItemLocation = "Woodlands, Singapore",
+                            ItemName = "Robot Vacuum Cleaner - Roomba",
+                            ItemPrice = 300,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 27,
+                            AppUserId = 27,
+                            CategoryId = 7,
+                            Condition = "Used",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 876,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7227),
+                            ItemDescription = "Bundle of educational toys for kids. Foster learning and creativity in a fun and engaging way.",
+                            ItemLikes = 15,
+                            ItemLocation = "Jurong West, Singapore",
+                            ItemName = "Kids' Educational Toys Bundle",
+                            ItemPrice = 50,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 28,
+                            AppUserId = 28,
+                            CategoryId = 13,
+                            Condition = "Good",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 1102,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7246),
+                            ItemDescription = "Complete weightlifting set with barbell and weights. Ideal for strength training at home or in the gym.",
+                            ItemLikes = 33,
+                            ItemLocation = "Yishun, Singapore",
+                            ItemName = "Weightlifting Set",
+                            ItemPrice = 200,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 29,
+                            AppUserId = 29,
+                            CategoryId = 4,
+                            Condition = "Like New",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 987,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7270),
+                            ItemDescription = "Anker Nebula portable projector in like-new condition. Enjoy movies and presentations on the big screen.",
+                            ItemLikes = 25,
+                            ItemLocation = "Toa Payoh, Singapore",
+                            ItemName = "Portable Projector - Anker Nebula",
+                            ItemPrice = 150,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 30,
+                            AppUserId = 30,
+                            CategoryId = 5,
+                            Condition = "New",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 765,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7288),
+                            ItemDescription = "Elegant handmade jewelry set including necklace and earrings. Perfect for special occasions or daily wear.",
+                            ItemLikes = 22,
+                            ItemLocation = "Marina Bay Sands, Singapore",
+                            ItemName = "Handmade Jewelry Set",
+                            ItemPrice = 80,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 31,
+                            AppUserId = 1,
+                            CategoryId = 12,
+                            Condition = "Available",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 543,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7322),
+                            ItemDescription = "Voucher for a gourmet cooking class. Learn culinary skills and enjoy a delightful cooking experience.",
+                            ItemLikes = 18,
+                            ItemLocation = "Chinatown, Singapore",
+                            ItemName = "Gourmet Cooking Class Voucher",
+                            ItemPrice = 60,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 32,
+                            AppUserId = 2,
+                            CategoryId = 4,
+                            Condition = "Like New",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 1201,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7346),
+                            ItemDescription = "DJI Mavic Air 2 drone in like-new condition. Capture breathtaking aerial footage with this advanced drone.",
+                            ItemLikes = 48,
+                            ItemLocation = "Orchard Road, Singapore",
+                            ItemName = "DJI Mavic Air 2 Drone",
+                            ItemPrice = 800,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 33,
+                            AppUserId = 3,
+                            CategoryId = 9,
+                            Condition = "Good",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 987,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7369),
+                            ItemDescription = "Sturdy home office desk in good condition. Ideal for remote work or studying from home.",
+                            ItemLikes = 32,
+                            ItemLocation = "Bukit Timah, Singapore",
+                            ItemName = "Home Office Desk",
+                            ItemPrice = 150,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 34,
+                            AppUserId = 4,
+                            CategoryId = 13,
+                            Condition = "Used",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 876,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7388),
+                            ItemDescription = "Collection of vintage vinyl records in good condition. Enjoy the classic sounds of music history.",
+                            ItemLikes = 25,
+                            ItemLocation = "Tampines, Singapore",
+                            ItemName = "Vintage Vinyl Record Collection",
+                            ItemPrice = 120,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 35,
+                            AppUserId = 5,
+                            CategoryId = 10,
+                            Condition = "Slightly Used",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 654,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7407),
+                            ItemDescription = "Nest Learning smart thermostat for efficient climate control. Save energy and customize your home's temperature.",
+                            ItemLikes = 35,
+                            ItemLocation = "Katong, Singapore",
+                            ItemName = "Smart Thermostat - Nest Learning",
+                            ItemPrice = 100,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 36,
+                            AppUserId = 6,
+                            CategoryId = 7,
+                            Condition = "Good",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 543,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7431),
+                            ItemDescription = "Schwinn kids' bicycle in good condition. Perfect for young riders to learn and enjoy cycling.",
+                            ItemLikes = 18,
+                            ItemLocation = "Serangoon, Singapore",
+                            ItemName = "Kids' Bicycle - Schwinn",
+                            ItemPrice = 80,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 37,
+                            AppUserId = 7,
+                            CategoryId = 6,
+                            Condition = "New",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 765,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7449),
+                            ItemDescription = "Abstract digital art print for home decor. Add a touch of modernity to your living space.",
+                            ItemLikes = 20,
+                            ItemLocation = "Hougang, Singapore",
+                            ItemName = "Digital Art Print - Abstract",
+                            ItemPrice = 40,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 38,
+                            AppUserId = 8,
+                            CategoryId = 4,
+                            Condition = "Like New",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 876,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7468),
+                            ItemDescription = "Sony WF-1000XM4 wireless earbuds in like-new condition. Experience premium audio quality on the go.",
+                            ItemLikes = 30,
+                            ItemLocation = "Ang Mo Kio, Singapore",
+                            ItemName = "Wireless Earbuds - Sony WF-1000XM4",
+                            ItemPrice = 180,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 39,
+                            AppUserId = 9,
+                            CategoryId = 10,
+                            Condition = "Excellent",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 987,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7492),
+                            ItemDescription = "Breville Barista Express coffee maker in excellent condition. Brew barista-quality coffee at home.",
+                            ItemLikes = 40,
+                            ItemLocation = "Woodlands, Singapore",
+                            ItemName = "Coffee Maker - Breville Barista Express",
+                            ItemPrice = 300,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 40,
+                            AppUserId = 10,
+                            CategoryId = 13,
+                            Condition = "Used",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 654,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7512),
+                            ItemDescription = "Fitbit Charge 4 fitness tracker in good working condition. Monitor your health and stay active.",
+                            ItemLikes = 25,
+                            ItemLocation = "Tanjong Pagar, Singapore",
+                            ItemName = "Fitness Tracker - Fitbit Charge 4",
+                            ItemPrice = 80,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 41,
+                            AppUserId = 11,
+                            CategoryId = 9,
+                            Condition = "New",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 765,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7530),
+                            ItemDescription = "Handmade quilt with vintage-style patterns. Add warmth and style to your bedroom.",
+                            ItemLikes = 22,
+                            ItemLocation = "Toa Payoh, Singapore",
+                            ItemName = "Handmade Quilt - Vintage Style",
+                            ItemPrice = 100,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 42,
+                            AppUserId = 12,
+                            CategoryId = 4,
+                            Condition = "Like New",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 1201,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7549),
+                            ItemDescription = "Samsung 4K smart LED TV in like-new condition. Immerse yourself in stunning visuals and smart features.",
+                            ItemLikes = 55,
+                            ItemLocation = "Raffles Place, Singapore",
+                            ItemName = "Smart LED TV - Samsung 4K",
+                            ItemPrice = 700,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 43,
+                            AppUserId = 13,
+                            CategoryId = 1,
+                            Condition = "Good",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 987,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7567),
+                            ItemDescription = "Segway Ninebot electric scooter in good condition. Convenient and eco-friendly mode of transportation.",
+                            ItemLikes = 32,
+                            ItemLocation = "Bishan, Singapore",
+                            ItemName = "Electric Scooter - Segway Ninebot",
+                            ItemPrice = 400,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 44,
+                            AppUserId = 14,
+                            CategoryId = 9,
+                            Condition = "Excellent",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 876,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7587),
+                            ItemDescription = "Modern dining table set with chairs in excellent condition. Upgrade your dining space with contemporary style.",
+                            ItemLikes = 45,
+                            ItemLocation = "Bedok, Singapore",
+                            ItemName = "Modern Dining Table Set",
+                            ItemPrice = 550,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 45,
+                            AppUserId = 15,
+                            CategoryId = 4,
+                            Condition = "Slightly Used",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 654,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7606),
+                            ItemDescription = "Wireless keyboard and mouse combo in great condition. Improve your productivity with cable-free peripherals.",
+                            ItemLikes = 28,
+                            ItemLocation = "Yishun, Singapore",
+                            ItemName = "Wireless Keyboard and Mouse Combo",
+                            ItemPrice = 50,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 46,
+                            AppUserId = 16,
+                            CategoryId = 6,
+                            Condition = "Used",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 765,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7629),
+                            ItemDescription = "Collection of vintage fountain pens in good condition. Perfect for pen enthusiasts and collectors.",
+                            ItemLikes = 25,
+                            ItemLocation = "Choa Chu Kang, Singapore",
+                            ItemName = "Vintage Fountain Pen Collection",
+                            ItemPrice = 90,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 47,
+                            AppUserId = 17,
+                            CategoryId = 9,
+                            Condition = "Like New",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 789,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7653),
+                            ItemDescription = "Ring Video Doorbell in like-new condition. Enhance your home security with smart doorbell features.",
+                            ItemLikes = 22,
+                            ItemLocation = "Pasir Ris, Singapore",
+                            ItemName = "Smart Doorbell - Ring Video Doorbell",
+                            ItemPrice = 120,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 48,
+                            AppUserId = 18,
+                            CategoryId = 9,
+                            Condition = "New",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 543,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7672),
+                            ItemDescription = "Set of artificial potted plants to add greenery to your home. No maintenance required!",
+                            ItemLikes = 18,
+                            ItemLocation = "Tanjong Pagar, Singapore",
+                            ItemName = "Artificial Potted Plants Set",
+                            ItemPrice = 30,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 49,
+                            AppUserId = 19,
+                            CategoryId = 13,
+                            Condition = "Used",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 876,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7691),
+                            ItemDescription = "Bundle of outdoor camping gear including tent, sleeping bag, and camping stove. Gear up for your next adventure.",
+                            ItemLikes = 36,
+                            ItemLocation = "Marina Bay, Singapore",
+                            ItemName = "Outdoor Camping Gear Bundle",
+                            ItemPrice = 200,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 50,
+                            AppUserId = 20,
+                            CategoryId = 9,
+                            Condition = "Good",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 654,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7714),
+                            ItemDescription = "Sturdy wooden bookshelf in good condition. Organize your book collection with style.",
+                            ItemLikes = 15,
+                            ItemLocation = "Jurong East, Singapore",
+                            ItemName = "Wooden Bookshelf",
+                            ItemPrice = 100,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 51,
+                            AppUserId = 21,
+                            CategoryId = 4,
+                            Condition = "New",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 765,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7733),
+                            ItemDescription = "Wireless charging pad for convenient charging of your devices. Stay powered up with this sleek accessory.",
+                            ItemLikes = 23,
+                            ItemLocation = "Toa Payoh, Singapore",
+                            ItemName = "Wireless Charging Pad",
+                            ItemPrice = 20,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 52,
+                            AppUserId = 22,
+                            CategoryId = 4,
+                            Condition = "Like New",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 1201,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7753),
+                            ItemDescription = "Garmin Venu 2 smartwatch in like-new condition. Track your fitness and stay connected with this advanced wearable.",
+                            ItemLikes = 40,
+                            ItemLocation = "Bishan, Singapore",
+                            ItemName = "Smartwatch - Garmin Venu 2",
+                            ItemPrice = 250,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 53,
+                            AppUserId = 23,
+                            CategoryId = 8,
+                            Condition = "Used",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 987,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7771),
+                            ItemDescription = "Vintage vinyl record player in good working condition. Enjoy your favorite tunes with a touch of nostalgia.",
+                            ItemLikes = 28,
+                            ItemLocation = "Sentosa, Singapore",
+                            ItemName = "Vintage Vinyl Record Player",
+                            ItemPrice = 180,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 54,
+                            AppUserId = 24,
+                            CategoryId = 4,
+                            Condition = "Good",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 876,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7790),
+                            ItemDescription = "Portable Bluetooth speaker in good condition. Take your music wherever you go with this compact device.",
+                            ItemLikes = 25,
+                            ItemLocation = "Clementi, Singapore",
+                            ItemName = "Portable Bluetooth Speaker",
+                            ItemPrice = 50,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 55,
+                            AppUserId = 25,
+                            CategoryId = 10,
+                            Condition = "Excellent",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 654,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7813),
+                            ItemDescription = "KitchenAid electric mixer in excellent condition. Make baking and cooking a breeze with this reliable appliance.",
+                            ItemLikes = 32,
+                            ItemLocation = "Ang Mo Kio, Singapore",
+                            ItemName = "Electric Mixer - KitchenAid",
+                            ItemPrice = 120,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 56,
+                            AppUserId = 26,
+                            CategoryId = 7,
+                            Condition = "Used",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 765,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7833),
+                            ItemDescription = "Collection of popular board games in good condition. Bring friends and family together for game night fun.",
+                            ItemLikes = 22,
+                            ItemLocation = "Woodlands, Singapore",
+                            ItemName = "Board Game Collection",
+                            ItemPrice = 60,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 57,
+                            AppUserId = 27,
+                            CategoryId = 9,
+                            Condition = "Like New",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 654,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7852),
+                            ItemDescription = "Smart home security camera in like-new condition. Monitor your home remotely for added peace of mind.",
+                            ItemLikes = 35,
+                            ItemLocation = "Jurong West, Singapore",
+                            ItemName = "Smart Home Security Camera",
+                            ItemPrice = 90,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 58,
+                            AppUserId = 28,
+                            CategoryId = 6,
+                            Condition = "Used",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 543,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7875),
+                            ItemDescription = "Vintage Royal typewriter in good working condition. Perfect for writers and collectors of retro items.",
+                            ItemLikes = 18,
+                            ItemLocation = "Yishun, Singapore",
+                            ItemName = "Vintage Typewriter - Royal",
+                            ItemPrice = 100,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 59,
+                            AppUserId = 29,
+                            CategoryId = 9,
+                            Condition = "New",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 876,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7894),
+                            ItemDescription = "Fiddle Leaf Fig indoor plant for a touch of greenery in your home. Low maintenance and aesthetically pleasing.",
+                            ItemLikes = 20,
+                            ItemLocation = "Toa Payoh, Singapore",
+                            ItemName = "Indoor Plant - Fiddle Leaf Fig",
+                            ItemPrice = 30,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 60,
+                            AppUserId = 30,
+                            CategoryId = 8,
+                            Condition = "Slightly Used",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 765,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7913),
+                            ItemDescription = "Wacom Intuos digital art tablet in great condition. Ideal for digital artists and graphic designers.",
+                            ItemLikes = 30,
+                            ItemLocation = "Toa Payoh, Singapore",
+                            ItemName = "Digital Art Tablet - Wacom Intuos",
+                            ItemPrice = 80,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 61,
+                            AppUserId = 1,
+                            CategoryId = 13,
+                            Condition = "New",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 543,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7937),
+                            ItemDescription = "Set of fitness resistance bands for effective home workouts. Stay fit and healthy with these versatile exercise tools.",
+                            ItemLikes = 25,
+                            ItemLocation = "Chinatown, Singapore",
+                            ItemName = "Fitness Resistance Bands Set",
+                            ItemPrice = 20,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 62,
+                            AppUserId = 2,
+                            CategoryId = 9,
+                            Condition = "Used",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 654,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(7956),
+                            ItemDescription = "iRobot Roomba robot vacuum cleaner in good working condition. Effortlessly keep your home clean with smart technology.",
+                            ItemLikes = 28,
+                            ItemLocation = "Chinatown, Singapore",
+                            ItemName = "Robot Vacuum Cleaner - iRobot Roomba",
+                            ItemPrice = 300,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 63,
+                            AppUserId = 3,
+                            CategoryId = 8,
+                            Condition = "Like New",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 987,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8003),
+                            ItemDescription = "Logitech G Pro wireless gaming mouse in like-new condition. Elevate your gaming experience with precision and speed.",
+                            ItemLikes = 32,
+                            ItemLocation = "Bukit Timah, Singapore",
+                            ItemName = "Wireless Gaming Mouse - Logitech G Pro",
+                            ItemPrice = 80,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 64,
+                            AppUserId = 4,
+                            CategoryId = 10,
+                            Condition = "Excellent",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 876,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8022),
+                            ItemDescription = "Portable espresso machine in excellent condition. Enjoy barista-quality coffee wherever you go.",
+                            ItemLikes = 25,
+                            ItemLocation = "Bedok, Singapore",
+                            ItemName = "Portable Espresso Machine",
+                            ItemPrice = 100,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 65,
+                            AppUserId = 5,
+                            CategoryId = 1,
+                            Condition = "Like New",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 654,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8045),
+                            ItemDescription = "Foldable electric scooter in like-new condition. Commute with ease and style using this convenient mode of transportation.",
+                            ItemLikes = 35,
+                            ItemLocation = "Tampines, Singapore",
+                            ItemName = "Foldable Electric Scooter",
+                            ItemPrice = 350,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 66,
+                            AppUserId = 6,
+                            CategoryId = 4,
+                            Condition = "Excellent",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 765,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8065),
+                            ItemDescription = "Sony WH-1000XM4 Bluetooth headphones in excellent condition. Immerse yourself in high-quality audio with noise-canceling technology.",
+                            ItemLikes = 42,
+                            ItemLocation = "Hougang, Singapore",
+                            ItemName = "Bluetooth Headphones - Sony WH-1000XM4",
+                            ItemPrice = 250,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 67,
+                            AppUserId = 7,
+                            CategoryId = 4,
+                            Condition = "Used",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 876,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8088),
+                            ItemDescription = "Nikon F2 vintage camera in good working condition. Capture timeless moments with this classic film camera.",
+                            ItemLikes = 30,
+                            ItemLocation = "Serangoon, Singapore",
+                            ItemName = "Vintage Camera - Nikon F2",
+                            ItemPrice = 180,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 68,
+                            AppUserId = 8,
+                            CategoryId = 9,
+                            Condition = "New",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 543,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8107),
+                            ItemDescription = "Set of smart LED bulbs for customizable lighting. Transform your home with modern and energy-efficient lighting.",
+                            ItemLikes = 18,
+                            ItemLocation = "Ang Mo Kio, Singapore",
+                            ItemName = "Smart LED Bulbs Set",
+                            ItemPrice = 40,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 69,
+                            AppUserId = 9,
+                            CategoryId = 5,
+                            Condition = "Like New",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 654,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8126),
+                            ItemDescription = "Yamaha P-125 digital piano in like-new condition. Perfect for aspiring musicians and music enthusiasts.",
+                            ItemLikes = 25,
+                            ItemLocation = "Woodlands, Singapore",
+                            ItemName = "Digital Piano - Yamaha P-125",
+                            ItemPrice = 600,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 70,
+                            AppUserId = 10,
+                            CategoryId = 8,
+                            Condition = "Slightly Used",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 876,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8144),
+                            ItemDescription = "Razer BlackWidow wireless gaming keyboard in great condition. Enhance your gaming setup with this high-performance keyboard.",
+                            ItemLikes = 28,
+                            ItemLocation = "Jurong West, Singapore",
+                            ItemName = "Wireless Gaming Keyboard - Razer BlackWidow",
+                            ItemPrice = 120,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 71,
+                            AppUserId = 11,
+                            CategoryId = 4,
+                            Condition = "Excellent",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 987,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8164),
+                            ItemDescription = "Canon EF 24-70mm professional camera lens in excellent condition. Capture sharp and detailed images with this high-quality lens.",
+                            ItemLikes = 35,
+                            ItemLocation = "Toa Payoh, Singapore",
+                            ItemName = "Professional Camera Lens - Canon EF 24-70mm",
+                            ItemPrice = 800,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 72,
+                            AppUserId = 12,
+                            CategoryId = 4,
+                            Condition = "New",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 765,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8188),
+                            ItemDescription = "Wireless charger stand for convenient charging of your devices. Stay organized and powered up with this sleek accessory.",
+                            ItemLikes = 22,
+                            ItemLocation = "Chinatown, Singapore",
+                            ItemName = "Wireless Charger Stand",
+                            ItemPrice = 30,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 73,
+                            AppUserId = 13,
+                            CategoryId = 6,
+                            Condition = "Used",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 543,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8211),
+                            ItemDescription = "Stand for vintage vinyl record players in good condition. Showcase and organize your vinyl collection with style.",
+                            ItemLikes = 18,
+                            ItemLocation = "Bishan, Singapore",
+                            ItemName = "Vintage Vinyl Record Player Stand",
+                            ItemPrice = 70,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 74,
+                            AppUserId = 14,
+                            CategoryId = 4,
+                            Condition = "Like New",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 876,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8230),
+                            ItemDescription = "ASUS ZenScreen portable monitor in like-new condition. Boost your productivity with an additional display on the go.",
+                            ItemLikes = 30,
+                            ItemLocation = "Bedok, Singapore",
+                            ItemName = "Portable Monitor - ASUS ZenScreen",
+                            ItemPrice = 200,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 75,
+                            AppUserId = 15,
+                            CategoryId = 13,
+                            Condition = "Used",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 654,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8249),
+                            ItemDescription = "Set of fitness dumbbells in good condition. Build strength and stay active with these versatile workout tools.",
+                            ItemLikes = 20,
+                            ItemLocation = "Ang Mo Kio, Singapore",
+                            ItemName = "Fitness Dumbbell Set",
+                            ItemPrice = 80,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 76,
+                            AppUserId = 16,
+                            CategoryId = 8,
+                            Condition = "Excellent",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 987,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8273),
+                            ItemDescription = "PlayStation 5 gaming console in excellent condition. Immerse yourself in the latest gaming experiences with this powerful console.",
+                            ItemLikes = 40,
+                            ItemLocation = "Clementi, Singapore",
+                            ItemName = "Gaming Console - PlayStation 5",
+                            ItemPrice = 600,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 77,
+                            AppUserId = 17,
+                            CategoryId = 9,
+                            Condition = "New",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 876,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8291),
+                            ItemDescription = "Modern wall clock to enhance your home decor. Stay punctual in style with this contemporary timepiece.",
+                            ItemLikes = 25,
+                            ItemLocation = "Hougang, Singapore",
+                            ItemName = "Modern Wall Clock",
+                            ItemPrice = 25,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 78,
+                            AppUserId = 18,
+                            CategoryId = 8,
+                            Condition = "Like New",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 654,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8315),
+                            ItemDescription = "Bose 700 wireless soundbar in like-new condition. Elevate your home entertainment experience with immersive sound.",
+                            ItemLikes = 35,
+                            ItemLocation = "Jurong West, Singapore",
+                            ItemName = "Wireless Soundbar - Bose 700",
+                            ItemPrice = 350,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 79,
+                            AppUserId = 19,
+                            CategoryId = 13,
+                            Condition = "Used",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 765,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8334),
+                            ItemDescription = "4-person camping tent in good condition. Enjoy outdoor adventures with this reliable and spacious tent.",
+                            ItemLikes = 22,
+                            ItemLocation = "Marina Bay, Singapore",
+                            ItemName = "Camping Tent - 4 Person",
+                            ItemPrice = 120,
+                            ItemStatus = 1
+                        },
+                        new
+                        {
+                            Id = 80,
+                            AppUserId = 20,
+                            CategoryId = 9,
+                            Condition = "Excellent",
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ImageUrl = "https://via.placeholder.com/300",
+                            ItemClicks = 876,
+                            ItemDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(8353),
+                            ItemDescription = "Dyson Pure Cool air purifier in excellent condition. Breathe clean air with advanced filtration technology.",
+                            ItemLikes = 30,
+                            ItemLocation = "Tanjong Pagar, Singapore",
+                            ItemName = "Air Purifier - Dyson Pure Cool",
+                            ItemPrice = 300,
+                            ItemStatus = 1
+                        });
                 });
 
             modelBuilder.Entity("Sellora.Shared.Domain.Report", b =>
@@ -837,7 +2663,8 @@ namespace Sellora.Server.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("AppUserID")
+                    b.Property<int?>("AppUserID")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<string>("CreatedBy")
@@ -851,8 +2678,8 @@ namespace Sellora.Server.Migrations
 
                     b.Property<string>("ReportContent")
                         .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
 
                     b.Property<DateTime>("ReportDate")
                         .HasColumnType("datetime2");
@@ -865,7 +2692,8 @@ namespace Sellora.Server.Migrations
                     b.Property<int?>("SaleTransactionID")
                         .HasColumnType("int");
 
-                    b.Property<int>("StaffID")
+                    b.Property<int?>("StaffID")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int?>("SwapTransactionID")
@@ -885,6 +2713,32 @@ namespace Sellora.Server.Migrations
                     b.HasIndex("SwapTransactionID");
 
                     b.ToTable("Reports");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AppUserID = 10,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ReportContent = "When I chatted with this seller, he kept asking me for photos of myself so he can see whether the item is fit for me. A little weird if you ask me...",
+                            ReportDate = new DateTime(2024, 2, 2, 1, 26, 6, 542, DateTimeKind.Local).AddTicks(9255),
+                            ReportTitle = "Suspicious Seller!",
+                            StaffID = 1,
+                            SwapTransactionID = 3
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AppUserID = 11,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ReportContent = "This buyer just never showed up after deciding on a meeting place. He was online until 5 minutes before the meeting and just MIAed me. Stopped replying after that, but still sees my messages.",
+                            ReportDate = new DateTime(2024, 2, 2, 1, 26, 6, 542, DateTimeKind.Local).AddTicks(9284),
+                            ReportTitle = "Buyer ghosted me after making me travel a far distance!",
+                            StaffID = 2,
+                            SwapTransactionID = 5
+                        });
                 });
 
             modelBuilder.Entity("Sellora.Shared.Domain.Review", b =>
@@ -913,8 +2767,8 @@ namespace Sellora.Server.Migrations
 
                     b.Property<string>("ReviewDescription")
                         .IsRequired()
-                        .HasMaxLength(500)
-                        .HasColumnType("nvarchar(500)");
+                        .HasMaxLength(1000)
+                        .HasColumnType("nvarchar(1000)");
 
                     b.Property<int>("ReviewRating")
                         .HasColumnType("int");
@@ -942,6 +2796,44 @@ namespace Sellora.Server.Migrations
                     b.HasIndex("SwapTransactionID");
 
                     b.ToTable("Reviews");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AppUserID = 1,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ReviewDate = new DateTime(2024, 2, 2, 1, 26, 6, 542, DateTimeKind.Local).AddTicks(9014),
+                            ReviewDescription = "The vintage jacket I acquired is a true gem that exudes a sense of timeless style and character.",
+                            ReviewRating = 5,
+                            ReviewTitle = "Loved the Vintage Jacket!",
+                            SwapTransactionID = 2
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AppUserID = 15,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ReviewDate = new DateTime(2024, 2, 2, 1, 26, 6, 542, DateTimeKind.Local).AddTicks(9038),
+                            ReviewDescription = "This guy sold me a BROKEN Camping Set. What kind of camping stove is one time use only? AND ITS USED. I asked for a refund and the guy just responded with: Googoo gaga not my problem. Like what kind of response is that????!?!!",
+                            ReviewRating = 0,
+                            ReviewTitle = "Terrible Seller!",
+                            SwapTransactionID = 5
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AppUserID = 10,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            ReviewDate = new DateTime(2024, 2, 2, 1, 26, 6, 542, DateTimeKind.Local).AddTicks(9056),
+                            ReviewDescription = "The camera lens was delivered to me 4 days after the estimated and guaranteed delivery date. Missed my daughter's 1st birthday. Fortunately I had my Ophone 19 pro max ultra slim exponential maximum ultimate phone.",
+                            ReviewRating = 4,
+                            ReviewTitle = "Great Camera Lens all around! Slow delivery sadly...",
+                            SwapTransactionID = 3
+                        });
                 });
 
             modelBuilder.Entity("Sellora.Shared.Domain.SaleTransaction", b =>
@@ -1006,8 +2898,8 @@ namespace Sellora.Server.Migrations
 
                     b.Property<string>("StaffDepartment")
                         .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("StaffEmail")
                         .IsRequired()
@@ -1032,8 +2924,8 @@ namespace Sellora.Server.Migrations
 
                     b.Property<string>("StaffPosition")
                         .IsRequired()
-                        .HasMaxLength(30)
-                        .HasColumnType("nvarchar(30)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
@@ -1047,14 +2939,14 @@ namespace Sellora.Server.Migrations
                         {
                             Id = 1,
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(3583),
-                            DateUpdated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(3585),
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5069),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5079),
                             StaffAddress = "Temasek Polytechnic",
                             StaffDepartment = "Full Stack Development",
                             StaffEmail = "2102197G@student.tp.edu.sg",
                             StaffFirstName = "Ryan",
                             StaffHPNum = "99991111",
-                            StaffHireDate = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(3582),
+                            StaffHireDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5051),
                             StaffLastName = "Chong",
                             StaffPosition = "Lead Developer",
                             UpdatedBy = "System"
@@ -1063,14 +2955,14 @@ namespace Sellora.Server.Migrations
                         {
                             Id = 2,
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(3590),
-                            DateUpdated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(3590),
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5112),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5122),
                             StaffAddress = "Temasek Polytechnic",
                             StaffDepartment = "Full Stack Development",
                             StaffEmail = "2203567i@student.tp.edu.sg",
                             StaffFirstName = "Lucas",
                             StaffHPNum = "99992222",
-                            StaffHireDate = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(3588),
+                            StaffHireDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5102),
                             StaffLastName = "Do",
                             StaffPosition = "Lead Developer",
                             UpdatedBy = "System"
@@ -1079,14 +2971,14 @@ namespace Sellora.Server.Migrations
                         {
                             Id = 3,
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(3593),
-                            DateUpdated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(3594),
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5159),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5169),
                             StaffAddress = "Design Avenue",
                             StaffDepartment = "User Experience Design",
                             StaffEmail = "emily.ng@example.com",
                             StaffFirstName = "Emily",
                             StaffHPNum = "88882222",
-                            StaffHireDate = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(3592),
+                            StaffHireDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5145),
                             StaffLastName = "Ng",
                             StaffPosition = "Senior UI/UX Designer",
                             UpdatedBy = "System"
@@ -1095,16 +2987,336 @@ namespace Sellora.Server.Migrations
                         {
                             Id = 4,
                             CreatedBy = "System",
-                            DateCreated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(3601),
-                            DateUpdated = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(3604),
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5197),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5206),
                             StaffAddress = "Data Center Lane",
                             StaffDepartment = "Database Management",
                             StaffEmail = "daniel.liu@example.com",
                             StaffFirstName = "Daniel",
                             StaffHPNum = "77773333",
-                            StaffHireDate = new DateTime(2024, 1, 31, 11, 18, 12, 790, DateTimeKind.Local).AddTicks(3600),
+                            StaffHireDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5187),
                             StaffLastName = "Liu",
                             StaffPosition = "Database Administrator",
+                            UpdatedBy = "System"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5234),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5244),
+                            StaffAddress = "Code Street",
+                            StaffDepartment = "Software Engineering",
+                            StaffEmail = "jessica.wong@example.com",
+                            StaffFirstName = "Jessica",
+                            StaffHPNum = "91112233",
+                            StaffHireDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5225),
+                            StaffLastName = "Wong",
+                            StaffPosition = "Software Developer",
+                            UpdatedBy = "System"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5273),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5282),
+                            StaffAddress = "Connectivity Avenue",
+                            StaffDepartment = "Network Management",
+                            StaffEmail = "ryan.tan@example.com",
+                            StaffFirstName = "Ryan",
+                            StaffHPNum = "92223344",
+                            StaffHireDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5263),
+                            StaffLastName = "Tan",
+                            StaffPosition = "Network Administrator",
+                            UpdatedBy = "System"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5310),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5324),
+                            StaffAddress = "Tech Park",
+                            StaffDepartment = "System Analysis",
+                            StaffEmail = "michelle.ng@example.com",
+                            StaffFirstName = "Michelle",
+                            StaffHPNum = "93334455",
+                            StaffHireDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5301),
+                            StaffLastName = "Ng",
+                            StaffPosition = "Systems Analyst",
+                            UpdatedBy = "System"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5354),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5363),
+                            StaffAddress = "Secure Lane",
+                            StaffDepartment = "Information Security",
+                            StaffEmail = "alex.cheng@example.com",
+                            StaffFirstName = "Alex",
+                            StaffHPNum = "94445566",
+                            StaffHireDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5339),
+                            StaffLastName = "Cheng",
+                            StaffPosition = "Security Specialist",
+                            UpdatedBy = "System"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5391),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5400),
+                            StaffAddress = "Project Street",
+                            StaffDepartment = "Project Management",
+                            StaffEmail = "emily.lim@example.com",
+                            StaffFirstName = "Emily",
+                            StaffHPNum = "95556677",
+                            StaffHireDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5377),
+                            StaffLastName = "Lim",
+                            StaffPosition = "Project Manager",
+                            UpdatedBy = "System"
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5429),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5439),
+                            StaffAddress = "Design Avenue",
+                            StaffDepartment = "Design Team",
+                            StaffEmail = "patrick.goh@example.com",
+                            StaffFirstName = "Patrick",
+                            StaffHPNum = "96667788",
+                            StaffHireDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5419),
+                            StaffLastName = "Goh",
+                            StaffPosition = "UX/UI Designer",
+                            UpdatedBy = "System"
+                        },
+                        new
+                        {
+                            Id = 11,
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5472),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5481),
+                            StaffAddress = "Data Center Lane",
+                            StaffDepartment = "Database Management",
+                            StaffEmail = "vanessa.teo@example.com",
+                            StaffFirstName = "Vanessa",
+                            StaffHPNum = "97778899",
+                            StaffHireDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5458),
+                            StaffLastName = "Teo",
+                            StaffPosition = "Database Administrator",
+                            UpdatedBy = "System"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5509),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5519),
+                            StaffAddress = "Business Street",
+                            StaffDepartment = "Business Analysis",
+                            StaffEmail = "darren.ong@example.com",
+                            StaffFirstName = "Darren",
+                            StaffHPNum = "98889900",
+                            StaffHireDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5500),
+                            StaffLastName = "Ong",
+                            StaffPosition = "Business Analyst",
+                            UpdatedBy = "System"
+                        },
+                        new
+                        {
+                            Id = 13,
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5551),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5561),
+                            StaffAddress = "Tech Support Lane",
+                            StaffDepartment = "Technical Support",
+                            StaffEmail = "samantha.tan@example.com",
+                            StaffFirstName = "Samantha",
+                            StaffHPNum = "99990011",
+                            StaffHireDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5538),
+                            StaffLastName = "Tan",
+                            StaffPosition = "Technical Support Specialist",
+                            UpdatedBy = "System"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5589),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5599),
+                            StaffAddress = "IT Management Street",
+                            StaffDepartment = "IT Management",
+                            StaffEmail = "gary.koh@example.com",
+                            StaffFirstName = "Gary",
+                            StaffHPNum = "91110022",
+                            StaffHireDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5580),
+                            StaffLastName = "Koh",
+                            StaffPosition = "IT Manager",
+                            UpdatedBy = "System"
+                        },
+                        new
+                        {
+                            Id = 15,
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5627),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5637),
+                            StaffAddress = "Testing Street",
+                            StaffDepartment = "Quality Assurance",
+                            StaffEmail = "andrew.lau@example.com",
+                            StaffFirstName = "Andrew",
+                            StaffHPNum = "91112233",
+                            StaffHireDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5618),
+                            StaffLastName = "Lau",
+                            StaffPosition = "Software Tester",
+                            UpdatedBy = "System"
+                        },
+                        new
+                        {
+                            Id = 16,
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5665),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5674),
+                            StaffAddress = "Networking Lane",
+                            StaffDepartment = "Network Engineering",
+                            StaffEmail = "rachel.lim@example.com",
+                            StaffFirstName = "Rachel",
+                            StaffHPNum = "92223344",
+                            StaffHireDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5655),
+                            StaffLastName = "Lim",
+                            StaffPosition = "Network Engineer",
+                            UpdatedBy = "System"
+                        },
+                        new
+                        {
+                            Id = 17,
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5713),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5722),
+                            StaffAddress = "Architecture Avenue",
+                            StaffDepartment = "System Architecture",
+                            StaffEmail = "ethan.neo@example.com",
+                            StaffFirstName = "Ethan",
+                            StaffHPNum = "93334455",
+                            StaffHireDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5704),
+                            StaffLastName = "Neo",
+                            StaffPosition = "Systems Architect",
+                            UpdatedBy = "System"
+                        },
+                        new
+                        {
+                            Id = 18,
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5750),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5760),
+                            StaffAddress = "Data Analysis Street",
+                            StaffDepartment = "Database Analysis",
+                            StaffEmail = "sophia.chong@example.com",
+                            StaffFirstName = "Sophia",
+                            StaffHPNum = "94445566",
+                            StaffHireDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5741),
+                            StaffLastName = "Chong",
+                            StaffPosition = "Database Analyst",
+                            UpdatedBy = "System"
+                        },
+                        new
+                        {
+                            Id = 19,
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5798),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5807),
+                            StaffAddress = "Project Coordination Lane",
+                            StaffDepartment = "Project Coordination",
+                            StaffEmail = "nathan.loh@example.com",
+                            StaffFirstName = "Nathan",
+                            StaffHPNum = "95556677",
+                            StaffHireDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5789),
+                            StaffLastName = "Loh",
+                            StaffPosition = "Project Coordinator",
+                            UpdatedBy = "System"
+                        },
+                        new
+                        {
+                            Id = 20,
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5836),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5845),
+                            StaffAddress = "Design Studio",
+                            StaffDepartment = "Design Team",
+                            StaffEmail = "isabel.koh@example.com",
+                            StaffFirstName = "Isabel",
+                            StaffHPNum = "96667788",
+                            StaffHireDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5826),
+                            StaffLastName = "Koh",
+                            StaffPosition = "UI/UX Designer",
+                            UpdatedBy = "System"
+                        },
+                        new
+                        {
+                            Id = 21,
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5883),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5892),
+                            StaffAddress = "Data Center Lane",
+                            StaffDepartment = "Database Management",
+                            StaffEmail = "brian.ong@example.com",
+                            StaffFirstName = "Brian",
+                            StaffHPNum = "97778899",
+                            StaffHireDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5869),
+                            StaffLastName = "Ong",
+                            StaffPosition = "Database Administrator",
+                            UpdatedBy = "System"
+                        },
+                        new
+                        {
+                            Id = 22,
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5921),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5931),
+                            StaffAddress = "Business Intelligence Street",
+                            StaffDepartment = "Business Intelligence",
+                            StaffEmail = "catherine.yap@example.com",
+                            StaffFirstName = "Catherine",
+                            StaffHPNum = "98889900",
+                            StaffHireDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5911),
+                            StaffLastName = "Yap",
+                            StaffPosition = "Business Intelligence Analyst",
+                            UpdatedBy = "System"
+                        },
+                        new
+                        {
+                            Id = 23,
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5959),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5968),
+                            StaffAddress = "Tech Support Lane",
+                            StaffDepartment = "Technical Support",
+                            StaffEmail = "oscar.gan@example.com",
+                            StaffFirstName = "Oscar",
+                            StaffHPNum = "99990011",
+                            StaffHireDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5949),
+                            StaffLastName = "Gan",
+                            StaffPosition = "Technical Support Engineer",
+                            UpdatedBy = "System"
+                        },
+                        new
+                        {
+                            Id = 24,
+                            CreatedBy = "System",
+                            DateCreated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(6001),
+                            DateUpdated = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(6011),
+                            StaffAddress = "IT Leadership Street",
+                            StaffDepartment = "IT Leadership",
+                            StaffEmail = "hannah.chua@example.com",
+                            StaffFirstName = "Hannah",
+                            StaffHPNum = "91110022",
+                            StaffHireDate = new DateTime(2024, 2, 2, 1, 26, 5, 59, DateTimeKind.Local).AddTicks(5987),
+                            StaffLastName = "Chua",
+                            StaffPosition = "IT Director",
                             UpdatedBy = "System"
                         });
                 });
@@ -1159,6 +3371,63 @@ namespace Sellora.Server.Migrations
                     b.HasIndex("SwapItem2Id");
 
                     b.ToTable("SwapTransactions");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            AppUser1Id = 1,
+                            AppUser2Id = 2,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            SwapItem1Id = 1,
+                            SwapItem2Id = 2,
+                            TransactionDate = new DateTime(2024, 2, 2, 1, 26, 6, 542, DateTimeKind.Local).AddTicks(8640)
+                        },
+                        new
+                        {
+                            Id = 2,
+                            AppUser1Id = 5,
+                            AppUser2Id = 7,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            SwapItem1Id = 35,
+                            SwapItem2Id = 67,
+                            TransactionDate = new DateTime(2024, 2, 2, 1, 26, 6, 542, DateTimeKind.Local).AddTicks(8663)
+                        },
+                        new
+                        {
+                            Id = 3,
+                            AppUser1Id = 10,
+                            AppUser2Id = 11,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            SwapItem1Id = 40,
+                            SwapItem2Id = 71,
+                            TransactionDate = new DateTime(2024, 2, 2, 1, 26, 6, 542, DateTimeKind.Local).AddTicks(8683)
+                        },
+                        new
+                        {
+                            Id = 4,
+                            AppUser1Id = 11,
+                            AppUser2Id = 5,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            SwapItem1Id = 71,
+                            SwapItem2Id = 5,
+                            TransactionDate = new DateTime(2024, 2, 2, 1, 26, 6, 542, DateTimeKind.Local).AddTicks(8702)
+                        },
+                        new
+                        {
+                            Id = 5,
+                            AppUser1Id = 15,
+                            AppUser2Id = 19,
+                            DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            SwapItem1Id = 15,
+                            SwapItem2Id = 40,
+                            TransactionDate = new DateTime(2024, 2, 2, 1, 26, 6, 542, DateTimeKind.Local).AddTicks(8725)
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -1305,25 +3574,25 @@ namespace Sellora.Server.Migrations
                     b.HasOne("Sellora.Shared.Domain.AppUser", "AppUser1")
                         .WithMany()
                         .HasForeignKey("AppUser1Id")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Sellora.Shared.Domain.AppUser", "AppUser2")
                         .WithMany()
                         .HasForeignKey("AppUser2Id")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Sellora.Shared.Domain.Item", "SwapItem1")
                         .WithMany()
                         .HasForeignKey("SwapItem1Id")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("Sellora.Shared.Domain.Item", "SwapItem2")
                         .WithMany()
                         .HasForeignKey("SwapItem2Id")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.Navigation("AppUser1");

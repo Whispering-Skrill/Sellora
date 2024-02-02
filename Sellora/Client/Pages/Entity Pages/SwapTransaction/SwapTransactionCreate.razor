@@ -1,0 +1,63 @@
+﻿@*ASPNetr-yanWorks*@
+@page "/swaptransactions/create"
+@implements IDisposable
+@inject HttpClient _client
+@inject NavigationManager _navManager
+@inject HttpInterceptorService _interceptor
+@attribute [Authorize]
+
+<!-- Page Title -->
+<PageTitle>Create a Transaction</PageTitle>
+
+<!-- Topbar with the title and a back-to-list button -->
+<div class="swaptransaction-topbar">
+    <h2 class="swaptransaction-title">Create Swap Transaction</h2>
+    <BackToList Target="swaptransactions" />
+</div>
+
+<div style="border-bottom:solid black 1px; padding-top:3px; margin-bottom:10px;">
+    <!-- Separator for spacing -->
+</div>
+
+<!-- This Generates a SwapTransaction Form Component with Creation Parameters -->
+<SwapTransactionFormComponent ButtonText="Submit" swaptransaction="swaptransaction" OnValidSubmit="@CreateSwapTransaction" />
+
+@code {
+    // An instance of the SwapTransaction class to store swaptransaction information
+    SwapTransaction swaptransaction = new SwapTransaction();
+
+    // Collections to store data fetched from the server
+    private IList<AppUser>? AppUsers;
+    private IList<Staff>? Staffs;
+    private IList<Item>? Items;
+
+    // This runs asynchronously when the component/page is initialised
+    protected async Task OnIntializedAsync()
+    {
+        // Initialises the interceptor module
+        // This monitors HTTP Events for Global Error Handling
+        _interceptor.MonitorEvent();
+
+        // This fetches data from Server Endpoints using HttpClient
+        AppUsers = await _client.GetFromJsonAsync<List<AppUser>>($"{Endpoints.AppUsersEndpoint}");
+        Staffs = await _client.GetFromJsonAsync<List<Staff>>($"{Endpoints.StaffsEndpoint}");
+        Items = await _client.GetFromJsonAsync<List<Item>>($"{Endpoints.ItemsEndpoint}");
+    }
+
+    // Method to Create a new SwapTransaction, this will navigate users back to the swaptransactions page when complete
+    private async Task CreateSwapTransaction()
+    {
+        // Send a POST request to the server to create a SwapTransaction
+        await _client.PostAsJsonAsync(Endpoints.SwapTransactionsEndpoint, swaptransaction);
+        
+        // Navigate back to the swaptransactions page after successful submission
+        _navManager.NavigateTo("/swaptransactions/");
+    }
+
+    // Disposes of resources when the component is disposed
+    public void Dispose()
+    {
+        // This disposes of global error handling events
+        _interceptor.DisposeEvent();
+    }
+}

@@ -1,0 +1,91 @@
+﻿.report-title {
+    font-weight: bold;
+    font-family: 'Microsoft Sans Serif';
+    letter-spacing: 1px;
+    flex: 1;
+}
+
+.report-topbar {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+.report-box {
+    background-color: #D5D5D5;
+    border-radius: 10px;
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.report-box-inner {
+    background-color: #7c0000;
+    border-radius: 10px;
+    display: flex;
+    flex: 1.7;
+}
+
+.report-box-innercontainer {
+    padding-left: 25px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    flex: 1;
+}
+
+.report-box-detail-container {
+    display: flex;
+    align-items: center;
+    min-height: 100%;
+}
+.report-box-detail-innercontainer {
+    margin-right:10px;
+}
+
+.report-box-title {
+    margin-right: 10px;
+    font-family: 'Microsoft Sans Serif';
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.report-box-details-labels {
+    font-size: 16px;
+    font-family: 'Microsoft Sans Serif';
+    font-weight: bold;
+    color: white;
+    text-align:end;
+    letter-spacing: 1px;
+}
+
+.report-box-details {
+    font-size: 16px;
+    font-family: 'Microsoft Sans Serif';
+    font-weight: bold;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.report-box-content {
+    font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-right: 10px;
+}
+
+.report-box-control-container {
+    padding: 15px;
+    display: block;
+}
+
+.report-box-detail-button {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.report-box-control-bottom {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+body {
+}
