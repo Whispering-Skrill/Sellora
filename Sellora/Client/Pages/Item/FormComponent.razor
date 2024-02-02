@@ -8,7 +8,9 @@
     <div class="form-group">
         <label>Add Pictures: </label>
         <div>
-            <InputFile @bind-Value="@item.ImageUrl" For="@(() => item.ImageUrl)" class="form-control" multiple="true" />
+            <InputText @bind-Value="@item.ImageUrl" class="form-control" />
+            <ValidationMessage For="@(() => item.ImageUrl)" />
+                <img src="@item.ImageUrl" class="card-img-top" style="border-radius:10px; width:30%; height:30%">
         </div>
     </div>
     <div class="form-group">
