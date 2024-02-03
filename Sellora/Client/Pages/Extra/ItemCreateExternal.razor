@@ -1,0 +1,157 @@
+﻿@*ASPNetr-yanWorks*@
+@page "/listings/create/"
+@inject HttpClient _client
+@inject NavigationManager _navManager
+
+<div class="listing-topbar">
+    <h2 class="listing-title">Create Listing</h2>
+    <a href="/" class="btn btn-secondary">
+        <span class="oi oi-account-logout" style="margin-top: 4px; margin-bottom:4px;"></span>
+    </a>
+</div>
+
+<EditForm Model="@item" OnValidSubmit="@ListItem">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+        <div class="main-container">
+            <div class="left-container">
+                <div class="form-group">
+                    <div>
+                        <img src="@item.ImageUrl" class="listing-image">
+                        <label>Add Pictures: </label>
+                        <InputText @bind-Value="@item.ImageUrl" class="form-control" />
+                        <ValidationMessage For="@(() => item.ImageUrl)" />
+                    </div>
+                </div>
+            </div>
+            <div class="right-container">
+                <div class="input-container">
+                    <div class="form-group">
+                        <label>Name: </label>
+                        <div>
+                            <InputText @bind-Value="@item.ItemName" class="form-control" />
+                            <ValidationMessage For="@(() => item.ItemName)" />
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="input-container">
+                    <div class="form-group">
+                        <label>Price: </label>
+                        <div>
+                            <InputNumber @bind-Value="@item.ItemPrice" class="form-control" />
+                            <ValidationMessage For="@(() => item.ItemPrice)" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="input-container">
+                    <div class="form-group">
+                        <label>Item Condition: </label>
+                        <div>
+                            <InputText @bind-Value="@item.Condition" class="form-control" />
+                            <ValidationMessage For="@(() => item.Condition)" />
+                        </div>
+                    </div>
+                </div>
+                                
+                <div class="input-container">
+                    <div class="form-group">
+                        <label>Upload Date: </label>
+                        <div>
+                            <InputDate @bind-Value="@item.ItemDate" class="form-control" />
+                            <ValidationMessage For="@(() => item.ItemDate)" />
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="input-container">
+                    <div class="form-group">
+                        <label>Item Description: </label>
+                        <div>
+                            <InputText @bind-Value="@item.ItemDescription" class="form-control" />
+                            <ValidationMessage For="@(() => item.ItemDescription)" />
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="input-container">
+                    <div class="form-group">
+                        <label>Item Location: </label>
+                        <div>
+                            <InputText @bind-Value="@item.ItemLocation" class="form-control" />
+                            <ValidationMessage For="@(() => item.ItemLocation)" />
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="input-container">
+                    <div class="form-group">
+                        <label>Category: </label>
+                        <div>
+                            <InputSelect @bind-Value="item.CategoryId" class="form-control">
+                                <option value="">-- Select Category --</option>
+                                @if (Categories != null)
+                                {
+                                    foreach (var category in Categories)
+                                    {
+                                        <option value="@category.Id">@category.CategoryName</option>
+                                    }
+                                }
+                            </InputSelect>
+                            <ValidationMessage For="@(() => item.CategoryId)" />
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="input-container">
+                    <div class="form-group">
+                        <label>Uploaded By: </label>
+                        <div>
+                            <InputSelect @bind-Value="item.AppUserId" class="form-control">
+                                <option value="">-- Select UserName --</option>
+                                @if (AppUsers != null)
+                                {
+                                    foreach (var appUser in AppUsers)
+                                    {
+                                        <option value="@appUser.Id">@appUser.UserName</option>
+                                    }
+                                }
+                            </InputSelect>
+                            <ValidationMessage For="@(() => item.AppUserId)" />
+                        </div>
+                    </div>
+                </div>
+                
+                <br />
+
+                <div class="button-container">
+                    <button type="submit" class="btn btn-success btn-block" style="width:100%; border-radius:10px;">
+                        List Item
+                    </button>
+                </div>
+
+            </div>
+        </div>
+
+</EditForm>
+
+@code {
+    Item item = new Item();
+
+    private IList<AppUser>? AppUsers;
+    private IList<Category>? Categories;
+
+    protected async override Task OnInitializedAsync()
+    {
+        AppUsers = await _client.GetFromJsonAsync<List<AppUser>>($"{Endpoints.AppUsersEndpoint}");
+        Categories = await _client.GetFromJsonAsync<List<Category>>($"{Endpoints.CategoriesEndpoint}");
+    }
+
+    private async Task ListItem()
+    {
+        await _client.PostAsJsonAsync(Endpoints.ItemsEndpoint, item);
+        _navManager.NavigateTo("/items/");
+    }
+
+}

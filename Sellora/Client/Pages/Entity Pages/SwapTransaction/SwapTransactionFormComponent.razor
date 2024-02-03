@@ -12,98 +12,108 @@
         <!-- Date of the swaptransaction ((visible only if editing an existing swaptransaction) -->
         @if (swaptransaction.Id > 0)
         {
-            <div class="form-group">
-                <label>Date of Transaction: </label>
-                <div>
-                    <InputDate @bind-Value="@swaptransaction.TransactionDate" class="form-control" />
-                    <ValidationMessage For="@(() => swaptransaction.TransactionDate)" />
+            <div class="input-container">
+                <div class="form-group">
+                    <label>Date of Transaction: </label>
+                    <div>
+                        <InputDate @bind-Value="@swaptransaction.TransactionDate" class="form-control" />
+                        <ValidationMessage For="@(() => swaptransaction.TransactionDate)" />
+                    </div>
                 </div>
             </div>
         }
 
         <!-- First User in the Swap Transaction -->
-        <div class="form-group">
-            <label>Transaction User 1: </label>
-            <div>
-                <InputSelect @bind-Value="swaptransaction.AppUser1Id" class="form-control">
-                    <option value="">-- Select User 1 --</option>
-                    @if (AppUsers != null)
-                    {
-                        foreach (var appuser in AppUsers)
+        <div class="input-container">
+            <div class="form-group">
+                <label>Transaction User 1: </label>
+                <div>
+                    <InputSelect @bind-Value="swaptransaction.AppUser1Id" class="form-control">
+                        <option value="">-- Select User 1 --</option>
+                        @if (AppUsers != null)
                         {
-                            <option value="@appuser.Id">ID: @appuser.Id ( @appuser.UserName )</option>
+                            foreach (var appuser in AppUsers)
+                            {
+                                <option value="@appuser.Id">ID: @appuser.Id ( @appuser.UserName )</option>
+                            }
                         }
-                    }
-                </InputSelect>
-                <ValidationMessage For="@(() => swaptransaction.AppUser1Id)" />
+                    </InputSelect>
+                    <ValidationMessage For="@(() => swaptransaction.AppUser1Id)" />
+                </div>
             </div>
         </div>
 
         <!-- Item belonging to First User in the Swap Transaction -->
-        <div class="form-group">
-            <label>Swapped Item 1: </label>
-            <div>
-                <InputSelect @bind-Value="swaptransaction.SwapItem1Id" class="form-control">
-                    <option value="">-- Select Item 1 --</option>
-                    @if (Items != null)
-                    {
-                        foreach (var item in Items)
+        <div class="input-container">
+            <div class="form-group">
+                <label>Swapped Item 1: </label>
+                <div>
+                    <InputSelect @bind-Value="swaptransaction.SwapItem1Id" class="form-control">
+                        <option value="">-- Select Item 1 --</option>
+                        @if (Items != null)
                         {
-                            <!-- The items displayed will depend on AppUser1 -->
-                            if (swaptransaction.AppUser1Id != null)
+                            foreach (var item in Items)
                             {
-                                if (item.AppUserId == swaptransaction.AppUser1Id)
+                                <!-- The items displayed will depend on AppUser1 -->
+                                if (swaptransaction.AppUser1Id != null)
                                 {
-                                    <option value="@item.Id">ID: @item.Id ( @item.ItemName )</option>
+                                    if (item.AppUserId == swaptransaction.AppUser1Id)
+                                    {
+                                        <option value="@item.Id">ID: @item.Id ( @item.ItemName )</option>
+                                    }
                                 }
                             }
                         }
-                    }
-                </InputSelect>
-                <ValidationMessage For="@(() => swaptransaction.SwapItem1Id)" />
+                    </InputSelect>
+                    <ValidationMessage For="@(() => swaptransaction.SwapItem1Id)" />
+                </div>
             </div>
         </div>
 
         <!-- Second User in the Swap Transaction -->
-        <div class="form-group">
-            <label>Transaction User 2: </label>
-            <div>
-                <InputSelect @bind-Value="swaptransaction.AppUser2Id" class="form-control">
-                    <option value="">-- Select User 2 --</option>
-                    @if (AppUsers != null)
-                    {
-                        foreach (var appuser in AppUsers)
+        <div class="input-container">
+            <div class="form-group">
+                <label>Transaction User 2: </label>
+                <div>
+                    <InputSelect @bind-Value="swaptransaction.AppUser2Id" class="form-control">
+                        <option value="">-- Select User 2 --</option>
+                        @if (AppUsers != null)
                         {
-                            <option value="@appuser.Id">ID: @appuser.Id ( @appuser.UserName )</option>
+                            foreach (var appuser in AppUsers)
+                            {
+                                <option value="@appuser.Id">ID: @appuser.Id ( @appuser.UserName )</option>
+                            }
                         }
-                    }
-                </InputSelect>
-                <ValidationMessage For="@(() => swaptransaction.AppUser2Id)" />
+                    </InputSelect>
+                    <ValidationMessage For="@(() => swaptransaction.AppUser2Id)" />
+                </div>
             </div>
         </div>
 
         <!-- Item belonging to the Second User in the Swap Transaction -->
-        <div class="form-group">
-            <label>Swapped Item 2: </label>
-            <div>
-                <InputSelect @bind-Value="swaptransaction.SwapItem2Id" class="form-control">
-                    <option value="">-- Select Item 2 --</option>
-                    @if (Items != null)
-                    {
-                        foreach (var item in Items)
+        <div class="input-container">
+            <div class="form-group">
+                <label>Swapped Item 2: </label>
+                <div>
+                    <InputSelect @bind-Value="swaptransaction.SwapItem2Id" class="form-control">
+                        <option value="">-- Select Item 2 --</option>
+                        @if (Items != null)
                         {
-                            <!-- The items displayed will depend on AppUser2 -->
-                            if (swaptransaction.AppUser2Id != null)
+                            foreach (var item in Items)
                             {
-                                if (item.AppUserId == swaptransaction.AppUser2Id)
+                                <!-- The items displayed will depend on AppUser2 -->
+                                if (swaptransaction.AppUser2Id != null)
                                 {
-                                    <option value="@item.Id">ID: @item.Id ( @item.ItemName )</option>
+                                    if (item.AppUserId == swaptransaction.AppUser2Id)
+                                    {
+                                        <option value="@item.Id">ID: @item.Id ( @item.ItemName )</option>
+                                    }
                                 }
                             }
                         }
-                    }
-                </InputSelect>
-                <ValidationMessage For="@(() => swaptransaction.SwapItem2Id)" />
+                    </InputSelect>
+                    <ValidationMessage For="@(() => swaptransaction.SwapItem2Id)" />
+                </div>
             </div>
         </div>
     </fieldset>

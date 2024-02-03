@@ -9,74 +9,90 @@
     <fieldset disabled="@Disabled">
 
         <!-- First Name -->
-        <div class="form-group">
-            <label>First Name: </label>
-            <div>
-                <InputText @bind-Value="@staff.StaffFirstName" class="form-control"/>
-                <ValidationMessage For="@(() => staff.StaffFirstName)" />
+        <div class="input-container">
+            <div class="form-group">
+                <label>First Name: </label>
+                <div>
+                    <InputText @bind-Value="@staff.StaffFirstName" class="form-control" />
+                    <ValidationMessage For="@(() => staff.StaffFirstName)" />
+                </div>
             </div>
         </div>
 
         <!-- Last Name -->
-        <div class="form-group">
-            <label>Last Name: </label>
-            <div>
-                <InputText @bind-Value="@staff.StaffLastName" class="form-control" />
-                <ValidationMessage For="@(() => staff.StaffLastName)" />
+        <div class="input-container">
+            <div class="form-group">
+                <label>Last Name: </label>
+                <div>
+                    <InputText @bind-Value="@staff.StaffLastName" class="form-control" />
+                    <ValidationMessage For="@(() => staff.StaffLastName)" />
+                </div>
             </div>
         </div>
 
         <!-- Email -->
-        <div class="form-group">
-            <label>Email: </label>
-            <div>
-                <InputText @bind-Value="@staff.StaffEmail" class="form-control" />
-                <ValidationMessage For="@(() => staff.StaffEmail)" />
+        <div class="input-container">
+            <div class="form-group">
+                <label>Email: </label>
+                <div>
+                    <InputText @bind-Value="@staff.StaffEmail" class="form-control" />
+                    <ValidationMessage For="@(() => staff.StaffEmail)" />
+                </div>
             </div>
         </div>
 
         <!-- Date of Hire -->
-        <div class="form-group">
-            <label>Date of Hire: </label>
-            <div>
-                <InputDate @bind-Value="@staff.StaffHireDate" class="form-control" />
-                <ValidationMessage For="@(() => staff.StaffHireDate)" />
+        <div class="input-container">
+            <div class="form-group">
+                <label>Date of Hire: </label>
+                <div>
+                    <InputDate @bind-Value="@staff.StaffHireDate" class="form-control" />
+                    <ValidationMessage For="@(() => staff.StaffHireDate)" />
+                </div>
             </div>
         </div>
 
         <!-- Position -->
-        <div class="form-group">
-            <label>Position: </label>
-            <div>
-                <InputText @bind-Value="@staff.StaffPosition" class="form-control" />
-                <ValidationMessage For="@(() => staff.StaffPosition)" />
+        <div class="input-container">
+            <div class="form-group">
+                <label>Position: </label>
+                <div>
+                    <InputText @bind-Value="@staff.StaffPosition" class="form-control" />
+                    <ValidationMessage For="@(() => staff.StaffPosition)" />
+                </div>
             </div>
         </div>
 
         <!-- Address -->
-        <div class="form-group">
-            <label>Address: </label>
-            <div>
-                <InputText @bind-Value="@staff.StaffAddress" class="form-control" />
-                <ValidationMessage For="@(() => staff.StaffAddress)" />
+        <div class="input-container">
+            <div class="form-group">
+                <label>Address: </label>
+                <div>
+                    <InputText @bind-Value="@staff.StaffAddress" class="form-control" />
+                    <ValidationMessage For="@(() => staff.StaffAddress)" />
+                </div>
             </div>
         </div>
 
         <!-- Contact -->
-        <div class="form-group">
-            <label>Contact: </label>
-            <div>
-                <InputText @bind-Value="@staff.StaffHPNum" class="form-control" />
-                <ValidationMessage For="@(() => staff.StaffHPNum)" />
+        <div class="input-container">
+            <div class="form-group">
+                <label>Contact: </label>
+                <div>
+                    <InputText @bind-Value="@staff.StaffHPNum" class="form-control" />
+                    <ValidationMessage For="@(() => staff.StaffHPNum)" />
+                </div>
             </div>
         </div>
 
         <!-- Department -->
-        <div class="form-group">
-            <label>Department: </label>
-            <div>
-                <InputText @bind-Value="@staff.StaffDepartment" class="form-control" />
-                <ValidationMessage For="@(() => staff.StaffDepartment)" />
+        <div class="input-container">
+            <div class="form-group">
+                <label>Department: </label>
+                <div>
+                    <InputText @bind-Value="@staff.StaffDepartment" class="form-control" />
+                    <ValidationMessage For="@(() => staff.StaffDepartment)" />
+                </div>
             </div>
         </div>
     </fieldset>

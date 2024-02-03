@@ -18,7 +18,7 @@
 18 - [COMPLETE] Update Reports Display to include transaction
 19 - [COMPLETE] Update Reviews Display to have cool swap vs sale transaction stuff
 20 - [COMPLETE] Add Reports Check for Staffs
-21 - Improve creation pages
+21 - [COMPLETE] Improve creation pages
 22 - [COMPLETE] Add Rating
 
 YY - [COMPLETE] Intermediate Bug Check
@@ -179,3 +179,7 @@ Ryan - Reconfigured Validation on Ryan-Entities
 Ryan - Added Seeding for Ryan-Entities
 
 Ryan - Implemented Item Searchbar
+
+Ryan - Improved Creation Pages
+
+Lucas - Implemented URL based image loading
