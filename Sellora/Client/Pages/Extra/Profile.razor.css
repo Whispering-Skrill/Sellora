@@ -64,14 +64,14 @@
     text-align: center;
     text-decoration: none;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 10px;
     color: #fff;
-    background-color: #3498db;
-    border: 2px solid #2980b9;
+    background-color: #7c0000;
     transition: background-color 0.3s, color 0.3s;
+    width: 100px;
 }
 
     .nice-button:hover {
-        background-color: #2980b9;
+        background-color: #b94444;
         color: #fff;
     }

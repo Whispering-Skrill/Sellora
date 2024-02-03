@@ -14,12 +14,12 @@
 </head>
 
 <!-- Contacts Section -->
-<div style="font-family:'Microsoft Sans Serif'; height:80vh;">
+<div style="font-family:'Microsoft Sans Serif'; height:1500px;">
     <div style="display:flex; height:10vh; align-items:center; justify-content:center; margin-bottom:1vh;">
         <h2 style="font-size:5.5vh; font-weight:bold;">Contact Us</h2>
     </div>
     <div style="display:flex; height:48vh;">
-        <div style="width:50%; background-color:#CB3838; border-radius:30px; margin:10px; height:65vh;">
+        <div style="width:50%; background-color:#CB3838; border-radius:30px; margin:10px; height:650px;">
             <div style="margin:6vh; margin-top:4vh; color:white; text-align:center;">
                 <h2 style="font-weight:bold; letter-spacing:1px;">Site Enquiries</h2>
                 <div style="margin: 3vh;">
@@ -46,7 +46,7 @@
                 </div>
             </div>
         </div>
-        <div style="width:50%; background-color:#CB3838; border-radius:30px;  margin:10px; height:65vh;">
+        <div style="width:50%; background-color:#CB3838; border-radius:30px;  margin:10px; height:650px;">
             <div style="margin:6vh; margin-top:4vh; color:white; text-align:center;">
                 <h2 style="font-weight:bold; letter-spacing:1px;">Report an issue</h2>
                 <div style="margin: 3vh;">
@@ -72,6 +72,30 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <!-- Not Functional -->
+    <div class="contact-form-outercontainer">
+        <div class="contact-form-innercontainer">
+
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+                <label for="country">Country</label>
+                <select id="country" name="country">
+                    <option value="Singapore">Singapore</option>
+                    <option value="Malaysia">Malaysia</option>
+                    <option value="Others">Others</option>
+                </select>
+
+                <label for="subject">Subject</label>
+                <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+                <button class="submit-button">Submit</button>
         </div>
     </div>
 </div>

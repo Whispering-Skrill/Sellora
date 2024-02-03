@@ -1,5 +1,6 @@
 ﻿@*ASPNetr-yanWorks*@
 @page "/profile/"
+@attribute [Authorize]
 
 <!-- Page Title -->
 <PageTitle>Profile</PageTitle>
@@ -12,7 +13,7 @@
                 <div class="profile-picture">
                     <img src="https://placekitten.com/300/300" alt="Profile Picture">
                 </div>
-                <h1 class="user-name">Hello! @user.Identity.Name</h1>
+                <h1 class="user-name">Hello, @user.Identity.Name</h1>
                 @if (user.IsInRole("Administrator"))
                 {
                     <p class="user-description">You have <b>Administrator</b> Privileges.</p>

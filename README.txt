@@ -9,7 +9,7 @@
  9 - [COMPLETE] Add Role name in ASPNetUser Profile Page
 10 - [COMPLETE] Item Seeding
 11 - [COMPLETE] Check Domain [Required]
-12 - Contact Form
+12 - [COMPLETE] Contact Form
 13 - [COMPLETE] 5 Stars on Reviews
 14 - [COMPLETE] Check on Unauthorised Error Handling
 15 - [COMPLETE] Create User side Item View Page
