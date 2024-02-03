@@ -17,7 +17,7 @@ namespace Sellora.Server.Configurations.Entities
                     ReviewRating = 5,
                     ReviewDate = DateTime.Now,
                     ReviewDescription = "The vintage jacket I acquired is a true gem that exudes a sense of timeless style and character.",
-                    SwapTransactionID = 2,
+                    SwapTransactionID = 1,
                     SaleTransactionID = null,
                     AppUserID = 1
                 },

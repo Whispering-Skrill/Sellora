@@ -1,8 +1,45 @@
-﻿.listingpage-title {
+﻿input[type=text], select {
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    background-color: #E1E1E1;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 20px;
+}
+
+.listingpage-title {
+    margin-top: 20px;
     font-weight: bold;
     font-family: 'Microsoft Sans Serif';
     letter-spacing: 1px;
     flex: 1;
+}
+
+.listingpage-searchbar-section {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.listingpage-searchbar-container {
+    width: 100%;
+    margin-left: 5.2vh;
+    margin-right: 5.2vh;
+    display: flex;
+}
+
+.listingpage-searchbar-searchbar-container {
+    flex: auto;
+}
+
+.listingpage-searchbar-button-container {
+    flex: auto;
+    max-width: 100px;
+    margin-left: 15px;
 }
 
 .listingpage-topbar {

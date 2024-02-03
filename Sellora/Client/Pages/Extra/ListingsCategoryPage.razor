@@ -1,6 +1,6 @@
 ﻿@* This is the category listings page, where listings are only displayed if they are under a certain category *@
 @*ASPNetr-yanWorks*@
-@page "/listings/{categoryID:int}"
+@page "/listings/category/{categoryID:int}"
 @implements IDisposable
 @inject IJSRuntime js
 @inject HttpClient _client
@@ -35,21 +35,37 @@ else
     }
 }
 
+<!-- Search bar -->
+<div class="listingpage-searchbar-section">
+    <div class="listingpage-searchbar-container">
+        <div class="listingpage-searchbar-searchbar-container">
+            <input type="text" @bind="searchQuery" @onkeyup="HandleKeyPress" placeholder="Search..." />
+        </div>
+        <div class="listingpage-searchbar-button-container">
+            <button class="btn btn-primary" style="height:100%; width:100%; border-radius:10px;" @onclick="Search">Search</button>
+        </div>
+    </div>
+</div>
+
 <!-- Listings -->
 <div class="listing-section">
     <div class="listing-container">
-        @if (Items == null)
+        @if (DisplayedItems == null)
         {
-            <div class="alert alert-info">Loading Items...</div>
+            <div class="alert alert-info">No matching items found.</div>
+        }
+        else if (DisplayedItems.Count == 0)
+        {
+            <div class="alert alert-warning">No items match the current search criteria.</div>
         }
         else
         {
-            @foreach (var item in Items)
+            @foreach (var item in DisplayedItems)
             {
                 @if (item.CategoryId == categoryID)
                 {
                     <div class="listing-box">
-                        <a href="/listing/@item.Id" style="text-decoration:none;">
+                        <a href="/listings/@item.Id" style="text-decoration:none;">
                             <div class="listingitem-inner">
                                 <p class="listingitem-username">@item.AppUser.UserName</p>
                                 <img src="https://via.placeholder.com/300" class="card-img-top" style="border-radius:10px;">
@@ -78,10 +94,13 @@ else
     </div>
 </div>
 
+
 @code {
     // Collections to store data fetched from the server
     private List<Sellora.Shared.Domain.Item>? Items;
     private List<Sellora.Shared.Domain.Category>? Categories;
+    private List<Sellora.Shared.Domain.Item>? DisplayedItems; // List to store filtered items
+    private string searchQuery = "";
 
     // Parameter for receiving the category ID from the URL
     [Parameter] public int categoryID { get; set; }
@@ -96,6 +115,9 @@ else
         // This fetches data from Server Endpoints using HttpClient
         Items = await _client.GetFromJsonAsync<List<Sellora.Shared.Domain.Item>>($"{Endpoints.ItemsEndpoint}");
         Categories = await _client.GetFromJsonAsync<List<Sellora.Shared.Domain.Category>>($"{Endpoints.CategoriesEndpoint}");
+
+        // This allows for all items to be displayed in the beginning
+        DisplayedItems = Items;
     }
 
     // Disposes of resources when the component is disposed
@@ -103,5 +125,33 @@ else
     {
         // This disposes of global error handling events
         _interceptor.DisposeEvent();
+    }
+
+    private void HandleKeyPress(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter" || e.Key == "NumpadEnter")
+        {
+            // Calls the search function when Enter key is pressed
+            Search();
+        }
+    }
+
+    private void Search()
+    {
+        if (Items != null)
+        {
+            // Convert searchQuery to lowercase for better matching
+            string query = searchQuery.ToLowerInvariant();
+
+            // Filter items based on the search query
+            // The search will go across multiple values e.g. condition and user
+            DisplayedItems = Items
+                .Where(item =>
+                    item.ItemName.ToLowerInvariant().Contains(query) ||
+                    item.AppUser.UserName.ToLowerInvariant().Contains(query) ||
+                    item.Condition.ToLowerInvariant().Contains(query)
+                )
+                .ToList();
+        }
     }
 }

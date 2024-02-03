@@ -18,7 +18,6 @@
 }
 
 .listingpage-searchbar-section {
-    margin-top: 3vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,7 +54,6 @@
 
 .listing-container {
     margin: 3vh;
-    margin-top: 1vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;

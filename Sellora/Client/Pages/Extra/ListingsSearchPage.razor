@@ -1,9 +1,12 @@
-﻿@* This allows for the landing page to contain listings dynamically *@
+﻿@* This is a Listings Page that allows for a search function to be used *@
 @*ASPNetr-yanWorks*@
+@page "/listings/"
 @implements IDisposable
 @inject IJSRuntime js
 @inject HttpClient _client
 @inject HttpInterceptorService _interceptor
+@attribute [Authorize]
+
 
 <!-- Page Title -->
 <PageTitle>Browse Listings</PageTitle>

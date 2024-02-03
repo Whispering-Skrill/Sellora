@@ -10,11 +10,11 @@
 10 - [COMPLETE] Item Seeding
 11 - [COMPLETE] Check Domain [Required]
 12 - Contact Form
-13 - 5 Stars on Reviews
+13 - [COMPLETE] 5 Stars on Reviews
 14 - [COMPLETE] Check on Unauthorised Error Handling
 15 - [COMPLETE] Create User side Item View Page
 16 - [COMPLETE] Comment Everything
-17 - Implement Searchbar
+17 - [COMPLETE] Implement Searchbar
 18 - [COMPLETE] Update Reports Display to include transaction
 19 - [COMPLETE] Update Reviews Display to have cool swap vs sale transaction stuff
 20 - [COMPLETE] Add Reports Check for Staffs
@@ -176,3 +176,5 @@ Ryan - Added STRICT logic on Swaptransaction, Review Form Components
 Ryan - Reconfigured Validation on Ryan-Entities
 
 Ryan - Added Seeding for Ryan-Entities
+
+Ryan - Implemented Item Searchbar
