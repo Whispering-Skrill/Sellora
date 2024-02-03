@@ -107,7 +107,7 @@ else
             if (confirm)
             {
                 // This disposes the table on reload to prevent errors
-                Dispose();
+                //Dispose();
 
                 // Deletes the swaptransaction and refreshes the list
                 await _client.DeleteAsync($"{Endpoints.SwapTransactionsEndpoint}/{swaptransactionsID}");

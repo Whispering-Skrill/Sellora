@@ -119,5 +119,9 @@
     justify-content: space-between;
 }
 
+.checked {
+    color: orange;
+}
+
 body {
 }

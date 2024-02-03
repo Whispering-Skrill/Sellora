@@ -19,8 +19,21 @@
 19 - [COMPLETE] Update Reviews Display to have cool swap vs sale transaction stuff
 20 - [COMPLETE] Add Reports Check for Staffs
 21 - Improve creation pages
+22 - [COMPLETE] Add Rating
 
+YY - [COMPLETE] Intermediate Bug Check
 
+XY - Intermediate Bug Check
+
+XX - Complete Bug Check
+	- All Buttons
+	- All Index
+	- All Creation
+		- All Validations
+	- All Updating
+	- All Deletion
+	- Authentication
+	- Errors
 
 <----- OTHERS ----->
 Nuget NewtonSoftJson Version --> 7.0.14

@@ -125,7 +125,7 @@ else
             if (confirm)
             {
                 // This disposes the table on reload to prevent errors
-                Dispose();
+                //Dispose();
                 
                 // Deletes the staff member and refreshes the list
                 await _client.DeleteAsync($"{Endpoints.StaffsEndpoint}/{staffID}");

@@ -119,7 +119,23 @@
                 </div>
                 <div class="review-box-innercontainer2">
                     <h4 class="review-box-title">@review.ReviewTitle</h4>
-                    <p class="review-box-details">Written by: @review.AppUser.UserName ------- @review.ReviewDate.Day / @review.ReviewDate.Month / @review.ReviewDate.Year</p>
+                    <div style="display:flex; margin-bottom: -15px;">
+                        <div>
+                            <p class="review-box-details">Written by: @review.AppUser.UserName ------- @review.ReviewDate.Day / @review.ReviewDate.Month / @review.ReviewDate.Year</p>
+                        </div>
+                        <div style="padding-left:10px;">
+                            <p>
+                                @for (int i = 0; i < review.ReviewRating; i++)
+                                {
+                                    <span class="fa fa-star checked"></span>
+                                }
+                                @for (int i = 0; i < (5 - review.ReviewRating); i++)
+                                {
+                                    <span class="fa fa-star"></span>
+                                }
+                            </p>
+                        </div>
+                    </div>
                     <p class="review-box-content">@review.ReviewDescription</p>
                 </div>
 
@@ -130,6 +146,13 @@
                             More Details
                         </a>
                     </div>
+                    <AuthorizeView Roles="User">
+                        <div class="review-box-control-bottom">
+                            <a href="/reviews/edit/@review.Id" class="btn btn-warning" style="width:100%; margin-right:5px;">
+                                <span class="oi oi-pencil"></span>
+                            </a>
+                        </div>
+                    </AuthorizeView>
 
                     <!-- This prevents user-role level users from editing reviews -->
                     <AuthorizeView Roles="Administrator">
