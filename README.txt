@@ -34,6 +34,7 @@ XX - Complete Bug Check
 	- All Deletion
 	- Authentication
 	- Errors
+	- Layout on standard aspect ratios
 
 <----- OTHERS ----->
 Nuget NewtonSoftJson Version --> 7.0.14

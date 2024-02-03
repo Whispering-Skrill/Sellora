@@ -11,6 +11,7 @@
 }
 
 .listingpage-title {
+    margin-top: 20px;
     font-weight: bold;
     font-family: 'Microsoft Sans Serif';
     letter-spacing: 1px;
@@ -18,6 +19,7 @@
 }
 
 .listingpage-searchbar-section {
+    margin-top: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,6 +29,7 @@
     width: 100%;
     margin-left: 5.2vh;
     margin-right: 5.2vh;
+    max-width: 1900px;
     display: flex;
 }
 
@@ -41,9 +44,12 @@
 }
 
 .listingpage-topbar {
+    margin: 0.5vh 2vh;
+    margin-bottom: 0;
     display: flex;
     position: relative;
     align-items: center;
+    text-align: center;
 }
 
 .listing-section {
@@ -54,11 +60,12 @@
 
 .listing-container {
     margin: 3vh;
+    margin-top: 1vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     max-width: 2000px;
-    width:100%;
+    width: 100%;
     height: auto;
 }
 

@@ -28,6 +28,7 @@
     width: 100%;
     margin-left: 5.2vh;
     margin-right: 5.2vh;
+    max-width: 1900px;
     display: flex;
 }
 

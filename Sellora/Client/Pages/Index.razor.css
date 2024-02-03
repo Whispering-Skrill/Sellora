@@ -62,7 +62,7 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     min-width: 700px;
-    max-width:100%;
+    max-width: 100%;
     width: auto;
     height: auto;
 }
@@ -137,9 +137,10 @@
 .login-div {
     margin-top: 2vh;
     margin-bottom: 0vh;
+    min-width: 1200px;
+    max-width: 1200px;
     display: flex;
     min-height: 50px;
-    min-width: 90%;
     text-align: center;
     align-items: center;
     justify-content: center;
