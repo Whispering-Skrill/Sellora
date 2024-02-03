@@ -57,7 +57,7 @@
 }
 
 .listing-container {
-    margin: 3vh;
+    margin: 30px;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -71,8 +71,8 @@
     background-color: white;
     flex: 1;
     margin: 1vh;
-    min-width: 20vh;
-    max-width: 20vh;
+    min-width: 15vw;
+    max-width: 15vw;
     height: auto;
     border-radius: 15px;
     transition: 0.2s;
@@ -137,8 +137,8 @@
 .login-div {
     margin-top: 2vh;
     margin-bottom: 0vh;
-    min-width: 1200px;
-    max-width: 1200px;
+    min-width: 1000px;
+    max-width: 1000px;
     display: flex;
     min-height: 50px;
     text-align: center;
