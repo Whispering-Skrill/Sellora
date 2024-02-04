@@ -80,6 +80,13 @@ namespace Sellora.Server.Data
                 .WithMany()
                 .HasForeignKey(st => st.SwapItem2Id)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            // Configure Report relationships to prevent staff deletion if staff is assigned to a report
+            builder.Entity<Report>()
+                .HasOne(r => r.Staff)
+                .WithMany(s => s.Reports)
+                .HasForeignKey(r => r.StaffID)
+                .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

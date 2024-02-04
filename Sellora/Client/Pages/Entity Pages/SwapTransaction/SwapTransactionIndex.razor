@@ -103,7 +103,7 @@ else
         if (SwapTransactions != null)
         {
             var swaptransaction = SwapTransactions.First(q => q.Id == swaptransactionsID);
-            var confirm = await js.InvokeAsync<bool>("confirm", $"Do you want to delete transactiond dated {swaptransaction.TransactionDate}?");
+            var confirm = await js.InvokeAsync<bool>("confirm", $"Do you want to delete transaction dated {swaptransaction.TransactionDate}?");
             if (confirm)
             {
                 // This disposes the table on reload to prevent errors
