@@ -39,10 +39,10 @@ else
                     <td>@saletransaction.AppUser.UserName</td>
                     <td>@saletransaction.Item.ItemName</td>
                     <td>
-                        <a href="/staffs/view/@saletransaction.Id" class="btn btn-primary">
+                        <a href="/saletransactions/view/@saletransaction.Id" class="btn btn-primary">
                             <span class="oi oi-book"></span>
                         </a>
-                        <a href="/staffs/edit/@saletransaction.Id" class="btn btn-warning">
+                        <a href="/saletransactions/edit/@saletransaction.Id" class="btn btn-warning">
                             <span class="oi oi-pencil"></span>
                         </a>
                         <button class="btn btn-danger" @onclick="@(()=>Delete(saletransaction.Id))">
